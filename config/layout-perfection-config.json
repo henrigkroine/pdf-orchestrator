@@ -1,0 +1,535 @@
+{
+  "version": "1.0.0",
+  "description": "Layout Perfection Checker Configuration - Mathematical design principles and professional standards",
+
+  "goldenRatio": {
+    "phi": 1.618033988749895,
+    "tolerance": 0.05,
+    "description": "Golden ratio (φ) - the most aesthetically pleasing proportion in nature and design",
+    "applications": {
+      "contentAreaRatio": {
+        "ideal": 1.618,
+        "tolerance": 0.1,
+        "description": "Content area width vs height should approximate φ"
+      },
+      "whitespaceSplit": {
+        "ideal": 0.618,
+        "tolerance": 0.08,
+        "description": "Content should occupy ~61.8% of page, whitespace ~38.2%"
+      },
+      "elementProportions": {
+        "ideal": 1.618,
+        "tolerance": 0.15,
+        "description": "Related element size ratios should approach φ"
+      },
+      "focalPointPlacement": {
+        "horizontalIdeal": 0.382,
+        "verticalIdeal": 0.382,
+        "tolerance": 0.1,
+        "description": "Primary focal point at 38.2% from edges (golden section)"
+      }
+    },
+    "fibonacci": {
+      "sequence": [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610, 987],
+      "description": "Fibonacci numbers - natural progression approaching golden ratio",
+      "spacingScale": [8, 13, 21, 34, 55, 89, 144],
+      "typographyScale": [13, 21, 34, 55, 89]
+    }
+  },
+
+  "gridSystem": {
+    "columns": 12,
+    "gutterWidth": 20,
+    "baselineGrid": 8,
+    "description": "Swiss grid system - 12-column with 8pt baseline rhythm",
+    "pageMargins": {
+      "all": 40,
+      "top": 40,
+      "right": 40,
+      "bottom": 40,
+      "left": 40
+    },
+    "snapTolerance": 4,
+    "description_detail": "Elements should snap to column boundaries within 4px tolerance",
+    "columnCalculation": {
+      "pageWidth": 612,
+      "marginLeft": 40,
+      "marginRight": 40,
+      "contentWidth": 532,
+      "columnWidth": 35.33,
+      "gutterWidth": 20
+    },
+    "baselineGridRules": {
+      "textBaseline": "Must align to 8pt grid",
+      "elementHeight": "Should be multiple of 8pt",
+      "tolerance": 2
+    }
+  },
+
+  "spacing": {
+    "scale": {
+      "xs": 4,
+      "sm": 8,
+      "md": 12,
+      "lg": 20,
+      "xl": 40,
+      "xxl": 60
+    },
+    "targets": {
+      "pageMargins": 40,
+      "sectionBreaks": 60,
+      "elementSpacing": 20,
+      "paragraphSpacing": 12,
+      "lineHeight": {
+        "body": 1.5,
+        "headings": 1.2
+      }
+    },
+    "consistency": {
+      "tolerance": 3,
+      "description": "Spacing variations within ±3px are acceptable",
+      "maxDeviation": 0.15,
+      "description_detail": "No spacing should deviate more than 15% from target"
+    },
+    "anomalyDetection": {
+      "enabled": true,
+      "zScoreThreshold": 2.5,
+      "description": "Flag spacing values beyond 2.5 standard deviations"
+    }
+  },
+
+  "alignment": {
+    "precision": {
+      "tolerance": 2,
+      "description": "Elements must align within ±2px for pixel-perfect layouts"
+    },
+    "types": {
+      "leftEdge": {
+        "enabled": true,
+        "weight": 1.0
+      },
+      "rightEdge": {
+        "enabled": true,
+        "weight": 1.0
+      },
+      "centerVertical": {
+        "enabled": true,
+        "weight": 0.8
+      },
+      "centerHorizontal": {
+        "enabled": true,
+        "weight": 0.8
+      },
+      "baseline": {
+        "enabled": true,
+        "weight": 1.2,
+        "description": "Text baseline alignment is critical"
+      },
+      "topEdge": {
+        "enabled": true,
+        "weight": 0.9
+      },
+      "bottomEdge": {
+        "enabled": true,
+        "weight": 0.9
+      }
+    },
+    "verticalRhythm": {
+      "enabled": true,
+      "baselineGrid": 8,
+      "tolerance": 2
+    }
+  },
+
+  "hierarchy": {
+    "typography": {
+      "h1": {
+        "minSize": 36,
+        "maxSize": 72,
+        "weight": "bold"
+      },
+      "h2": {
+        "minSize": 28,
+        "maxSize": 48,
+        "weight": "semibold"
+      },
+      "h3": {
+        "minSize": 20,
+        "maxSize": 32,
+        "weight": "medium"
+      },
+      "body": {
+        "minSize": 11,
+        "maxSize": 14,
+        "weight": "regular"
+      },
+      "ratioMinimum": 1.25,
+      "description": "Each level should be at least 1.25x larger than the next"
+    },
+    "contrast": {
+      "minimumRatio": 4.5,
+      "preferredRatio": 7.0,
+      "description": "WCAG AA compliance for readability"
+    },
+    "eyeFlowPatterns": {
+      "fPattern": {
+        "description": "Text-heavy content follows F-pattern (top horizontal, left vertical, lower horizontal)",
+        "primaryZone": "top-left",
+        "weight": 1.0
+      },
+      "zPattern": {
+        "description": "Visual content follows Z-pattern (top-left to top-right to bottom-left to bottom-right)",
+        "primaryZone": "corners",
+        "weight": 0.8
+      },
+      "gutenbergDiagram": {
+        "description": "Natural reading gravity - top-left (primary) to bottom-right (terminal)",
+        "zones": {
+          "primary": "top-left",
+          "strong": "top-right",
+          "weak": "bottom-left",
+          "terminal": "bottom-right"
+        },
+        "weight": 0.9
+      }
+    }
+  },
+
+  "balance": {
+    "symmetry": {
+      "threshold": 0.1,
+      "description": "Visual weight difference < 10% indicates symmetry"
+    },
+    "weightCalculation": {
+      "method": "luminosity",
+      "description": "Calculate visual weight based on luminosity, size, and color saturation",
+      "factors": {
+        "luminosity": 0.5,
+        "size": 0.3,
+        "saturation": 0.2
+      }
+    },
+    "quadrantAnalysis": {
+      "enabled": true,
+      "description": "Analyze balance across 4 quadrants"
+    },
+    "scoringScale": {
+      "perfectBalance": 0.0,
+      "excellent": 0.1,
+      "good": 0.2,
+      "fair": 0.3,
+      "poor": 0.5,
+      "description": "Balance score represents deviation from perfect equilibrium"
+    },
+    "densityHeatmap": {
+      "enabled": true,
+      "resolution": 20,
+      "description": "Generate 20x20 density grid for visual weight distribution"
+    }
+  },
+
+  "proximity": {
+    "gestaltPrinciples": {
+      "proximity": {
+        "enabled": true,
+        "threshold": 30,
+        "description": "Elements within 30px are perceived as related"
+      },
+      "similarity": {
+        "enabled": true,
+        "colorTolerance": 20,
+        "sizeTolerance": 0.2,
+        "description": "Similar elements (color/size) should be grouped"
+      },
+      "continuity": {
+        "enabled": true,
+        "description": "Elements along a line are perceived as related"
+      },
+      "closure": {
+        "enabled": true,
+        "description": "Incomplete shapes are perceived as complete"
+      },
+      "figureGround": {
+        "enabled": true,
+        "description": "Clear distinction between foreground and background"
+      }
+    },
+    "groupingThresholds": {
+      "tight": 12,
+      "medium": 20,
+      "loose": 40,
+      "separate": 60
+    }
+  },
+
+  "professionalStandards": {
+    "industryBenchmarks": {
+      "awardWinning": {
+        "goldenRatioCompliance": 0.9,
+        "gridAlignment": 0.95,
+        "spacingConsistency": 0.92,
+        "alignmentPrecision": 0.98,
+        "hierarchyClarity": 0.9
+      },
+      "professional": {
+        "goldenRatioCompliance": 0.7,
+        "gridAlignment": 0.85,
+        "spacingConsistency": 0.8,
+        "alignmentPrecision": 0.9,
+        "hierarchyClarity": 0.8
+      },
+      "acceptable": {
+        "goldenRatioCompliance": 0.5,
+        "gridAlignment": 0.7,
+        "spacingConsistency": 0.65,
+        "alignmentPrecision": 0.75,
+        "hierarchyClarity": 0.7
+      }
+    },
+    "commonMistakes": [
+      {
+        "name": "Center Alignment Overuse",
+        "description": "Too many centered elements creates weak hierarchy",
+        "severity": "medium",
+        "detection": "Count center-aligned elements > 40% of total"
+      },
+      {
+        "name": "Inconsistent Spacing",
+        "description": "Random spacing values instead of consistent scale",
+        "severity": "high",
+        "detection": "Spacing variance > 30%"
+      },
+      {
+        "name": "Poor Contrast",
+        "description": "Insufficient contrast between hierarchy levels",
+        "severity": "high",
+        "detection": "Size ratio between levels < 1.2"
+      },
+      {
+        "name": "Grid Ignorance",
+        "description": "Elements not aligned to grid system",
+        "severity": "medium",
+        "detection": "Grid alignment < 70%"
+      },
+      {
+        "name": "Orphan Elements",
+        "description": "Elements too far from related content",
+        "severity": "low",
+        "detection": "Related elements > 60px apart"
+      },
+      {
+        "name": "Tight Margins",
+        "description": "Insufficient breathing room at page edges",
+        "severity": "medium",
+        "detection": "Margins < 30pt"
+      }
+    ]
+  },
+
+  "scoring": {
+    "weights": {
+      "goldenRatio": 0.15,
+      "gridAlignment": 0.20,
+      "hierarchy": 0.15,
+      "spacing": 0.15,
+      "alignment": 0.15,
+      "balance": 0.10,
+      "proximity": 0.10
+    },
+    "grades": {
+      "aPlusPlus": {
+        "min": 95,
+        "max": 100,
+        "label": "Mathematical Perfection",
+        "description": "Award-winning layout with exceptional mathematical precision"
+      },
+      "aPlus": {
+        "min": 90,
+        "max": 94,
+        "label": "Excellent Professional",
+        "description": "Outstanding layout meeting all professional standards"
+      },
+      "a": {
+        "min": 85,
+        "max": 89,
+        "label": "Very Good",
+        "description": "Strong layout with minor improvements possible"
+      },
+      "b": {
+        "min": 80,
+        "max": 84,
+        "label": "Good",
+        "description": "Solid layout with some precision issues"
+      },
+      "c": {
+        "min": 70,
+        "max": 79,
+        "label": "Fair",
+        "description": "Acceptable layout with multiple alignment/spacing issues"
+      },
+      "d": {
+        "min": 60,
+        "max": 69,
+        "label": "Poor",
+        "description": "Below standards, needs significant layout work"
+      },
+      "f": {
+        "min": 0,
+        "max": 59,
+        "label": "Failing",
+        "description": "Major layout problems, complete redesign recommended"
+      }
+    }
+  },
+
+  "ai": {
+    "models": {
+      "claudeOpus41": {
+        "provider": "anthropic",
+        "model": "claude-opus-4.1",
+        "role": "Golden ratio and deep layout reasoning",
+        "useCases": ["goldenRatio", "professionalStandards"],
+        "temperature": 0.3,
+        "maxTokens": 4096
+      },
+      "gpt4o": {
+        "provider": "openai",
+        "model": "gpt-4o",
+        "role": "Grid system and proximity analysis",
+        "useCases": ["gridAlignment", "proximity"],
+        "temperature": 0.2,
+        "maxTokens": 4096
+      },
+      "gpt5": {
+        "provider": "openai",
+        "model": "gpt-5",
+        "role": "Spacing optimization and anomaly detection",
+        "useCases": ["spacing", "optimization"],
+        "temperature": 0.2,
+        "maxTokens": 8192
+      },
+      "claudeSonnet45": {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4.5",
+        "role": "Alignment and precision critique",
+        "useCases": ["alignment", "precision"],
+        "temperature": 0.1,
+        "maxTokens": 4096
+      },
+      "gemini25Pro": {
+        "provider": "google",
+        "model": "gemini-2.5-pro",
+        "role": "Hierarchy, balance, and visual weight analysis",
+        "useCases": ["hierarchy", "balance", "visualWeight"],
+        "temperature": 0.3,
+        "maxTokens": 8192
+      }
+    },
+    "prompts": {
+      "goldenRatioAnalysis": "Analyze this layout for golden ratio (φ = 1.618) compliance. Evaluate: 1) Content area proportions 2) Whitespace distribution 3) Element size relationships 4) Focal point placement 5) Overall mathematical harmony. Provide specific measurements and improvement suggestions.",
+
+      "gridSystemAnalysis": "Evaluate this 12-column grid layout. Check: 1) Column alignment accuracy 2) Gutter width consistency (20pt target) 3) Baseline grid adherence (8pt) 4) Element snapping quality 5) Grid violations with coordinates. Rate grid usage professionalism.",
+
+      "hierarchyAnalysis": "Assess visual hierarchy clarity. Examine: 1) Size progression (H1 > H2 > H3 > body) 2) Color emphasis and contrast 3) Spatial relationships 4) Eye flow patterns (F/Z/Gutenberg) 5) Hierarchy effectiveness. Suggest improvements for clarity.",
+
+      "spacingAnalysis": "Analyze spacing consistency and rhythm. Evaluate: 1) Margin uniformity (40pt target) 2) Element spacing (20pt target) 3) Section breaks (60pt target) 4) Paragraph spacing (12pt target) 5) Anomalies and outliers. Recommend optimal spacing scale.",
+
+      "alignmentAnalysis": "Critique alignment precision (±2px tolerance). Check: 1) Edge alignments 2) Center alignments 3) Baseline rhythm 4) Vertical/horizontal consistency 5) Misalignment patterns. Identify all alignment violations.",
+
+      "balanceAnalysis": "Evaluate visual balance and weight distribution. Analyze: 1) Left vs right balance 2) Top vs bottom balance 3) Symmetry vs asymmetry 4) Color weight 5) Density distribution. Calculate balance score and suggest equilibrium improvements.",
+
+      "proximityAnalysis": "Assess proximity and grouping using Gestalt principles. Check: 1) Related element proximity 2) Logical grouping 3) Similarity patterns 4) Continuity 5) Figure-ground separation. Identify grouping logic issues.",
+
+      "professionalAssessment": "Provide comprehensive professional layout assessment. Rate against: 1) Industry best practices 2) Award-winning patterns 3) Common mistakes 4) Layout complexity 5) Overall sophistication. Grade A+ to F with detailed justification."
+    },
+    "critiqueFormat": {
+      "structure": [
+        "Executive Summary (2-3 sentences)",
+        "Strengths (3-5 bullet points)",
+        "Weaknesses (3-5 bullet points with coordinates)",
+        "Mathematical Analysis (specific calculations)",
+        "Professional Rating (A+ to F)",
+        "Actionable Recommendations (prioritized list)"
+      ]
+    }
+  },
+
+  "output": {
+    "formats": ["json", "html", "csv", "pdf"],
+    "defaultFormat": "json",
+    "includeVisualOverlays": true,
+    "overlayTypes": [
+      "goldenRatio",
+      "gridLines",
+      "alignmentGuides",
+      "spacingMeasurements",
+      "hierarchyLevels",
+      "balanceHeatmap",
+      "proximityGroups"
+    ],
+    "reportSections": [
+      "executiveSummary",
+      "perfectionScore",
+      "goldenRatioAnalysis",
+      "gridCompliance",
+      "hierarchyValidation",
+      "spacingConsistency",
+      "alignmentPrecision",
+      "balanceAssessment",
+      "proximityGrouping",
+      "professionalStandards",
+      "aiCritiques",
+      "violations",
+      "recommendations",
+      "visualOverlays"
+    ],
+    "verbosity": {
+      "quiet": 0,
+      "normal": 1,
+      "verbose": 2,
+      "debug": 3
+    }
+  },
+
+  "performance": {
+    "caching": {
+      "enabled": true,
+      "ttl": 3600,
+      "maxSize": 100
+    },
+    "parallel": {
+      "enabled": true,
+      "maxConcurrent": 4,
+      "description": "Run AI model calls in parallel when possible"
+    },
+    "optimization": {
+      "skipAIForPerfectLayouts": false,
+      "description": "Always run AI critique even for perfect scores"
+    }
+  },
+
+  "teei": {
+    "brandColors": {
+      "nordshore": "#00393F",
+      "sky": "#C9E4EC",
+      "sand": "#FFF1E2",
+      "beige": "#EFE1DC",
+      "moss": "#65873B",
+      "gold": "#BA8F5A",
+      "clay": "#913B2F"
+    },
+    "typography": {
+      "headlines": "Lora",
+      "body": "Roboto Flex"
+    },
+    "layoutStandards": {
+      "margins": 40,
+      "sectionBreaks": 60,
+      "elementSpacing": 20,
+      "paragraphSpacing": 12,
+      "gridColumns": 12,
+      "gutterWidth": 20,
+      "baselineGrid": 8
+    }
+  }
+}

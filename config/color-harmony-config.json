@@ -1,0 +1,390 @@
+{
+  "brandColors": {
+    "nordshore": {
+      "hex": "#00393F",
+      "name": "Nordshore",
+      "role": "primary",
+      "targetUsage": 80,
+      "description": "Deep teal - TEEI's primary brand color",
+      "cmyk": [100, 0, 19, 75],
+      "rgb": [0, 57, 63],
+      "pantone": "3035 C"
+    },
+    "sky": {
+      "hex": "#C9E4EC",
+      "name": "Sky",
+      "role": "secondary",
+      "targetUsage": 10,
+      "description": "Light blue - Secondary highlight color",
+      "cmyk": [15, 0, 5, 7],
+      "rgb": [201, 228, 236],
+      "pantone": "290 C"
+    },
+    "sand": {
+      "hex": "#FFF1E2",
+      "name": "Sand",
+      "role": "background",
+      "targetUsage": 5,
+      "description": "Warm neutral - Background color",
+      "cmyk": [0, 5, 10, 0],
+      "rgb": [255, 241, 226],
+      "pantone": "9220 C"
+    },
+    "beige": {
+      "hex": "#EFE1DC",
+      "name": "Beige",
+      "role": "background",
+      "targetUsage": 0,
+      "description": "Soft neutral - Alternative background",
+      "cmyk": [0, 6, 8, 6],
+      "rgb": [239, 225, 220],
+      "pantone": "9221 C"
+    },
+    "moss": {
+      "hex": "#65873B",
+      "name": "Moss",
+      "role": "accent",
+      "targetUsage": 2,
+      "description": "Natural green - Accent color",
+      "cmyk": [53, 0, 100, 18],
+      "rgb": [101, 135, 59],
+      "pantone": "370 C"
+    },
+    "gold": {
+      "hex": "#BA8F5A",
+      "name": "Gold",
+      "role": "accent",
+      "targetUsage": 2,
+      "description": "Warm metallic - Accent for premium feel",
+      "cmyk": [25, 35, 65, 10],
+      "rgb": [186, 143, 90],
+      "pantone": "465 C"
+    },
+    "clay": {
+      "hex": "#913B2F",
+      "name": "Clay",
+      "role": "accent",
+      "targetUsage": 1,
+      "description": "Rich terracotta - Tertiary accent",
+      "cmyk": [22, 80, 75, 25],
+      "rgb": [145, 59, 47],
+      "pantone": "7593 C"
+    }
+  },
+  "forbiddenColors": [
+    {
+      "hex": "#FF6B35",
+      "name": "Copper/Orange",
+      "reason": "Not in TEEI brand palette - creates confusion with competitive brands"
+    },
+    {
+      "hex": "#F7931E",
+      "name": "Orange",
+      "reason": "Not in TEEI brand palette"
+    }
+  ],
+  "colorHarmonyAlgorithms": {
+    "complementary": {
+      "description": "Colors opposite on the color wheel (180° apart)",
+      "hueDifference": 180,
+      "tolerance": 15,
+      "strength": "High contrast, dynamic",
+      "bestFor": ["emphasis", "call-to-action", "attention"]
+    },
+    "splitComplementary": {
+      "description": "Base color plus two colors adjacent to its complement",
+      "hueDifferences": [150, 210],
+      "tolerance": 20,
+      "strength": "Balanced contrast with nuance",
+      "bestFor": ["professional", "sophisticated", "TEEI recommended"]
+    },
+    "triadic": {
+      "description": "Three colors equally spaced on the wheel (120° apart)",
+      "hueDifference": 120,
+      "tolerance": 20,
+      "strength": "Vibrant and energetic",
+      "bestFor": ["creative", "playful", "diverse"]
+    },
+    "tetradic": {
+      "description": "Four colors in two complementary pairs (90° apart)",
+      "hueDifference": 90,
+      "tolerance": 15,
+      "strength": "Rich variety, complex",
+      "bestFor": ["comprehensive", "varied content"]
+    },
+    "analogous": {
+      "description": "Adjacent colors on the wheel (30-60° apart)",
+      "hueDifference": [30, 60],
+      "tolerance": 10,
+      "strength": "Harmonious and serene",
+      "bestFor": ["calming", "natural", "cohesive"]
+    },
+    "monochromatic": {
+      "description": "Variations of a single hue",
+      "hueDifference": 15,
+      "tolerance": 15,
+      "strength": "Sophisticated and elegant",
+      "bestFor": ["minimalist", "professional", "unified"]
+    }
+  },
+  "accessibilityStandards": {
+    "wcagAAA": {
+      "normalText": {
+        "minRatio": 7.0,
+        "fontSize": "14pt or smaller",
+        "description": "Highest accessibility standard for body text"
+      },
+      "largeText": {
+        "minRatio": 4.5,
+        "fontSize": "18pt+ or 14pt+ bold",
+        "description": "Highest accessibility standard for large text"
+      },
+      "uiComponents": {
+        "minRatio": 3.0,
+        "description": "UI elements and graphics"
+      }
+    },
+    "wcagAA": {
+      "normalText": {
+        "minRatio": 4.5,
+        "fontSize": "14pt or smaller"
+      },
+      "largeText": {
+        "minRatio": 3.0,
+        "fontSize": "18pt+ or 14pt+ bold"
+      }
+    }
+  },
+  "colorBlindnessTypes": {
+    "protanopia": {
+      "description": "Red-blind",
+      "prevalence": "1% of males",
+      "severity": "high"
+    },
+    "deuteranopia": {
+      "description": "Green-blind",
+      "prevalence": "1% of males",
+      "severity": "high"
+    },
+    "tritanopia": {
+      "description": "Blue-blind",
+      "prevalence": "Rare",
+      "severity": "medium"
+    },
+    "protanomaly": {
+      "description": "Red-weak",
+      "prevalence": "1% of males",
+      "severity": "medium"
+    },
+    "deuteranomaly": {
+      "description": "Green-weak (most common)",
+      "prevalence": "6% of males, 0.4% of females",
+      "severity": "medium"
+    },
+    "tritanomaly": {
+      "description": "Blue-weak",
+      "prevalence": "Rare",
+      "severity": "low"
+    },
+    "achromatopsia": {
+      "description": "Complete color blindness",
+      "prevalence": "Very rare (1 in 30,000)",
+      "severity": "high"
+    },
+    "achromatomaly": {
+      "description": "Partial color blindness",
+      "prevalence": "Rare",
+      "severity": "medium"
+    }
+  },
+  "colorPsychology": {
+    "education": {
+      "preferredColors": ["blue", "green", "purple", "teal"],
+      "avoid": ["red", "orange"],
+      "emotions": ["trust", "growth", "wisdom", "calm"]
+    },
+    "nonprofit": {
+      "preferredColors": ["blue", "green", "teal"],
+      "avoid": ["luxury colors without context"],
+      "emotions": ["trust", "hope", "compassion", "professionalism"]
+    }
+  },
+  "culturalConsiderations": {
+    "western": {
+      "positive": {
+        "blue": "trust, professionalism",
+        "green": "growth, money",
+        "white": "purity, peace"
+      },
+      "negative": {
+        "red": "danger, stop",
+        "black": "mourning"
+      }
+    },
+    "eastern": {
+      "positive": {
+        "red": "luck, prosperity",
+        "gold": "wealth, fortune",
+        "yellow": "royalty, sacredness"
+      },
+      "negative": {
+        "white": "mourning (some cultures)",
+        "black": "bad luck (some contexts)"
+      }
+    },
+    "global": {
+      "universallyPositive": ["blue", "green"],
+      "requiresCaution": ["red", "white", "black", "yellow"]
+    }
+  },
+  "colorTheoryParameters": {
+    "saturationBalance": {
+      "balanced": {
+        "maxRange": 40,
+        "description": "Saturation range within 40% is considered balanced"
+      },
+      "highSaturation": {
+        "min": 70,
+        "description": "Vibrant, energetic colors"
+      },
+      "mediumSaturation": {
+        "min": 30,
+        "max": 70,
+        "description": "Moderate, balanced colors"
+      },
+      "lowSaturation": {
+        "max": 30,
+        "description": "Muted, subtle colors"
+      }
+    },
+    "brightnessBalance": {
+      "balanced": {
+        "minRange": 20,
+        "maxRange": 60,
+        "description": "Good contrast without extremes"
+      },
+      "light": {
+        "min": 70,
+        "description": "High-key palette"
+      },
+      "medium": {
+        "min": 30,
+        "max": 70,
+        "description": "Mid-tone palette"
+      },
+      "dark": {
+        "max": 30,
+        "description": "Low-key palette"
+      }
+    },
+    "temperatureBalance": {
+      "warm": {
+        "hueRanges": [[0, 60], [300, 360]],
+        "description": "Reds, oranges, yellows"
+      },
+      "cool": {
+        "hueRanges": [[180, 240]],
+        "description": "Blues, cyans"
+      },
+      "neutral": {
+        "hueRanges": [[60, 180], [240, 300]],
+        "description": "Greens, purples"
+      }
+    }
+  },
+  "aiModels": {
+    "colorTheory": {
+      "model": "gpt-4o",
+      "provider": "openai",
+      "purpose": "Color harmony and theory analysis",
+      "temperature": 0.3
+    },
+    "colorPsychology": {
+      "model": "gpt-4o",
+      "provider": "openai",
+      "purpose": "Emotional impact and psychology",
+      "temperature": 0.4,
+      "note": "Will use GPT-5 when available"
+    },
+    "brandCompliance": {
+      "model": "claude-opus-4-20250514",
+      "provider": "anthropic",
+      "purpose": "Brand color critique and aesthetic judgment",
+      "temperature": 0.3
+    },
+    "consistency": {
+      "model": "claude-sonnet-4-20250514",
+      "provider": "anthropic",
+      "purpose": "Cross-page consistency analysis",
+      "temperature": 0.3
+    },
+    "accessibility": {
+      "model": "gemini-2.0-flash-exp",
+      "provider": "google",
+      "purpose": "Accessibility and color blindness validation",
+      "temperature": 0.3
+    },
+    "technical": {
+      "model": "gpt-4o",
+      "provider": "openai",
+      "purpose": "Technical color validation (RGB/CMYK, profiles)",
+      "temperature": 0.2
+    }
+  },
+  "scoringWeights": {
+    "harmonyScore": {
+      "harmony": 40,
+      "saturation": 20,
+      "brightness": 20,
+      "temperature": 20
+    },
+    "complianceScore": {
+      "brandColors": 40,
+      "unauthorized": 30,
+      "ratios": 20,
+      "balance": 10
+    },
+    "accessibilityScore": {
+      "contrast": 50,
+      "colorBlind": 30,
+      "lowVision": 20
+    },
+    "psychologyScore": {
+      "industry": 40,
+      "meaning": 30,
+      "cultural": 30
+    },
+    "consistencyScore": {
+      "variations": -10,
+      "missingPages": -5,
+      "brandInconsistency": -20,
+      "colorDrift": -8
+    }
+  },
+  "grading": {
+    "perfect": {
+      "min": 95,
+      "description": "Perfect color harmony, accessibility, and brand compliance"
+    },
+    "excellent": {
+      "min": 90,
+      "description": "Excellent color usage, minor improvements possible"
+    },
+    "veryGood": {
+      "min": 85,
+      "description": "Very good, some harmony or accessibility issues"
+    },
+    "good": {
+      "min": 80,
+      "description": "Good, multiple improvements available"
+    },
+    "fair": {
+      "min": 70,
+      "description": "Fair, several color issues to fix"
+    },
+    "poor": {
+      "max": 70,
+      "description": "Poor, major color work needed"
+    }
+  }
+}

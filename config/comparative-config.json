@@ -1,0 +1,262 @@
+{
+  "description": "Comparative Analyzer Configuration",
+  "version": "1.0.0",
+
+  "comparison": {
+    "defaultType": "version",
+    "analysisDepth": "comprehensive",
+    "categories": [
+      "visual",
+      "content",
+      "layout",
+      "color",
+      "font",
+      "image",
+      "accessibility",
+      "brand"
+    ]
+  },
+
+  "visual": {
+    "threshold": 0.1,
+    "diffColor": {
+      "r": 255,
+      "g": 0,
+      "b": 0
+    },
+    "saveDiffImages": true,
+    "imageFormat": "png",
+    "imageQuality": 95
+  },
+
+  "content": {
+    "sensitivity": "high",
+    "ignoreWhitespace": false,
+    "ignorePunctuation": false,
+    "minChangeLength": 5,
+    "trackDeletions": true,
+    "trackAdditions": true,
+    "trackModifications": true
+  },
+
+  "layout": {
+    "tolerance": 5,
+    "detectPositionChanges": true,
+    "detectSizeChanges": true,
+    "detectAlignmentChanges": true,
+    "detectSpacingChanges": true
+  },
+
+  "color": {
+    "tolerance": 10,
+    "trackColorUsage": true,
+    "detectPaletteChanges": true,
+    "brandColors": {
+      "nordshore": { "r": 0, "g": 57, "b": 63 },
+      "sky": { "r": 201, "g": 228, "b": 236 },
+      "sand": { "r": 255, "g": 241, "b": 226 },
+      "beige": { "r": 239, "g": 225, "b": 220 },
+      "moss": { "r": 101, "g": 135, "b": 59 },
+      "gold": { "r": 186, "g": 143, "b": 90 },
+      "clay": { "r": 145, "g": 59, "b": 47 }
+    }
+  },
+
+  "font": {
+    "sizeTolerancePt": 0.5,
+    "trackFontChanges": true,
+    "trackSizeChanges": true,
+    "trackWeightChanges": true,
+    "trackStyleChanges": true,
+    "brandFonts": [
+      "Lora",
+      "Roboto Flex"
+    ]
+  },
+
+  "image": {
+    "hashAlgorithm": "perceptual",
+    "similarityThreshold": 0.95,
+    "detectReplacements": true,
+    "detectModifications": true,
+    "trackImageQuality": true
+  },
+
+  "ai": {
+    "enabled": true,
+    "models": {
+      "changeImpact": {
+        "provider": "openai",
+        "model": "gpt-5",
+        "temperature": 0.3,
+        "maxTokens": 2000
+      },
+      "benchmarking": {
+        "provider": "anthropic",
+        "model": "claude-opus-4.1",
+        "temperature": 0.2,
+        "maxTokens": 3000
+      },
+      "insights": {
+        "provider": "anthropic",
+        "model": "claude-opus-4.1",
+        "temperature": 0.3,
+        "maxTokens": 2500
+      },
+      "consistency": {
+        "provider": "openai",
+        "model": "gpt-4o",
+        "temperature": 0.2,
+        "maxTokens": 2000
+      },
+      "trends": {
+        "provider": "google",
+        "model": "gemini-2.5-pro",
+        "temperature": 0.3,
+        "maxTokens": 2500
+      },
+      "competitive": {
+        "provider": "google",
+        "model": "gemini-2.5-pro",
+        "temperature": 0.3,
+        "maxTokens": 3000
+      },
+      "statistics": {
+        "provider": "openai",
+        "model": "gpt-5",
+        "temperature": 0.1,
+        "maxTokens": 2000
+      },
+      "reporting": {
+        "provider": "anthropic",
+        "model": "claude-sonnet-4.5",
+        "temperature": 0.4,
+        "maxTokens": 4000
+      }
+    },
+    "apiKeys": {
+      "openai": "${OPENAI_API_KEY}",
+      "anthropic": "${ANTHROPIC_API_KEY}",
+      "google": "${GOOGLE_API_KEY}"
+    }
+  },
+
+  "reasoning": {
+    "enabled": true,
+    "defaultStrategy": "comparative-analysis",
+    "enableChainOfThought": true,
+    "enableTreeOfThoughts": true,
+    "depth": "deep",
+    "maxIterations": 10
+  },
+
+  "benchmarking": {
+    "benchmarkPath": "./benchmarks",
+    "targetGrade": "A+",
+    "dimensions": [
+      "visual_design",
+      "typography",
+      "color_usage",
+      "layout",
+      "content_quality",
+      "accessibility",
+      "brand_consistency",
+      "technical_quality"
+    ],
+    "weights": {
+      "visual_design": 0.20,
+      "typography": 0.15,
+      "color_usage": 0.15,
+      "layout": 0.15,
+      "content_quality": 0.15,
+      "accessibility": 0.10,
+      "brand_consistency": 0.05,
+      "technical_quality": 0.05
+    },
+    "gradeThresholds": {
+      "A+": 95,
+      "A": 90,
+      "A-": 85,
+      "B+": 80,
+      "B": 75,
+      "B-": 70,
+      "C+": 65,
+      "C": 60,
+      "C-": 55,
+      "D+": 50,
+      "D": 45,
+      "F": 0
+    }
+  },
+
+  "statistics": {
+    "confidenceLevel": 0.95,
+    "significanceThreshold": 0.05,
+    "enableTrendAnalysis": true,
+    "enableCorrelationAnalysis": true,
+    "enableDistributionAnalysis": true,
+    "movingAverageWindow": 3
+  },
+
+  "tracking": {
+    "trackingDir": "./tracking",
+    "enableVersionHistory": true,
+    "enableIssueTracking": true,
+    "enableRegressionDetection": true,
+    "enablePredictions": true,
+    "predictionConfidenceThreshold": 0.8
+  },
+
+  "reporting": {
+    "defaultFormats": ["html", "json"],
+    "includeExecutiveSummary": true,
+    "includeDetailedChanges": true,
+    "includeVisuals": true,
+    "includeStatistics": true,
+    "includeRecommendations": true,
+    "includeAIInsights": true,
+    "chartLibrary": "chart.js",
+    "outputDir": "./comparisons",
+    "reportTemplates": {
+      "version": "./templates/version-comparison-report.html",
+      "benchmark": "./templates/benchmark-report.html",
+      "tracking": "./templates/tracking-report.html"
+    }
+  },
+
+  "performance": {
+    "parallel": true,
+    "maxConcurrency": 4,
+    "cacheResults": true,
+    "cacheTTL": 3600000,
+    "timeout": 300000
+  },
+
+  "output": {
+    "outputDir": "./comparisons",
+    "tempDir": "./temp/comparisons",
+    "keepTempFiles": false,
+    "compressReports": false
+  },
+
+  "logging": {
+    "level": "info",
+    "logFile": "./logs/comparative-analyzer.log",
+    "enableConsole": true,
+    "enableFile": true,
+    "maxFileSize": 10485760,
+    "maxFiles": 5
+  },
+
+  "integration": {
+    "enableVisualRegression": true,
+    "enableContentValidation": true,
+    "enableAccessibilityCheck": true,
+    "enableBrandCheck": true,
+    "enablePerformanceCheck": true,
+    "enableSelfHealing": true,
+    "enableRAG": true,
+    "enableFineTuning": true,
+    "enableReasoning": true
+  }
+}

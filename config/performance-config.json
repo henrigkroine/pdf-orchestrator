@@ -1,0 +1,460 @@
+{
+  "version": "1.0.0",
+  "description": "PDF Performance Optimization Configuration - Multi-Model AI Integration",
+
+  "optimizationPresets": {
+    "aggressive": {
+      "description": "Maximum compression - Smallest file size, acceptable quality loss",
+      "targetReduction": 60,
+      "imageQuality": 75,
+      "imageDPI": {
+        "color": 150,
+        "grayscale": 150,
+        "monochrome": 300
+      },
+      "fontSubsetting": true,
+      "fontDeduplication": true,
+      "removeUnusedObjects": true,
+      "streamCompression": "maximum",
+      "linearization": true,
+      "objectStreams": true,
+      "transparencyFlattening": true,
+      "pathSimplification": true,
+      "pdfVersion": "1.7",
+      "aiAssistance": "full"
+    },
+
+    "balanced": {
+      "description": "Quality/size balance - Good compression with minimal quality loss",
+      "targetReduction": 40,
+      "imageQuality": 85,
+      "imageDPI": {
+        "color": 200,
+        "grayscale": 200,
+        "monochrome": 400
+      },
+      "fontSubsetting": true,
+      "fontDeduplication": true,
+      "removeUnusedObjects": true,
+      "streamCompression": "balanced",
+      "linearization": true,
+      "objectStreams": true,
+      "transparencyFlattening": false,
+      "pathSimplification": true,
+      "pdfVersion": "1.7",
+      "aiAssistance": "full"
+    },
+
+    "conservative": {
+      "description": "Minimal changes - Safe optimization with maximum quality preservation",
+      "targetReduction": 20,
+      "imageQuality": 95,
+      "imageDPI": {
+        "color": 300,
+        "grayscale": 300,
+        "monochrome": 600
+      },
+      "fontSubsetting": true,
+      "fontDeduplication": true,
+      "removeUnusedObjects": false,
+      "streamCompression": "safe",
+      "linearization": true,
+      "objectStreams": false,
+      "transparencyFlattening": false,
+      "pathSimplification": false,
+      "pdfVersion": "1.7",
+      "aiAssistance": "recommendations"
+    },
+
+    "web": {
+      "description": "Web optimization - Fast loading, 150 DPI, aggressive compression",
+      "targetReduction": 65,
+      "imageQuality": 80,
+      "imageDPI": {
+        "color": 150,
+        "grayscale": 150,
+        "monochrome": 300
+      },
+      "fontSubsetting": true,
+      "fontDeduplication": true,
+      "removeUnusedObjects": true,
+      "streamCompression": "maximum",
+      "linearization": true,
+      "objectStreams": true,
+      "transparencyFlattening": true,
+      "pathSimplification": true,
+      "pdfVersion": "1.7",
+      "aiAssistance": "full",
+      "targetLoadingTime": 3000,
+      "colorSpace": "RGB"
+    },
+
+    "print": {
+      "description": "Print optimization - High quality, 300 DPI, CMYK",
+      "targetReduction": 25,
+      "imageQuality": 90,
+      "imageDPI": {
+        "color": 300,
+        "grayscale": 300,
+        "monochrome": 600
+      },
+      "fontSubsetting": true,
+      "fontDeduplication": true,
+      "removeUnusedObjects": true,
+      "streamCompression": "balanced",
+      "linearization": false,
+      "objectStreams": true,
+      "transparencyFlattening": false,
+      "pathSimplification": false,
+      "pdfVersion": "1.7",
+      "aiAssistance": "full",
+      "colorSpace": "CMYK"
+    },
+
+    "archive": {
+      "description": "Archive optimization - Maximum compatibility, PDF/A compliance",
+      "targetReduction": 15,
+      "imageQuality": 95,
+      "imageDPI": {
+        "color": 300,
+        "grayscale": 300,
+        "monochrome": 600
+      },
+      "fontSubsetting": false,
+      "fontDeduplication": true,
+      "removeUnusedObjects": false,
+      "streamCompression": "safe",
+      "linearization": false,
+      "objectStreams": false,
+      "transparencyFlattening": false,
+      "pathSimplification": false,
+      "pdfVersion": "1.4",
+      "aiAssistance": "recommendations",
+      "pdfACompliance": true,
+      "embedAllFonts": true
+    }
+  },
+
+  "aiModels": {
+    "fileSize": {
+      "model": "gpt-4o",
+      "provider": "openai",
+      "purpose": "File size and structure optimization strategies",
+      "temperature": 0.3,
+      "maxTokens": 4000,
+      "systemPrompt": "You are an expert PDF optimization engineer specializing in file size reduction. Analyze PDF structure and provide specific optimization strategies balancing compression ratio with quality preservation. Consider image compression, font subsetting, object deduplication, and stream compression."
+    },
+
+    "rendering": {
+      "model": "gpt-5",
+      "provider": "openai",
+      "purpose": "Rendering optimization and complexity analysis",
+      "temperature": 0.3,
+      "maxTokens": 3500,
+      "systemPrompt": "You are a PDF rendering performance expert. Analyze complex paths, transparency effects, layers, and form XObjects. Provide optimization strategies to reduce rendering time while maintaining visual fidelity. Focus on path simplification, transparency flattening decisions, and object reuse."
+    },
+
+    "loading": {
+      "model": "claude-opus-4.1",
+      "provider": "anthropic",
+      "purpose": "Loading strategy and compatibility reasoning",
+      "temperature": 0.2,
+      "maxTokens": 4000,
+      "systemPrompt": "You are a PDF loading performance specialist. Analyze document structure for optimal loading strategies including linearization, object stream optimization, cross-reference table optimization, and page loading order. Consider compatibility across different PDF readers and network conditions."
+    },
+
+    "fonts": {
+      "model": "claude-sonnet-4.5",
+      "provider": "anthropic",
+      "purpose": "Font optimization strategy",
+      "temperature": 0.3,
+      "maxTokens": 3000,
+      "systemPrompt": "You are a font optimization expert for PDF documents. Analyze font usage and provide subsetting strategies, deduplication recommendations, and format optimization decisions. Balance file size reduction with text quality and accessibility requirements."
+    },
+
+    "images": {
+      "model": "gemini-2.5-pro-vision",
+      "provider": "google",
+      "purpose": "Image optimization and quality assessment",
+      "temperature": 0.3,
+      "maxTokens": 3500,
+      "systemPrompt": "You are an image optimization specialist with computer vision expertise. Analyze PDF images for optimal compression settings, format selection, and resolution requirements. Assess perceptual quality after compression and recommend strategies that maintain visual fidelity while maximizing file size reduction."
+    },
+
+    "structure": {
+      "model": "gpt-4o",
+      "provider": "openai",
+      "purpose": "PDF structure optimization",
+      "temperature": 0.3,
+      "maxTokens": 3500,
+      "systemPrompt": "You are a PDF document structure optimization expert. Analyze object streams, cross-reference optimization, metadata cleanup, and document organization. Provide strategies for efficient PDF structure that improves both file size and performance."
+    },
+
+    "compatibility": {
+      "model": "claude-opus-4.1",
+      "provider": "anthropic",
+      "purpose": "Compatibility analysis and version optimization",
+      "temperature": 0.2,
+      "maxTokens": 3000,
+      "systemPrompt": "You are a PDF compatibility expert. Analyze PDF version requirements, feature usage, and reader compatibility. Provide recommendations balancing modern optimization features with broad compatibility across PDF readers, browsers, and mobile devices."
+    }
+  },
+
+  "imageOptimization": {
+    "jpeg": {
+      "qualityLevels": {
+        "maximum": 95,
+        "high": 90,
+        "medium": 85,
+        "low": 80,
+        "minimum": 75
+      },
+      "chromaSubsampling": {
+        "high": "4:4:4",
+        "medium": "4:2:2",
+        "low": "4:2:0"
+      },
+      "progressive": true,
+      "optimizeCoding": true,
+      "stripMetadata": true
+    },
+
+    "png": {
+      "compressionLevel": 9,
+      "stripMetadata": true,
+      "quantization": {
+        "enabled": true,
+        "colors": 256,
+        "dithering": 1.0
+      },
+      "optimizeFilters": true
+    },
+
+    "conversionRules": {
+      "pngToJpeg": {
+        "enabled": true,
+        "minSize": 10240,
+        "noAlphaChannel": true,
+        "photographicContent": true
+      },
+      "cmykToRgb": {
+        "enabled": true,
+        "webOnly": true
+      }
+    },
+
+    "downsamplingRules": {
+      "bicubic": {
+        "quality": "high",
+        "sharpening": 0.5
+      },
+      "lanczos": {
+        "quality": "maximum",
+        "radius": 3
+      }
+    }
+  },
+
+  "fontOptimization": {
+    "subsetting": {
+      "enabled": true,
+      "preserveHinting": true,
+      "unicodeRanges": true,
+      "minimumGlyphUsage": 0.3
+    },
+
+    "deduplication": {
+      "enabled": true,
+      "compareByHash": true,
+      "mergeIdentical": true
+    },
+
+    "formatOptimization": {
+      "preferCFF": true,
+      "compressTables": true,
+      "removeUnusedTables": true
+    },
+
+    "embeddingRules": {
+      "embedThreshold": 0.5,
+      "alwaysEmbed": ["custom", "branding"],
+      "neverEmbed": ["standard14"]
+    }
+  },
+
+  "streamCompression": {
+    "flate": {
+      "level": 9,
+      "strategy": "default",
+      "windowBits": 15,
+      "memLevel": 9
+    },
+
+    "objectStreams": {
+      "enabled": true,
+      "maxObjectsPerStream": 100,
+      "compressionLevel": 9
+    },
+
+    "contentStreams": {
+      "recompress": true,
+      "optimizeOperators": true,
+      "removeRedundancy": true
+    }
+  },
+
+  "structureOptimization": {
+    "crossReference": {
+      "useStream": true,
+      "compression": true
+    },
+
+    "objectStreams": {
+      "enabled": true,
+      "excludeTypes": ["Page", "Pages"]
+    },
+
+    "metadata": {
+      "removeUnused": true,
+      "compressXMP": true,
+      "stripPrivate": true
+    },
+
+    "incrementalUpdates": {
+      "flatten": true,
+      "removeHistory": true
+    }
+  },
+
+  "linearization": {
+    "enabled": true,
+    "firstPageFirst": true,
+    "hintStreams": true,
+    "optimizePageOrder": true
+  },
+
+  "performanceThresholds": {
+    "excellent": 95,
+    "veryGood": 90,
+    "good": 85,
+    "fair": 75,
+    "belowAverage": 60,
+    "poor": 0
+  },
+
+  "loadingTimeTargets": {
+    "3G": {
+      "speed": "750 Kbps",
+      "targetTime": 5000,
+      "maxFileSize": 500000
+    },
+    "4G": {
+      "speed": "4 Mbps",
+      "targetTime": 3000,
+      "maxFileSize": 1500000
+    },
+    "wifi": {
+      "speed": "10 Mbps",
+      "targetTime": 1000,
+      "maxFileSize": 2000000
+    }
+  },
+
+  "renderingComplexity": {
+    "simple": {
+      "score": 90,
+      "maxPaths": 100,
+      "maxTransparency": 5,
+      "maxLayers": 3
+    },
+    "moderate": {
+      "score": 75,
+      "maxPaths": 500,
+      "maxTransparency": 20,
+      "maxLayers": 10
+    },
+    "complex": {
+      "score": 60,
+      "maxPaths": 2000,
+      "maxTransparency": 50,
+      "maxLayers": 25
+    },
+    "veryComplex": {
+      "score": 40,
+      "maxPaths": 5000,
+      "maxTransparency": 100,
+      "maxLayers": 50
+    }
+  },
+
+  "compatibilityMatrix": {
+    "1.4": {
+      "readers": ["all"],
+      "features": ["basic"],
+      "objectStreams": false,
+      "transparency": "limited"
+    },
+    "1.5": {
+      "readers": ["most"],
+      "features": ["objectStreams", "crossRefStreams"],
+      "objectStreams": true,
+      "transparency": "full"
+    },
+    "1.6": {
+      "readers": ["most"],
+      "features": ["objectStreams", "crossRefStreams", "AES"],
+      "objectStreams": true,
+      "transparency": "full"
+    },
+    "1.7": {
+      "readers": ["modern"],
+      "features": ["all1.6", "attachments", "3D"],
+      "objectStreams": true,
+      "transparency": "full"
+    },
+    "2.0": {
+      "readers": ["latest"],
+      "features": ["all1.7", "enhanced"],
+      "objectStreams": true,
+      "transparency": "full"
+    }
+  },
+
+  "fileTypeBenchmarks": {
+    "text": {
+      "baselineSize": 100000,
+      "targetReduction": 30,
+      "primaryOptimizations": ["fonts", "structure", "compression"]
+    },
+    "images": {
+      "baselineSize": 5000000,
+      "targetReduction": 60,
+      "primaryOptimizations": ["images", "compression"]
+    },
+    "mixed": {
+      "baselineSize": 2000000,
+      "targetReduction": 45,
+      "primaryOptimizations": ["images", "fonts", "structure", "compression"]
+    },
+    "forms": {
+      "baselineSize": 500000,
+      "targetReduction": 35,
+      "primaryOptimizations": ["interactive", "fonts", "structure"]
+    }
+  },
+
+  "logging": {
+    "level": "info",
+    "includeTimings": true,
+    "includeMetrics": true,
+    "saveReports": true,
+    "reportFormat": "json"
+  },
+
+  "errorHandling": {
+    "continueOnError": true,
+    "fallbackToSafe": true,
+    "validateOutput": true,
+    "createBackup": true
+  }
+}

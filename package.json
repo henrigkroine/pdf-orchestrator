@@ -45,7 +45,10 @@
     "generate:icons": "node scripts/generate-brand-graphics.js icons",
     "generate:illustrations": "node scripts/generate-brand-graphics.js illustrations",
     "optimize:whitespace": "node scripts/optimize-whitespace.js",
-    "analyze:density": "node scripts/optimize-whitespace.js --analyze"
+    "analyze:density": "node scripts/optimize-whitespace.js --analyze",
+    "audit:brand": "node scripts/audit-brand-compliance.js",
+    "audit:brand-quick": "node scripts/audit-brand-compliance.js --skip-brand-voice --skip-photography",
+    "audit:brand-html": "node scripts/audit-brand-compliance.js --format html"
   },
   "keywords": [
     "pdf",

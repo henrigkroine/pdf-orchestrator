@@ -1,0 +1,412 @@
+{
+  "brand": {
+    "name": "TEEI",
+    "fullName": "The Educational Equality Institute",
+    "version": "2025-11-06"
+  },
+  "colors": {
+    "official": {
+      "Nordshore": {
+        "hex": "#00393F",
+        "rgb": [0, 57, 63],
+        "cmyk": [100, 9, 0, 75],
+        "usage": "Primary brand color - 80% usage recommended",
+        "role": "Headlines, primary elements, dominant color",
+        "severity": "critical"
+      },
+      "Sky": {
+        "hex": "#C9E4EC",
+        "rgb": [201, 228, 236],
+        "cmyk": [15, 3, 0, 7],
+        "usage": "Secondary accent - light blue highlights",
+        "role": "Accents, backgrounds, secondary elements",
+        "severity": "major"
+      },
+      "Sand": {
+        "hex": "#FFF1E2",
+        "rgb": [255, 241, 226],
+        "cmyk": [0, 6, 11, 0],
+        "usage": "Warm neutral background",
+        "role": "Page backgrounds, content areas",
+        "severity": "major"
+      },
+      "Beige": {
+        "hex": "#EFE1DC",
+        "rgb": [239, 225, 220],
+        "cmyk": [0, 6, 8, 6],
+        "usage": "Soft neutral background",
+        "role": "Alternative backgrounds, soft sections",
+        "severity": "major"
+      },
+      "Moss": {
+        "hex": "#65873B",
+        "rgb": [101, 135, 59],
+        "cmyk": [25, 0, 56, 47],
+        "usage": "Natural green accent - sparingly",
+        "role": "Environmental themes, growth metrics",
+        "severity": "minor"
+      },
+      "Gold": {
+        "hex": "#BA8F5A",
+        "rgb": [186, 143, 90],
+        "cmyk": [0, 23, 52, 27],
+        "usage": "Warm metallic accent - premium feel",
+        "role": "Highlights, premium elements, awards",
+        "severity": "minor"
+      },
+      "Clay": {
+        "hex": "#913B2F",
+        "rgb": [145, 59, 47],
+        "cmyk": [0, 59, 68, 43],
+        "usage": "Rich terracotta accent - sparingly",
+        "role": "Warm accents, call-to-action elements",
+        "severity": "minor"
+      }
+    },
+    "forbidden": {
+      "Copper": {
+        "hex": "#C87137",
+        "rgb": [200, 113, 55],
+        "reason": "Not in TEEI brand palette - creates brand confusion",
+        "severity": "critical"
+      },
+      "Orange": {
+        "hex": "#FF6600",
+        "rgb": [255, 102, 0],
+        "reason": "Not in TEEI brand palette - only allowed in partner logos",
+        "severity": "critical"
+      },
+      "BrightOrange": {
+        "hex": "#FF8800",
+        "rgb": [255, 136, 0],
+        "reason": "Not in TEEI brand palette",
+        "severity": "critical"
+      }
+    },
+    "neutral": {
+      "Black": {
+        "hex": "#000000",
+        "rgb": [0, 0, 0],
+        "usage": "Body text, primary text content",
+        "severity": "minor"
+      },
+      "Gray": {
+        "hex": "#666666",
+        "rgb": [102, 102, 102],
+        "usage": "Captions, secondary text",
+        "severity": "minor"
+      },
+      "White": {
+        "hex": "#FFFFFF",
+        "rgb": [255, 255, 255],
+        "usage": "Backgrounds, negative space",
+        "severity": "minor"
+      }
+    },
+    "tolerance": 2,
+    "usageRatios": {
+      "Nordshore": {
+        "min": 0.6,
+        "max": 0.85,
+        "ideal": 0.8
+      },
+      "Sky": {
+        "min": 0.05,
+        "max": 0.2,
+        "ideal": 0.1
+      },
+      "Sand_Beige": {
+        "min": 0.1,
+        "max": 0.3,
+        "ideal": 0.15
+      }
+    },
+    "accessibility": {
+      "minimumContrast": {
+        "largeText": 3.0,
+        "normalText": 4.5
+      },
+      "wcagLevel": "AA"
+    }
+  },
+  "typography": {
+    "fonts": {
+      "headline": {
+        "family": "Lora",
+        "variants": ["Regular", "Medium", "SemiBold", "Bold"],
+        "usage": "All headlines, section headers, document titles",
+        "severity": "critical"
+      },
+      "body": {
+        "family": "Roboto Flex",
+        "variants": ["Regular", "Medium", "Bold"],
+        "usage": "Body text, captions, UI elements",
+        "severity": "critical"
+      }
+    },
+    "scale": {
+      "documentTitle": {
+        "font": "Lora Bold",
+        "size": 42,
+        "lineHeight": 1.2,
+        "color": "Nordshore",
+        "usage": "Main document title"
+      },
+      "sectionHeader": {
+        "font": "Lora SemiBold",
+        "size": 28,
+        "lineHeight": 1.2,
+        "color": "Nordshore",
+        "usage": "Major section headings"
+      },
+      "subhead": {
+        "font": "Roboto Flex Medium",
+        "size": 18,
+        "lineHeight": 1.3,
+        "color": "Nordshore",
+        "usage": "Subsection headings"
+      },
+      "bodyText": {
+        "font": "Roboto Flex Regular",
+        "size": 11,
+        "lineHeight": 1.5,
+        "color": "Black",
+        "usage": "Primary body text"
+      },
+      "caption": {
+        "font": "Roboto Flex Regular",
+        "size": 9,
+        "lineHeight": 1.4,
+        "color": "Gray",
+        "usage": "Image captions, footnotes"
+      }
+    },
+    "forbidden": ["Arial", "Helvetica", "Times New Roman", "Georgia", "Calibri", "Cambria"],
+    "lineHeight": {
+      "body": 1.5,
+      "headlines": 1.2,
+      "captions": 1.4
+    },
+    "tracking": {
+      "headlines": 0,
+      "body": 0,
+      "captions": 10
+    }
+  },
+  "logo": {
+    "clearspace": {
+      "rule": "Minimum clearspace = height of logo icon element",
+      "minClearspaceRatio": 1.0,
+      "severity": "major"
+    },
+    "minimumSize": {
+      "print": 0.5,
+      "digital": 48,
+      "unit": "inches for print, pixels for digital"
+    },
+    "allowedColors": ["Nordshore", "White"],
+    "prohibitedActions": [
+      "Stretching or distorting",
+      "Rotating",
+      "Adding effects (drop shadow, glow, etc.)",
+      "Placing on busy backgrounds without clearspace",
+      "Using colors other than Nordshore or White"
+    ]
+  },
+  "spacing": {
+    "margins": {
+      "all": 40,
+      "unit": "pt"
+    },
+    "sectionBreaks": 60,
+    "elementSpacing": 20,
+    "paragraphSpacing": 12,
+    "grid": {
+      "columns": 12,
+      "gutter": 20
+    },
+    "lineHeight": {
+      "body": 1.5,
+      "headlines": 1.2
+    }
+  },
+  "layout": {
+    "grid": {
+      "columns": 12,
+      "gutter": 20,
+      "margin": 40
+    },
+    "pageSize": {
+      "width": 8.5,
+      "height": 11,
+      "unit": "inches",
+      "name": "Letter"
+    },
+    "alignment": {
+      "preferredSystem": "grid-based",
+      "opticalAlignment": true
+    }
+  },
+  "photography": {
+    "required": true,
+    "style": {
+      "lighting": "Natural, warm",
+      "tone": "Warm color tones (align with Sand/Beige)",
+      "authenticity": "Authentic moments, not staged corporate stock",
+      "diversity": "Diverse representation required",
+      "emotion": "Shows connection, hope, empowerment"
+    },
+    "forbidden": [
+      "Cold/clinical lighting",
+      "Generic stock photography",
+      "Studio-lit corporate headshots",
+      "Staged/artificial moments"
+    ],
+    "colorTone": {
+      "warmth": "Must align with Sand (#FFF1E2) and Beige (#EFE1DC)",
+      "saturation": "Moderate, natural",
+      "brightness": "Bright but not overexposed"
+    }
+  },
+  "brandVoice": {
+    "qualities": {
+      "empowering": {
+        "description": "Uplifting, capability-focused, not condescending",
+        "severity": "major"
+      },
+      "urgent": {
+        "description": "Important, timely, without panic or pressure",
+        "severity": "major"
+      },
+      "hopeful": {
+        "description": "Optimistic, forward-looking, not naive",
+        "severity": "major"
+      },
+      "inclusive": {
+        "description": "Celebrating diversity, welcoming all",
+        "severity": "critical"
+      },
+      "respectful": {
+        "description": "Honoring all stakeholders, dignified",
+        "severity": "critical"
+      },
+      "clear": {
+        "description": "Jargon-free, accessible language",
+        "severity": "major"
+      }
+    },
+    "forbidden": [
+      "Condescending language",
+      "Panic-inducing urgency",
+      "Naive optimism",
+      "Exclusionary terms",
+      "Disrespectful phrasing",
+      "Complex jargon",
+      "Corporate buzzwords"
+    ]
+  },
+  "violations": {
+    "severity": {
+      "critical": {
+        "weight": 100,
+        "description": "Fundamental brand violations - must fix immediately",
+        "examples": [
+          "Using forbidden colors (copper, orange)",
+          "Wrong font families (not Lora/Roboto Flex)",
+          "Inclusive/respectful language violations",
+          "Text cutoffs"
+        ]
+      },
+      "major": {
+        "weight": 50,
+        "description": "Significant brand inconsistencies - should fix soon",
+        "examples": [
+          "Incorrect color usage ratios",
+          "Wrong typography scale",
+          "Logo clearspace violations",
+          "Missing photography",
+          "Tone violations"
+        ]
+      },
+      "minor": {
+        "weight": 10,
+        "description": "Small inconsistencies - improve when possible",
+        "examples": [
+          "Accent color usage",
+          "Spacing inconsistencies",
+          "Line height variations",
+          "Caption styling"
+        ]
+      }
+    },
+    "thresholds": {
+      "perfect": 100,
+      "excellent": 95,
+      "good": 85,
+      "fair": 70,
+      "poor": 50,
+      "critical": 0
+    }
+  },
+  "scoring": {
+    "weights": {
+      "color": 0.25,
+      "typography": 0.20,
+      "logo": 0.10,
+      "spacing": 0.10,
+      "brandVoice": 0.20,
+      "photography": 0.15
+    },
+    "passThreshold": 85
+  },
+  "export": {
+    "print": {
+      "format": "PDF/X-4",
+      "resolution": 300,
+      "colorMode": "CMYK",
+      "bleed": 3,
+      "trimMarks": true
+    },
+    "digital": {
+      "format": "PDF",
+      "resolution": 150,
+      "colorMode": "RGB",
+      "optimize": true
+    }
+  },
+  "ai": {
+    "models": {
+      "colorNaming": {
+        "model": "gpt-4o",
+        "temperature": 0.3,
+        "prompt": "You are a color expert. Given RGB values {r}, {g}, {b} (hex: {hex}), identify if this matches any TEEI brand color. TEEI colors are: Nordshore #00393F (deep teal), Sky #C9E4EC (light blue), Sand #FFF1E2 (warm neutral), Beige #EFE1DC (soft neutral), Moss #65873B (green), Gold #BA8F5A (warm metallic), Clay #913B2F (terracotta). Respond with the color name if it matches (within ±2 tolerance), or 'Unknown' with a descriptive name."
+      },
+      "typographyCritique": {
+        "model": "claude-opus-4",
+        "temperature": 0.5,
+        "maxTokens": 2000,
+        "prompt": "You are an expert typographer analyzing a TEEI brand document. TEEI uses Lora (serif) for headlines and Roboto Flex (sans-serif) for body text. The modular type scale is: 42pt titles, 28pt section headers, 18pt subheads, 11pt body, 9pt captions. Line heights: 1.2x for headlines, 1.5x for body. Review the detected fonts and provide a detailed critique with specific fixes needed."
+      },
+      "brandVoice": {
+        "model": "gpt-5",
+        "temperature": 0.4,
+        "maxTokens": 3000,
+        "prompt": "You are a brand voice expert analyzing TEEI communications. TEEI's voice is: empowering (not condescending), urgent (without panic), hopeful (not naive), inclusive (celebrating diversity), respectful (of all stakeholders), clear (jargon-free). Analyze the following text and score it 0-100 on each quality, identifying specific violations with quotes and suggested improvements."
+      },
+      "photographyStyle": {
+        "model": "gemini-2.5-pro-vision",
+        "temperature": 0.4,
+        "maxTokens": 1500,
+        "prompt": "You are a photography director evaluating images for TEEI brand compliance. TEEI requires: warm natural lighting (not studio), authentic moments (not staged), warm color tones aligned with Sand #FFF1E2 and Beige #EFE1DC, diverse representation, emotional resonance (hope, connection, empowerment). Analyze each image and score 0-100 on brand fit with specific feedback."
+      }
+    }
+  },
+  "reference": {
+    "designGuidelines": "T:\\TEEI\\TEEI Overviews\\TEEI Design Guidelines.pdf",
+    "fixReport": "reports/TEEI_AWS_Design_Fix_Report.md",
+    "examples": {
+      "excellent": "T:\\TEEI\\Examples\\World-Class-Partnership-Doc.pdf",
+      "poor": "C:\\Users\\ovehe\\Downloads\\TEEI_AWS_WORLD_CLASS.pdf"
+    }
+  }
+}

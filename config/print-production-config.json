@@ -343,5 +343,218 @@
     "fonts": "All fonts must be embedded so printers can reproduce your document exactly.",
     "pdfx": "PDF/X-4 is an ISO standard for print production, ensuring compatibility.",
     "cropMarks": "Crop marks show the printer where to trim the final document."
+  },
+
+  "aiModels": {
+    "gpt4o": {
+      "provider": "openai",
+      "model": "gpt-4o-2024-11-20",
+      "role": "PDF/X compliance assessment and technical specifications",
+      "tasks": [
+        "PDF/X standard compliance validation",
+        "Technical specification analysis",
+        "Production readiness assessment",
+        "Compliance report generation"
+      ],
+      "temperature": 0.3,
+      "maxTokens": 4000
+    },
+    "gpt5": {
+      "provider": "openai",
+      "model": "gpt-5-preview",
+      "role": "Bleed and trim validation, production optimization",
+      "tasks": [
+        "Bleed measurement and validation",
+        "Trim mark accuracy checking",
+        "Production workflow optimization",
+        "Advanced preflight reasoning"
+      ],
+      "temperature": 0.2,
+      "maxTokens": 8000
+    },
+    "claudeOpus4": {
+      "provider": "anthropic",
+      "model": "claude-opus-4-20250514",
+      "role": "Color management and print quality reasoning",
+      "tasks": [
+        "CMYK color analysis",
+        "Ink coverage calculation",
+        "Out-of-gamut detection",
+        "Color profile validation",
+        "Rich black verification"
+      ],
+      "temperature": 0.25,
+      "maxTokens": 6000
+    },
+    "claudeSonnet4_5": {
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-20250929",
+      "role": "Production readiness and optimization",
+      "tasks": [
+        "Production readiness scoring",
+        "Automated fix recommendations",
+        "Print optimization strategies",
+        "Cost estimation analysis"
+      ],
+      "temperature": 0.3,
+      "maxTokens": 5000
+    },
+    "geminiPro2_5": {
+      "provider": "google",
+      "model": "gemini-2.5-pro-vision",
+      "role": "Image resolution and quality for print",
+      "tasks": [
+        "Image resolution validation",
+        "Upsampling detection",
+        "JPEG compression analysis",
+        "Visual quality assessment",
+        "Bitmap vs vector identification"
+      ],
+      "temperature": 0.2,
+      "maxTokens": 4000
+    }
+  },
+
+  "advancedPreflight": {
+    "PF001": {
+      "name": "Missing Fonts",
+      "description": "All fonts must be embedded",
+      "severity": "CRITICAL",
+      "action": "Embed all fonts or convert to outlines"
+    },
+    "PF002": {
+      "name": "Low Resolution Images",
+      "description": "Images below 300 DPI at final size",
+      "severity": "CRITICAL",
+      "threshold": 300,
+      "action": "Replace with higher resolution images"
+    },
+    "PF003": {
+      "name": "RGB Color Space",
+      "description": "RGB colors in PDF/X-1a document",
+      "severity": "CRITICAL",
+      "action": "Convert all colors to CMYK"
+    },
+    "PF004": {
+      "name": "Missing Bleed",
+      "description": "Insufficient or missing bleed",
+      "severity": "CRITICAL",
+      "threshold": 3,
+      "action": "Add 3-5mm bleed on all sides"
+    },
+    "PF005": {
+      "name": "Transparency Not Flattened",
+      "description": "Live transparency in PDF/X-1a or X-3",
+      "severity": "CRITICAL",
+      "action": "Flatten transparency or use PDF/X-4"
+    },
+    "PF101": {
+      "name": "High Ink Coverage",
+      "description": "Total ink coverage exceeds 300%",
+      "severity": "WARNING",
+      "threshold": 300,
+      "action": "Reduce ink coverage to prevent drying issues"
+    },
+    "PF102": {
+      "name": "Hairline Strokes",
+      "description": "Strokes thinner than 0.25pt may not print",
+      "severity": "WARNING",
+      "threshold": 0.25,
+      "action": "Increase stroke weight to 0.25pt minimum"
+    },
+    "PF103": {
+      "name": "Small Text Size",
+      "description": "Text smaller than 6pt may be illegible",
+      "severity": "WARNING",
+      "threshold": 6,
+      "action": "Increase text size to 6pt minimum"
+    },
+    "PF104": {
+      "name": "White Overprint",
+      "description": "White objects set to overprint (usually error)",
+      "severity": "WARNING",
+      "action": "Disable overprint for white objects"
+    },
+    "PF105": {
+      "name": "Registration Color Usage",
+      "description": "Registration color used for objects (should be marks only)",
+      "severity": "WARNING",
+      "action": "Change to appropriate color"
+    },
+    "PF106": {
+      "name": "Upsampled Images",
+      "description": "Images artificially enlarged, may appear pixelated",
+      "severity": "WARNING",
+      "action": "Use original high-resolution images"
+    },
+    "PF107": {
+      "name": "Missing Color Profile",
+      "description": "ICC color profile not embedded",
+      "severity": "WARNING",
+      "action": "Embed appropriate ICC profile"
+    },
+    "PF108": {
+      "name": "Rich Black Usage",
+      "description": "Large black areas should use rich black (C:60 M:40 Y:40 K:100)",
+      "severity": "INFO",
+      "action": "Use rich black for large solid areas"
+    },
+    "PF109": {
+      "name": "Black Text Overprint",
+      "description": "Black text should overprint to prevent registration issues",
+      "severity": "INFO",
+      "action": "Set black text to overprint"
+    },
+    "PF110": {
+      "name": "Spot Colors Detected",
+      "description": "Document contains spot colors",
+      "severity": "INFO",
+      "action": "Verify spot colors with printer"
+    }
+  },
+
+  "productionReadiness": {
+    "scoring": {
+      "perfect": { "min": 100, "max": 100, "description": "Perfect print-ready, PDF/X-4 compliant" },
+      "excellent": { "min": 95, "max": 99, "description": "Excellent, minor warnings only" },
+      "veryGood": { "min": 90, "max": 94, "description": "Very good, ready for most printers" },
+      "good": { "min": 85, "max": 89, "description": "Good, some improvements recommended" },
+      "fair": { "min": 70, "max": 84, "description": "Fair, multiple issues to fix" },
+      "poor": { "min": 0, "max": 69, "description": "Not print-ready, critical issues" }
+    },
+    "weights": {
+      "pdfxCompliance": 25,
+      "colorManagement": 20,
+      "resolution": 20,
+      "fonts": 15,
+      "bleedTrim": 10,
+      "preflight": 10
+    }
+  },
+
+  "printCostEstimation": {
+    "inkCosts": {
+      "cyan": { "price": 50, "unit": "USD per liter" },
+      "magenta": { "price": 50, "unit": "USD per liter" },
+      "yellow": { "price": 50, "unit": "USD per liter" },
+      "black": { "price": 40, "unit": "USD per liter" },
+      "spot": { "price": 75, "unit": "USD per liter" }
+    },
+    "paperCosts": {
+      "letter": { "price": 0.02, "unit": "USD per sheet" },
+      "a4": { "price": 0.018, "unit": "USD per sheet" },
+      "tabloid": { "price": 0.05, "unit": "USD per sheet" },
+      "a3": { "price": 0.045, "unit": "USD per sheet" }
+    },
+    "laborCosts": {
+      "setup": { "price": 50, "unit": "USD per job" },
+      "runtime": { "price": 100, "unit": "USD per hour" },
+      "finishing": { "price": 25, "unit": "USD per hour" }
+    },
+    "wasteFactor": {
+      "setup": 0.05,
+      "runtime": 0.02,
+      "description": "Paper waste percentage"
+    }
   }
 }
