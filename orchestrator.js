@@ -24,9 +24,9 @@ const CircuitBreaker = require('./workers/circuit-breaker');
 const FallbackQueue = require('./workers/fallback-queue');
 const { CostExceededError, CircuitBreakerOpenError } = require('./workers/errors');
 
-// Worker imports (to be implemented)
-// const mcpWorker = require('./workers/mcp_worker');
-// const pdfServicesWorker = require('./workers/pdf_services_worker');
+// Worker imports
+const MCPWorker = require('./workers/mcp_worker');
+const PDFServicesWorker = require('./workers/pdf_services_worker');
 
 class PDFOrchestrator {
   constructor() {
@@ -53,9 +53,16 @@ class PDFOrchestrator {
       })
     };
 
+    // Initialize workers
+    this.workers = {
+      mcp: new MCPWorker(this.config.workers?.mcp || {}),
+      pdfServices: new PDFServicesWorker(this.config.workers?.pdfServices || {})
+    };
+
     console.log(`[Orchestrator] Initialized v${this.config.orchestrator.version}`);
     console.log('[Orchestrator] Cost tracking enabled');
     console.log('[Orchestrator] Circuit breakers initialized');
+    console.log('[Orchestrator] Workers initialized: MCP, PDF Services');
   }
 
   /**
@@ -243,25 +250,37 @@ class PDFOrchestrator {
       // Step 2: Route
       const workerType = this.routeJob(job);
 
-      // Step 3: Execute with cost tracking
+      // Step 3: Execute with appropriate worker
       if (workerType === 'mcp') {
         console.log('[Orchestrator] Dispatching to MCP worker...');
-        // Example: return await this.executeWithCostTracking(
-        //   'mcp_worker',
-        //   'generate_document',
-        //   async () => mcpWorker.execute(job),
-        //   { docSlug: job.data?.slug, runId, user: job.user }
-        // );
-        return { status: 'stub', message: 'MCP worker not yet implemented', worker: 'mcp', runId };
+
+        // MCP worker for local InDesign/Illustrator automation
+        // Cost tracking not needed for local resources
+        const result = await this.workers.mcp.execute(job);
+
+        return {
+          ...result,
+          runId,
+          timestamp: new Date().toISOString()
+        };
+
       } else if (workerType === 'pdfServices') {
         console.log('[Orchestrator] Dispatching to PDF Services worker...');
-        // Example: return await this.executeWithCostTracking(
-        //   'adobe_pdf_services',
-        //   'document_generation',
-        //   async () => pdfServicesWorker.execute(job),
-        //   { docSlug: job.data?.slug, runId, user: job.user }
-        // );
-        return { status: 'stub', message: 'PDF Services worker not yet implemented', worker: 'pdfServices', runId };
+
+        // PDF Services with cost tracking and circuit breaker
+        const result = await this.executeWithCostTracking(
+          'adobe_pdf_services',
+          'document_generation',
+          async () => this.workers.pdfServices.execute(job),
+          { docSlug: job.data?.slug, runId, user: job.user }
+        );
+
+        return {
+          ...result,
+          runId,
+          timestamp: new Date().toISOString()
+        };
+
       } else {
         throw new Error(`Unknown worker type: ${workerType}`);
       }
@@ -309,6 +328,27 @@ class PDFOrchestrator {
         status: breaker.getStatus()
       }))
     };
+  }
+
+  /**
+   * Get worker status for all workers
+   */
+  async getWorkerStatus() {
+    const status = {
+      mcp: this.workers.mcp.getStatus(),
+      pdfServices: this.workers.pdfServices.getStatus()
+    };
+
+    // Run health checks
+    const healthChecks = await Promise.allSettled([
+      this.workers.mcp.healthCheck(),
+      this.workers.pdfServices.healthCheck()
+    ]);
+
+    status.mcp.healthy = healthChecks[0].status === 'fulfilled' && healthChecks[0].value;
+    status.pdfServices.healthy = healthChecks[1].status === 'fulfilled' && healthChecks[1].value;
+
+    return status;
   }
 
   /**
