@@ -108,14 +108,134 @@ class GeminiAdapter extends ModelAdapter {
 }
 
 /**
- * Claude Vision adapter (Anthropic)
+ * Gemini 2.5 Pro adapter - Premium tier with Deep Think mode
+ * Released Mid-2025, tops LMArena leaderboard, 1M token context
+ */
+class Gemini25ProAdapter extends ModelAdapter {
+  constructor(apiKey, modelName = 'gemini-2.5-pro', weight = 0.35, useDeepThink = true) {
+    super();
+    this.genAI = new GoogleGenerativeAI(apiKey);
+    this.model = this.genAI.getGenerativeModel({
+      model: modelName,
+      generationConfig: {
+        responseMimeType: 'application/json',
+        temperature: 0.3,
+        maxOutputTokens: 8192,
+        // Deep Think mode for superior reasoning
+        ...(useDeepThink && { thinkingMode: 'deep' })
+      }
+    });
+    this.modelName = modelName;
+    this.weight = weight;
+    this.useDeepThink = useDeepThink;
+  }
+
+  /**
+   * Analyze single image
+   */
+  async analyze(prompt, imageData, mimeType) {
+    try {
+      const base64Data = Buffer.isBuffer(imageData)
+        ? imageData.toString('base64')
+        : imageData;
+
+      const result = await this.model.generateContent([
+        { text: prompt },
+        {
+          inlineData: {
+            data: base64Data,
+            mimeType: mimeType
+          }
+        }
+      ]);
+
+      const response = result.response;
+      const text = response.text();
+
+      // Parse JSON (Gemini should return JSON due to responseMimeType)
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) {
+        throw new Error('No JSON found in Gemini 2.5 Pro response');
+      }
+
+      return JSON.parse(jsonMatch[0]);
+
+    } catch (error) {
+      throw new Error(`Gemini 2.5 Pro analysis failed: ${error.message}`);
+    }
+  }
+
+  /**
+   * Analyze multiple pages at once using 1M context window
+   * This is a premium feature unique to Gemini 2.5 Pro
+   */
+  async analyzeFullDocument(prompt, imagePagesData) {
+    try {
+      const content = [{ text: prompt }];
+
+      // Add all page images (leveraging 1M context!)
+      imagePagesData.forEach((imageData, idx) => {
+        const base64Data = Buffer.isBuffer(imageData.buffer)
+          ? imageData.buffer.toString('base64')
+          : imageData.buffer;
+
+        content.push({
+          inlineData: {
+            data: base64Data,
+            mimeType: imageData.mimeType
+          }
+        });
+      });
+
+      const result = await this.model.generateContent(content);
+      const response = result.response;
+      const text = response.text();
+
+      // Parse JSON
+      const jsonMatch = text.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) {
+        throw new Error('No JSON found in Gemini 2.5 Pro full document response');
+      }
+
+      return JSON.parse(jsonMatch[0]);
+
+    } catch (error) {
+      throw new Error(`Gemini 2.5 Pro full document analysis failed: ${error.message}`);
+    }
+  }
+
+  getModelName() {
+    return `gemini:${this.modelName}${this.useDeepThink ? '-deep' : ''}`;
+  }
+
+  getWeight() {
+    return this.weight;
+  }
+}
+
+/**
+ * Claude Vision adapter (Anthropic) - Supports Claude 4 series with extended thinking
+ *
+ * Claude 4 Series (2025):
+ * - Claude Opus 4.1 (Aug 2025): Best for agentic tasks, complex reasoning, real-world coding
+ * - Claude Sonnet 4.5 (Sep 2025): Most capable for coding, agents, computer use. Best-in-class vision.
+ * - Claude Haiku 4.5 (Oct 2025): Fast, low-cost, high-volume processing
+ *
+ * All models: 200K context window, extended thinking mode, superior vision capabilities
  */
 class ClaudeAdapter extends ModelAdapter {
-  constructor(apiKey, modelName = 'claude-3-5-sonnet-20241022', weight = 0.35) {
+  constructor(apiKey, modelName = 'claude-sonnet-4.5', weight = 0.40, options = {}) {
     super();
     this.anthropic = new Anthropic({ apiKey });
     this.modelName = modelName;
     this.weight = weight;
+    this.options = {
+      enableThinking: options.enableThinking !== false, // Default: enabled
+      thinkingType: options.thinkingType || 'enabled', // 'enabled', 'extended', or 'disabled'
+      thinkingBudget: options.thinkingBudget || 5000, // Default 5K tokens for standard, 10K for extended
+      maxTokens: options.maxTokens || 8192, // Increased for Claude 4
+      ...options
+    };
   }
 
   async analyze(prompt, imageData, mimeType) {
@@ -130,9 +250,10 @@ class ClaudeAdapter extends ModelAdapter {
                        mimeType.includes('webp') ? 'image/webp' :
                        mimeType.includes('gif') ? 'image/gif' : 'image/png';
 
-      const message = await this.anthropic.messages.create({
+      // Build request with extended thinking if enabled
+      const requestConfig = {
         model: this.modelName,
-        max_tokens: 4096,
+        max_tokens: this.options.maxTokens,
         messages: [
           {
             role: 'user',
@@ -152,20 +273,127 @@ class ClaudeAdapter extends ModelAdapter {
             ]
           }
         ]
-      });
+      };
+
+      // Add extended thinking configuration for Claude 4 models
+      if (this.options.enableThinking && this.options.thinkingType !== 'disabled') {
+        requestConfig.thinking = {
+          type: this.options.thinkingType,
+          budget_tokens: this.options.thinkingBudget
+        };
+      }
+
+      const message = await this.anthropic.messages.create(requestConfig);
+
+      // Extract thinking process if available (Claude 4 extended thinking)
+      const thinkingContent = message.content.find(c => c.type === 'thinking');
+      const textContent = message.content.find(c => c.type === 'text');
+
+      if (!textContent) {
+        throw new Error('No text content in Claude response');
+      }
 
       // Extract JSON from response
-      const responseText = message.content[0].text;
+      const responseText = textContent.text;
       const jsonMatch = responseText.match(/\{[\s\S]*\}/);
 
       if (!jsonMatch) {
         throw new Error('No JSON found in Claude response');
       }
 
-      return JSON.parse(jsonMatch[0]);
+      const analysis = JSON.parse(jsonMatch[0]);
+
+      // Include thinking process in metadata if available
+      if (thinkingContent) {
+        analysis._metadata = {
+          ...(analysis._metadata || {}),
+          thinking: thinkingContent.thinking,
+          thinkingEnabled: true,
+          thinkingType: this.options.thinkingType,
+          thinkingTokens: thinkingContent.thinking?.length || 0,
+          model: this.modelName
+        };
+      }
+
+      return analysis;
 
     } catch (error) {
       throw new Error(`Claude analysis failed: ${error.message}`);
+    }
+  }
+
+  /**
+   * Analyze multiple pages using Claude 4's 200K context window
+   * Superior to single-page analysis for cross-page consistency checking
+   */
+  async analyzeMultiplePages(prompt, imagePagesData) {
+    try {
+      const content = [{ type: 'text', text: prompt }];
+
+      // Add all page images (leveraging 200K context)
+      imagePagesData.forEach((imageData, idx) => {
+        const base64Data = Buffer.isBuffer(imageData.buffer)
+          ? imageData.buffer.toString('base64')
+          : imageData.buffer;
+
+        content.push({
+          type: 'image',
+          source: {
+            type: 'base64',
+            media_type: imageData.mimeType,
+            data: base64Data
+          }
+        });
+      });
+
+      const requestConfig = {
+        model: this.modelName,
+        max_tokens: this.options.maxTokens,
+        messages: [{ role: 'user', content }]
+      };
+
+      // Add extended thinking for multi-page analysis
+      if (this.options.enableThinking && this.options.thinkingType !== 'disabled') {
+        requestConfig.thinking = {
+          type: this.options.thinkingType,
+          budget_tokens: this.options.thinkingBudget
+        };
+      }
+
+      const message = await this.anthropic.messages.create(requestConfig);
+
+      const thinkingContent = message.content.find(c => c.type === 'thinking');
+      const textContent = message.content.find(c => c.type === 'text');
+
+      if (!textContent) {
+        throw new Error('No text content in Claude multi-page response');
+      }
+
+      const responseText = textContent.text;
+      const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+
+      if (!jsonMatch) {
+        throw new Error('No JSON found in Claude multi-page response');
+      }
+
+      const analysis = JSON.parse(jsonMatch[0]);
+
+      if (thinkingContent) {
+        analysis._metadata = {
+          ...(analysis._metadata || {}),
+          thinking: thinkingContent.thinking,
+          thinkingEnabled: true,
+          thinkingType: this.options.thinkingType,
+          multiPageAnalysis: true,
+          pageCount: imagePagesData.length,
+          model: this.modelName
+        };
+      }
+
+      return analysis;
+
+    } catch (error) {
+      throw new Error(`Claude multi-page analysis failed: ${error.message}`);
     }
   }
 
@@ -176,10 +404,99 @@ class ClaudeAdapter extends ModelAdapter {
   getWeight() {
     return this.weight;
   }
+
+  /**
+   * Get model capabilities for Claude 4 series
+   * @returns {Object} Model capabilities
+   */
+  getCapabilities() {
+    const isOpus = this.modelName.includes('opus');
+    const isSonnet = this.modelName.includes('sonnet');
+    const isHaiku = this.modelName.includes('haiku');
+    const isClaude4 = this.modelName.includes('4.') || this.modelName.includes('4-');
+
+    return {
+      model: this.modelName,
+      generation: isClaude4 ? 4 : 3.5,
+      contextWindow: 200000, // Claude 4 series has 200K context
+      extendedThinking: isClaude4,
+      agenticCapabilities: isOpus,
+      bestForCoding: isSonnet,
+      fastProcessing: isHaiku,
+      visionQuality: isClaude4 ? 'best-in-class' : 'excellent',
+      costTier: isOpus ? 'premium' : isSonnet ? 'balanced' : 'economy'
+    };
+  }
 }
 
 /**
- * GPT-4 Vision adapter (OpenAI)
+ * GPT-5 Vision adapter (OpenAI) - 2025 Release
+ * Natively multimodal with 84.2% MMMU accuracy, superior visual perception
+ */
+class GPT5Adapter extends ModelAdapter {
+  constructor(apiKey, modelName = 'gpt-5', weight = 0.30) {
+    super();
+    this.openai = new OpenAI({ apiKey });
+    this.modelName = modelName;
+    this.weight = weight;
+  }
+
+  async analyze(prompt, imageData, mimeType) {
+    try {
+      const base64Data = Buffer.isBuffer(imageData)
+        ? imageData.toString('base64')
+        : imageData;
+
+      const response = await this.openai.chat.completions.create({
+        model: this.modelName,
+        messages: [
+          {
+            role: 'user',
+            content: [
+              {
+                type: 'text',
+                text: prompt + '\n\nProvide your analysis as valid JSON matching the requested structure.'
+              },
+              {
+                type: 'image_url',
+                image_url: {
+                  url: `data:${mimeType};base64,${base64Data}`,
+                  detail: 'high'
+                }
+              }
+            ]
+          }
+        ],
+        max_tokens: 4096,
+        response_format: { type: 'json_object' }
+      });
+
+      const responseText = response.choices[0].message.content;
+
+      // GPT-5 should return JSON due to response_format
+      const jsonMatch = responseText.match(/\{[\s\S]*\}/);
+      if (!jsonMatch) {
+        throw new Error('No JSON found in GPT-5 response');
+      }
+
+      return JSON.parse(jsonMatch[0]);
+
+    } catch (error) {
+      throw new Error(`GPT-5 analysis failed: ${error.message}`);
+    }
+  }
+
+  getModelName() {
+    return `gpt5:${this.modelName}`;
+  }
+
+  getWeight() {
+    return this.weight;
+  }
+}
+
+/**
+ * GPT-4 Vision adapter (OpenAI) - Legacy support
  */
 class GPT4VisionAdapter extends ModelAdapter {
   constructor(apiKey, modelName = 'gpt-4-vision-preview', weight = 0.25) {
@@ -291,7 +608,32 @@ export class EnsembleEngine {
       console.log(`  ✅ Claude ${this.config.models.claude.model} initialized (weight: ${this.config.models.claude.weight})`);
     }
 
-    // Initialize GPT-4V
+    // Initialize Gemini 2.5 Pro (Premium)
+    if (this.config.models.gemini25pro?.enabled && apiKeys.gemini) {
+      const adapter = new Gemini25ProAdapter(
+        apiKeys.gemini,
+        this.config.models.gemini25pro.model,
+        this.config.models.gemini25pro.weight,
+        this.config.models.gemini25pro.useDeepThink
+      );
+      this.adapters.push(adapter);
+      this.modelWeights[adapter.getModelName()] = this.config.models.gemini25pro.weight;
+      console.log(`  ✅ Gemini 2.5 Pro ${this.config.models.gemini25pro.model} initialized (weight: ${this.config.models.gemini25pro.weight}, Deep Think: ${this.config.models.gemini25pro.useDeepThink})`);
+    }
+
+    // Initialize GPT-5 (2025 Release)
+    if (this.config.models.gpt5?.enabled && apiKeys.openai) {
+      const adapter = new GPT5Adapter(
+        apiKeys.openai,
+        this.config.models.gpt5.model,
+        this.config.models.gpt5.weight
+      );
+      this.adapters.push(adapter);
+      this.modelWeights[adapter.getModelName()] = this.config.models.gpt5.weight;
+      console.log(`  ✅ GPT-5 ${this.config.models.gpt5.model} initialized (weight: ${this.config.models.gpt5.weight})`);
+    }
+
+    // Initialize GPT-4V (Legacy)
     if (this.config.models.gpt4v?.enabled && apiKeys.gpt4v) {
       const adapter = new GPT4VisionAdapter(
         apiKeys.gpt4v,
@@ -665,4 +1007,10 @@ export class EnsembleEngine {
   }
 }
 
-export { GeminiAdapter, ClaudeAdapter, GPT4VisionAdapter };
+export {
+  GeminiAdapter,
+  Gemini25ProAdapter,
+  ClaudeAdapter,
+  GPT5Adapter,
+  GPT4VisionAdapter
+};
