@@ -1,0 +1,383 @@
+{
+  "$schema": "./auto-fix-config-schema.json",
+  "version": "1.0.0",
+  "description": "Auto-fix system configuration for TEEI PDF automation",
+
+  "auto_fix": {
+    "enabled": true,
+    "require_approval": true,
+    "max_fixes_per_run": 50,
+    "rollback_on_failure": true,
+    "backup_before_fix": true,
+    "backup_retention_days": 7,
+    "dry_run_default": false
+  },
+
+  "fixable_violations": {
+    "color": {
+      "auto": true,
+      "risk": "low",
+      "require_approval": false,
+      "types": {
+        "forbidden_color": {
+          "auto": true,
+          "priority": "critical",
+          "estimated_time_seconds": 2
+        },
+        "color_mismatch": {
+          "auto": true,
+          "priority": "major",
+          "estimated_time_seconds": 1
+        },
+        "unrecognized_color": {
+          "auto": true,
+          "priority": "minor",
+          "estimated_time_seconds": 1
+        }
+      }
+    },
+
+    "typography": {
+      "auto": true,
+      "risk": "low",
+      "require_approval": false,
+      "types": {
+        "wrong_font_family": {
+          "auto": true,
+          "priority": "critical",
+          "estimated_time_seconds": 3
+        },
+        "wrong_font_size": {
+          "auto": true,
+          "priority": "major",
+          "estimated_time_seconds": 2
+        },
+        "wrong_line_height": {
+          "auto": true,
+          "priority": "minor",
+          "estimated_time_seconds": 2
+        }
+      }
+    },
+
+    "layout": {
+      "auto": true,
+      "risk": "medium",
+      "require_approval": true,
+      "types": {
+        "text_cutoff": {
+          "auto": true,
+          "priority": "critical",
+          "estimated_time_seconds": 5,
+          "strategies": [
+            "auto_sizing",
+            "expand_frame",
+            "reduce_font_size"
+          ]
+        },
+        "wrong_page_width": {
+          "auto": true,
+          "priority": "critical",
+          "estimated_time_seconds": 5
+        },
+        "wrong_page_height": {
+          "auto": true,
+          "priority": "critical",
+          "estimated_time_seconds": 5
+        }
+      }
+    },
+
+    "spacing": {
+      "auto": true,
+      "risk": "medium",
+      "require_approval": false,
+      "types": {
+        "inconsistent_spacing": {
+          "auto": true,
+          "priority": "major",
+          "estimated_time_seconds": 3
+        },
+        "logo_clearspace": {
+          "auto": true,
+          "priority": "major",
+          "estimated_time_seconds": 4
+        }
+      }
+    },
+
+    "content": {
+      "auto": false,
+      "risk": "high",
+      "require_approval": true,
+      "types": {
+        "placeholder_text": {
+          "auto": false,
+          "priority": "critical",
+          "estimated_time_seconds": 600,
+          "ai_generation": {
+            "enabled": true,
+            "model": "gpt-4",
+            "max_tokens": 200,
+            "temperature": 0.7,
+            "requires_human_review": true
+          }
+        },
+        "incomplete_text": {
+          "auto": false,
+          "priority": "critical",
+          "estimated_time_seconds": 300
+        }
+      }
+    },
+
+    "accessibility": {
+      "auto": true,
+      "risk": "medium",
+      "require_approval": false,
+      "types": {
+        "missing_alt_text": {
+          "auto": false,
+          "priority": "major",
+          "estimated_time_seconds": 120,
+          "ai_generation": {
+            "enabled": true,
+            "model": "gpt-4-vision",
+            "requires_human_review": true
+          }
+        },
+        "color_contrast": {
+          "auto": true,
+          "priority": "major",
+          "estimated_time_seconds": 2
+        }
+      }
+    }
+  },
+
+  "predictive": {
+    "enabled": true,
+    "confidence_threshold": 0.7,
+    "retrain_frequency": "weekly",
+    "min_samples_for_prediction": 10,
+    "features": [
+      "page_count",
+      "color_count",
+      "font_count",
+      "image_count",
+      "text_frame_count",
+      "has_custom_colors",
+      "has_custom_fonts",
+      "complexity_score",
+      "days_since_last_validation",
+      "previous_violation_count"
+    ],
+    "model": {
+      "type": "logistic_regression",
+      "learning_rate": 0.01,
+      "epochs": 1000,
+      "save_path": "data/predictive-model.json"
+    }
+  },
+
+  "self_improvement": {
+    "enabled": true,
+    "learning_rate": 0.1,
+    "min_samples_for_update": 5,
+    "db_path": "data/learning.db",
+    "export_frequency": "daily",
+    "export_path": "exports/learning-data",
+    "auto_retrain": {
+      "enabled": true,
+      "accuracy_threshold": 0.85,
+      "decline_threshold": -0.05
+    }
+  },
+
+  "indesign_automation": {
+    "mcp": {
+      "host": "localhost",
+      "port": 8012,
+      "timeout_ms": 30000,
+      "retry_attempts": 3,
+      "retry_delay_ms": 1000
+    },
+    "script_generation": {
+      "validate_before_execution": true,
+      "add_error_handling": true,
+      "verbose_output": false
+    },
+    "backup": {
+      "enabled": true,
+      "path": "backups/indesign",
+      "naming_pattern": "{filename}_backup_{timestamp}.indd"
+    }
+  },
+
+  "reporting": {
+    "enabled": true,
+    "auto_generate": true,
+    "output_dir": "exports/fix-reports",
+    "formats": [
+      "html",
+      "json"
+    ],
+    "include": {
+      "screenshots": true,
+      "timeline": true,
+      "metrics": true,
+      "recommendations": true
+    },
+    "metrics": {
+      "track_time_saved": true,
+      "track_success_rate": true,
+      "track_mttr": true,
+      "track_efficiency_gain": true
+    }
+  },
+
+  "notifications": {
+    "enabled": false,
+    "channels": {
+      "email": {
+        "enabled": false,
+        "recipients": [],
+        "send_on": [
+          "fix_complete",
+          "fix_failed",
+          "critical_violations"
+        ]
+      },
+      "slack": {
+        "enabled": false,
+        "webhook_url": "",
+        "send_on": [
+          "fix_complete"
+        ]
+      }
+    }
+  },
+
+  "thresholds": {
+    "max_consecutive_failures": 3,
+    "max_execution_time_seconds": 600,
+    "min_success_rate_percent": 70,
+    "max_violations_after_fix": 10
+  },
+
+  "brand_guidelines": {
+    "colors": {
+      "nordshore": {
+        "hex": "#00393F",
+        "rgb": [0, 57, 63],
+        "cmyk": [100, 10, 10, 75],
+        "usage": "primary"
+      },
+      "sky": {
+        "hex": "#C9E4EC",
+        "rgb": [201, 228, 236],
+        "cmyk": [15, 3, 0, 7],
+        "usage": "secondary"
+      },
+      "sand": {
+        "hex": "#FFF1E2",
+        "rgb": [255, 241, 226],
+        "cmyk": [0, 5, 11, 0],
+        "usage": "background"
+      },
+      "beige": {
+        "hex": "#EFE1DC",
+        "rgb": [239, 225, 220],
+        "cmyk": [0, 6, 8, 6],
+        "usage": "background"
+      },
+      "moss": {
+        "hex": "#65873B",
+        "rgb": [101, 135, 59],
+        "cmyk": [45, 0, 77, 25],
+        "usage": "accent"
+      },
+      "gold": {
+        "hex": "#BA8F5A",
+        "rgb": [186, 143, 90],
+        "cmyk": [0, 23, 52, 27],
+        "usage": "accent"
+      },
+      "clay": {
+        "hex": "#913B2F",
+        "rgb": [145, 59, 47],
+        "cmyk": [0, 59, 68, 43],
+        "usage": "accent"
+      }
+    },
+    "forbidden_colors": {
+      "copper": {
+        "hex": "#B87333",
+        "rgb": [184, 115, 51],
+        "reason": "Not in TEEI brand palette"
+      },
+      "orange": {
+        "hex": "#FF6B35",
+        "rgb": [255, 107, 53],
+        "reason": "Not in TEEI brand palette"
+      }
+    },
+    "typography": {
+      "headline": {
+        "family": "Lora",
+        "variants": ["Regular", "Medium", "SemiBold", "Bold"],
+        "sizes": {
+          "title": 42,
+          "header": 28,
+          "subheader": 20
+        },
+        "line_height": 1.2
+      },
+      "body": {
+        "family": "Roboto Flex",
+        "variants": ["Regular", "Medium"],
+        "sizes": {
+          "body": 11,
+          "subhead": 18,
+          "caption": 9
+        },
+        "line_height": 1.5
+      }
+    },
+    "layout": {
+      "page_size": {
+        "width_inches": 8.5,
+        "height_inches": 11,
+        "width_points": 612,
+        "height_points": 792
+      },
+      "margins": {
+        "all": 40
+      },
+      "spacing": {
+        "sections": 60,
+        "elements": 20,
+        "paragraphs": 12
+      },
+      "grid": {
+        "columns": 12,
+        "gutter": 20
+      }
+    }
+  },
+
+  "tolerances": {
+    "color_rgb_difference": 15,
+    "dimension_points": 2,
+    "spacing_points": 3,
+    "font_size_points": 1
+  },
+
+  "logging": {
+    "level": "info",
+    "log_file": "logs/auto-fix.log",
+    "console_output": true,
+    "include_timestamps": true,
+    "include_stack_traces": false
+  }
+}

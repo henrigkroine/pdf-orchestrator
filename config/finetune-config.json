@@ -1,0 +1,220 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TEEI Fine-Tuning Configuration",
+  "description": "Configuration for LoRA/QLoRA fine-tuning and RAG system",
+
+  "lora": {
+    "description": "LoRA (Low-Rank Adaptation) configuration",
+    "r": 16,
+    "lora_alpha": 32,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj"
+    ],
+    "lora_dropout": 0.1,
+    "bias": "none",
+    "task_type": "VISION_SEQ_2_SEQ_LM",
+    "training": {
+      "epochs": 3,
+      "batch_size": 4,
+      "learning_rate": 2e-4,
+      "warmup_steps": 100,
+      "weight_decay": 0.01,
+      "gradient_accumulation_steps": 4,
+      "eval_steps": 100,
+      "save_steps": 500,
+      "logging_steps": 10
+    }
+  },
+
+  "qlora": {
+    "description": "QLoRA (4-bit quantized LoRA) configuration",
+    "bits": 4,
+    "quant_type": "nf4",
+    "double_quant": true,
+    "compute_dtype": "bfloat16",
+    "r": 64,
+    "lora_alpha": 128,
+    "target_modules": [
+      "q_proj",
+      "k_proj",
+      "v_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "lora_dropout": 0.05,
+    "training": {
+      "epochs": 3,
+      "batch_size": 8,
+      "learning_rate": 2e-4,
+      "warmup_steps": 100,
+      "gradient_accumulation_steps": 2,
+      "gradient_checkpointing": true,
+      "optim": "paged_adamw_32bit"
+    }
+  },
+
+  "vectordb": {
+    "description": "Vector database configuration for RAG",
+    "provider": "qdrant",
+    "url": "http://localhost:6333",
+    "collection_name": "teei-brand-examples",
+    "embedding_model": "text-embedding-3-large",
+    "dimensions": 3072,
+    "distance_metric": "cosine",
+    "hnsw": {
+      "m": 16,
+      "ef_construct": 100,
+      "full_scan_threshold": 10000
+    },
+    "cache": {
+      "enabled": true,
+      "max_size": 1000
+    }
+  },
+
+  "rag": {
+    "description": "Retrieval-Augmented Generation configuration",
+    "retrieval_count": 5,
+    "reranking": {
+      "enabled": true,
+      "model": "cross-encoder/ms-marco-MiniLM-L-12-v2"
+    },
+    "hybrid_search": {
+      "enabled": true,
+      "weight_vector": 0.7,
+      "weight_keyword": 0.3
+    }
+  },
+
+  "continual_learning": {
+    "description": "Continual learning system configuration",
+    "enabled": true,
+    "retraining_threshold": 100,
+    "min_accuracy_improvement": 0.01,
+    "evaluation": {
+      "validation_split": 0.2,
+      "test_split": 0.1
+    },
+    "deployment": {
+      "auto_deploy": false,
+      "approval_required": true
+    }
+  },
+
+  "models": {
+    "description": "Supported base models",
+    "gemini": {
+      "name": "google/gemini-2.5-flash",
+      "type": "vision-language",
+      "context_length": 1048576,
+      "cost_per_1k_input": 0.00003,
+      "cost_per_1k_output": 0.00012
+    },
+    "gpt4o": {
+      "name": "openai/gpt-4o",
+      "type": "vision-language",
+      "context_length": 128000,
+      "cost_per_1k_input": 0.005,
+      "cost_per_1k_output": 0.015
+    },
+    "claude": {
+      "name": "anthropic/claude-sonnet-4.5",
+      "type": "vision-language",
+      "context_length": 200000,
+      "cost_per_1k_input": 0.003,
+      "cost_per_1k_output": 0.015
+    }
+  },
+
+  "dataset": {
+    "description": "Training dataset configuration",
+    "train_split": 0.8,
+    "val_split": 0.2,
+    "augmentation": {
+      "enabled": true,
+      "techniques": [
+        "color_variation",
+        "font_variation",
+        "layout_variation"
+      ]
+    },
+    "quality_filters": {
+      "min_resolution": 150,
+      "max_file_size_mb": 50,
+      "required_metadata": ["grade", "violations"]
+    }
+  },
+
+  "hardware": {
+    "description": "Hardware requirements and recommendations",
+    "minimum": {
+      "gpu": "NVIDIA GTX 1080 Ti (11GB)",
+      "ram": "16GB",
+      "disk": "50GB"
+    },
+    "recommended": {
+      "gpu": "NVIDIA RTX 4090 (24GB)",
+      "ram": "32GB",
+      "disk": "100GB"
+    },
+    "optimal": {
+      "gpu": "NVIDIA A100 (80GB)",
+      "ram": "64GB",
+      "disk": "200GB"
+    }
+  },
+
+  "performance": {
+    "description": "Expected performance metrics",
+    "lora": {
+      "training_time_hours": 2,
+      "adapter_size_mb": 10,
+      "accuracy_improvement": 0.12,
+      "inference_latency_ms": 200
+    },
+    "qlora": {
+      "training_time_hours": 1.5,
+      "adapter_size_mb": 5,
+      "accuracy_improvement": 0.12,
+      "inference_latency_ms": 180
+    },
+    "rag": {
+      "retrieval_latency_ms": 50,
+      "accuracy_improvement": 0.05,
+      "recall": 0.99
+    }
+  },
+
+  "costs": {
+    "description": "Estimated costs",
+    "training": {
+      "lora_one_time": 10,
+      "qlora_one_time": 5,
+      "incremental_update": 2,
+      "currency": "USD"
+    },
+    "inference": {
+      "per_1k_validations": 0.1,
+      "with_rag_per_1k": 0.15,
+      "currency": "USD"
+    },
+    "storage": {
+      "lora_adapters_gb": 0.01,
+      "vector_db_gb": 1,
+      "training_data_gb": 5,
+      "currency": "USD/month"
+    }
+  },
+
+  "endpoints": {
+    "description": "API endpoints for deployment",
+    "qdrant": "http://localhost:6333",
+    "model_server": "http://localhost:8000",
+    "monitoring": "http://localhost:9090"
+  }
+}

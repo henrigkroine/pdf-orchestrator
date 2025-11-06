@@ -1,0 +1,24 @@
+# TEEI Fine-Tuning + RAG System - Python Dependencies
+# Install with: pip install -r requirements.txt
+
+# Core ML Libraries
+transformers==4.36.0
+peft==0.7.0
+datasets==2.15.0
+torch==2.1.0
+accelerate==0.25.0
+
+# Quantization (for QLoRA)
+bitsandbytes==0.41.3
+
+# Vision Processing
+pillow==10.1.0
+pdf2image==1.16.3
+
+# Monitoring (optional)
+wandb==0.16.0
+
+# Utilities
+numpy==1.24.3
+scipy==1.11.4
+tqdm==4.66.1

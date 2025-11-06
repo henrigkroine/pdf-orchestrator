@@ -1,0 +1,229 @@
+{
+  "system": {
+    "name": "Multi-Agent Reasoning Validator",
+    "version": "1.0.0",
+    "description": "Advanced PDF validation using reasoning models and collaborative AI agents"
+  },
+
+  "reasoning_models": {
+    "o3-mini": {
+      "provider": "openai",
+      "model_id": "o3-mini",
+      "reasoning_enabled": true,
+      "reasoning_effort": "high",
+      "temperature": 0.3,
+      "max_tokens": 4096,
+      "cost_per_million_tokens": 15.0,
+      "capabilities": ["vision", "chain_of_thought", "self_verification"],
+      "recommended_for": ["complex_analysis", "high_accuracy_required"],
+      "notes": "State-of-the-art reasoning model, 96.7% AIME accuracy"
+    },
+
+    "deepseek-r1": {
+      "provider": "deepseek",
+      "model_id": "deepseek-reasoner",
+      "reasoning_enabled": true,
+      "visible_reasoning": true,
+      "temperature": 0.3,
+      "max_tokens": 4096,
+      "cost_per_million_tokens": 0.55,
+      "capabilities": ["vision", "visible_reasoning", "cost_optimization"],
+      "recommended_for": ["cost_optimization", "high_volume"],
+      "notes": "95% cheaper than OpenAI, 671B parameters, visible reasoning chains"
+    },
+
+    "gpt-4o": {
+      "provider": "openai",
+      "model_id": "gpt-4o",
+      "reasoning_enabled": true,
+      "temperature": 0.3,
+      "max_tokens": 4096,
+      "cost_per_million_tokens": 5.0,
+      "capabilities": ["vision", "reasoning", "production_ready"],
+      "recommended_for": ["production", "balanced_performance"],
+      "notes": "Current production model with excellent vision capabilities"
+    },
+
+    "claude-opus-4": {
+      "provider": "anthropic",
+      "model_id": "claude-opus-4-20250514",
+      "reasoning_enabled": true,
+      "extended_thinking": true,
+      "thinking_budget_tokens": 2000,
+      "max_tokens": 4096,
+      "cost_per_million_tokens": 15.0,
+      "capabilities": ["vision", "extended_thinking", "detailed_analysis"],
+      "recommended_for": ["complex_documents", "detailed_analysis"],
+      "notes": "Extended thinking capability for deep analysis"
+    },
+
+    "gemini-2.5-pro": {
+      "provider": "google",
+      "model_id": "gemini-2.5-pro-latest",
+      "reasoning_enabled": true,
+      "temperature": 0.3,
+      "response_format": "json",
+      "cost_per_million_tokens": 3.5,
+      "capabilities": ["vision", "reasoning", "cost_effective"],
+      "recommended_for": ["cost_effective", "fast_processing"],
+      "notes": "Fast and cost-effective with strong vision capabilities"
+    }
+  },
+
+  "agents": {
+    "brandExpert": {
+      "role": "Brand Compliance Expert",
+      "goal": "Ensure perfect TEEI brand compliance in all visual elements",
+      "backstory": "Expert in TEEI color palette (Nordshore, Sky, Sand, Gold), typography (Lora, Roboto Flex), and logo guidelines. 15 years experience in brand management.",
+      "model": "gpt-4o",
+      "expertise": ["colors", "typography", "logos", "brand_guidelines"],
+      "weight": 1.2,
+      "temperature": 0.2,
+      "max_tokens": 2048
+    },
+
+    "designCritic": {
+      "role": "Design Quality Critic",
+      "goal": "Validate layout quality, visual hierarchy, and design best practices",
+      "backstory": "Award-winning designer with 20 years experience. Expert in layout, whitespace, visual hierarchy, and professional document design.",
+      "model": "claude-sonnet-4-20250514",
+      "expertise": ["layout", "hierarchy", "whitespace", "visual_balance", "grid_systems"],
+      "weight": 1.0,
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+
+    "accessibilityExpert": {
+      "role": "Accessibility Specialist",
+      "goal": "Ensure WCAG 2.2 AA compliance and inclusive design",
+      "backstory": "WCAG certified accessibility auditor. Expert in color contrast, readability, screen reader compatibility, and inclusive design principles.",
+      "model": "gemini-2.5-flash",
+      "expertise": ["wcag_2.2", "color_contrast", "readability", "inclusive_design"],
+      "weight": 1.1,
+      "temperature": 0.2,
+      "max_tokens": 2048
+    },
+
+    "contentEditor": {
+      "role": "Content Quality Editor",
+      "goal": "Validate text quality, completeness, grammar, and brand voice",
+      "backstory": "Professional editor for educational content. Expert in grammar, tone, clarity, and brand voice alignment. 12 years in educational publishing.",
+      "model": "claude-sonnet-4-20250514",
+      "expertise": ["grammar", "tone", "clarity", "completeness", "brand_voice"],
+      "weight": 0.9,
+      "temperature": 0.3,
+      "max_tokens": 2048
+    },
+
+    "coordinator": {
+      "role": "Quality Assurance Coordinator",
+      "goal": "Synthesize all agent findings and make final quality decision",
+      "backstory": "Senior QA manager with expertise in multi-stakeholder decision-making. Resolves conflicts between agents using systematic reasoning.",
+      "model": "gpt-4o",
+      "expertise": ["synthesis", "conflict_resolution", "final_decision"],
+      "weight": 1.5,
+      "temperature": 0.3,
+      "max_tokens": 4096,
+      "reasoning_enabled": true
+    }
+  },
+
+  "workflow": {
+    "process": "parallel",
+    "description": "Agents analyze in parallel for 3-4x speedup, then coordinator synthesizes",
+    "enable_debate": true,
+    "debate_config": {
+      "max_rounds": 3,
+      "consensus_threshold": 0.8,
+      "enable_cross_examination": true
+    },
+    "self_verification": false,
+    "verification_threshold": 0.85
+  },
+
+  "quality_thresholds": {
+    "pass_score": 80,
+    "excellent_score": 90,
+    "confidence_threshold": 0.75,
+    "critical_issue_threshold": 1,
+    "high_issue_threshold": 3
+  },
+
+  "cost_optimization": {
+    "use_cheapest_for_simple_tasks": true,
+    "simple_task_model": "gemini-2.5-flash",
+    "complex_task_model": "gpt-4o",
+    "budget_per_validation": 0.50,
+    "alert_on_budget_exceeded": true
+  },
+
+  "output": {
+    "save_reasoning_chains": true,
+    "save_agent_findings": true,
+    "save_debate_transcripts": true,
+    "generate_html_report": true,
+    "generate_json_report": true,
+    "output_directory": "exports/reasoning-reports"
+  },
+
+  "teei_brand_guidelines": {
+    "colors": {
+      "primary": {
+        "nordshore": "#00393F",
+        "sky": "#C9E4EC",
+        "sand": "#FFF1E2",
+        "beige": "#EFE1DC"
+      },
+      "accent": {
+        "moss": "#65873B",
+        "gold": "#BA8F5A",
+        "clay": "#913B2F"
+      },
+      "forbidden": ["#C87137", "copper", "orange"]
+    },
+    "typography": {
+      "headlines": {
+        "family": "Lora",
+        "styles": ["Bold", "SemiBold"],
+        "sizes": ["28pt", "42pt", "48pt"]
+      },
+      "body": {
+        "family": "Roboto Flex",
+        "style": "Regular",
+        "sizes": ["11pt", "14pt"]
+      }
+    },
+    "layout": {
+      "grid": "12-column",
+      "gutters": "20pt",
+      "margins": "40pt",
+      "section_breaks": "60pt"
+    },
+    "critical_checks": [
+      "no_copper_orange_colors",
+      "correct_fonts",
+      "no_text_cutoffs",
+      "no_placeholder_metrics",
+      "proper_logo_clearspace"
+    ]
+  },
+
+  "performance": {
+    "cache_enabled": true,
+    "cache_ttl": 3600,
+    "parallel_execution": true,
+    "max_concurrent_agents": 5,
+    "timeout_per_agent": 30000,
+    "retry_on_failure": true,
+    "max_retries": 2
+  },
+
+  "logging": {
+    "level": "info",
+    "log_reasoning_chains": true,
+    "log_agent_communication": true,
+    "log_debates": true,
+    "save_logs": true,
+    "log_directory": "logs/multi-agent"
+  }
+}
