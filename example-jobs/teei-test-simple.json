@@ -1,0 +1,72 @@
+{
+  "jobType": "document",
+  "jobId": "test-001",
+  "templateId": "teei-partnership-simple",
+  "humanSession": false,
+  "data": {
+    "title": "TEEI AWS Partnership",
+    "subtitle": "Together for Ukraine Program Overview",
+    "partnerName": "Amazon Web Services",
+    "programName": "Together for Ukraine",
+    "metrics": {
+      "studentsReached": 850,
+      "partnersEngaged": 12,
+      "programsActive": 3
+    },
+    "sections": [
+      {
+        "heading": "About TEEI",
+        "content": "The Educational Equality Institute works to provide quality education access to underserved communities worldwide. Through innovative partnerships and technology-driven solutions, we're breaking down barriers to education."
+      },
+      {
+        "heading": "Together for Ukraine",
+        "content": "Our flagship program supporting displaced Ukrainian students with access to online learning resources, technology equipment, and educational support services. Partnering with AWS provides cloud infrastructure for our learning platform."
+      },
+      {
+        "heading": "Partnership Impact",
+        "content": "With AWS cloud services, we've scaled our platform to serve 850+ students across 12 partner organizations. The partnership enables reliable, secure access to educational resources for students who need it most."
+      }
+    ],
+    "callToAction": {
+      "heading": "Ready to Partner with TEEI?",
+      "text": "Join us in transforming educational access for underserved communities.",
+      "contact": "partnerships@theeducationalequalityinstitute.org"
+    }
+  },
+  "images": {
+    "hero": {
+      "type": "generate",
+      "prompt": "A warm, authentic photo of diverse students collaborating on laptops in a modern learning space. Natural golden hour lighting, deep teal and warm beige color scheme. Professional photography style, hopeful and empowering atmosphere. Photorealistic, high detail.",
+      "size": "1792x1024",
+      "quality": "hd"
+    },
+    "sections": [
+      {
+        "type": "unsplash",
+        "query": "students learning technology",
+        "color": "blue",
+        "orientation": "landscape"
+      }
+    ]
+  },
+  "output": {
+    "format": "pdf",
+    "quality": "high",
+    "destination": "exports/teei-aws-partnership-test.pdf",
+    "colorProfile": "sRGB",
+    "accessibility": true
+  },
+  "validation": {
+    "brandCompliance": true,
+    "accessibility": true,
+    "visualQA": false,
+    "preflight": true
+  },
+  "metadata": {
+    "createdBy": "henrik@theeducationalequalityinstitute.org",
+    "purpose": "Partnership document test",
+    "budget": {
+      "maxCost": 1.00
+    }
+  }
+}

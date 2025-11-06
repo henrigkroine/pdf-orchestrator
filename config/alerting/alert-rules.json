@@ -1,0 +1,246 @@
+{
+  "alertRules": [
+    {
+      "priority": "P1",
+      "name": "Service Down",
+      "description": "PDF Orchestrator service availability below 90%",
+      "condition": {
+        "metric": "orchestrator.success_rate",
+        "operator": "<",
+        "threshold": 90,
+        "duration": "5m"
+      },
+      "severity": "critical",
+      "routes": ["email"],
+      "runbook": "https://docs.internal/runbooks/service-down",
+      "action": "Immediate investigation required. Check service logs and upstream dependencies."
+    },
+    {
+      "priority": "P1",
+      "name": "Daily Budget Exceeded",
+      "description": "Daily spend has exceeded $25 cap",
+      "condition": {
+        "metric": "orchestrator.cost.daily",
+        "operator": ">=",
+        "threshold": 25.0,
+        "duration": "1m"
+      },
+      "severity": "critical",
+      "routes": ["email"],
+      "runbook": "https://docs.internal/runbooks/budget-exceeded",
+      "action": "All non-critical operations halted. Review cost logs and identify spike."
+    },
+    {
+      "priority": "P1",
+      "name": "Circuit Breaker Open Extended",
+      "description": "Circuit breaker has been OPEN for more than 15 minutes",
+      "condition": {
+        "metric": "orchestrator.circuit_breaker.state",
+        "operator": "==",
+        "threshold": 2,
+        "duration": "15m"
+      },
+      "severity": "critical",
+      "routes": ["email"],
+      "runbook": "https://docs.internal/runbooks/circuit-breaker-open",
+      "action": "Service degraded. Check upstream API status (Adobe, OpenAI). Enable fallback queue."
+    },
+    {
+      "priority": "P2",
+      "name": "Availability Below SLO",
+      "description": "Service availability below 99% SLO target",
+      "condition": {
+        "metric": "orchestrator.success_rate",
+        "operator": "<",
+        "threshold": 99,
+        "duration": "1h"
+      },
+      "severity": "high",
+      "routes": ["email"],
+      "runbook": "https://docs.internal/runbooks/availability-slo",
+      "action": "Review error logs. Check for rate limiting or API issues."
+    },
+    {
+      "priority": "P2",
+      "name": "Success Rate Below Target",
+      "description": "Operation success rate below 98%",
+      "condition": {
+        "metric": "orchestrator.success_rate",
+        "operator": "<",
+        "threshold": 98,
+        "duration": "30m"
+      },
+      "severity": "high",
+      "routes": ["email"],
+      "runbook": "https://docs.internal/runbooks/success-rate-low",
+      "action": "Investigate recent failures. Check validation gate failures."
+    },
+    {
+      "priority": "P2",
+      "name": "P95 Latency Elevated",
+      "description": "P95 latency exceeds 45 seconds",
+      "condition": {
+        "metric": "orchestrator.latency.p95",
+        "operator": ">",
+        "threshold": 45000,
+        "duration": "15m"
+      },
+      "severity": "high",
+      "routes": ["email"],
+      "runbook": "https://docs.internal/runbooks/latency-elevated",
+      "action": "Check upstream API latency. Review recent operation logs for timeouts."
+    },
+    {
+      "priority": "P2",
+      "name": "Monthly Budget Alert",
+      "description": "Monthly spend exceeds 75% of $500 cap",
+      "condition": {
+        "metric": "orchestrator.cost.monthly",
+        "operator": ">=",
+        "threshold": 375.0,
+        "duration": "5m"
+      },
+      "severity": "high",
+      "routes": ["email"],
+      "runbook": "https://docs.internal/runbooks/budget-alert",
+      "action": "Review cost trends. Consider reducing non-essential operations."
+    },
+    {
+      "priority": "P3",
+      "name": "P99 Latency Elevated",
+      "description": "P99 latency exceeds 90 seconds",
+      "condition": {
+        "metric": "orchestrator.latency.p99",
+        "operator": ">",
+        "threshold": 90000,
+        "duration": "30m"
+      },
+      "severity": "medium",
+      "routes": ["slack"],
+      "runbook": "https://docs.internal/runbooks/latency-p99",
+      "action": "Monitor trend. Investigate if P95 also elevated."
+    },
+    {
+      "priority": "P3",
+      "name": "Fallback Rate High",
+      "description": "More than 10% of operations using fallback",
+      "condition": {
+        "metric": "orchestrator.fallback_rate",
+        "operator": ">",
+        "threshold": 10,
+        "duration": "30m"
+      },
+      "severity": "medium",
+      "routes": ["slack"],
+      "runbook": "https://docs.internal/runbooks/fallback-high",
+      "action": "Primary service may be degraded. Check circuit breaker states."
+    },
+    {
+      "priority": "P3",
+      "name": "Cost Per Document Elevated",
+      "description": "Average cost per document exceeds $0.75",
+      "condition": {
+        "metric": "orchestrator.cost.per_document",
+        "operator": ">",
+        "threshold": 0.75,
+        "duration": "1h"
+      },
+      "severity": "medium",
+      "routes": ["slack"],
+      "runbook": "https://docs.internal/runbooks/cost-per-doc",
+      "action": "Review recent operations for cost anomalies. Check image generation costs."
+    },
+    {
+      "priority": "P3",
+      "name": "Brand Compliance Failure",
+      "description": "Brand compliance validation failure detected",
+      "condition": {
+        "metric": "orchestrator.validation.brand_compliance.pass_rate",
+        "operator": "<",
+        "threshold": 100,
+        "duration": "5m"
+      },
+      "severity": "medium",
+      "routes": ["slack"],
+      "runbook": "https://docs.internal/runbooks/brand-compliance",
+      "action": "Review validation logs. Check for color/font violations."
+    },
+    {
+      "priority": "P4",
+      "name": "Golden Snapshot Drift",
+      "description": "Visual regression SSIM below 0.95 threshold",
+      "condition": {
+        "metric": "orchestrator.validation.visual_ssim",
+        "operator": "<",
+        "threshold": 0.95,
+        "duration": "5m"
+      },
+      "severity": "low",
+      "routes": ["email_digest"],
+      "runbook": "https://docs.internal/runbooks/visual-drift",
+      "action": "Review visual diff. Update golden snapshot if change is intentional."
+    },
+    {
+      "priority": "P4",
+      "name": "Quota Usage Warning",
+      "description": "API quota usage exceeds 50%",
+      "condition": {
+        "metric": "orchestrator.quota.usage_percent",
+        "operator": ">",
+        "threshold": 50,
+        "duration": "15m"
+      },
+      "severity": "low",
+      "routes": ["email_digest"],
+      "runbook": "https://docs.internal/runbooks/quota-warning",
+      "action": "Monitor usage. Plan for potential quota increase if trend continues."
+    }
+  ],
+  "notificationChannels": {
+    "slack": {
+      "type": "slack",
+      "webhook_url": "${SLACK_WEBHOOK_URL}",
+      "channel": "#pdf-orchestrator-alerts",
+      "username": "PDF Orchestrator Alerting",
+      "icon_emoji": ":warning:"
+    },
+    "email": {
+      "type": "email",
+      "to": ["tech-lead@teei.org"],
+      "from": "alerts@teei.org",
+      "smtp_host": "${SMTP_HOST}",
+      "smtp_port": 587,
+      "smtp_user": "${SMTP_USER}",
+      "smtp_pass": "${SMTP_PASS}"
+    },
+    "pagerduty": {
+      "type": "pagerduty",
+      "integration_key": "${PAGERDUTY_INTEGRATION_KEY}",
+      "severity": "critical"
+    },
+    "email_digest": {
+      "type": "email_digest",
+      "to": ["tech-lead@teei.org"],
+      "from": "alerts@teei.org",
+      "frequency": "daily",
+      "time": "09:00"
+    }
+  },
+  "escalationPolicy": {
+    "P1": {
+      "immediate": ["pagerduty"],
+      "after_5m": ["email"],
+      "after_15m": ["pagerduty"]
+    },
+    "P2": {
+      "immediate": ["slack"],
+      "after_10m": ["email"]
+    },
+    "P3": {
+      "immediate": ["slack"]
+    },
+    "P4": {
+      "daily_digest": ["email_digest"]
+    }
+  }
+}

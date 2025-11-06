@@ -1,0 +1,57 @@
+{
+  "jobType": "campaign",
+  "templateId": "campaign-flyer-v2",
+  "humanSession": true,
+  "data": {
+    "campaignName": "Spring 2025 Product Launch",
+    "assets": [
+      {
+        "assetType": "flyer",
+        "content": {
+          "headline": "Revolutionize Your Workflow",
+          "body": "Discover our new AI-powered automation suite designed to save you time and boost productivity.",
+          "images": [
+            "https://example.com/product-hero.jpg"
+          ],
+          "callToAction": "Learn More at example.com",
+          "branding": {
+            "logo": "https://example.com/logo.svg",
+            "colors": [
+              "#0066CC",
+              "#FF6600",
+              "#333333"
+            ]
+          }
+        }
+      },
+      {
+        "assetType": "social-media",
+        "content": {
+          "headline": "New Launch Alert!",
+          "body": "We're excited to introduce our latest innovation. Stay tuned!",
+          "images": [
+            "https://example.com/social-teaser.jpg"
+          ],
+          "callToAction": "Follow for Updates",
+          "branding": {
+            "logo": "https://example.com/logo.svg",
+            "colors": [
+              "#0066CC",
+              "#FF6600"
+            ]
+          }
+        }
+      }
+    ],
+    "metadata": {
+      "client": "Your Personal AI",
+      "startDate": "2025-03-01",
+      "endDate": "2025-05-31"
+    }
+  },
+  "output": {
+    "format": "pdf-print",
+    "destination": "campaigns/spring-2025/",
+    "quality": "high"
+  }
+}

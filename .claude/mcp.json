@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "adobe-indesign": {
+      "command": "cmd",
+      "args": ["/c", "mcp-local\\launch-indesign.cmd"]
+    },
+    "adobe-illustrator": {
+      "command": "cmd",
+      "args": ["/c", "mcp-local\\launch-illustrator.cmd"]
+    }
+  }
+}

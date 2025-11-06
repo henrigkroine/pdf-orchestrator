@@ -1,0 +1,71 @@
+{
+  "orchestrator": {
+    "name": "PDF Orchestrator",
+    "version": "1.0.0",
+    "port": 3000,
+    "logLevel": "info"
+  },
+  "workers": {
+    "mcp": {
+      "enabled": true,
+      "host": "localhost",
+      "port": 8012,
+      "protocol": "http",
+      "timeout": 300000,
+      "description": "MCP worker for human-session InDesign/Illustrator automation"
+    },
+    "pdfServices": {
+      "enabled": true,
+      "baseUrl": "https://pdf-services.adobe.io",
+      "timeout": 120000,
+      "description": "Adobe PDF Services API worker for serverless automation"
+    }
+  },
+  "routing": {
+    "defaultWorker": "pdfServices",
+    "rules": [
+      {
+        "condition": "humanSession === true",
+        "worker": "mcp"
+      },
+      {
+        "condition": "jobType === 'campaign' && output.quality === 'high'",
+        "worker": "mcp",
+        "reason": "High-quality campaigns benefit from human oversight"
+      },
+      {
+        "condition": "jobType === 'report' && humanSession === false",
+        "worker": "pdfServices",
+        "reason": "Automated reports can use serverless pipeline"
+      }
+    ]
+  },
+  "validation": {
+    "enabled": true,
+    "schemasPath": "./schemas",
+    "strictMode": true
+  },
+  "storage": {
+    "provider": "r2",
+    "buckets": {
+      "outputs": "pdf-outputs",
+      "source": "assets-source",
+      "renditions": "assets-renditions"
+    },
+    "region": "EEUR",
+    "localCache": {
+      "enabled": true,
+      "path": "./cache",
+      "ttl": 3600
+    }
+  },
+  "templates": {
+    "registryPath": "./templates/template-registry.json",
+    "basePath": "./templates"
+  },
+  "ai": {
+    "enabled": true,
+    "model": "claude-3-5-sonnet-20241022",
+    "purpose": "Intelligent job routing and validation assistance"
+  }
+}

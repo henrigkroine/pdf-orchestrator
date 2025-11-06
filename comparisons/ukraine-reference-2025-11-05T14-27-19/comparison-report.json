@@ -1,0 +1,82 @@
+{
+  "testPDF": "T:\\Projects\\pdf-orchestrator\\exports\\ukraine-tiny.pdf",
+  "reference": "ukraine-reference",
+  "timestamp": "2025-11-05T14:27:19.497Z",
+  "pages": [
+    {
+      "page": 1,
+      "diffPercentage": 10.191718382077859,
+      "diffPixels": 444597,
+      "totalPixels": 4362336,
+      "classification": "critical",
+      "analysis": {
+        "textCutoffs": [],
+        "layoutChanges": []
+      },
+      "screenshots": {
+        "test": "page-1-test.png",
+        "diff": "page-1-diff.png",
+        "comparison": "page-1-comparison.png"
+      }
+    },
+    {
+      "page": 2,
+      "diffPercentage": 5.5106713467279915,
+      "diffPixels": 240394,
+      "totalPixels": 4362336,
+      "classification": "critical",
+      "analysis": {
+        "textCutoffs": [],
+        "layoutChanges": []
+      },
+      "screenshots": {
+        "test": "page-2-test.png",
+        "diff": "page-2-diff.png",
+        "comparison": "page-2-comparison.png"
+      }
+    },
+    {
+      "page": 3,
+      "diffPercentage": 4.9256407576124355,
+      "diffPixels": 214873,
+      "totalPixels": 4362336,
+      "classification": "critical",
+      "analysis": {
+        "textCutoffs": [],
+        "layoutChanges": []
+      },
+      "screenshots": {
+        "test": "page-3-test.png",
+        "diff": "page-3-diff.png",
+        "comparison": "page-3-comparison.png"
+      }
+    },
+    {
+      "page": 4,
+      "diffPercentage": 96.68954890223954,
+      "diffPixels": 4217923,
+      "totalPixels": 4362336,
+      "classification": "critical",
+      "analysis": {
+        "textCutoffs": [],
+        "layoutChanges": []
+      },
+      "screenshots": {
+        "test": "page-4-test.png",
+        "diff": "page-4-diff.png",
+        "comparison": "page-4-comparison.png"
+      }
+    }
+  ],
+  "summary": {
+    "passed": 0,
+    "minor": 0,
+    "warnings": 0,
+    "major": 0,
+    "critical": 4,
+    "totalDiffPercentage": 117.31757938865782,
+    "averageDiffPercentage": 23.463515877731563
+  },
+  "testPageCount": 5,
+  "referencePageCount": 4
+}

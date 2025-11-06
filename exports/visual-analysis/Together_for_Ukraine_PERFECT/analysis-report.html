@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Visual Analysis Report - Together_for_Ukraine_PERFECT</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+    h1 { color: #00393F; }
+    .summary { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    .summary h2 { color: #00393F; margin-top: 0; }
+    .status { display: inline-block; padding: 5px 15px; border-radius: 4px; font-weight: bold; margin: 5px; }
+    .pass { background: #4CAF50; color: white; }
+    .fail { background: #F44336; color: white; }
+    .warning { background: #FF9800; color: white; }
+    .pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
+    .page { background: white; padding: 15px; border-radius: 8px; }
+    .page img { width: 100%; border: 1px solid #ddd; }
+    .page h3 { color: #00393F; margin-top: 0; }
+    .issue { background: #FFF3E0; padding: 10px; border-left: 4px solid #FF9800; margin: 10px 0; }
+    .colors { display: flex; gap: 10px; flex-wrap: wrap; }
+    .color-box { padding: 10px; border-radius: 4px; min-width: 150px; }
+  </style>
+</head>
+<body>
+  <h1>📊 Visual Analysis Report</h1>
+  <h2>PDF: Together_for_Ukraine_PERFECT</h2>
+
+  <div class="summary">
+    <h2>Summary</h2>
+    <p><strong>Total Pages:</strong> 4</p>
+    <p><strong>Page Dimensions:</strong> <span class="status pass">✅ PASS</span></p>
+    <p><strong>Text Cutoffs:</strong> <span class="status warning">⚠️ WARNING</span></p>
+    <p><strong>Font Usage:</strong> <span class="status warning">⚠️ WARNING</span></p>
+    <p><strong>Brand Colors:</strong> <span class="status pass">✅ PASS</span></p>
+
+    
+
+    
+    <h3>Detected TEEI Brand Colors:</h3>
+    <div class="colors">
+      
+        <div class="color-box" style="background: #00393F; color: white;">
+          <strong>Nordshore</strong><br>
+          #00393F<br>
+          RGB(0, 57, 63)
+        </div>
+      
+        <div class="color-box" style="background: #FFF1E2; color: white;">
+          <strong>Sand</strong><br>
+          #FFF1E2<br>
+          RGB(255, 241, 226)
+        </div>
+      
+    </div>
+    
+  </div>
+
+  <h2>Annotated Pages</h2>
+  <div class="pages">
+    
+        <div class="page">
+          <h3>Page 1</h3>
+          <img src="page-1-annotated.png" alt="Page 1">
+          <p>✅ Page dimensions correct</p>
+        </div>
+      
+        <div class="page">
+          <h3>Page 2</h3>
+          <img src="page-2-annotated.png" alt="Page 2">
+          <p>✅ Page dimensions correct</p>
+        </div>
+      
+        <div class="page">
+          <h3>Page 3</h3>
+          <img src="page-3-annotated.png" alt="Page 3">
+          <p>✅ Page dimensions correct</p>
+        </div>
+      
+        <div class="page">
+          <h3>Page 4</h3>
+          <img src="page-4-annotated.png" alt="Page 4">
+          <p>✅ Page dimensions correct</p>
+        </div>
+      
+  </div>
+</body>
+</html>

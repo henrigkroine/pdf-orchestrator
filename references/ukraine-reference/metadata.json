@@ -1,0 +1,277 @@
+{
+  "documentName": "ukraine-reference",
+  "sourcePDF": "T:\\Projects\\pdf-orchestrator\\exports\\ukraine-perfect.pdf",
+  "scale": 3,
+  "createdAt": "2025-11-05T14:26:09.020Z",
+  "pages": [
+    {
+      "page": 1,
+      "width": 1836,
+      "height": 2376,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 20,
+          "stdev": 68,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 70,
+          "stdev": 45,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 62,
+          "stdev": 31,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 130007,
+      "timestamp": "2025-11-05T14:26:09.580Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": true,
+          "contentDensity": "100.00",
+          "totalPixels": 218484,
+          "nonWhitePixels": 218484
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-1.png"
+    },
+    {
+      "page": 2,
+      "width": 1836,
+      "height": 2376,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 246,
+          "stdev": 42,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 247,
+          "stdev": 38,
+          "min": 51,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 247,
+          "stdev": 37,
+          "min": 51,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 519762,
+      "timestamp": "2025-11-05T14:26:10.068Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.30",
+          "totalPixels": 218484,
+          "nonWhitePixels": 655
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-2.png"
+    },
+    {
+      "page": 3,
+      "width": 1836,
+      "height": 2376,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 246,
+          "stdev": 39,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 246,
+          "stdev": 38,
+          "min": 51,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 247,
+          "stdev": 38,
+          "min": 51,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 617929,
+      "timestamp": "2025-11-05T14:26:10.553Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.30",
+          "totalPixels": 218484,
+          "nonWhitePixels": 655
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-3.png"
+    },
+    {
+      "page": 4,
+      "width": 1836,
+      "height": 2376,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 20,
+          "stdev": 68,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 70,
+          "stdev": 45,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 63,
+          "stdev": 31,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 208696,
+      "timestamp": "2025-11-05T14:26:10.880Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": true,
+          "contentDensity": "100.00",
+          "totalPixels": 218484,
+          "nonWhitePixels": 218484
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-4.png"
+    }
+  ],
+  "pageCount": 4
+}

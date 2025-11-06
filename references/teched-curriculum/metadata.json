@@ -1,0 +1,746 @@
+{
+  "documentName": "teched-curriculum",
+  "sourcePDF": "T:\\Projects\\pdf-orchestrator\\exports\\teched-curriculum.pdf",
+  "scale": 3,
+  "createdAt": "2025-11-05T21:39:16.957Z",
+  "pages": [
+    {
+      "page": 1,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 62,
+          "stdev": 96,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 99,
+          "stdev": 76,
+          "min": 18,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 101,
+          "stdev": 72,
+          "min": 3,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 2154801,
+      "timestamp": "2025-11-05T21:39:18.204Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": true,
+          "contentDensity": "14.29",
+          "totalPixels": 225162,
+          "nonWhitePixels": 32166
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-1.png"
+    },
+    {
+      "page": 2,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 228,
+          "stdev": 47,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 238,
+          "stdev": 40,
+          "min": 26,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 241,
+          "stdev": 39,
+          "min": 26,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 559553,
+      "timestamp": "2025-11-05T21:39:18.836Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-2.png"
+    },
+    {
+      "page": 3,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 202,
+          "stdev": 95,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 213,
+          "stdev": 71,
+          "min": 25,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 211,
+          "stdev": 68,
+          "min": 26,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 516415,
+      "timestamp": "2025-11-05T21:39:19.577Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-3.png"
+    },
+    {
+      "page": 4,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 194,
+          "stdev": 101,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 207,
+          "stdev": 75,
+          "min": 25,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 206,
+          "stdev": 71,
+          "min": 26,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 486897,
+      "timestamp": "2025-11-05T21:39:20.119Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-4.png"
+    },
+    {
+      "page": 5,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 203,
+          "stdev": 95,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 213,
+          "stdev": 70,
+          "min": 25,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 211,
+          "stdev": 67,
+          "min": 26,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 471994,
+      "timestamp": "2025-11-05T21:39:20.643Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-5.png"
+    },
+    {
+      "page": 6,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 202,
+          "stdev": 95,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 213,
+          "stdev": 70,
+          "min": 25,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 211,
+          "stdev": 67,
+          "min": 26,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 532702,
+      "timestamp": "2025-11-05T21:39:21.200Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-6.png"
+    },
+    {
+      "page": 7,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 203,
+          "stdev": 95,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 213,
+          "stdev": 70,
+          "min": 25,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 211,
+          "stdev": 68,
+          "min": 26,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 524768,
+      "timestamp": "2025-11-05T21:39:21.734Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-7.png"
+    },
+    {
+      "page": 8,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 204,
+          "stdev": 95,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 214,
+          "stdev": 70,
+          "min": 25,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 211,
+          "stdev": 67,
+          "min": 26,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 503215,
+      "timestamp": "2025-11-05T21:39:22.198Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-8.png"
+    },
+    {
+      "page": 9,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 203,
+          "stdev": 95,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 213,
+          "stdev": 70,
+          "min": 25,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 211,
+          "stdev": 67,
+          "min": 26,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 531172,
+      "timestamp": "2025-11-05T21:39:22.738Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-9.png"
+    },
+    {
+      "page": 10,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 246,
+          "stdev": 43,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 242,
+          "stdev": 37,
+          "min": 51,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 237,
+          "stdev": 39,
+          "min": 51,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 390458,
+      "timestamp": "2025-11-05T21:39:23.203Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-10.png"
+    },
+    {
+      "page": 11,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 212,
+          "stdev": 86,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 225,
+          "stdev": 65,
+          "min": 19,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 227,
+          "stdev": 63,
+          "min": 26,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 315001,
+      "timestamp": "2025-11-05T21:39:23.803Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": true,
+          "contentDensity": "11.28",
+          "totalPixels": 225162,
+          "nonWhitePixels": 25401
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-11.png"
+    }
+  ],
+  "pageCount": 11
+}

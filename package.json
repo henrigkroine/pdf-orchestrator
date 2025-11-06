@@ -1,0 +1,52 @@
+{
+  "name": "pdf-orchestrator",
+  "version": "1.0.0",
+  "description": "Intelligent PDF automation system routing between MCP workers and Adobe PDF Services API",
+  "main": "orchestrator.js",
+  "scripts": {
+    "start": "node orchestrator.js",
+    "test": "node tests/telemetry.test.js",
+    "test:telemetry": "node tests/telemetry.test.js",
+    "test:cost": "node tests/cost-tracker.test.js",
+    "test:job": "node orchestrator.js example-jobs/report-sample.json",
+    "test:report": "node orchestrator.js example-jobs/report-sample.json",
+    "test:campaign": "node orchestrator.js example-jobs/campaign-sample.json",
+    "check-budget": "node scripts/check-budget.js",
+    "start-metrics": "node start-metrics-aggregator.js",
+    "test-alert": "node scripts/send-alert.js"
+  },
+  "keywords": [
+    "pdf",
+    "automation",
+    "adobe",
+    "indesign",
+    "illustrator",
+    "mcp",
+    "cost-tracking",
+    "circuit-breaker"
+  ],
+  "author": "Henrik Røine",
+  "license": "PRIVATE",
+  "dependencies": {
+    "ajv": "^8.12.0",
+    "ajv-formats": "^3.0.1",
+    "canvas": "^3.2.0",
+    "dotenv": "^16.4.0",
+    "mammoth": "^1.11.0",
+    "openai": "^6.8.1",
+    "pdf-lib": "^1.17.1",
+    "pdf-poppler": "^0.2.3",
+    "pdf-to-img": "^5.0.0",
+    "pdf.js-extract": "^0.2.1",
+    "pdfjs-dist": "^5.4.394",
+    "pixelmatch": "^7.1.0",
+    "playwright": "^1.56.1",
+    "pngjs": "^7.0.0",
+    "sharp": "^0.34.4",
+    "sqlite3": "^5.1.7",
+    "uuid": "^10.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

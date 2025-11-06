@@ -1,0 +1,68 @@
+{
+  "proxy_url": "http://localhost:8013",
+  "export_path": "./exports",
+  "pdf_preset": "High Quality Print",
+  "validation_threshold": 80,
+  "auto_fix_colors": true,
+  "auto_fix_missing_assets": false,
+  "export_formats": ["pdf"],
+  "notification_webhook": null,
+  "ci_mode": false,
+
+  "quality_presets": {
+    "production": {
+      "validation_threshold": 95,
+      "pdf_preset": "Press Quality",
+      "export_formats": ["pdf", "png"],
+      "auto_fix_colors": true
+    },
+    "draft": {
+      "validation_threshold": 60,
+      "pdf_preset": "Smallest File Size",
+      "export_formats": ["pdf"],
+      "auto_fix_colors": false
+    },
+    "review": {
+      "validation_threshold": 75,
+      "pdf_preset": "High Quality Print",
+      "export_formats": ["pdf"],
+      "auto_fix_colors": true
+    }
+  },
+
+  "expected_content": {
+    "organization": ["TEEI", "Educational Equality Institute"],
+    "partner": ["AWS", "Amazon Web Services"],
+    "required_sections": ["Mission", "Impact", "Partnership", "Contact"]
+  },
+
+  "brand_colors": {
+    "TEEI_Teal": {
+      "rgb": [0, 57, 63],
+      "hex": "#00393f"
+    },
+    "TEEI_Gold": {
+      "rgb": [186, 143, 90],
+      "hex": "#BA8F5A"
+    },
+    "TEEI_Light": {
+      "rgb": [248, 250, 252],
+      "hex": "#f8fafc"
+    }
+  },
+
+  "automation": {
+    "retry_on_failure": true,
+    "max_retries": 3,
+    "retry_delay_seconds": 5,
+    "parallel_exports": false,
+    "cleanup_old_exports": true,
+    "max_export_age_days": 7
+  },
+
+  "notifications": {
+    "slack_webhook": null,
+    "email_on_failure": null,
+    "teams_webhook": null
+  }
+}

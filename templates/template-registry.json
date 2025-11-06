@@ -1,0 +1,28 @@
+{
+  "templates": {
+    "report-annual-v1": {
+      "file": "./reports/annual-report.indt",
+      "application": "indesign",
+      "version": "1.0",
+      "description": "Standard annual report template",
+      "cloudAssetId": null,
+      "requiredFields": ["title", "subtitle", "author", "date", "content"]
+    },
+    "report-monthly-v1": {
+      "file": "./reports/monthly-summary.indt",
+      "application": "indesign",
+      "version": "1.0",
+      "description": "Monthly summary report template",
+      "cloudAssetId": null,
+      "requiredFields": ["title", "month", "year", "content"]
+    },
+    "campaign-flyer-v2": {
+      "file": "./campaigns/flyer-template.ait",
+      "application": "illustrator",
+      "version": "2.0",
+      "description": "Marketing flyer template with variable data",
+      "cloudAssetId": null,
+      "requiredFields": ["headline", "body", "callToAction", "images"]
+    }
+  }
+}

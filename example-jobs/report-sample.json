@@ -1,0 +1,50 @@
+{
+  "jobType": "report",
+  "templateId": "report-annual-v1",
+  "humanSession": false,
+  "data": {
+    "title": "2024 Annual Report",
+    "subtitle": "Year in Review",
+    "content": [
+      {
+        "type": "text",
+        "content": "Executive Summary: This year marked significant growth across all business units..."
+      },
+      {
+        "type": "chart",
+        "content": {
+          "chartType": "bar",
+          "title": "Revenue Growth by Quarter",
+          "data": [
+            { "quarter": "Q1", "revenue": 2500000 },
+            { "quarter": "Q2", "revenue": 2800000 },
+            { "quarter": "Q3", "revenue": 3100000 },
+            { "quarter": "Q4", "revenue": 3500000 }
+          ]
+        }
+      },
+      {
+        "type": "table",
+        "content": {
+          "title": "Key Metrics",
+          "headers": ["Metric", "2023", "2024", "Change"],
+          "rows": [
+            ["Revenue", "$10M", "$12M", "+20%"],
+            ["Customers", "500", "650", "+30%"],
+            ["Employees", "50", "65", "+30%"]
+          ]
+        }
+      }
+    ],
+    "metadata": {
+      "author": "Henrik Røine",
+      "date": "2024-12-31",
+      "organization": "Your Personal AI"
+    }
+  },
+  "output": {
+    "format": "pdf",
+    "destination": "reports/2024/annual-report.pdf",
+    "quality": "standard"
+  }
+}

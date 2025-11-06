@@ -1,0 +1,339 @@
+{
+  "dashboard": {
+    "id": null,
+    "uid": "pdf-orchestrator-quality",
+    "title": "PDF Orchestrator - Quality",
+    "description": "Quality and validation metrics for PDF Orchestrator",
+    "tags": ["pdf-orchestrator", "quality", "validation"],
+    "timezone": "browser",
+    "schemaVersion": 38,
+    "version": 1,
+    "refresh": "1m",
+    "time": {
+      "from": "now-24h",
+      "to": "now"
+    },
+    "panels": [
+      {
+        "id": 1,
+        "title": "Accessibility Pass Rate",
+        "type": "stat",
+        "gridPos": { "x": 0, "y": 0, "w": 6, "h": 8 },
+        "targets": [
+          {
+            "refId": "A",
+            "expr": "sum(orchestrator_validation_accessibility_pass) / sum(orchestrator_validation_total) * 100",
+            "datasource": "Prometheus"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                { "value": 0, "color": "red" },
+                { "value": 90, "color": "yellow" },
+                { "value": 95, "color": "green" }
+              ]
+            },
+            "decimals": 1
+          }
+        },
+        "options": {
+          "colorMode": "background",
+          "graphMode": "area",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "reduceOptions": {
+            "values": false,
+            "calcs": ["lastNotNull"]
+          },
+          "textMode": "value_and_name",
+          "text": {
+            "titleSize": 18,
+            "valueSize": 48
+          }
+        }
+      },
+      {
+        "id": 2,
+        "title": "Visual SSIM Average",
+        "type": "timeseries",
+        "gridPos": { "x": 6, "y": 0, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "refId": "A",
+            "expr": "orchestrator_validation_visual_ssim_avg",
+            "legendFormat": "Average SSIM",
+            "datasource": "Prometheus"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short",
+            "min": 0,
+            "max": 1,
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "lineInterpolation": "smooth",
+              "lineWidth": 2,
+              "fillOpacity": 20,
+              "gradientMode": "opacity",
+              "axisPlacement": "auto",
+              "drawStyle": "line"
+            },
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                { "value": 0, "color": "red" },
+                { "value": 0.95, "color": "green" }
+              ]
+            }
+          }
+        },
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        }
+      },
+      {
+        "id": 3,
+        "title": "Brand Compliance Rate",
+        "type": "stat",
+        "gridPos": { "x": 18, "y": 0, "w": 6, "h": 8 },
+        "targets": [
+          {
+            "refId": "A",
+            "expr": "sum(orchestrator_validation_brand_compliance_pass) / sum(orchestrator_validation_total) * 100",
+            "datasource": "Prometheus"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent",
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                { "value": 0, "color": "red" },
+                { "value": 95, "color": "yellow" },
+                { "value": 100, "color": "green" }
+              ]
+            },
+            "decimals": 1
+          }
+        },
+        "options": {
+          "colorMode": "background",
+          "graphMode": "area",
+          "justifyMode": "center",
+          "orientation": "auto",
+          "reduceOptions": {
+            "values": false,
+            "calcs": ["lastNotNull"]
+          },
+          "textMode": "value_and_name",
+          "text": {
+            "titleSize": 18,
+            "valueSize": 48
+          }
+        }
+      },
+      {
+        "id": 4,
+        "title": "Validation Gate Pass Rates",
+        "type": "barchart",
+        "gridPos": { "x": 0, "y": 8, "w": 12, "h": 10 },
+        "targets": [
+          {
+            "refId": "A",
+            "expr": "sum(orchestrator_gate_pass{gate='input_validation'}) / sum(orchestrator_gate_total{gate='input_validation'}) * 100",
+            "legendFormat": "Input Validation",
+            "datasource": "Prometheus"
+          },
+          {
+            "refId": "B",
+            "expr": "sum(orchestrator_gate_pass{gate='asset_validation'}) / sum(orchestrator_gate_total{gate='asset_validation'}) * 100",
+            "legendFormat": "Asset Validation",
+            "datasource": "Prometheus"
+          },
+          {
+            "refId": "C",
+            "expr": "sum(orchestrator_gate_pass{gate='pdf_validation'}) / sum(orchestrator_gate_total{gate='pdf_validation'}) * 100",
+            "legendFormat": "PDF Validation",
+            "datasource": "Prometheus"
+          },
+          {
+            "refId": "D",
+            "expr": "sum(orchestrator_gate_pass{gate='visual_regression'}) / sum(orchestrator_gate_total{gate='visual_regression'}) * 100",
+            "legendFormat": "Visual Regression",
+            "datasource": "Prometheus"
+          },
+          {
+            "refId": "E",
+            "expr": "sum(orchestrator_gate_pass{gate='brand_compliance'}) / sum(orchestrator_gate_total{gate='brand_compliance'}) * 100",
+            "legendFormat": "Brand Compliance",
+            "datasource": "Prometheus"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "percent",
+            "color": {
+              "mode": "thresholds"
+            },
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                { "value": 0, "color": "red" },
+                { "value": 90, "color": "yellow" },
+                { "value": 95, "color": "green" }
+              ]
+            }
+          }
+        },
+        "options": {
+          "orientation": "horizontal",
+          "xField": "gate",
+          "showValue": "always",
+          "legend": {
+            "displayMode": "list",
+            "placement": "right",
+            "showLegend": true
+          }
+        }
+      },
+      {
+        "id": 5,
+        "title": "Recent Validation Failures",
+        "type": "table",
+        "gridPos": { "x": 12, "y": 8, "w": 12, "h": 10 },
+        "targets": [
+          {
+            "refId": "A",
+            "expr": "orchestrator_validation_failures",
+            "format": "table",
+            "datasource": "Prometheus"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "custom": {
+              "align": "auto",
+              "displayMode": "auto"
+            }
+          },
+          "overrides": [
+            {
+              "matcher": { "id": "byName", "options": "Time" },
+              "properties": [{ "id": "custom.width", "value": 150 }]
+            },
+            {
+              "matcher": { "id": "byName", "options": "gate" },
+              "properties": [{ "id": "custom.width", "value": 150 }]
+            }
+          ]
+        },
+        "options": {
+          "showHeader": true,
+          "sortBy": [
+            {
+              "desc": true,
+              "displayName": "Time"
+            }
+          ]
+        }
+      },
+      {
+        "id": 6,
+        "title": "Image Resolution Distribution",
+        "type": "histogram",
+        "gridPos": { "x": 0, "y": 18, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "refId": "A",
+            "expr": "orchestrator_asset_resolution_dpi",
+            "datasource": "Prometheus"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "short",
+            "color": {
+              "mode": "palette-classic"
+            }
+          }
+        },
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          }
+        }
+      },
+      {
+        "id": 7,
+        "title": "PDF File Size Distribution",
+        "type": "histogram",
+        "gridPos": { "x": 12, "y": 18, "w": 12, "h": 8 },
+        "targets": [
+          {
+            "refId": "A",
+            "expr": "orchestrator_pdf_file_size_bytes",
+            "datasource": "Prometheus"
+          }
+        ],
+        "fieldConfig": {
+          "defaults": {
+            "unit": "decbytes",
+            "color": {
+              "mode": "palette-classic"
+            }
+          }
+        },
+        "options": {
+          "legend": {
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          }
+        }
+      }
+    ],
+    "templating": {
+      "list": [
+        {
+          "type": "query",
+          "name": "document_type",
+          "label": "Document Type",
+          "query": "label_values(orchestrator_validation_total, doc_slug)",
+          "datasource": "Prometheus",
+          "refresh": 1,
+          "sort": 1
+        }
+      ]
+    },
+    "annotations": {
+      "list": [
+        {
+          "datasource": "Prometheus",
+          "enable": true,
+          "expr": "orchestrator_validation_failures{gate='brand_compliance'}",
+          "iconColor": "red",
+          "name": "Brand Compliance Failures",
+          "tagKeys": "gate,doc_slug"
+        }
+      ]
+    }
+  }
+}

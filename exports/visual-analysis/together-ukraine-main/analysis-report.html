@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Visual Analysis Report - together-ukraine-main</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 1200px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
+    h1 { color: #00393F; }
+    .summary { background: white; padding: 20px; border-radius: 8px; margin-bottom: 20px; }
+    .summary h2 { color: #00393F; margin-top: 0; }
+    .status { display: inline-block; padding: 5px 15px; border-radius: 4px; font-weight: bold; margin: 5px; }
+    .pass { background: #4CAF50; color: white; }
+    .fail { background: #F44336; color: white; }
+    .warning { background: #FF9800; color: white; }
+    .pages { display: grid; grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); gap: 20px; }
+    .page { background: white; padding: 15px; border-radius: 8px; }
+    .page img { width: 100%; border: 1px solid #ddd; }
+    .page h3 { color: #00393F; margin-top: 0; }
+    .issue { background: #FFF3E0; padding: 10px; border-left: 4px solid #FF9800; margin: 10px 0; }
+    .colors { display: flex; gap: 10px; flex-wrap: wrap; }
+    .color-box { padding: 10px; border-radius: 4px; min-width: 150px; }
+  </style>
+</head>
+<body>
+  <h1>📊 Visual Analysis Report</h1>
+  <h2>PDF: together-ukraine-main</h2>
+
+  <div class="summary">
+    <h2>Summary</h2>
+    <p><strong>Total Pages:</strong> 8</p>
+    <p><strong>Page Dimensions:</strong> <span class="status fail">❌ FAIL</span></p>
+    <p><strong>Text Cutoffs:</strong> <span class="status pass">✅ PASS</span></p>
+    <p><strong>Font Usage:</strong> <span class="status warning">⚠️ WARNING</span></p>
+    <p><strong>Brand Colors:</strong> <span class="status pass">✅ PASS</span></p>
+
+    
+    <div class="issue">
+      <strong>❌ Dimension Issue:</strong>
+      8 page(s) have incorrect dimensions.<br>
+      <strong>Actual:</strong> 595 × 842 points (A4 size)<br>
+      <strong>Expected:</strong> 612 × 792 points (US Letter 8.5×11 inches)
+    </div>
+    
+
+    
+    <h3>Detected TEEI Brand Colors:</h3>
+    <div class="colors">
+      
+        <div class="color-box" style="background: #00393F; color: white;">
+          <strong>Nordshore</strong><br>
+          #00393F<br>
+          RGB(0, 57, 63)
+        </div>
+      
+        <div class="color-box" style="background: #C9E4EC; color: white;">
+          <strong>Sky</strong><br>
+          #C9E4EC<br>
+          RGB(201, 228, 236)
+        </div>
+      
+    </div>
+    
+  </div>
+
+  <h2>Annotated Pages</h2>
+  <div class="pages">
+    
+        <div class="page">
+          <h3>Page 1</h3>
+          <img src="page-1-annotated.png" alt="Page 1">
+          
+            <div class="issue">
+              <strong>❌ Wrong dimensions</strong><br>
+              Actual: 595 × 842pt<br>
+              Expected: 612 × 792pt
+            </div>
+          
+        </div>
+      
+        <div class="page">
+          <h3>Page 2</h3>
+          <img src="page-2-annotated.png" alt="Page 2">
+          
+            <div class="issue">
+              <strong>❌ Wrong dimensions</strong><br>
+              Actual: 595 × 842pt<br>
+              Expected: 612 × 792pt
+            </div>
+          
+        </div>
+      
+        <div class="page">
+          <h3>Page 3</h3>
+          <img src="page-3-annotated.png" alt="Page 3">
+          
+            <div class="issue">
+              <strong>❌ Wrong dimensions</strong><br>
+              Actual: 595 × 842pt<br>
+              Expected: 612 × 792pt
+            </div>
+          
+        </div>
+      
+        <div class="page">
+          <h3>Page 4</h3>
+          <img src="page-4-annotated.png" alt="Page 4">
+          
+            <div class="issue">
+              <strong>❌ Wrong dimensions</strong><br>
+              Actual: 595 × 842pt<br>
+              Expected: 612 × 792pt
+            </div>
+          
+        </div>
+      
+        <div class="page">
+          <h3>Page 5</h3>
+          <img src="page-5-annotated.png" alt="Page 5">
+          
+            <div class="issue">
+              <strong>❌ Wrong dimensions</strong><br>
+              Actual: 595 × 842pt<br>
+              Expected: 612 × 792pt
+            </div>
+          
+        </div>
+      
+        <div class="page">
+          <h3>Page 6</h3>
+          <img src="page-6-annotated.png" alt="Page 6">
+          
+            <div class="issue">
+              <strong>❌ Wrong dimensions</strong><br>
+              Actual: 595 × 842pt<br>
+              Expected: 612 × 792pt
+            </div>
+          
+        </div>
+      
+        <div class="page">
+          <h3>Page 7</h3>
+          <img src="page-7-annotated.png" alt="Page 7">
+          
+            <div class="issue">
+              <strong>❌ Wrong dimensions</strong><br>
+              Actual: 595 × 842pt<br>
+              Expected: 612 × 792pt
+            </div>
+          
+        </div>
+      
+        <div class="page">
+          <h3>Page 8</h3>
+          <img src="page-8-annotated.png" alt="Page 8">
+          
+            <div class="issue">
+              <strong>❌ Wrong dimensions</strong><br>
+              Actual: 595 × 842pt<br>
+              Expected: 612 × 792pt
+            </div>
+          
+        </div>
+      
+  </div>
+</body>
+</html>

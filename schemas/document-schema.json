@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Document Job Schema",
+  "description": "Schema for generic document generation jobs",
+  "type": "object",
+  "required": ["jobType", "jobId", "data", "output"],
+  "properties": {
+    "jobType": {
+      "type": "string",
+      "const": "document",
+      "description": "Job type identifier"
+    },
+    "jobId": {
+      "type": "string",
+      "description": "Unique job identifier"
+    },
+    "templateId": {
+      "type": "string",
+      "description": "Template to use for document generation"
+    },
+    "humanSession": {
+      "type": "boolean",
+      "description": "Whether this requires human interaction (MCP)",
+      "default": false
+    },
+    "data": {
+      "type": "object",
+      "description": "Document content data",
+      "required": ["title"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Document title"
+        },
+        "subtitle": {
+          "type": "string",
+          "description": "Document subtitle"
+        },
+        "metrics": {
+          "type": "object",
+          "description": "Numerical metrics to display"
+        },
+        "sections": {
+          "type": "array",
+          "description": "Content sections",
+          "items": {
+            "type": "object",
+            "properties": {
+              "heading": {
+                "type": "string"
+              },
+              "content": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "images": {
+      "type": "object",
+      "description": "Image generation/sourcing configuration"
+    },
+    "output": {
+      "type": "object",
+      "required": ["format", "destination"],
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": ["pdf", "pdf-print", "docx"]
+        },
+        "quality": {
+          "type": "string",
+          "enum": ["draft", "standard", "high", "print"],
+          "default": "standard"
+        },
+        "destination": {
+          "type": "string",
+          "description": "Output file path"
+        },
+        "colorProfile": {
+          "type": "string",
+          "enum": ["sRGB", "AdobeRGB", "FOGRA39"],
+          "default": "sRGB"
+        },
+        "accessibility": {
+          "type": "boolean",
+          "default": false
+        }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "description": "Validation gates to run"
+    },
+    "metadata": {
+      "type": "object",
+      "description": "Job metadata"
+    }
+  }
+}

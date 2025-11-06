@@ -1,0 +1,101 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://indesign-mcp.teei.org/schemas/v1/createTextOnPath",
+  "title": "createTextOnPath",
+  "description": "Create text that follows a curved path (circle, arc, or bezier)",
+  "type": "object",
+  "required": ["page", "x", "y", "diameter", "content"],
+  "properties": {
+    "page": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Page number (1-indexed)"
+    },
+    "x": {
+      "type": "number",
+      "description": "X coordinate in points from left edge"
+    },
+    "y": {
+      "type": "number",
+      "description": "Y coordinate in points from top edge"
+    },
+    "diameter": {
+      "type": "number",
+      "minimum": 10,
+      "maximum": 2000,
+      "description": "Diameter of circular path in points"
+    },
+    "content": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 500,
+      "description": "Text content to place on path"
+    },
+    "fontSize": {
+      "type": "number",
+      "minimum": 4,
+      "maximum": 200,
+      "default": 12,
+      "description": "Font size in points"
+    },
+    "textColor": {
+      "$ref": "#/definitions/RGBColor"
+    },
+    "pathEffect": {
+      "type": "string",
+      "enum": ["rainbow", "skew", "3d", "stair", "gravity"],
+      "default": "rainbow",
+      "description": "Visual effect applied to text on path"
+    },
+    "flipPath": {
+      "type": "boolean",
+      "default": false,
+      "description": "Flip text to opposite side of path"
+    },
+    "spacing": {
+      "type": "number",
+      "minimum": -100,
+      "maximum": 100,
+      "default": 0,
+      "description": "Letter spacing adjustment"
+    }
+  },
+  "definitions": {
+    "RGBColor": {
+      "type": "object",
+      "required": ["red", "green", "blue"],
+      "properties": {
+        "red": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "green": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        },
+        "blue": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 255
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false,
+  "examples": [
+    {
+      "page": 1,
+      "x": 200,
+      "y": 200,
+      "diameter": 150,
+      "content": "POWERED BY AWS",
+      "fontSize": 12,
+      "textColor": {"red": 212, "green": 175, "blue": 55},
+      "pathEffect": "rainbow",
+      "spacing": 0
+    }
+  ]
+}

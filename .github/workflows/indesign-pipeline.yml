@@ -1,0 +1,189 @@
+name: InDesign Document Pipeline
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'documents/**/*.indd'
+      - 'templates/**/*.indt'
+  pull_request:
+    branches: [ main ]
+    paths:
+      - 'documents/**/*.indd'
+      - 'templates/**/*.indt'
+  workflow_dispatch:
+    inputs:
+      document_path:
+        description: 'Path to InDesign document'
+        required: false
+        default: 'documents/TEEI_AWS_Partnership_Brief.indd'
+
+jobs:
+  validate-and-export:
+    runs-on: windows-latest
+
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v3
+
+    - name: Setup Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.10'
+
+    - name: Cache Python Dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements*.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
+
+    - name: Install Dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install -r requirements-extended.txt
+
+    - name: Setup InDesign Server Connection
+      run: |
+        # This would typically involve starting InDesign Server
+        # or connecting to a remote InDesign Server instance
+        echo "Setting up InDesign Server connection..."
+        # For actual implementation, you'd need InDesign Server or
+        # a Windows runner with InDesign installed
+
+    - name: Run Document Validation
+      id: validation
+      run: |
+        python pipeline.py \
+          --config pipeline.config.json \
+          --ci \
+          --threshold 85 \
+          --export-formats pdf png
+      continue-on-error: true
+
+    - name: Upload Exported Files
+      if: success() || failure()
+      uses: actions/upload-artifact@v3
+      with:
+        name: exported-documents
+        path: exports/
+
+    - name: Upload Validation Report
+      if: success() || failure()
+      uses: actions/upload-artifact@v3
+      with:
+        name: validation-report
+        path: pipeline_report_*.txt
+
+    - name: Parse Validation Results
+      if: success() || failure()
+      id: parse_results
+      run: |
+        import json
+        import os
+        import glob
+
+        # Find the latest report
+        reports = glob.glob('pipeline_report_*.json')
+        if reports:
+            with open(reports[-1], 'r') as f:
+                data = json.load(f)
+                score = data.get('score', 0)
+                success = data.get('success', False)
+
+                print(f"::set-output name=score::{score}")
+                print(f"::set-output name=success::{success}")
+
+                if not success:
+                    print(f"::error::Validation failed with score {score}/100")
+      shell: python
+
+    - name: Comment on PR
+      if: github.event_name == 'pull_request'
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const fs = require('fs');
+          const glob = require('glob');
+
+          // Read the latest report
+          const reports = glob.sync('pipeline_report_*.txt');
+          if (reports.length > 0) {
+            const report = fs.readFileSync(reports[reports.length - 1], 'utf8');
+
+            // Extract key metrics
+            const scoreMatch = report.match(/FINAL SCORE: (\d+)\/100/);
+            const score = scoreMatch ? scoreMatch[1] : 'Unknown';
+            const passed = report.includes('✅ PASSED');
+
+            const comment = `## InDesign Document Validation Results
+
+            ${passed ? '✅ **Validation Passed**' : '❌ **Validation Failed**'}
+
+            **Score:** ${score}/100
+
+            <details>
+            <summary>Full Report</summary>
+
+            \`\`\`
+            ${report}
+            \`\`\`
+
+            </details>
+
+            **Exported Files:** Check the artifacts for the exported documents.`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: comment
+            });
+          }
+
+    - name: Fail if validation failed
+      if: steps.validation.outcome == 'failure'
+      run: exit 1
+
+  deploy-to-staging:
+    needs: validate-and-export
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main' && success()
+
+    steps:
+    - name: Download Artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: exported-documents
+        path: ./exports
+
+    - name: Deploy to S3
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: us-east-1
+      run: |
+        aws s3 cp ./exports/ s3://teei-documents-staging/ \
+          --recursive \
+          --exclude "*.tmp" \
+          --metadata "pipeline-run=${{ github.run_id }}"
+
+    - name: Invalidate CloudFront
+      env:
+        AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        AWS_DEFAULT_REGION: us-east-1
+      run: |
+        aws cloudfront create-invalidation \
+          --distribution-id ${{ secrets.CLOUDFRONT_DISTRIBUTION_ID }} \
+          --paths "/*"
+
+    - name: Notify Slack
+      if: success()
+      uses: 8398a7/action-slack@v3
+      with:
+        status: success
+        text: 'InDesign documents deployed to staging'
+        webhook_url: ${{ secrets.SLACK_WEBHOOK }}

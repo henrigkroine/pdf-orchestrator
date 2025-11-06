@@ -1,0 +1,143 @@
+{
+  "documentName": "language-program-v1",
+  "sourcePDF": "T:\\Projects\\pdf-orchestrator\\exports\\together-ukraine-language-program.pdf",
+  "scale": 3,
+  "createdAt": "2025-11-05T17:50:53.340Z",
+  "pages": [
+    {
+      "page": 1,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 72,
+          "stdev": 97,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 105,
+          "stdev": 67,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 102,
+          "stdev": 60,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 1031197,
+      "timestamp": "2025-11-05T17:50:54.032Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": true,
+          "contentDensity": "98.36",
+          "totalPixels": 225162,
+          "nonWhitePixels": 221464
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-1.png"
+    },
+    {
+      "page": 2,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 237,
+          "stdev": 39,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 244,
+          "stdev": 32,
+          "min": 51,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 245,
+          "stdev": 31,
+          "min": 51,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 375295,
+      "timestamp": "2025-11-05T17:50:54.426Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-2.png"
+    }
+  ],
+  "pageCount": 2
+}

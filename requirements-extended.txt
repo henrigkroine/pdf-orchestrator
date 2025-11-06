@@ -1,0 +1,30 @@
+# Extended PDF and Image Processing Requirements
+# For enhanced PDF orchestration capabilities
+
+# Core PDF Libraries
+pypdf2==3.0.1          # PDF manipulation (merge, split, rotate, encrypt)
+pdfplumber==0.10.3     # Extract tables and text from PDFs
+reportlab==4.0.7       # Generate PDFs programmatically
+pymupdf==1.23.8        # Fast PDF rendering and text extraction
+
+# Image Processing
+pillow==10.1.0         # Image analysis and manipulation
+opencv-python==4.8.1.78 # Advanced image processing and computer vision
+
+# OCR and Text Extraction
+pytesseract==0.3.10    # OCR for scanned PDFs
+pdf2image==1.16.3      # Convert PDF pages to images
+
+# Additional Utilities
+camelot-py==0.11.0     # Extract tables from PDFs with high accuracy
+pdfkit==1.0.0          # HTML to PDF conversion
+weasyprint==60.1       # CSS-compliant HTML to PDF
+
+# Excel/Data Integration
+openpyxl==3.1.2        # Excel file manipulation
+pandas==2.1.4          # Data processing for tables
+
+# Existing Requirements (from main project)
+fastmcp==0.5.10
+python-socketio[client]==5.10.0
+colorama==0.4.6

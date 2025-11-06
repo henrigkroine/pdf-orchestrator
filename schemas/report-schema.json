@@ -1,0 +1,80 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Report Job Schema",
+  "description": "Schema for automated report generation jobs",
+  "type": "object",
+  "required": ["jobType", "templateId", "data", "output"],
+  "properties": {
+    "jobType": {
+      "type": "string",
+      "const": "report",
+      "description": "Type of PDF generation job"
+    },
+    "templateId": {
+      "type": "string",
+      "description": "ID of the InDesign/Illustrator template to use"
+    },
+    "humanSession": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, routes to MCP worker for interactive session"
+    },
+    "data": {
+      "type": "object",
+      "required": ["title", "content"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Report title"
+        },
+        "subtitle": {
+          "type": "string",
+          "description": "Optional subtitle"
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["text", "chart", "table", "image"]
+              },
+              "content": {
+                "description": "Content varies by type"
+              }
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "author": { "type": "string" },
+            "date": { "type": "string", "format": "date" },
+            "organization": { "type": "string" }
+          }
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": ["format"],
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": ["pdf", "pdf-print", "pdf-interactive"]
+        },
+        "destination": {
+          "type": "string",
+          "description": "Output path or R2 bucket key"
+        },
+        "quality": {
+          "type": "string",
+          "enum": ["draft", "standard", "high"],
+          "default": "standard"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,171 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "InDesign MCP Error Codes",
+  "description": "Standard error codes for InDesign MCP operations",
+  "type": "object",
+  "definitions": {
+    "ErrorResponse": {
+      "type": "object",
+      "required": ["ok", "error"],
+      "properties": {
+        "ok": {
+          "type": "boolean",
+          "const": false
+        },
+        "error": {
+          "type": "object",
+          "required": ["code", "message"],
+          "properties": {
+            "code": {
+              "type": "string",
+              "enum": [
+                "VALIDATION_ERROR",
+                "STYLE_NOT_FOUND",
+                "LINK_MISSING",
+                "PAGE_OUT_OF_RANGE",
+                "EXPORT_FAILED",
+                "TIMEOUT",
+                "TRANSPORT_DOWN",
+                "PERMISSION_DENIED",
+                "DOCUMENT_LOCKED",
+                "FONT_MISSING",
+                "GLYPH_NOT_FOUND",
+                "TEMPLATE_NOT_FOUND",
+                "PREFLIGHT_FAILED",
+                "UNKNOWN_COMMAND",
+                "INVALID_PATH",
+                "FILE_NOT_FOUND",
+                "INSUFFICIENT_PERMISSIONS",
+                "DOCUMENT_CORRUPTED",
+                "MEMORY_EXCEEDED",
+                "SCRIPT_TIMEOUT",
+                "NETWORK_ERROR",
+                "UNKNOWN_ERROR"
+              ]
+            },
+            "message": {
+              "type": "string",
+              "description": "Human-readable error message"
+            },
+            "details": {
+              "type": "object",
+              "description": "Additional context about the error",
+              "additionalProperties": true
+            }
+          }
+        }
+      }
+    },
+    "SuccessResponse": {
+      "type": "object",
+      "required": ["ok"],
+      "properties": {
+        "ok": {
+          "type": "boolean",
+          "const": true
+        }
+      },
+      "additionalProperties": true
+    }
+  },
+  "errorCodes": {
+    "VALIDATION_ERROR": {
+      "description": "Input validation failed",
+      "httpStatus": 400,
+      "retryable": false,
+      "example": {
+        "ok": false,
+        "error": {
+          "code": "VALIDATION_ERROR",
+          "message": "Invalid page number: must be between 1 and document page count",
+          "details": {
+            "field": "page",
+            "value": 0,
+            "constraint": "minimum 1"
+          }
+        }
+      }
+    },
+    "STYLE_NOT_FOUND": {
+      "description": "Referenced paragraph or character style does not exist",
+      "httpStatus": 404,
+      "retryable": false,
+      "example": {
+        "ok": false,
+        "error": {
+          "code": "STYLE_NOT_FOUND",
+          "message": "Paragraph style 'Hero Title' not found in document",
+          "details": {
+            "styleName": "Hero Title",
+            "availableStyles": ["Normal", "Body Text"]
+          }
+        }
+      }
+    },
+    "LINK_MISSING": {
+      "description": "Linked image or asset file is missing",
+      "httpStatus": 404,
+      "retryable": false
+    },
+    "PAGE_OUT_OF_RANGE": {
+      "description": "Requested page number exceeds document page count",
+      "httpStatus": 400,
+      "retryable": false
+    },
+    "EXPORT_FAILED": {
+      "description": "PDF export operation failed",
+      "httpStatus": 500,
+      "retryable": true
+    },
+    "TIMEOUT": {
+      "description": "Operation exceeded maximum allowed time",
+      "httpStatus": 408,
+      "retryable": true
+    },
+    "TRANSPORT_DOWN": {
+      "description": "InDesign connection not available",
+      "httpStatus": 503,
+      "retryable": true
+    },
+    "PERMISSION_DENIED": {
+      "description": "File system permission denied or path not in allow-list",
+      "httpStatus": 403,
+      "retryable": false
+    },
+    "DOCUMENT_LOCKED": {
+      "description": "Document is locked by another operation",
+      "httpStatus": 423,
+      "retryable": true
+    },
+    "FONT_MISSING": {
+      "description": "Required font not installed or not available",
+      "httpStatus": 404,
+      "retryable": false
+    },
+    "GLYPH_NOT_FOUND": {
+      "description": "Character glyph not found in font",
+      "httpStatus": 400,
+      "retryable": false
+    },
+    "TEMPLATE_NOT_FOUND": {
+      "description": "Template file not found at specified path",
+      "httpStatus": 404,
+      "retryable": false
+    },
+    "PREFLIGHT_FAILED": {
+      "description": "Document failed preflight checks",
+      "httpStatus": 422,
+      "retryable": false
+    },
+    "UNKNOWN_COMMAND": {
+      "description": "Command action not recognized",
+      "httpStatus": 400,
+      "retryable": false
+    },
+    "INVALID_PATH": {
+      "description": "File path is invalid or contains path traversal",
+      "httpStatus": 400,
+      "retryable": false
+    }
+  }
+}

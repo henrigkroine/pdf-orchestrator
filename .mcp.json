@@ -1,0 +1,12 @@
+{
+  "mcpServers": {
+    "adobe-indesign": {
+      "command": "cmd",
+      "args": ["/c", "T:\\Projects\\pdf-orchestrator\\.wrappers\\adobe-indesign-mcp.cmd"]
+    },
+    "adobe-illustrator": {
+      "command": "cmd",
+      "args": ["/c", "T:\\Projects\\pdf-orchestrator\\.wrappers\\adobe-illustrator-mcp.cmd"]
+    }
+  }
+}

@@ -1,0 +1,95 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Campaign Job Schema",
+  "description": "Schema for marketing campaign PDF generation jobs",
+  "type": "object",
+  "required": ["jobType", "templateId", "data", "output"],
+  "properties": {
+    "jobType": {
+      "type": "string",
+      "const": "campaign",
+      "description": "Type of PDF generation job"
+    },
+    "templateId": {
+      "type": "string",
+      "description": "ID of the InDesign/Illustrator template to use"
+    },
+    "humanSession": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, routes to MCP worker for interactive session"
+    },
+    "data": {
+      "type": "object",
+      "required": ["campaignName", "assets"],
+      "properties": {
+        "campaignName": {
+          "type": "string",
+          "description": "Name of the marketing campaign"
+        },
+        "assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["assetType", "content"],
+            "properties": {
+              "assetType": {
+                "type": "string",
+                "enum": ["flyer", "brochure", "poster", "social-media"]
+              },
+              "content": {
+                "type": "object",
+                "properties": {
+                  "headline": { "type": "string" },
+                  "body": { "type": "string" },
+                  "images": {
+                    "type": "array",
+                    "items": { "type": "string", "format": "uri" }
+                  },
+                  "callToAction": { "type": "string" },
+                  "branding": {
+                    "type": "object",
+                    "properties": {
+                      "logo": { "type": "string", "format": "uri" },
+                      "colors": {
+                        "type": "array",
+                        "items": { "type": "string", "pattern": "^#[0-9A-Fa-f]{6}$" }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "client": { "type": "string" },
+            "startDate": { "type": "string", "format": "date" },
+            "endDate": { "type": "string", "format": "date" }
+          }
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": ["format"],
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": ["pdf", "pdf-print", "pdf-interactive"]
+        },
+        "destination": {
+          "type": "string",
+          "description": "Output path or R2 bucket key"
+        },
+        "quality": {
+          "type": "string",
+          "enum": ["draft", "standard", "high"],
+          "default": "high"
+        }
+      }
+    }
+  }
+}

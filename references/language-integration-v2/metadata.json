@@ -1,0 +1,143 @@
+{
+  "documentName": "language-integration-v2",
+  "sourcePDF": "T:\\Projects\\pdf-orchestrator\\exports\\language-integration-program-v2.pdf",
+  "scale": 3,
+  "createdAt": "2025-11-05T18:59:42.890Z",
+  "pages": [
+    {
+      "page": 1,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 61,
+          "stdev": 94,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 95,
+          "stdev": 66,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 95,
+          "stdev": 61,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 733165,
+      "timestamp": "2025-11-05T18:59:43.579Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": true,
+          "contentDensity": "98.36",
+          "totalPixels": 225162,
+          "nonWhitePixels": 221464
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-1.png"
+    },
+    {
+      "page": 2,
+      "width": 1787,
+      "height": 2528,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 236,
+          "stdev": 44,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 242,
+          "stdev": 37,
+          "min": 51,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 244,
+          "stdev": 36,
+          "min": 51,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 403864,
+      "timestamp": "2025-11-05T18:59:43.909Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 225162,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-2.png"
+    }
+  ],
+  "pageCount": 2
+}

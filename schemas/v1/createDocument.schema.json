@@ -1,0 +1,135 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://indesign-mcp.teei.org/schemas/v1/createDocument",
+  "title": "createDocument",
+  "description": "Create a new InDesign document with specified dimensions and margins",
+  "type": "object",
+  "required": ["pageWidth", "pageHeight", "pagesPerDocument"],
+  "properties": {
+    "pageWidth": {
+      "type": "number",
+      "minimum": 100,
+      "maximum": 5000,
+      "description": "Page width in points (or specified units)"
+    },
+    "pageHeight": {
+      "type": "number",
+      "minimum": 100,
+      "maximum": 5000,
+      "description": "Page height in points (or specified units)"
+    },
+    "pagesPerDocument": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 9999,
+      "default": 1,
+      "description": "Number of pages to create"
+    },
+    "pagesFacing": {
+      "type": "boolean",
+      "default": false,
+      "description": "Create facing pages (spreads)"
+    },
+    "margins": {
+      "type": "object",
+      "properties": {
+        "top": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500,
+          "default": 72
+        },
+        "bottom": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500,
+          "default": 72
+        },
+        "left": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500,
+          "default": 72
+        },
+        "right": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 500,
+          "default": 72
+        }
+      },
+      "additionalProperties": false
+    },
+    "columns": {
+      "type": "object",
+      "properties": {
+        "count": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 40,
+          "default": 1
+        },
+        "gutter": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "default": 12
+        }
+      }
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 255,
+      "pattern": "^[a-zA-Z0-9_\\-\\s]+$",
+      "description": "Document name (filename without extension)"
+    },
+    "units": {
+      "type": "string",
+      "enum": ["pt", "mm", "in", "px"],
+      "default": "pt",
+      "description": "Measurement units for dimensions"
+    },
+    "intent": {
+      "type": "string",
+      "enum": ["print", "web"],
+      "default": "print",
+      "description": "Document intent (affects color mode and DPI)"
+    }
+  },
+  "additionalProperties": false,
+  "examples": [
+    {
+      "pageWidth": 595,
+      "pageHeight": 842,
+      "pagesPerDocument": 1,
+      "pagesFacing": false,
+      "margins": {
+        "top": 72,
+        "bottom": 72,
+        "left": 72,
+        "right": 72
+      },
+      "name": "TEEI_AWS_Brief",
+      "units": "pt"
+    },
+    {
+      "pageWidth": 8.5,
+      "pageHeight": 11,
+      "pagesPerDocument": 4,
+      "pagesFacing": true,
+      "margins": {
+        "top": 1,
+        "bottom": 1,
+        "left": 1,
+        "right": 1
+      },
+      "columns": {
+        "count": 2,
+        "gutter": 0.25
+      },
+      "name": "Newsletter",
+      "units": "in"
+    }
+  ]
+}
