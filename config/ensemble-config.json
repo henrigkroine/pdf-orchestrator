@@ -1,0 +1,78 @@
+{
+  "description": "Multi-Model Ensemble Configuration for AI Vision Validation",
+  "version": "1.0.0",
+  "models": {
+    "gemini": {
+      "enabled": true,
+      "weight": 0.4,
+      "model": "gemini-1.5-flash",
+      "strengths": [
+        "Speed and efficiency",
+        "Visual detail recognition",
+        "Color accuracy detection",
+        "High throughput processing"
+      ],
+      "apiKeyEnv": "GEMINI_API_KEY",
+      "costPerImage": 0.000125,
+      "notes": "Primary model for fast, accurate visual analysis"
+    },
+    "claude": {
+      "enabled": true,
+      "weight": 0.35,
+      "model": "claude-3-5-sonnet-20241022",
+      "strengths": [
+        "Typography and font analysis",
+        "Layout and composition critique",
+        "Brand voice consistency",
+        "Detailed reasoning and explanations"
+      ],
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "costPerImage": 0.003,
+      "notes": "Strong at design critique and typography analysis"
+    },
+    "gpt4v": {
+      "enabled": true,
+      "weight": 0.25,
+      "model": "gpt-4-vision-preview",
+      "strengths": [
+        "Overall design quality assessment",
+        "Professional appearance evaluation",
+        "Accessibility considerations",
+        "Cross-reference validation"
+      ],
+      "apiKeyEnv": "OPENAI_API_KEY",
+      "costPerImage": 0.01275,
+      "notes": "Provides additional perspective and validation"
+    }
+  },
+  "thresholds": {
+    "highConfidence": 80,
+    "mediumConfidence": 50,
+    "lowConfidence": 40,
+    "requiresReview": 40,
+    "autoAccept": 90,
+    "autoReject": 30
+  },
+  "ensembleStrategy": {
+    "votingMethod": "weighted_soft",
+    "requireMinimumModels": 2,
+    "allowPartialFailure": true,
+    "confidenceCalculation": {
+      "agreementWeight": 0.6,
+      "modelWeightedScoreWeight": 0.4
+    }
+  },
+  "parallelProcessing": {
+    "enabled": true,
+    "maxConcurrent": 3,
+    "timeout": 30000,
+    "retryOnFailure": true,
+    "maxRetries": 2
+  },
+  "reporting": {
+    "includeIndividualAnalyses": true,
+    "includeConfidenceBreakdown": true,
+    "includeDisagreementDetails": true,
+    "highlightLowConfidenceFindings": true
+  }
+}

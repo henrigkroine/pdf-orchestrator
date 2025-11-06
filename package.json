@@ -13,7 +13,18 @@
     "test:campaign": "node orchestrator.js example-jobs/campaign-sample.json",
     "check-budget": "node scripts/check-budget.js",
     "start-metrics": "node start-metrics-aggregator.js",
-    "test-alert": "node scripts/send-alert.js"
+    "test-alert": "node scripts/send-alert.js",
+    "validate:single": "node scripts/validate-pdf-ai-vision.js",
+    "validate:batch": "node scripts/validate-pdf-batch.js",
+    "validate:batch-cached": "node scripts/validate-pdf-batch.js --cache",
+    "validate:batch-nocache": "node scripts/validate-pdf-batch.js --no-cache",
+    "batch:report": "node scripts/generate-batch-report.js",
+    "cache:stats": "node scripts/lib/cache-manager.js stats",
+    "cache:clean": "node scripts/lib/cache-manager.js clean",
+    "cache:clear": "node scripts/lib/cache-manager.js clear",
+    "progress:demo": "node scripts/lib/progress-tracker.js",
+    "test:accessibility": "node test-accessibility.js",
+    "validate:accessibility": "node scripts/validate-accessibility.js"
   },
   "keywords": [
     "pdf",
@@ -28,10 +39,12 @@
   "author": "Henrik Røine",
   "license": "PRIVATE",
   "dependencies": {
+    "@anthropic-ai/sdk": "^0.32.1",
     "@google/generative-ai": "^0.24.1",
     "ajv": "^8.12.0",
     "ajv-formats": "^3.0.1",
     "canvas": "^3.2.0",
+    "color-blind": "^0.1.2",
     "dotenv": "^16.4.0",
     "mammoth": "^1.11.0",
     "openai": "^6.8.1",

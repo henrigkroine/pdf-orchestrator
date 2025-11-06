@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Orchestrator - QA Performance Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+</head>
+<body>
+  <div class="dashboard-container">
+
+    <!-- Header -->
+    <header class="dashboard-header">
+      <div class="header-content">
+        <h1>🎯 PDF Orchestrator QA Dashboard</h1>
+        <p class="subtitle">Phase 4: World-Class Quality Assurance System</p>
+      </div>
+      <div class="header-stats">
+        <div class="stat-pill">
+          <span class="stat-label">Last Updated</span>
+          <span class="stat-value" id="lastUpdated">Loading...</span>
+        </div>
+        <div class="stat-pill">
+          <span class="stat-label">Environment</span>
+          <span class="stat-value" id="environment">Production</span>
+        </div>
+        <div class="stat-pill success">
+          <span class="stat-label">System Status</span>
+          <span class="stat-value">✓ Operational</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Real-time Metrics -->
+    <section class="metrics-section">
+      <h2>📊 Real-Time Metrics</h2>
+      <div class="metrics-grid">
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-icon">📝</span>
+            <span class="metric-title">Total Validations</span>
+          </div>
+          <div class="metric-value" id="totalValidations">0</div>
+          <div class="metric-footer">
+            <span class="metric-trend" id="validationTrend">—</span>
+            <span class="metric-label">Last 24 hours</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-icon">⭐</span>
+            <span class="metric-title">Average Score</span>
+          </div>
+          <div class="metric-value" id="averageScore">0.0</div>
+          <div class="metric-footer">
+            <span class="metric-trend" id="scoreTrend">—</span>
+            <span class="metric-label">Out of 10.0</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-icon">🎯</span>
+            <span class="metric-title">Accuracy</span>
+          </div>
+          <div class="metric-value" id="accuracy">0%</div>
+          <div class="metric-footer">
+            <span class="metric-trend" id="accuracyTrend">—</span>
+            <span class="metric-label">AI-Human Agreement</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-icon">⚡</span>
+            <span class="metric-title">Avg Processing</span>
+          </div>
+          <div class="metric-value" id="processingTime">0.0s</div>
+          <div class="metric-footer">
+            <span class="metric-trend" id="speedTrend">—</span>
+            <span class="metric-label">Per validation</span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-icon">💰</span>
+            <span class="metric-title">Cost Per Validation</span>
+          </div>
+          <div class="metric-value" id="costPerValidation">$0.000</div>
+          <div class="metric-footer">
+            <span class="metric-trend" id="costTrend">—</span>
+            <span class="metric-label">Total: <span id="totalCost">$0.00</span></span>
+          </div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-header">
+            <span class="metric-icon">🔄</span>
+            <span class="metric-title">Cache Hit Rate</span>
+          </div>
+          <div class="metric-value" id="cacheHitRate">0%</div>
+          <div class="metric-footer">
+            <span class="metric-trend positive">↑ Efficiency</span>
+            <span class="metric-label">Revalidations cached</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Charts Section -->
+    <section class="charts-section">
+      <div class="charts-grid">
+
+        <!-- Accuracy Trend -->
+        <div class="chart-card">
+          <h3>📈 Accuracy Trend Over Time</h3>
+          <canvas id="accuracyTrendChart"></canvas>
+        </div>
+
+        <!-- Grade Distribution -->
+        <div class="chart-card">
+          <h3>📊 Grade Distribution</h3>
+          <canvas id="gradeDistributionChart"></canvas>
+        </div>
+
+        <!-- Model Comparison -->
+        <div class="chart-card">
+          <h3>🤖 Model Performance Comparison</h3>
+          <canvas id="modelComparisonChart"></canvas>
+        </div>
+
+        <!-- Cost Breakdown -->
+        <div class="chart-card">
+          <h3>💰 Cost Breakdown by Model</h3>
+          <canvas id="costBreakdownChart"></canvas>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Model Performance Table -->
+    <section class="table-section">
+      <h2>🤖 Model Performance Metrics</h2>
+      <div class="table-container">
+        <table class="performance-table" id="modelPerformanceTable">
+          <thead>
+            <tr>
+              <th>Model</th>
+              <th>Accuracy</th>
+              <th>Avg Speed</th>
+              <th>Cost/Validation</th>
+              <th>Usage Count</th>
+              <th>Confidence</th>
+              <th>Error Rate</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Recent Validations -->
+    <section class="table-section">
+      <h2>📝 Recent Validations</h2>
+      <div class="table-container">
+        <table class="validations-table" id="recentValidationsTable">
+          <thead>
+            <tr>
+              <th>Timestamp</th>
+              <th>Document</th>
+              <th>Score</th>
+              <th>Grade</th>
+              <th>Confidence</th>
+              <th>Model</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Populated by JavaScript -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Quality Insights -->
+    <section class="insights-section">
+      <h2>💡 Quality Insights</h2>
+      <div class="insights-grid">
+
+        <div class="insight-card">
+          <h3>🎯 Top Issues Detected</h3>
+          <div id="topIssues" class="insight-content">
+            Loading...
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <h3>📊 Issue Categories</h3>
+          <div id="issueCategories" class="insight-content">
+            Loading...
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <h3>🧠 Learning Progress</h3>
+          <div id="learningProgress" class="insight-content">
+            Loading...
+          </div>
+        </div>
+
+        <div class="insight-card">
+          <h3>♿ Accessibility Compliance</h3>
+          <div id="accessibilityCompliance" class="insight-content">
+            Loading...
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+      <p>PDF Orchestrator QA Dashboard v1.0 | Auto-refresh every 30 seconds</p>
+      <p>Data source: <code id="dataSource">dashboard/data/metrics.json</code></p>
+    </footer>
+
+  </div>
+
+  <script src="js/api.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/metrics.js"></script>
+</body>
+</html>

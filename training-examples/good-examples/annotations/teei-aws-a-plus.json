@@ -1,0 +1,97 @@
+{
+  "documentId": "teei-aws-a-plus",
+  "documentName": "TEEI AWS Partnership Document (A+ Example)",
+  "category": "good",
+  "grade": "A+",
+  "overallScore": 9.8,
+  "confidence": 0.95,
+  "annotatedBy": "brand-manager",
+  "annotationDate": "2025-11-06",
+  "brandCompliance": {
+    "colors": {
+      "score": 10,
+      "pass": true,
+      "notes": "Perfect use of official TEEI palette: Nordshore #00393F as primary color throughout, Sky #C9E4EC for subtle accents, Sand #FFF1E2 for warm backgrounds, and Gold #BA8F5A for premium metric highlights. No copper or orange tones present. Color ratios follow 80/20 rule with Nordshore dominant.",
+      "correctColors": [
+        "Nordshore #00393F",
+        "Sky #C9E4EC",
+        "Sand #FFF1E2",
+        "Gold #BA8F5A",
+        "Beige #EFE1DC"
+      ],
+      "incorrectColors": []
+    },
+    "typography": {
+      "score": 10,
+      "pass": true,
+      "notes": "Exemplary typography: Lora Bold 42pt for document title, Lora Semibold 28pt for section headers, Roboto Flex Regular 11pt for body text with perfect 1.5x line height. All text is crisp and properly rendered. Font hierarchy is immediately clear.",
+      "correctFonts": [
+        "Lora Bold (title)",
+        "Lora Semibold (headers)",
+        "Roboto Flex Regular (body)",
+        "Roboto Flex Medium (subheads)"
+      ],
+      "incorrectFonts": []
+    },
+    "layout": {
+      "score": 9.5,
+      "pass": true,
+      "notes": "Professional 12-column grid layout with consistent 40pt margins on all sides. Perfect 60pt section breaks create breathing room. All elements align to grid. No text cutoffs anywhere. White space is well-balanced. Minor: Could add slightly more padding around metric cards (currently 20pt, could be 24pt for extra refinement).",
+      "gridCompliance": true,
+      "spacingCorrect": true,
+      "textCutoffs": []
+    },
+    "photography": {
+      "score": 10,
+      "pass": true,
+      "notes": "Outstanding photography: 3 high-quality images showing Ukrainian students in natural learning environments. Warm, natural lighting with authentic moments (not staged). Photos use Sand/Beige color grading for brand consistency. Nordshore overlay at 40% opacity on hero image creates cohesive look. Diverse representation visible. Images evoke hope and empowerment.",
+      "hasPhotography": true,
+      "photographyQuality": "excellent",
+      "warmTones": true,
+      "authentic": true
+    },
+    "logos": {
+      "score": 10,
+      "pass": true,
+      "notes": "Perfect logo treatment: TEEI logo (Nordshore version) in header with full clearspace maintained (minimum = icon height). AWS logo properly sized with correct clearspace. Both logos are high-resolution vector quality, crisp at all zoom levels. Together for Ukraine logo in footer with proper spacing.",
+      "clearspaceCorrect": true,
+      "logoQuality": "high-resolution"
+    }
+  },
+  "violations": [],
+  "strengths": [
+    "Perfect adherence to TEEI brand colors (Nordshore, Sky, Sand, Gold) - no forbidden copper/orange",
+    "Exemplary typography hierarchy using Lora and Roboto Flex correctly throughout",
+    "Outstanding photography: warm, authentic images with natural lighting (not stock photos)",
+    "Professional 12-column grid layout with perfect spacing (60pt sections, 40pt margins)",
+    "No text cutoffs - all content complete and readable",
+    "High-resolution logos with proper clearspace maintained",
+    "Actual metrics visible (not 'XX' placeholders) - shows credibility",
+    "Clear visual hierarchy makes document easy to scan",
+    "Emotionally resonant - conveys hope and empowerment",
+    "World-class production quality - ready for executive presentation"
+  ],
+  "keyLearnings": [
+    "This is the gold standard for TEEI partnership documents - use as reference for all future work",
+    "Notice how Nordshore #00393F is used consistently as the primary brand color (80% of colored elements)",
+    "Typography hierarchy is crystal clear: Lora for headlines, Roboto Flex for body text, no generic fonts",
+    "Photography quality matters: warm, authentic images create emotional connection vs. cold stock photos",
+    "Complete text (no cutoffs) is essential - incomplete words are CRITICAL violations",
+    "Proper logo clearspace (minimum = icon height) is non-negotiable for brand integrity",
+    "Actual metrics (not 'XX' placeholders) build credibility and professionalism",
+    "White space and breathing room (60pt sections, 40pt margins) create premium feel",
+    "When colors, typography, photography, and layout all align with brand guidelines, you achieve A+ world-class quality"
+  ],
+  "accessibilityNotes": {
+    "colorContrast": "Excellent contrast ratios: Nordshore text on Sand backgrounds provides 8.2:1 ratio (exceeds WCAG AAA 7:1). All text meets WCAG 2.2 AA minimum 4.5:1 requirement.",
+    "textSize": "All body text is 11pt Roboto Flex (meets 12pt equivalent minimum). Headlines are 28-42pt. No text below minimum readable size.",
+    "readingOrder": "Perfect visual hierarchy: Title → Hero image → Section headers → Body text → CTA. Reading order is logical and intuitive. F-pattern layout guides eye naturally through content."
+  },
+  "usageInstructions": "Use this as the PRIMARY example of excellent TEEI brand compliance. Show this first in few-shot prompts to teach AI what A+ quality looks like. Highlight: (1) correct Nordshore/Sky/Gold colors, (2) Lora/Roboto typography, (3) authentic photography, (4) no text cutoffs, (5) proper logo treatment.",
+  "metadata": {
+    "pageCount": 2,
+    "fileSize": "3.2 MB",
+    "dimensions": "8.5 x 11 inches",
+    "resolution": "300 DPI"
+  }
+}

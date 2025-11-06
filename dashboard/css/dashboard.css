@@ -1,0 +1,525 @@
+/**
+ * PDF Orchestrator Dashboard Styles
+ * Phase 4: World-Class QA System
+ */
+
+/* Reset and Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* TEEI Brand Colors */
+  --color-nordshore: #00393F;
+  --color-sky: #C9E4EC;
+  --color-sand: #FFF1E2;
+  --color-gold: #BA8F5A;
+  --color-beige: #EFE1DC;
+  --color-moss: #65873B;
+
+  /* Functional Colors */
+  --color-success: #4CAF50;
+  --color-warning: #FF9800;
+  --color-error: #F44336;
+  --color-info: #2196F3;
+
+  /* Grays */
+  --color-gray-50: #FAFAFA;
+  --color-gray-100: #F5F5F5;
+  --color-gray-200: #EEEEEE;
+  --color-gray-300: #E0E0E0;
+  --color-gray-600: #757575;
+  --color-gray-900: #212121;
+
+  /* Typography */
+  --font-display: 'Lora', serif;
+  --font-body: 'Roboto Flex', 'Roboto', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+}
+
+body {
+  font-family: var(--font-body);
+  background: linear-gradient(135deg, var(--color-sand) 0%, var(--color-beige) 100%);
+  color: var(--color-gray-900);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.dashboard-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: var(--spacing-lg);
+}
+
+/* Header */
+.dashboard-header {
+  background: white;
+  padding: var(--spacing-xl);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  margin-bottom: var(--spacing-xl);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--spacing-lg);
+}
+
+.header-content h1 {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  color: var(--color-nordshore);
+  margin-bottom: var(--spacing-xs);
+}
+
+.header-content .subtitle {
+  color: var(--color-gray-600);
+  font-size: 0.95rem;
+}
+
+.header-stats {
+  display: flex;
+  gap: var(--spacing-md);
+  flex-wrap: wrap;
+}
+
+.stat-pill {
+  background: var(--color-gray-100);
+  padding: var(--spacing-sm) var(--spacing-md);
+  border-radius: var(--radius-md);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+}
+
+.stat-pill.success {
+  background: var(--color-success);
+  color: white;
+}
+
+.stat-label {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0.8;
+}
+
+.stat-value {
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* Sections */
+.metrics-section,
+.charts-section,
+.table-section,
+.insights-section {
+  margin-bottom: var(--spacing-2xl);
+}
+
+section h2 {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--color-nordshore);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* Metrics Grid */
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.metric-card {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.metric-header {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-md);
+}
+
+.metric-icon {
+  font-size: 1.5rem;
+}
+
+.metric-title {
+  font-size: 0.85rem;
+  color: var(--color-gray-600);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.metric-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--color-nordshore);
+  margin-bottom: var(--spacing-sm);
+  line-height: 1;
+}
+
+.metric-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+}
+
+.metric-trend {
+  font-weight: 600;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  background: var(--color-gray-100);
+}
+
+.metric-trend.positive {
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--color-success);
+}
+
+.metric-trend.negative {
+  background: rgba(244, 67, 54, 0.1);
+  color: var(--color-error);
+}
+
+.metric-label {
+  color: var(--color-gray-600);
+}
+
+/* Charts Grid */
+.charts-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.chart-card {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.chart-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-nordshore);
+  margin-bottom: var(--spacing-md);
+}
+
+.chart-card canvas {
+  max-height: 300px;
+}
+
+/* Tables */
+.table-container {
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+thead {
+  background: var(--color-nordshore);
+  color: white;
+}
+
+thead th {
+  padding: var(--spacing-md);
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+tbody tr {
+  border-bottom: 1px solid var(--color-gray-200);
+  transition: background-color 0.2s;
+}
+
+tbody tr:hover {
+  background: var(--color-gray-50);
+}
+
+tbody td {
+  padding: var(--spacing-md);
+  font-size: 0.9rem;
+}
+
+/* Status Badges */
+.status-badge {
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.status-badge.success {
+  background: rgba(76, 175, 80, 0.1);
+  color: var(--color-success);
+}
+
+.status-badge.warning {
+  background: rgba(255, 152, 0, 0.1);
+  color: var(--color-warning);
+}
+
+.status-badge.error {
+  background: rgba(244, 67, 54, 0.1);
+  color: var(--color-error);
+}
+
+/* Grade Badges */
+.grade-badge {
+  display: inline-block;
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+.grade-badge.A-plus,
+.grade-badge.A {
+  background: var(--color-success);
+  color: white;
+}
+
+.grade-badge.B-plus,
+.grade-badge.B {
+  background: var(--color-info);
+  color: white;
+}
+
+.grade-badge.C-plus,
+.grade-badge.C {
+  background: var(--color-warning);
+  color: white;
+}
+
+.grade-badge.D,
+.grade-badge.F {
+  background: var(--color-error);
+  color: white;
+}
+
+/* Insights Grid */
+.insights-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.insight-card {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.insight-card h3 {
+  font-family: var(--font-display);
+  font-size: 1.1rem;
+  color: var(--color-nordshore);
+  margin-bottom: var(--spacing-md);
+}
+
+.insight-content {
+  font-size: 0.9rem;
+  color: var(--color-gray-900);
+}
+
+.insight-list {
+  list-style: none;
+}
+
+.insight-list li {
+  padding: var(--spacing-sm) 0;
+  border-bottom: 1px solid var(--color-gray-200);
+  display: flex;
+  justify-content: space-between;
+}
+
+.insight-list li:last-child {
+  border-bottom: none;
+}
+
+.insight-list .issue-name {
+  font-weight: 500;
+}
+
+.insight-list .issue-count {
+  background: var(--color-gray-200);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+/* Progress Bars */
+.progress-bar {
+  background: var(--color-gray-200);
+  border-radius: var(--radius-sm);
+  height: 8px;
+  margin: var(--spacing-sm) 0;
+  overflow: hidden;
+}
+
+.progress-fill {
+  background: linear-gradient(90deg, var(--color-nordshore), var(--color-sky));
+  height: 100%;
+  border-radius: var(--radius-sm);
+  transition: width 0.3s ease;
+}
+
+/* Footer */
+.dashboard-footer {
+  background: white;
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  color: var(--color-gray-600);
+  font-size: 0.85rem;
+}
+
+.dashboard-footer code {
+  background: var(--color-gray-100);
+  padding: var(--spacing-xs) var(--spacing-sm);
+  border-radius: var(--radius-sm);
+  font-family: monospace;
+}
+
+/* Loading State */
+.loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--spacing-2xl);
+}
+
+.loading::after {
+  content: '⏳ Loading...';
+  font-size: 1.2rem;
+  color: var(--color-gray-600);
+}
+
+/* Error State */
+.error-message {
+  background: rgba(244, 67, 54, 0.1);
+  color: var(--color-error);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  border-left: 4px solid var(--color-error);
+  margin: var(--spacing-lg) 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-container {
+    padding: var(--spacing-md);
+  }
+
+  .header-content h1 {
+    font-size: 1.5rem;
+  }
+
+  .metrics-grid,
+  .charts-grid,
+  .insights-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header-stats {
+    width: 100%;
+  }
+
+  .stat-pill {
+    flex: 1;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.metric-card,
+.chart-card,
+.insight-card {
+  animation: fadeIn 0.3s ease-out;
+}
+
+/* Utility Classes */
+.text-success {
+  color: var(--color-success);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+.text-muted {
+  color: var(--color-gray-600);
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-center {
+  text-align: center;
+}
