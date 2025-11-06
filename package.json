@@ -41,7 +41,11 @@
     "finetune:continual": "node scripts/finetune/continual-learning.js",
     "rag:init": "node scripts/lib/vector-store.js",
     "rag:build-kb": "node scripts/build-teei-knowledge-base.js",
-    "validate:rag": "node scripts/validate-pdf-rag.js"
+    "validate:rag": "node scripts/validate-pdf-rag.js",
+    "generate:icons": "node scripts/generate-brand-graphics.js icons",
+    "generate:illustrations": "node scripts/generate-brand-graphics.js illustrations",
+    "optimize:whitespace": "node scripts/optimize-whitespace.js",
+    "analyze:density": "node scripts/optimize-whitespace.js --analyze"
   },
   "keywords": [
     "pdf",
@@ -68,6 +72,7 @@
     "commander": "^12.0.0",
     "dotenv": "^16.4.0",
     "glob": "^10.3.10",
+    "jimp": "^0.22.10",
     "mammoth": "^1.11.0",
     "openai": "^6.8.1",
     "pdf-lib": "^1.17.1",
@@ -79,8 +84,10 @@
     "pixelmatch": "^7.1.0",
     "playwright": "^1.56.1",
     "pngjs": "^7.0.0",
+    "potrace": "^2.1.8",
     "sharp": "^0.34.4",
     "sqlite3": "^5.1.7",
+    "svgo": "^3.2.0",
     "uuid": "^10.0.0"
   },
   "devDependencies": {

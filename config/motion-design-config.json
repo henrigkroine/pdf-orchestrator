@@ -1,0 +1,195 @@
+{
+  "name": "TEEI Motion Design System",
+  "version": "1.0.0",
+  "description": "Professional motion design configuration for TEEI interactive PDFs",
+
+  "brand": {
+    "personality": "warm, professional, empowering",
+    "speed": "moderate",
+    "style": "smooth",
+    "emphasis": "subtle"
+  },
+
+  "timing": {
+    "instant": 100,
+    "quick": 200,
+    "standard": 300,
+    "deliberate": 500,
+    "slow": 1000,
+    "data": 1500
+  },
+
+  "easing": {
+    "ease": "cubic-bezier(0.25, 0.1, 0.25, 1)",
+    "easeIn": "cubic-bezier(0.42, 0, 1, 1)",
+    "easeOut": "cubic-bezier(0, 0, 0.58, 1)",
+    "easeInOut": "cubic-bezier(0.42, 0, 0.58, 1)",
+    "bounce": "cubic-bezier(0.68, -0.55, 0.265, 1.55)",
+    "smooth": "cubic-bezier(0.4, 0.0, 0.2, 1)",
+    "sharp": "cubic-bezier(0.4, 0.0, 0.6, 1)",
+    "emphasized": "cubic-bezier(0.0, 0.0, 0.2, 1)"
+  },
+
+  "colors": {
+    "primary": "#00393F",
+    "secondary": "#C9E4EC",
+    "accent": "#BA8F5A",
+    "success": "#65873B",
+    "error": "#913B2F",
+    "sand": "#FFF1E2",
+    "beige": "#EFE1DC",
+    "moss": "#65873B",
+    "clay": "#913B2F"
+  },
+
+  "animations": {
+    "pageTransition": {
+      "default": "fade",
+      "duration": 300,
+      "easing": "ease"
+    },
+
+    "elementReveal": {
+      "threshold": 0.2,
+      "duration": 600,
+      "easing": "easeOut",
+      "stagger": 100
+    },
+
+    "microinteractions": {
+      "buttonHover": {
+        "translateY": -2,
+        "duration": 200,
+        "easing": "ease"
+      },
+      "cardHover": {
+        "scale": 1.02,
+        "duration": 300,
+        "easing": "ease"
+      }
+    },
+
+    "dataVisualizations": {
+      "countUp": {
+        "duration": 2000,
+        "easing": "easeOut"
+      },
+      "chartDraw": {
+        "duration": 1500,
+        "easing": "easeOut",
+        "stagger": 200
+      },
+      "progressBar": {
+        "duration": 1500,
+        "easing": "easeOut"
+      }
+    }
+  },
+
+  "interactiveElements": {
+    "buttons": {
+      "primary": {
+        "backgroundColor": "#00393F",
+        "hoverBackgroundColor": "#00494F",
+        "color": "#FFFFFF",
+        "padding": "12px 24px",
+        "borderRadius": "4px",
+        "fontSize": "16px",
+        "fontWeight": "500"
+      },
+      "secondary": {
+        "backgroundColor": "transparent",
+        "borderColor": "#00393F",
+        "hoverBackgroundColor": "#00393F",
+        "color": "#00393F",
+        "hoverColor": "#FFFFFF"
+      },
+      "cta": {
+        "background": "linear-gradient(135deg, #00393F 0%, #BA8F5A 100%)",
+        "padding": "16px 32px",
+        "fontSize": "18px",
+        "fontWeight": "600"
+      }
+    },
+
+    "forms": {
+      "input": {
+        "borderColor": "#C9E4EC",
+        "focusBorderColor": "#00393F",
+        "errorBorderColor": "#913B2F",
+        "successBorderColor": "#65873B",
+        "padding": "12px 16px",
+        "fontSize": "16px"
+      },
+      "validation": {
+        "showErrorsOnBlur": true,
+        "shakeOnError": true,
+        "highlightOnSuccess": true
+      }
+    },
+
+    "cards": {
+      "borderColor": "#C9E4EC",
+      "hoverBorderColor": "#00393F",
+      "hoverTranslateY": -4,
+      "hoverShadow": "0 8px 24px rgba(0, 57, 63, 0.15)"
+    }
+  },
+
+  "scrollEffects": {
+    "enabled": true,
+    "parallax": {
+      "enabled": false,
+      "speed": 0.5
+    },
+    "stickyHeader": {
+      "enabled": true,
+      "shadowOnScroll": true
+    },
+    "revealOnScroll": {
+      "enabled": true,
+      "threshold": 0.2,
+      "animation": "fadeUp"
+    }
+  },
+
+  "accessibility": {
+    "respectReducedMotion": true,
+    "keyboardNavigation": true,
+    "focusIndicators": true,
+    "skipAnimationsOnLoad": false
+  },
+
+  "presets": {
+    "minimal": {
+      "pageTransition": "fade",
+      "elementReveal": "none",
+      "microinteractions": "subtle"
+    },
+    "standard": {
+      "pageTransition": "fade",
+      "elementReveal": "fadeUp",
+      "microinteractions": "normal"
+    },
+    "engaging": {
+      "pageTransition": "slideUp",
+      "elementReveal": "staggered",
+      "microinteractions": "full",
+      "dataAnimations": "all"
+    },
+    "professional": {
+      "pageTransition": "fade",
+      "elementReveal": "fadeUp",
+      "microinteractions": "normal",
+      "dataAnimations": "countUp"
+    }
+  },
+
+  "export": {
+    "generateCSS": true,
+    "generateJavaScript": true,
+    "generateJSON": true,
+    "minify": false,
+    "includeComments": true
+  }
+}

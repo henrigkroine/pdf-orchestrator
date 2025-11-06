@@ -1,0 +1,223 @@
+{
+  "whitespaceMaster": {
+    "model": "claude-opus-4-20250514",
+    "thinkingBudget": 3000,
+    "enableAIValidation": true,
+    "recursiveOptimization": true,
+    "maxIterations": 2
+  },
+
+  "principles": {
+    "ratio": {
+      "ideal": 0.5,
+      "minimum": 0.3,
+      "maximum": 0.7,
+      "description": "Ideal whitespace-to-content ratio"
+    },
+    "macroWhitespace": {
+      "description": "Space between major sections",
+      "purpose": "Creates visual hierarchy and breathing room"
+    },
+    "microWhitespace": {
+      "description": "Space between elements (text, images, UI components)",
+      "purpose": "Improves readability and scannability"
+    },
+    "activeWhitespace": {
+      "description": "Intentional, strategic empty space",
+      "purpose": "Guides eye flow and emphasizes content"
+    },
+    "passiveWhitespace": {
+      "description": "Natural margins and padding",
+      "purpose": "Creates comfortable reading experience"
+    }
+  },
+
+  "spacingScale": {
+    "baseUnit": 8,
+    "ratio": "goldenRatio",
+    "useGoldenRatio": true,
+    "useFibonacci": true,
+    "responsive": true
+  },
+
+  "teeiSpacing": {
+    "micro": {
+      "xs": 8,
+      "sm": 12,
+      "md": 16,
+      "lg": 24
+    },
+    "macro": {
+      "sm": 40,
+      "md": 64,
+      "lg": 104,
+      "xl": 168
+    },
+    "document": {
+      "pageMargins": 40,
+      "sectionMargins": 64,
+      "elementSpacing": 24,
+      "paragraphSpacing": 16,
+      "lineSpacing": 12
+    },
+    "grid": {
+      "columns": 12,
+      "gutter": 20,
+      "margin": 40
+    }
+  },
+
+  "densityAnalyzer": {
+    "gridSize": 50,
+    "densityThreshold": 0.7,
+    "thresholds": {
+      "sparse": 0.3,
+      "comfortable": 0.5,
+      "dense": 0.7,
+      "crowded": 0.8
+    },
+    "generateHeatmap": true,
+    "identifyCrowdedAreas": true
+  },
+
+  "breathingCalculator": {
+    "baseUnit": 8,
+    "useGoldenRatio": true,
+    "useFibonacci": true,
+    "snapToGrid": true
+  },
+
+  "typography": {
+    "lineHeight": {
+      "headline": 1.2,
+      "subhead": 1.3,
+      "body": 1.5,
+      "caption": 1.4,
+      "dense": 1.4,
+      "spacious": 1.8
+    },
+    "letterSpacing": {
+      "tight": -0.025,
+      "normal": 0,
+      "loose": 0.05
+    },
+    "wordSpacing": {
+      "tight": -0.05,
+      "normal": 0,
+      "loose": 0.1
+    },
+    "readingWidth": {
+      "minCharacters": 50,
+      "idealCharacters": 65,
+      "maxCharacters": 75,
+      "charWidth": 0.5
+    }
+  },
+
+  "elementSpacing": {
+    "headingToText": 24,
+    "textToText": 16,
+    "textToImage": 24,
+    "imageToImage": 24,
+    "sectionToSection": 64,
+    "minimumSpacing": 12
+  },
+
+  "margins": {
+    "standard": 40,
+    "compact": 24,
+    "generous": 60,
+    "cover": 80,
+    "minimum": 40
+  },
+
+  "responsive": {
+    "breakpoints": {
+      "mobile": {
+        "width": 375,
+        "scale": 0.75
+      },
+      "tablet": {
+        "width": 768,
+        "scale": 0.85
+      },
+      "desktop": {
+        "width": 1024,
+        "scale": 1.0
+      },
+      "wide": {
+        "width": 1440,
+        "scale": 1.15
+      }
+    }
+  },
+
+  "validation": {
+    "minimumWhitespace": 0.3,
+    "maximumWhitespace": 0.7,
+    "minimumElementSpacing": 12,
+    "minimumMargins": 40,
+    "minimumLineHeight": 1.4,
+    "minimumReadabilityScore": 7.0,
+    "allowedVariance": 0.3
+  },
+
+  "readability": {
+    "minimumFontSize": 10,
+    "maximumLineWidth": 700,
+    "minimumLineHeight": 1.4,
+    "idealDensity": 0.5,
+    "scoreWeights": {
+      "density": 0.3,
+      "spacing": 0.3,
+      "typography": 0.2,
+      "distribution": 0.2
+    }
+  },
+
+  "optimization": {
+    "crammedMultiplier": 1.4,
+    "sparseMultiplier": 0.8,
+    "autoFixTouchingElements": true,
+    "autoBalanceWeight": true,
+    "autoImproveReadability": true,
+    "preserveIntentionalTightness": false
+  },
+
+  "reporting": {
+    "includeHeatmap": true,
+    "includeCrowdedAreas": true,
+    "includeWeightDistribution": true,
+    "includeReadabilityScore": true,
+    "includeRecommendations": true,
+    "includeBeforeAfter": true,
+    "format": "json"
+  },
+
+  "grading": {
+    "aPlus": 9.0,
+    "a": 8.0,
+    "b": 7.0,
+    "c": 6.0,
+    "d": 5.0
+  },
+
+  "ratios": {
+    "minorSecond": 1.067,
+    "majorSecond": 1.125,
+    "minorThird": 1.2,
+    "majorThird": 1.25,
+    "perfectFourth": 1.333,
+    "augmentedFourth": 1.414,
+    "perfectFifth": 1.5,
+    "goldenRatio": 1.618,
+    "majorSixth": 1.667,
+    "minorSeventh": 1.778,
+    "majorSeventh": 1.875,
+    "octave": 2.0,
+    "majorTenth": 2.5,
+    "majorEleventh": 2.667,
+    "majorTwelfth": 3.0,
+    "doubleOctave": 4.0
+  }
+}

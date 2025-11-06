@@ -1,0 +1,251 @@
+{
+  "name": "Photography Enhancement Configuration",
+  "version": "1.0.0",
+  "description": "Configuration for AI-powered photo enhancement and selection",
+
+  "defaults": {
+    "preset": "teei-warm",
+    "autoCrop": false,
+    "format": "jpeg",
+    "quality": 90,
+    "colorGrading": "teei-warm"
+  },
+
+  "enhancementPresets": {
+    "teei-warm": {
+      "name": "TEEI Warm",
+      "description": "Warm, natural tones aligned with TEEI brand",
+      "adjustments": {
+        "brightness": 1.05,
+        "contrast": 1.10,
+        "saturation": 1.15,
+        "temperature": 10,
+        "tint": 5,
+        "shadows": 1.10,
+        "highlights": 0.95,
+        "sharpness": 1.20
+      },
+      "bestFor": "TEEI brand materials, partnership documents"
+    },
+    "natural": {
+      "name": "Natural",
+      "description": "Subtle enhancements preserving natural look",
+      "adjustments": {
+        "brightness": 1.02,
+        "contrast": 1.05,
+        "saturation": 1.05,
+        "temperature": 0,
+        "tint": 0,
+        "shadows": 1.05,
+        "highlights": 0.98,
+        "sharpness": 1.10
+      },
+      "bestFor": "Documentary, authentic moments"
+    },
+    "vibrant": {
+      "name": "Vibrant",
+      "description": "Bold, eye-catching colors",
+      "adjustments": {
+        "brightness": 1.08,
+        "contrast": 1.15,
+        "saturation": 1.25,
+        "temperature": 5,
+        "tint": 0,
+        "shadows": 1.15,
+        "highlights": 0.92,
+        "sharpness": 1.30
+      },
+      "bestFor": "Social media, marketing materials"
+    },
+    "professional": {
+      "name": "Professional",
+      "description": "Clean, corporate look",
+      "adjustments": {
+        "brightness": 1.03,
+        "contrast": 1.08,
+        "saturation": 0.98,
+        "temperature": -5,
+        "tint": 0,
+        "shadows": 1.08,
+        "highlights": 0.95,
+        "sharpness": 1.15
+      },
+      "bestFor": "Business documents, formal presentations"
+    }
+  },
+
+  "colorGradingPresets": {
+    "teei-warm": {
+      "name": "TEEI Warm",
+      "description": "Signature TEEI look: warm, natural, hopeful",
+      "colorMatrix": [
+        [1.10, -0.05, -0.05],
+        [-0.02, 1.00, -0.02],
+        [-0.08, -0.05, 0.92]
+      ],
+      "global": {
+        "temperature": 15,
+        "tint": 5,
+        "saturation": 1.15,
+        "vibrance": 1.10,
+        "contrast": 1.10
+      },
+      "highlights": {
+        "hue": 45,
+        "saturation": 1.10,
+        "luminance": 0.95
+      },
+      "shadows": {
+        "hue": 195,
+        "saturation": 1.05,
+        "luminance": 1.08
+      }
+    },
+    "golden-hour": {
+      "name": "Golden Hour",
+      "description": "Warm golden sunset look",
+      "global": {
+        "temperature": 25,
+        "tint": 10,
+        "saturation": 1.20,
+        "vibrance": 1.15,
+        "contrast": 1.12
+      }
+    },
+    "clean-corporate": {
+      "name": "Clean Corporate",
+      "description": "Professional, slightly cool look",
+      "global": {
+        "temperature": -5,
+        "tint": 0,
+        "saturation": 0.98,
+        "vibrance": 1.00,
+        "contrast": 1.08
+      }
+    }
+  },
+
+  "brandCriteria": {
+    "mood": ["hopeful", "empowering", "warm", "authentic", "inclusive"],
+    "subjects": ["students", "teachers", "learning", "collaboration", "education", "technology"],
+    "avoid": ["staged", "stock-photo-feel", "artificial", "corporate-stiff", "dated"],
+    "lighting": ["natural", "warm", "soft", "bright"],
+    "colors": ["warm tones", "natural colors", "cohesive palette"],
+    "composition": ["clean", "balanced", "professional", "engaging"]
+  },
+
+  "qualityThresholds": {
+    "technical": {
+      "minResolution": 1200,
+      "minSharpness": 0.7,
+      "minExposure": 0.6,
+      "minColorBalance": 0.6,
+      "minContrast": 0.5
+    },
+    "aesthetic": {
+      "minBrandAlignment": 0.7,
+      "minEmotionalImpact": 0.6,
+      "minProfessionalism": 0.7,
+      "minAuthenticity": 0.6
+    },
+    "composition": {
+      "minScore": 6.0,
+      "minVisualBalance": 0.6,
+      "preferRuleOfThirds": true
+    }
+  },
+
+  "selectionCriteria": {
+    "scores": {
+      "excellent": 85,
+      "good": 75,
+      "acceptable": 65,
+      "marginal": 50
+    },
+    "weights": {
+      "technical": 0.30,
+      "aesthetic": 0.40,
+      "brandAlignment": 0.30
+    }
+  },
+
+  "outputFormats": {
+    "jpeg": {
+      "quality": 90,
+      "progressive": true,
+      "chromaSubsampling": "4:4:4"
+    },
+    "png": {
+      "compressionLevel": 9,
+      "quality": 95
+    },
+    "webp": {
+      "quality": 90,
+      "lossless": false
+    }
+  },
+
+  "resizing": {
+    "print": {
+      "dpi": 300,
+      "minWidth": 2400,
+      "minHeight": 1600
+    },
+    "web": {
+      "maxWidth": 1920,
+      "maxHeight": 1280,
+      "dpi": 72
+    },
+    "thumbnail": {
+      "width": 400,
+      "height": 300,
+      "fit": "cover"
+    }
+  },
+
+  "aiSettings": {
+    "openai": {
+      "model": "gpt-4o",
+      "temperature": 0.3,
+      "maxTokens": 1000,
+      "detailLevel": "high"
+    }
+  },
+
+  "composition": {
+    "rules": {
+      "ruleOfThirds": {
+        "weight": 0.30,
+        "powerPointRadius": 10
+      },
+      "goldenRatio": {
+        "weight": 0.25,
+        "phi": 1.618
+      },
+      "visualBalance": {
+        "weight": 0.20,
+        "threshold": 0.7
+      },
+      "leadingLines": {
+        "weight": 0.15
+      },
+      "symmetry": {
+        "weight": 0.10
+      }
+    }
+  },
+
+  "batchProcessing": {
+    "maxConcurrent": 3,
+    "createBackups": true,
+    "generateReports": true,
+    "createComparisons": false
+  },
+
+  "performance": {
+    "cacheEnabled": true,
+    "maxFileSize": 52428800,
+    "supportedFormats": ["jpg", "jpeg", "png", "webp"],
+    "timeoutMs": 60000
+  }
+}

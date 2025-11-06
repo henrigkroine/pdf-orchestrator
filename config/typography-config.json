@@ -1,0 +1,337 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Typography Configuration",
+  "description": "Configuration for typography optimization system",
+
+  "scales": {
+    "minorSecond": {
+      "ratio": 1.067,
+      "interval": "15:16",
+      "name": "Minor Second",
+      "character": "Subtle, refined",
+      "bestFor": ["Dense content", "Technical documentation"]
+    },
+    "majorSecond": {
+      "ratio": 1.125,
+      "interval": "8:9",
+      "name": "Major Second",
+      "character": "Modest, conservative",
+      "bestFor": ["Body-heavy content", "Long-form reading"]
+    },
+    "minorThird": {
+      "ratio": 1.200,
+      "interval": "5:6",
+      "name": "Minor Third",
+      "character": "Balanced, versatile",
+      "bestFor": ["General purpose", "Web applications"]
+    },
+    "majorThird": {
+      "ratio": 1.250,
+      "interval": "4:5",
+      "name": "Major Third",
+      "character": "Professional, harmonious",
+      "bestFor": ["Corporate documents", "Educational materials"],
+      "recommended": true
+    },
+    "perfectFourth": {
+      "ratio": 1.333,
+      "interval": "3:4",
+      "name": "Perfect Fourth",
+      "character": "Strong, clear",
+      "bestFor": ["Marketing materials", "Modern websites"]
+    },
+    "augmentedFourth": {
+      "ratio": 1.414,
+      "interval": "1:√2",
+      "name": "Augmented Fourth",
+      "character": "Dramatic, dynamic",
+      "bestFor": ["Editorial design", "Fashion"]
+    },
+    "perfectFifth": {
+      "ratio": 1.500,
+      "interval": "2:3",
+      "name": "Perfect Fifth",
+      "character": "Bold, expressive",
+      "bestFor": ["Display typography", "Posters"]
+    },
+    "goldenRatio": {
+      "ratio": 1.618,
+      "interval": "1:φ",
+      "name": "Golden Ratio",
+      "character": "Elegant, sophisticated",
+      "bestFor": ["Premium brands", "Editorial design"]
+    }
+  },
+
+  "baseSizes": {
+    "web": {
+      "default": 16,
+      "description": "Standard web base size",
+      "note": "Never go below 16px for body text"
+    },
+    "print": {
+      "default": 12,
+      "description": "Standard print base size (in points)",
+      "note": "Convert to pt for InDesign (1pt = 1.333px)"
+    },
+    "mobile": {
+      "default": 16,
+      "description": "Mobile base size",
+      "note": "Use same as web for consistency"
+    }
+  },
+
+  "lineHeight": {
+    "display": {
+      "value": 1.0,
+      "description": "Very tight for large display text",
+      "minFontSize": 60
+    },
+    "heading": {
+      "value": 1.2,
+      "description": "Compact for headlines",
+      "minFontSize": 24,
+      "maxFontSize": 60
+    },
+    "body": {
+      "value": 1.618,
+      "description": "Golden ratio for optimal readability",
+      "minFontSize": 14,
+      "maxFontSize": 24,
+      "recommended": true
+    },
+    "caption": {
+      "value": 1.4,
+      "description": "Tighter for small text",
+      "maxFontSize": 14
+    },
+    "code": {
+      "value": 1.5,
+      "description": "Monospace needs more space",
+      "note": "Applies to code blocks and pre elements"
+    }
+  },
+
+  "characterPerLine": {
+    "min": 45,
+    "ideal": 66,
+    "max": 75,
+    "description": "Optimal characters per line for readability",
+    "reference": "The Elements of Typographic Style by Robert Bringhurst"
+  },
+
+  "tracking": {
+    "display": {
+      "value": -0.02,
+      "description": "Tighten large text for visual cohesion"
+    },
+    "heading": {
+      "value": -0.01,
+      "description": "Slightly tight for emphasis"
+    },
+    "body": {
+      "value": 0,
+      "description": "Normal tracking for body text"
+    },
+    "small": {
+      "value": 0.01,
+      "description": "Open up small text for legibility"
+    },
+    "allCaps": {
+      "value": 0.05,
+      "description": "Much more space for all caps",
+      "note": "Essential for readability"
+    }
+  },
+
+  "fontWeights": {
+    "thin": 100,
+    "extraLight": 200,
+    "light": 300,
+    "regular": 400,
+    "medium": 500,
+    "semiBold": 600,
+    "bold": 700,
+    "extraBold": 800,
+    "black": 900
+  },
+
+  "paragraphSpacing": {
+    "tight": {
+      "value": 0.5,
+      "em": "0.5em",
+      "description": "Minimal spacing for dense content"
+    },
+    "normal": {
+      "value": 1.0,
+      "em": "1em",
+      "description": "Standard paragraph spacing",
+      "recommended": true
+    },
+    "loose": {
+      "value": 1.5,
+      "em": "1.5em",
+      "description": "Generous spacing for emphasis"
+    }
+  },
+
+  "measure": {
+    "minEm": 20,
+    "idealEm": 30,
+    "maxEm": 35,
+    "description": "Line width in em units",
+    "note": "Measure = line width, optimal for reading comfort"
+  },
+
+  "opticalSizes": {
+    "caption": {
+      "min": 0,
+      "max": 8,
+      "description": "Very small text (footnotes, legal)"
+    },
+    "small": {
+      "min": 8,
+      "max": 13,
+      "description": "Small text (captions, labels)"
+    },
+    "regular": {
+      "min": 13,
+      "max": 24,
+      "description": "Normal reading sizes"
+    },
+    "display": {
+      "min": 24,
+      "max": 72,
+      "description": "Large headings"
+    },
+    "poster": {
+      "min": 72,
+      "max": 999,
+      "description": "Huge display text"
+    }
+  },
+
+  "teei": {
+    "description": "TEEI Brand Typography Settings",
+    "scale": 1.250,
+    "baseSize": 16,
+    "fonts": {
+      "headline": {
+        "family": "Lora",
+        "weights": ["SemiBold", "Bold"],
+        "classification": "Serif, Transitional",
+        "character": "Warm, sophisticated, educational"
+      },
+      "body": {
+        "family": "Roboto Flex",
+        "weights": ["Regular", "Medium"],
+        "classification": "Sans-serif, Neo-grotesque",
+        "character": "Clear, modern, accessible"
+      }
+    },
+    "hierarchy": {
+      "documentTitle": {
+        "size": "h1",
+        "weight": "bold",
+        "font": "headline",
+        "color": "#00393F",
+        "usage": "Main document title, cover page"
+      },
+      "sectionHeader": {
+        "size": "h2",
+        "weight": "semiBold",
+        "font": "headline",
+        "color": "#00393F",
+        "usage": "Major section divisions"
+      },
+      "subhead": {
+        "size": "h3",
+        "weight": "medium",
+        "font": "body",
+        "color": "#65873B",
+        "usage": "Sub-sections, card titles"
+      },
+      "bodyText": {
+        "size": "body",
+        "weight": "regular",
+        "font": "body",
+        "color": "#333333",
+        "usage": "Paragraphs, main content"
+      },
+      "caption": {
+        "size": "small",
+        "weight": "regular",
+        "font": "body",
+        "color": "#666666",
+        "usage": "Image captions, footnotes"
+      }
+    }
+  },
+
+  "bestPractices": [
+    "Never use more than 2-3 font families in one document",
+    "Ensure 4.5:1 contrast ratio for body text (WCAG AA)",
+    "Use real small caps, not scaled capitals",
+    "Avoid justified text on web (creates rivers)",
+    "Set line-height in unitless values for better scaling",
+    "Use optical sizes when available (caption, regular, display)",
+    "Pair serif headlines with sans-serif body (or vice versa)",
+    "Avoid pure black (#000) for body text, use dark gray",
+    "Test typography at multiple screen sizes",
+    "Use proper quote marks (" ") not straight quotes (\" \")"
+  ],
+
+  "accessibility": {
+    "minBodySize": {
+      "web": 16,
+      "print": 11,
+      "description": "Minimum size for extended reading"
+    },
+    "minContrastRatio": {
+      "normalText": 4.5,
+      "largeText": 3.0,
+      "description": "WCAG AA requirements"
+    },
+    "largeTextDefinition": {
+      "size": 18,
+      "boldSize": 14,
+      "description": "18pt+ regular or 14pt+ bold"
+    },
+    "maxLineLength": {
+      "characters": 80,
+      "description": "Maximum before fatigue sets in"
+    }
+  },
+
+  "exportFormats": {
+    "css": {
+      "description": "CSS custom properties",
+      "extension": ".css",
+      "useCase": "Web development"
+    },
+    "scss": {
+      "description": "Sass variables",
+      "extension": ".scss",
+      "useCase": "Sass/SCSS projects"
+    },
+    "json": {
+      "description": "JSON configuration",
+      "extension": ".json",
+      "useCase": "JavaScript/TypeScript, config files"
+    },
+    "indesign": {
+      "description": "InDesign paragraph styles",
+      "extension": ".json",
+      "useCase": "Adobe InDesign automation"
+    }
+  },
+
+  "references": [
+    "The Elements of Typographic Style - Robert Bringhurst",
+    "Thinking with Type - Ellen Lupton",
+    "Detail in Typography - Jost Hochuli",
+    "Web Typography - Richard Rutter",
+    "Butterick's Practical Typography - Matthew Butterick",
+    "WCAG 2.1 - W3C Web Accessibility Guidelines"
+  ]
+}

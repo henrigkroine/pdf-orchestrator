@@ -1,0 +1,310 @@
+{
+  "name": "Layout Configuration",
+  "version": "1.0.0",
+  "description": "Configuration for layout optimization system",
+
+  "grids": {
+    "default": "swiss12",
+    "presets": {
+      "swiss12": {
+        "name": "Swiss 12-Column Grid",
+        "columns": 12,
+        "gutters": 20,
+        "margins": {
+          "top": 40,
+          "right": 40,
+          "bottom": 40,
+          "left": 40
+        },
+        "baseline": 8,
+        "description": "Classic 12-column grid for maximum flexibility",
+        "bestFor": ["General layouts", "Multi-column documents", "Responsive design"]
+      },
+      "swiss6": {
+        "name": "Swiss 6-Column Grid",
+        "columns": 6,
+        "gutters": 20,
+        "margins": {
+          "top": 40,
+          "right": 40,
+          "bottom": 40,
+          "left": 40
+        },
+        "baseline": 8,
+        "description": "Simpler 6-column grid for focused layouts",
+        "bestFor": ["Simple layouts", "Print documents", "Reports"]
+      },
+      "golden": {
+        "name": "Golden Ratio Grid",
+        "ratio": 1.618,
+        "columns": 2,
+        "gutters": 20,
+        "margins": "auto",
+        "description": "Grid based on golden ratio proportions",
+        "bestFor": ["Artistic layouts", "Premium documents", "Visual harmony"]
+      },
+      "modular": {
+        "name": "Modular Grid",
+        "columns": 6,
+        "rows": 12,
+        "gutters": 20,
+        "margins": {
+          "top": 40,
+          "right": 40,
+          "bottom": 40,
+          "left": 40
+        },
+        "baseline": 8,
+        "description": "Grid with both columns and rows for precise control",
+        "bestFor": ["Complex layouts", "Magazines", "Multi-element pages"]
+      },
+      "manuscript": {
+        "name": "Manuscript Grid",
+        "columns": 1,
+        "margins": {
+          "top": 72,
+          "right": 54,
+          "bottom": 72,
+          "left": 54
+        },
+        "maxLineLength": 66,
+        "description": "Single-column grid for text-heavy content",
+        "bestFor": ["Books", "Long-form text", "Academic papers"]
+      },
+      "magazine2col": {
+        "name": "Magazine 2-Column",
+        "columns": 2,
+        "gutters": 30,
+        "margins": {
+          "top": 36,
+          "right": 36,
+          "bottom": 48,
+          "left": 36
+        },
+        "baseline": 12,
+        "description": "Two-column layout for editorial content",
+        "bestFor": ["Magazines", "Newsletters", "Articles"]
+      },
+      "magazine3col": {
+        "name": "Magazine 3-Column",
+        "columns": 3,
+        "gutters": 20,
+        "margins": {
+          "top": 36,
+          "right": 36,
+          "bottom": 48,
+          "left": 36
+        },
+        "baseline": 12,
+        "description": "Three-column layout for dense content",
+        "bestFor": ["Magazines", "Newspapers", "Data-heavy layouts"]
+      }
+    }
+  },
+
+  "goldenRatio": {
+    "phi": 1.618033988749895,
+    "phiInverse": 0.618033988749895,
+    "fibonacci": [1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233, 377, 610],
+    "applications": {
+      "typography": {
+        "baseSize": 11,
+        "scale": "multiply by phi for each level"
+      },
+      "spacing": {
+        "baseUnit": 8,
+        "scale": "multiply by phi for each level"
+      },
+      "margins": {
+        "classical": "based on golden divisions of page"
+      },
+      "columns": {
+        "twoColumn": "61.8% / 38.2% split",
+        "threeColumn": "primary 61.8%, divide remainder"
+      }
+    }
+  },
+
+  "alignment": {
+    "tolerance": 2,
+    "opticalAdjustment": true,
+    "snapToGrid": true,
+    "opticalFactors": {
+      "circle": {
+        "x": 0.03,
+        "y": 0.03,
+        "description": "Circles need slight visual offset to appear centered"
+      },
+      "triangle": {
+        "x": 0.05,
+        "y": 0.05,
+        "description": "Triangles need more adjustment due to angular shape"
+      },
+      "rounded": {
+        "x": 0.02,
+        "y": 0.02,
+        "description": "Rounded rectangles need minor adjustment"
+      },
+      "text": {
+        "x": 0,
+        "y": 0.05,
+        "description": "Text needs vertical optical adjustment"
+      }
+    }
+  },
+
+  "eyeFlow": {
+    "defaultPattern": "auto",
+    "patterns": {
+      "z": {
+        "name": "Z-Pattern",
+        "description": "Horizontal scanning for image-heavy layouts",
+        "bestFor": ["Landing pages", "Hero sections", "Image-heavy layouts"],
+        "focalPoints": [
+          { "x": 0.1, "y": 0.1, "strength": 1.0, "label": "Primary Entry" },
+          { "x": 0.9, "y": 0.1, "strength": 0.8, "label": "Top Right" },
+          { "x": 0.1, "y": 0.5, "strength": 0.6, "label": "Middle Left" },
+          { "x": 0.9, "y": 0.9, "strength": 0.9, "label": "CTA Zone" }
+        ]
+      },
+      "f": {
+        "name": "F-Pattern",
+        "description": "Vertical scanning for text-heavy content",
+        "bestFor": ["Text-heavy documents", "Articles", "White papers"],
+        "focalPoints": [
+          { "x": 0.1, "y": 0.1, "strength": 1.0, "label": "Start" },
+          { "x": 0.7, "y": 0.1, "strength": 0.9, "label": "Top Bar" },
+          { "x": 0.1, "y": 0.25, "strength": 0.8, "label": "Second Bar Start" },
+          { "x": 0.5, "y": 0.25, "strength": 0.7, "label": "Second Bar End" },
+          { "x": 0.1, "y": 0.4, "strength": 0.6, "label": "Stem Top" },
+          { "x": 0.1, "y": 0.7, "strength": 0.4, "label": "Stem Bottom" }
+        ]
+      },
+      "gutenberg": {
+        "name": "Gutenberg Diagram",
+        "description": "Diagonal flow from top-left to bottom-right",
+        "bestFor": ["Print layouts", "Books", "Traditional documents"],
+        "zones": [
+          { "name": "Primary", "x": 0.05, "y": 0.05, "width": 0.45, "height": 0.45, "strength": 1.0 },
+          { "name": "Strong Fallow", "x": 0.5, "y": 0.05, "width": 0.45, "height": 0.45, "strength": 0.6 },
+          { "name": "Weak Fallow", "x": 0.05, "y": 0.5, "width": 0.45, "height": 0.45, "strength": 0.4 },
+          { "name": "Terminal", "x": 0.5, "y": 0.5, "width": 0.45, "height": 0.45, "strength": 0.8 }
+        ]
+      }
+    }
+  },
+
+  "page": {
+    "usLetter": {
+      "width": 612,
+      "height": 792,
+      "inches": "8.5 × 11",
+      "description": "US Letter size"
+    },
+    "a4": {
+      "width": 595,
+      "height": 842,
+      "inches": "8.27 × 11.69",
+      "description": "A4 International"
+    }
+  },
+
+  "teei": {
+    "brandColors": {
+      "nordshore": {
+        "hex": "#00393F",
+        "name": "Nordshore",
+        "usage": "Primary brand color (80%)",
+        "visualWeight": 1.0,
+        "psychology": "Trust, stability, professionalism"
+      },
+      "sky": {
+        "hex": "#C9E4EC",
+        "name": "Sky",
+        "usage": "Secondary highlights",
+        "visualWeight": 0.4,
+        "psychology": "Hope, openness, calm"
+      },
+      "sand": {
+        "hex": "#FFF1E2",
+        "name": "Sand",
+        "usage": "Warm neutral background",
+        "visualWeight": 0.2,
+        "psychology": "Warmth, invitation, comfort"
+      },
+      "beige": {
+        "hex": "#EFE1DC",
+        "name": "Beige",
+        "usage": "Soft neutral background",
+        "visualWeight": 0.25,
+        "psychology": "Sophistication, elegance"
+      },
+      "gold": {
+        "hex": "#BA8F5A",
+        "name": "Gold",
+        "usage": "Premium feel, metrics",
+        "visualWeight": 0.7,
+        "psychology": "Achievement, value, excellence"
+      },
+      "moss": {
+        "hex": "#65873B",
+        "name": "Moss",
+        "usage": "Natural green accent",
+        "visualWeight": 0.6,
+        "psychology": "Growth, sustainability"
+      },
+      "clay": {
+        "hex": "#913B2F",
+        "name": "Clay",
+        "usage": "Rich terracotta accent",
+        "visualWeight": 0.8,
+        "psychology": "Warmth, urgency, groundedness"
+      }
+    },
+    "typography": {
+      "headline": {
+        "family": "Lora",
+        "weights": ["Regular", "Medium", "SemiBold", "Bold"],
+        "sizes": [28, 32, 42, 48],
+        "lineHeight": 1.2
+      },
+      "body": {
+        "family": "Roboto Flex",
+        "weights": ["Regular", "Medium"],
+        "sizes": [11, 12, 14],
+        "lineHeight": 1.5
+      },
+      "caption": {
+        "family": "Roboto Flex",
+        "weight": "Regular",
+        "size": 9,
+        "lineHeight": 1.4
+      }
+    },
+    "spacing": {
+      "sections": 60,
+      "elements": 20,
+      "paragraphs": 12,
+      "baseline": 8
+    }
+  },
+
+  "ai": {
+    "enabled": true,
+    "defaultModel": "claude-opus-4-20250514",
+    "fallbackModel": "claude-sonnet-4-20250514",
+    "thinkingBudget": 5000,
+    "refinementSettings": {
+      "layoutCritique": true,
+      "narrativeOptimization": true,
+      "emotionalMapping": true
+    }
+  },
+
+  "export": {
+    "formats": ["json", "indesign", "css-grid"],
+    "includeComments": true,
+    "prettyPrint": true,
+    "generateReport": true
+  }
+}

@@ -1,0 +1,347 @@
+{
+  "name": "TEEI Print Production Configuration",
+  "version": "1.0.0",
+  "description": "Professional print production specifications for TEEI documents",
+
+  "printSpecs": {
+    "bleed": {
+      "standard": 3,
+      "safe": 5,
+      "minSafe": 6,
+      "unit": "mm",
+      "description": "Bleed extends background beyond trim edge"
+    },
+
+    "resolution": {
+      "print": 300,
+      "highEnd": 600,
+      "lowThreshold": 200,
+      "unit": "DPI",
+      "description": "Minimum 300 DPI for quality print"
+    },
+
+    "colorProfile": {
+      "cmyk": "Coated FOGRA39 (ISO 12647-2:2004)",
+      "rgb": "sRGB IEC61966-2.1",
+      "spot": "PANTONE+ Solid Coated",
+      "description": "Industry standard color profiles"
+    },
+
+    "lineWeight": {
+      "minimum": 0.25,
+      "recommended": 0.5,
+      "unit": "pt",
+      "description": "Minimum line weight for reliable printing"
+    },
+
+    "inkCoverage": {
+      "maximum": 300,
+      "recommended": 280,
+      "unit": "percent",
+      "description": "Total CMYK ink coverage (C+M+Y+K)"
+    }
+  },
+
+  "paperSizes": {
+    "letter": {
+      "name": "US Letter",
+      "width": 8.5,
+      "height": 11,
+      "unit": "in",
+      "widthMM": 215.9,
+      "heightMM": 279.4,
+      "common": true
+    },
+    "a4": {
+      "name": "A4",
+      "width": 210,
+      "height": 297,
+      "unit": "mm",
+      "common": true
+    },
+    "tabloid": {
+      "name": "Tabloid / Ledger",
+      "width": 11,
+      "height": 17,
+      "unit": "in",
+      "widthMM": 279.4,
+      "heightMM": 431.8,
+      "common": true
+    },
+    "legal": {
+      "name": "US Legal",
+      "width": 8.5,
+      "height": 14,
+      "unit": "in",
+      "widthMM": 215.9,
+      "heightMM": 355.6,
+      "common": true
+    },
+    "a3": {
+      "name": "A3",
+      "width": 297,
+      "height": 420,
+      "unit": "mm",
+      "common": false
+    },
+    "a5": {
+      "name": "A5",
+      "width": 148,
+      "height": 210,
+      "unit": "mm",
+      "common": false
+    }
+  },
+
+  "pdfStandards": {
+    "pdfx1a": {
+      "name": "PDF/X-1a:2001",
+      "version": "1.3",
+      "colorMode": "CMYK only",
+      "transparency": false,
+      "fonts": "all embedded",
+      "description": "Oldest standard, most compatible"
+    },
+    "pdfx3": {
+      "name": "PDF/X-3:2002",
+      "version": "1.3",
+      "colorMode": "CMYK and spot",
+      "transparency": false,
+      "fonts": "all embedded",
+      "description": "Allows device-independent color"
+    },
+    "pdfx4": {
+      "name": "PDF/X-4:2008",
+      "version": "1.6",
+      "colorMode": "CMYK, spot, RGB with profile",
+      "transparency": true,
+      "fonts": "all embedded",
+      "description": "Modern standard, supports transparency (recommended)"
+    }
+  },
+
+  "preflightChecks": {
+    "critical": [
+      "fonts_embedded",
+      "color_mode_cmyk",
+      "bleed_present",
+      "pdf_version"
+    ],
+    "high": [
+      "image_resolution",
+      "spot_colors",
+      "overprint_settings",
+      "trim_box_defined"
+    ],
+    "medium": [
+      "file_size",
+      "page_dimensions",
+      "line_weights",
+      "ink_coverage"
+    ],
+    "low": [
+      "metadata",
+      "transparency_usage",
+      "compression"
+    ]
+  },
+
+  "cropMarks": {
+    "enabled": true,
+    "length": 8,
+    "offset": 3,
+    "thickness": 0.5,
+    "unit": "mm",
+    "color": "black",
+    "registration": true
+  },
+
+  "colorBars": {
+    "enabled": false,
+    "position": "bottom",
+    "colors": ["cyan", "magenta", "yellow", "black"],
+    "width": 10,
+    "unit": "mm"
+  },
+
+  "validation": {
+    "strictMode": false,
+    "allowRGB": false,
+    "requireBleed": true,
+    "requireFontEmbedding": true,
+    "maxFileSize": 100,
+    "maxFileSizeUnit": "MB",
+    "warnOnTransparency": true,
+    "checkOverprint": true
+  },
+
+  "optimization": {
+    "downsampleImages": true,
+    "downsampleThreshold": 450,
+    "targetDPI": 300,
+    "compressImages": true,
+    "compressionQuality": "high",
+    "subsetFonts": true,
+    "removeUnusedObjects": true
+  },
+
+  "export": {
+    "defaultStandard": "pdfx4",
+    "embedColorProfile": true,
+    "preserveTransparency": true,
+    "includeBleed": true,
+    "includeCropMarks": true,
+    "includeRegistration": true,
+    "pdfVersion": "1.6",
+    "compatibility": "Acrobat 7.0 and later"
+  },
+
+  "printPackage": {
+    "createFolder": true,
+    "includeSpecSheet": true,
+    "includeReport": true,
+    "includeReadme": true,
+    "includeSeparations": false,
+    "includeProof": false
+  },
+
+  "printers": {
+    "local": {
+      "name": "Local Print Shop",
+      "requirements": {
+        "format": "PDF/X-4",
+        "bleed": 3,
+        "resolution": 300,
+        "colorMode": "CMYK"
+      }
+    },
+    "professional": {
+      "name": "Professional Printer",
+      "requirements": {
+        "format": "PDF/X-4",
+        "bleed": 5,
+        "resolution": 300,
+        "colorMode": "CMYK",
+        "inkCoverage": 280,
+        "proofRequired": true
+      }
+    },
+    "premium": {
+      "name": "Premium / High-End",
+      "requirements": {
+        "format": "PDF/X-4",
+        "bleed": 5,
+        "resolution": 600,
+        "colorMode": "CMYK + Spot",
+        "inkCoverage": 300,
+        "proofRequired": true,
+        "colorManaged": true
+      }
+    }
+  },
+
+  "workflows": {
+    "quick": {
+      "name": "Quick Print Prep",
+      "steps": [
+        "validate",
+        "embed_fonts",
+        "add_bleed"
+      ],
+      "skipCMYK": false,
+      "skipPDFX": true
+    },
+    "standard": {
+      "name": "Standard Print Prep",
+      "steps": [
+        "validate",
+        "add_bleed",
+        "convert_cmyk",
+        "embed_fonts",
+        "add_cropmarks",
+        "generate_pdfx4"
+      ],
+      "default": true
+    },
+    "professional": {
+      "name": "Professional Print Package",
+      "steps": [
+        "preflight",
+        "add_bleed",
+        "convert_cmyk",
+        "optimize_images",
+        "embed_fonts",
+        "add_cropmarks",
+        "add_registration",
+        "generate_pdfx4",
+        "create_spec_sheet",
+        "package"
+      ],
+      "strictValidation": true
+    }
+  },
+
+  "teeiDefaults": {
+    "bleed": 3,
+    "paperSize": "letter",
+    "colorMode": "CMYK",
+    "pdfStandard": "pdfx4",
+    "resolution": 300,
+    "workflow": "standard",
+    "includeCropMarks": true,
+    "createPackage": true,
+    "colors": {
+      "nordshore": {
+        "name": "TEEI Nordshore",
+        "hex": "#00393F",
+        "cmyk": [100, 45, 38, 65],
+        "pantone": "3165 C"
+      },
+      "sky": {
+        "name": "TEEI Sky",
+        "hex": "#C9E4EC",
+        "cmyk": [20, 2, 5, 0],
+        "pantone": "7457 C"
+      },
+      "gold": {
+        "name": "TEEI Gold",
+        "hex": "#BA8F5A",
+        "cmyk": [20, 35, 65, 15],
+        "pantone": "465 C"
+      },
+      "sand": {
+        "name": "TEEI Sand",
+        "hex": "#FFF1E2",
+        "cmyk": [0, 5, 12, 0],
+        "pantone": "9060 C"
+      },
+      "beige": {
+        "name": "TEEI Beige",
+        "hex": "#EFE1DC",
+        "cmyk": [3, 8, 10, 0],
+        "pantone": "9221 C"
+      },
+      "moss": {
+        "name": "TEEI Moss",
+        "hex": "#65873B",
+        "cmyk": [50, 15, 90, 30],
+        "pantone": "5763 C"
+      },
+      "clay": {
+        "name": "TEEI Clay",
+        "hex": "#913B2F",
+        "cmyk": [20, 80, 75, 35],
+        "pantone": "7609 C"
+      }
+    }
+  },
+
+  "notes": {
+    "bleed": "Bleed prevents white edges when cutting. Extend all background elements into bleed area.",
+    "cmyk": "CMYK is required for print. RGB colors will look different when printed.",
+    "resolution": "300 DPI minimum ensures sharp, clear printing. Higher resolution = larger files.",
+    "fonts": "All fonts must be embedded so printers can reproduce your document exactly.",
+    "pdfx": "PDF/X-4 is an ISO standard for print production, ensuring compatibility.",
+    "cropMarks": "Crop marks show the printer where to trim the final document."
+  }
+}
