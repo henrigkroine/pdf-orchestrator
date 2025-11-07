@@ -1,0 +1,32 @@
+[
+  {
+    "year": "2020",
+    "students": 2500,
+    "teachers": 125,
+    "programs": 8
+  },
+  {
+    "year": "2021",
+    "students": 3200,
+    "teachers": 160,
+    "programs": 12
+  },
+  {
+    "year": "2022",
+    "students": 4100,
+    "teachers": 205,
+    "programs": 15
+  },
+  {
+    "year": "2023",
+    "students": 5800,
+    "teachers": 290,
+    "programs": 18
+  },
+  {
+    "year": "2024",
+    "students": 7500,
+    "teachers": 375,
+    "programs": 22
+  }
+]

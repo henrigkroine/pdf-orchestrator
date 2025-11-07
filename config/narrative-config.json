@@ -1,0 +1,398 @@
+{
+  "name": "Narrative Configuration",
+  "version": "1.0.0",
+  "description": "Configuration for visual storytelling and narrative systems",
+
+  "storyArcs": {
+    "default": "classic",
+    "templates": {
+      "classic": {
+        "name": "Classic 5-Act Structure",
+        "stages": ["exposition", "rising", "climax", "falling", "resolution"],
+        "description": "Traditional narrative structure (Freytag's Pyramid)",
+        "bestFor": ["General purpose", "Educational content", "Reports"],
+        "duration": "5-10 pages",
+        "intensity": {
+          "exposition": 0.6,
+          "rising": 0.7,
+          "climax": 1.0,
+          "falling": 0.5,
+          "resolution": 0.8
+        }
+      },
+      "hero": {
+        "name": "Hero's Journey",
+        "stages": [
+          "ordinary-world",
+          "call-to-adventure",
+          "refusal",
+          "mentor",
+          "threshold",
+          "tests",
+          "ordeal",
+          "reward",
+          "road-back",
+          "resurrection",
+          "return",
+          "master"
+        ],
+        "description": "Joseph Campbell's monomyth (12 stages)",
+        "bestFor": ["Transformation stories", "Case studies", "Long-form content"],
+        "duration": "12-20 pages"
+      },
+      "problemSolution": {
+        "name": "Problem-Solution-Benefit",
+        "stages": ["problem", "agitation", "solution", "proof", "call-to-action"],
+        "description": "Marketing and persuasion framework (PAS)",
+        "bestFor": ["Partnership proposals", "Sales documents", "Persuasive content"],
+        "duration": "4-6 pages",
+        "intensity": {
+          "problem": 0.6,
+          "agitation": 0.9,
+          "solution": 1.0,
+          "proof": 0.8,
+          "call-to-action": 1.0
+        }
+      },
+      "beforeAfter": {
+        "name": "Before-After-Bridge",
+        "stages": ["before", "after", "bridge", "call-to-action"],
+        "description": "Show the transformation clearly",
+        "bestFor": ["Case studies", "Impact reports", "Success stories"],
+        "duration": "4-5 pages"
+      },
+      "educational": {
+        "name": "Educational Arc",
+        "stages": ["hook", "background", "concepts", "application", "summary", "next-steps"],
+        "description": "Learning-focused structure",
+        "bestFor": ["White papers", "Guides", "Tutorials"],
+        "duration": "6-10 pages"
+      }
+    }
+  },
+
+  "emotions": {
+    "core": {
+      "trust": {
+        "name": "Trust",
+        "colors": ["#00393F", "#C9E4EC", "#EFE1DC"],
+        "intensity": 0.6,
+        "typography": {
+          "family": "serif",
+          "weight": "regular",
+          "style": "clear-honest",
+          "letterSpacing": "normal"
+        },
+        "imagery": "authentic-people-handshakes",
+        "whitespace": "comfortable",
+        "psychology": "Blue tones create stability and professional trust"
+      },
+      "hope": {
+        "name": "Hope",
+        "colors": ["#C9E4EC", "#FFF1E2", "#BA8F5A"],
+        "intensity": 0.7,
+        "typography": {
+          "family": "sans-serif",
+          "weight": "light",
+          "style": "open-flowing",
+          "letterSpacing": "loose"
+        },
+        "imagery": "upward-sunrise-growth",
+        "whitespace": "generous",
+        "psychology": "Light blues and warm tones evoke optimism and possibility"
+      },
+      "urgency": {
+        "name": "Urgency",
+        "colors": ["#913B2F", "#BA8F5A", "#00393F"],
+        "intensity": 1.0,
+        "typography": {
+          "family": "sans-serif",
+          "weight": "bold",
+          "style": "strong-direct",
+          "letterSpacing": "tight"
+        },
+        "imagery": "sharp-focused-clock",
+        "whitespace": "minimal",
+        "psychology": "Warm reds and high contrast demand immediate attention"
+      },
+      "calm": {
+        "name": "Calm",
+        "colors": ["#C9E4EC", "#FFF1E2", "#EFE1DC"],
+        "intensity": 0.3,
+        "typography": {
+          "family": "serif",
+          "weight": "light",
+          "style": "gentle-flowing",
+          "letterSpacing": "loose"
+        },
+        "imagery": "soft-nature-peaceful",
+        "whitespace": "abundant",
+        "psychology": "Pastels and neutrals create peace and tranquility"
+      },
+      "excitement": {
+        "name": "Excitement",
+        "colors": ["#BA8F5A", "#C9E4EC", "#65873B"],
+        "intensity": 0.9,
+        "typography": {
+          "family": "sans-serif",
+          "weight": "bold",
+          "style": "bold-expressive",
+          "letterSpacing": "varied"
+        },
+        "imagery": "dynamic-celebration-action",
+        "whitespace": "balanced",
+        "psychology": "Bright colors and variety create energy and stimulation"
+      },
+      "concern": {
+        "name": "Concern",
+        "colors": ["#00393F", "#65873B", "#913B2F"],
+        "intensity": 0.7,
+        "typography": {
+          "family": "serif",
+          "weight": "medium",
+          "style": "solid-weighted",
+          "letterSpacing": "normal"
+        },
+        "imagery": "serious-problem-challenge",
+        "whitespace": "tight",
+        "psychology": "Dark tones convey seriousness and grounding"
+      },
+      "empowerment": {
+        "name": "Empowerment",
+        "colors": ["#BA8F5A", "#00393F", "#C9E4EC"],
+        "intensity": 0.8,
+        "typography": {
+          "family": "sans-serif",
+          "weight": "semibold",
+          "style": "confident-clear",
+          "letterSpacing": "normal"
+        },
+        "imagery": "success-achievement-leadership",
+        "whitespace": "structured",
+        "psychology": "Gold and strong contrast build confidence"
+      },
+      "joy": {
+        "name": "Joy",
+        "colors": ["#FFF1E2", "#C9E4EC", "#BA8F5A"],
+        "intensity": 0.8,
+        "typography": {
+          "family": "sans-serif",
+          "weight": "regular",
+          "style": "friendly-warm",
+          "letterSpacing": "loose"
+        },
+        "imagery": "smiles-celebration-connection",
+        "whitespace": "generous",
+        "psychology": "Warm pastels evoke happiness and positivity"
+      }
+    }
+  },
+
+  "emotionalJourneys": {
+    "persuasion": {
+      "name": "Persuasion Journey",
+      "stages": [
+        { "emotion": "concern", "description": "Identify problem", "duration": "short" },
+        { "emotion": "urgency", "description": "Amplify need", "duration": "short" },
+        { "emotion": "hope", "description": "Present solution", "duration": "medium" },
+        { "emotion": "trust", "description": "Build credibility", "duration": "medium" },
+        { "emotion": "empowerment", "description": "Call to action", "duration": "short" }
+      ],
+      "totalIntensity": "building",
+      "bestFor": ["Sales", "Proposals", "Persuasive content"]
+    },
+    "transformation": {
+      "name": "Transformation Journey",
+      "stages": [
+        { "emotion": "calm", "description": "Starting point", "duration": "short" },
+        { "emotion": "concern", "description": "Challenge arises", "duration": "medium" },
+        { "emotion": "hope", "description": "Path forward", "duration": "medium" },
+        { "emotion": "excitement", "description": "Progress made", "duration": "medium" },
+        { "emotion": "joy", "description": "Success achieved", "duration": "short" }
+      ],
+      "totalIntensity": "ascending",
+      "bestFor": ["Case studies", "Success stories", "Impact reports"]
+    },
+    "educational": {
+      "name": "Educational Journey",
+      "stages": [
+        { "emotion": "calm", "description": "Introduction", "duration": "short" },
+        { "emotion": "trust", "description": "Build foundation", "duration": "medium" },
+        { "emotion": "excitement", "description": "New concepts", "duration": "long" },
+        { "emotion": "empowerment", "description": "Application", "duration": "medium" },
+        { "emotion": "hope", "description": "Next steps", "duration": "short" }
+      ],
+      "totalIntensity": "varied",
+      "bestFor": ["Tutorials", "Guides", "Educational content"]
+    }
+  },
+
+  "pacing": {
+    "strategies": {
+      "fast": {
+        "name": "Fast Pacing",
+        "wordDensity": "high",
+        "whitespace": "minimal",
+        "imageRatio": "low",
+        "readingSpeed": 300,
+        "description": "High information density with minimal breaks",
+        "bestFor": ["News", "Updates", "Quick reads"],
+        "breathingPointInterval": 300
+      },
+      "moderate": {
+        "name": "Moderate Pacing",
+        "wordDensity": "balanced",
+        "whitespace": "comfortable",
+        "imageRatio": "balanced",
+        "readingSpeed": 250,
+        "description": "Balanced rhythm with regular breathing points",
+        "bestFor": ["Reports", "Proposals", "General documents"],
+        "breathingPointInterval": 200
+      },
+      "slow": {
+        "name": "Slow Pacing",
+        "wordDensity": "low",
+        "whitespace": "generous",
+        "imageRatio": "high",
+        "readingSpeed": 200,
+        "description": "Contemplative and spacious with rich imagery",
+        "bestFor": ["Portfolios", "Art books", "Luxury content"],
+        "breathingPointInterval": 150
+      },
+      "varied": {
+        "name": "Varied Pacing",
+        "wordDensity": "mixed",
+        "whitespace": "dynamic",
+        "imageRatio": "mixed",
+        "readingSpeed": 250,
+        "description": "Alternating fast and slow to maintain engagement",
+        "bestFor": ["Long documents", "Books", "Magazines"],
+        "breathingPointInterval": 200
+      }
+    },
+    "densityThresholds": {
+      "sparse": { "max": 0.3, "label": "Very spacious" },
+      "balanced": { "min": 0.3, "max": 0.5, "label": "Well balanced" },
+      "dense": { "min": 0.5, "max": 0.7, "label": "Content-rich" },
+      "very-dense": { "min": 0.7, "label": "Very dense" }
+    },
+    "whitespaceTargets": {
+      "minimal": { "ratio": 0.2, "description": "20% whitespace" },
+      "comfortable": { "ratio": 0.35, "description": "35% whitespace (optimal)" },
+      "generous": { "ratio": 0.5, "description": "50% whitespace" },
+      "abundant": { "ratio": 0.65, "description": "65% whitespace" }
+    }
+  },
+
+  "transitions": {
+    "types": {
+      "subtle": {
+        "name": "Subtle Transition",
+        "description": "Gentle flow between similar emotional states",
+        "technique": "color-gradient",
+        "duration": "short",
+        "visualChange": "minimal"
+      },
+      "amplifying": {
+        "name": "Amplifying Transition",
+        "description": "Building intensity and emotional engagement",
+        "technique": "progressive-reveal",
+        "duration": "long",
+        "visualChange": "gradual-increase"
+      },
+      "calming": {
+        "name": "Calming Transition",
+        "description": "Reducing intensity for reflection",
+        "technique": "fade-dissolve",
+        "duration": "medium",
+        "visualChange": "gradual-decrease"
+      },
+      "shifting": {
+        "name": "Shifting Transition",
+        "description": "Moving between different emotional states",
+        "technique": "cross-dissolve",
+        "duration": "medium",
+        "visualChange": "moderate"
+      },
+      "dramatic": {
+        "name": "Dramatic Transition",
+        "description": "Strong contrast for impact",
+        "technique": "hard-cut",
+        "duration": "immediate",
+        "visualChange": "significant"
+      }
+    }
+  },
+
+  "visualTreatments": {
+    "layouts": {
+      "hero-full-width": "Large impactful opening with full-bleed imagery",
+      "two-column": "Balanced two-column layout for text and supporting elements",
+      "centered-focus": "Centered single element for maximum impact",
+      "asymmetric": "Dynamic asymmetric layout for visual interest",
+      "balanced-grid": "Structured grid layout for multiple elements",
+      "heavy-text": "Text-focused layout with minimal visuals",
+      "data-driven": "Chart and metric focused layout",
+      "focused-cta": "Clear call-to-action emphasis"
+    },
+    "imagery": {
+      "large-impactful": "Hero image 50-70% of page",
+      "supporting-medium": "Supporting images 20-30% of page",
+      "supporting-small": "Small accent images 10-15% of page",
+      "hero-statement": "Single powerful image 60-80% of page",
+      "uplifting": "Positive, hopeful imagery",
+      "authentic": "Real people, genuine moments",
+      "professional": "Business-appropriate imagery"
+    }
+  },
+
+  "metrics": {
+    "quality": {
+      "excellent": { "min": 8.0, "label": "Exceptional quality" },
+      "good": { "min": 6.0, "max": 8.0, "label": "High quality" },
+      "acceptable": { "min": 4.0, "max": 6.0, "label": "Adequate quality" },
+      "needs-work": { "max": 4.0, "label": "Requires improvement" }
+    },
+    "resonance": {
+      "excellent": { "min": 8.0, "description": "Strong emotional connection" },
+      "good": { "min": 6.0, "description": "Clear emotional journey" },
+      "acceptable": { "min": 4.0, "description": "Some emotional impact" },
+      "weak": { "max": 4.0, "description": "Limited emotional resonance" }
+    },
+    "engagement": {
+      "high": { "min": 7.0, "indicators": ["Varied pacing", "Clear narrative", "Strong emotions"] },
+      "medium": { "min": 5.0, "indicators": ["Moderate pacing", "Some variety"] },
+      "low": { "max": 5.0, "indicators": ["Monotonous", "No clear arc"] }
+    }
+  },
+
+  "ai": {
+    "enabled": true,
+    "models": {
+      "primary": "claude-opus-4-20250514",
+      "fallback": "claude-sonnet-4-20250514"
+    },
+    "thinkingBudget": 5000,
+    "optimization": {
+      "narrativeCritique": true,
+      "emotionalMapping": true,
+      "pacingAnalysis": true,
+      "transitionSuggestions": true
+    }
+  },
+
+  "export": {
+    "formats": ["json", "html-storyboard", "pdf-report"],
+    "storyboard": {
+      "includeVisuals": true,
+      "colorPreviews": true,
+      "emotionIndicators": true,
+      "transitionAnimations": false
+    },
+    "report": {
+      "includeMetrics": true,
+      "includeRecommendations": true,
+      "includeVisualizations": true
+    }
+  }
+}

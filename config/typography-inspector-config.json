@@ -1,0 +1,263 @@
+{
+  "version": "1.0.0",
+  "description": "Typography Inspector Configuration - TEEI Brand Standards",
+
+  "teeiTypography": {
+    "fonts": {
+      "headlines": {
+        "family": "Lora",
+        "weights": ["Regular", "Medium", "SemiBold", "Bold"],
+        "styles": ["normal", "italic"],
+        "usage": "Headlines, document titles, section headers"
+      },
+      "body": {
+        "family": "Roboto Flex",
+        "fallback": "Roboto",
+        "weights": ["Thin", "Light", "Regular", "Medium", "Bold", "Black"],
+        "styles": ["normal", "italic"],
+        "usage": "Body text, captions, subheads"
+      }
+    },
+
+    "typeScale": {
+      "documentTitle": { "size": 42, "font": "Lora Bold", "usage": "Main document title" },
+      "sectionHeader": { "size": 28, "font": "Lora SemiBold", "usage": "Section headers", "color": "#00393F" },
+      "subhead": { "size": 18, "font": "Roboto Flex Medium", "usage": "Subheadings", "color": "#00393F" },
+      "bodyText": { "size": 11, "font": "Roboto Flex Regular", "usage": "Body paragraphs" },
+      "caption": { "size": 9, "font": "Roboto Flex Regular", "usage": "Captions, footnotes" }
+    },
+
+    "spacing": {
+      "lineHeight": {
+        "body": 1.5,
+        "headlines": 1.2,
+        "captions": 1.4
+      },
+      "paragraphSpacing": 12,
+      "sectionSpacing": 60,
+      "elementSpacing": 20,
+      "margins": 40
+    },
+
+    "colors": {
+      "nordshore": "#00393F",
+      "sky": "#C9E4EC",
+      "sand": "#FFF1E2",
+      "beige": "#EFE1DC",
+      "moss": "#65873B",
+      "gold": "#BA8F5A",
+      "clay": "#913B2F"
+    }
+  },
+
+  "modularScales": {
+    "minorSecond": 1.067,
+    "majorSecond": 1.125,
+    "minorThird": 1.200,
+    "majorThird": 1.250,
+    "perfectFourth": 1.333,
+    "augmentedFourth": 1.414,
+    "perfectFifth": 1.500,
+    "goldenRatio": 1.618
+  },
+
+  "sizeConstraints": {
+    "minBody": 11,
+    "minCaption": 9,
+    "maxHeadline": 48,
+    "minHeadline": 18,
+    "minLineHeight": 1.2,
+    "maxLineHeight": 2.0
+  },
+
+  "readabilityStandards": {
+    "lineLength": {
+      "ideal": { "min": 45, "max": 75 },
+      "acceptable": { "min": 35, "max": 90 }
+    },
+    "contrastRatio": {
+      "wcagAAA": 7.0,
+      "wcagAA": 4.5,
+      "wcagAAALarge": 4.5
+    },
+    "ragQuality": {
+      "maxVariation": 0.3,
+      "minVariation": 0.1
+    }
+  },
+
+  "problematicKerningPairs": [
+    "AV", "AW", "AY", "AT", "Av", "Aw", "Ay",
+    "FA", "PA", "TA", "VA", "WA", "YA",
+    "LT", "LV", "LW", "LY",
+    "RT", "RV", "RW", "RY",
+    "av", "aw", "ay", "we", "wo",
+    "T.", "T,", "P.", "P,", "Y.", "Y,",
+    "V.", "V,", "W.", "W,",
+    "\"A", "\"J", "\"T", "\"V", "\"W", "\"Y"
+  ],
+
+  "ligatures": {
+    "standard": ["ff", "fi", "fl", "ffi", "ffl"],
+    "discretionary": ["ct", "st", "sp"],
+    "historical": ["ſt", "ſi", "ſl"]
+  },
+
+  "typographyPolish": {
+    "smartQuotes": {
+      "openingDouble": """,
+      "closingDouble": """,
+      "openingSingle": "'",
+      "closingSingle": "'",
+      "avoid": ["\"", "'"]
+    },
+    "dashes": {
+      "emDash": "—",
+      "enDash": "–",
+      "hyphen": "-",
+      "minus": "−"
+    },
+    "ellipsis": {
+      "correct": "…",
+      "avoid": "..."
+    },
+    "spaces": {
+      "nonBreaking": "\u00A0",
+      "thin": "\u2009",
+      "narrow": "\u202F",
+      "figure": "\u2007",
+      "hair": "\u200A"
+    }
+  },
+
+  "aiModels": {
+    "fonts": {
+      "model": "gpt-4o",
+      "provider": "openai",
+      "purpose": "Font appropriateness and hierarchy effectiveness"
+    },
+    "scale": {
+      "model": "claude-opus-4.1",
+      "provider": "anthropic",
+      "purpose": "Type scale reasoning and critique"
+    },
+    "spacing": {
+      "model": "gpt-5",
+      "provider": "openai",
+      "purpose": "Line spacing and widow/orphan optimization"
+    },
+    "kerning": {
+      "model": "claude-sonnet-4.5",
+      "provider": "anthropic",
+      "purpose": "Micro-typography and kerning analysis"
+    },
+    "readability": {
+      "model": "gemini-2.5-pro",
+      "provider": "google",
+      "purpose": "Readability and rag quality analysis"
+    },
+    "hierarchy": {
+      "model": "gpt-4o",
+      "provider": "openai",
+      "purpose": "Hierarchy effectiveness and clarity"
+    },
+    "polish": {
+      "model": "claude-opus-4.1",
+      "provider": "anthropic",
+      "purpose": "Typography polish and refinement"
+    }
+  },
+
+  "scoringWeights": {
+    "fonts": 15,
+    "scale": 15,
+    "spacing": 15,
+    "kerning": 10,
+    "readability": 20,
+    "hierarchy": 15,
+    "polish": 10
+  },
+
+  "scoringThresholds": {
+    "perfect": 95,
+    "excellent": 90,
+    "veryGood": 85,
+    "good": 80,
+    "fair": 70,
+    "poor": 0
+  },
+
+  "fontLicenses": {
+    "Lora": {
+      "type": "OFL",
+      "commercial": true,
+      "embedding": true,
+      "url": "https://fonts.google.com/specimen/Lora"
+    },
+    "Roboto": {
+      "type": "Apache 2.0",
+      "commercial": true,
+      "embedding": true,
+      "url": "https://fonts.google.com/specimen/Roboto"
+    },
+    "Roboto Flex": {
+      "type": "OFL",
+      "commercial": true,
+      "embedding": true,
+      "url": "https://fonts.google.com/specimen/Roboto+Flex"
+    }
+  },
+
+  "hierarchyRules": {
+    "minSizeDifference": 2,
+    "maxLevelsSkipped": 1,
+    "consistencyTolerance": 1,
+    "maxH1PerPage": 1,
+    "maxConsecutiveSameLevel": 5
+  },
+
+  "outputFormats": {
+    "json": {
+      "extension": ".json",
+      "mimeType": "application/json",
+      "description": "Machine-readable JSON format"
+    },
+    "html": {
+      "extension": ".html",
+      "mimeType": "text/html",
+      "description": "Human-readable HTML report"
+    },
+    "markdown": {
+      "extension": ".md",
+      "mimeType": "text/markdown",
+      "description": "Markdown format for documentation"
+    },
+    "csv": {
+      "extension": ".csv",
+      "mimeType": "text/csv",
+      "description": "Spreadsheet-compatible CSV format"
+    }
+  },
+
+  "validation": {
+    "strictMode": true,
+    "allowFallbackFonts": false,
+    "requireEmbedding": true,
+    "checkLicensing": true,
+    "wcagLevel": "AAA",
+    "detectWidows": true,
+    "detectOrphans": true,
+    "checkRivers": true
+  },
+
+  "fixing": {
+    "autoFixQuotes": true,
+    "autoFixDashes": true,
+    "autoFixEllipsis": true,
+    "autoFixApostrophes": true,
+    "autoFixNumbers": true,
+    "addLigatures": true,
+    "optimizeSpacing": true,
+    "backupOriginal": true
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "documentId": "teei-aws-violations",
+  "documentName": "TEEI AWS Partnership Draft (Violations Example)",
+  "category": "bad",
+  "grade": "D",
+  "overallScore": 3.5,
+  "confidence": 0.92,
+  "annotatedBy": "brand-manager",
+  "annotationDate": "2025-11-06",
+  "brandCompliance": {
+    "colors": {
+      "score": 2,
+      "pass": false,
+      "notes": "CRITICAL FAILURE: Document uses copper/orange colors (#D17A3C, #E8985E) throughout, which are NOT in TEEI brand palette. Official Nordshore #00393F is missing entirely. Wrong color palette undermines entire brand identity. This is the most common and serious brand violation.",
+      "correctColors": [],
+      "incorrectColors": [
+        "Copper #D17A3C (header, buttons)",
+        "Orange #E8985E (accents)",
+        "Generic Gray #666666 (should use Nordshore)",
+        "Bright Blue #0066CC (not Sky #C9E4EC)"
+      ]
+    },
+    "typography": {
+      "score": 3,
+      "pass": false,
+      "notes": "MAJOR FAILURE: Using Arial and Helvetica instead of required Lora and Roboto Flex. Generic sans-serif fonts destroy premium brand feel. Headlines should be Lora (serif), body should be Roboto Flex. Font hierarchy exists but uses wrong typefaces entirely.",
+      "correctFonts": [],
+      "incorrectFonts": [
+        "Arial (body text - should be Roboto Flex)",
+        "Helvetica Bold (headlines - should be Lora)",
+        "Verdana (captions - should be Roboto Flex)"
+      ]
+    },
+    "layout": {
+      "score": 4,
+      "pass": false,
+      "notes": "CRITICAL TEXT CUTOFFS: Header text reads 'THE EDUCATIONAL EQUALITY IN-' (incomplete). Call-to-action button shows 'Ready to Transform Educa-' (incomplete). Text cutoffs are CRITICAL violations that make document unprofessional. Layout ignores 12-column grid. Margins inconsistent (ranging 20-50pt instead of standard 40pt). Section spacing varies wildly (30pt to 80pt instead of standard 60pt).",
+      "gridCompliance": false,
+      "spacingCorrect": false,
+      "textCutoffs": [
+        "Header: 'THE EDUCATIONAL EQUALITY IN-' (should be complete)",
+        "CTA button: 'Ready to Transform Educa-' (should be 'Ready to Transform Education')",
+        "Metrics section: 'XX Students Reached' (placeholder not replaced)"
+      ]
+    },
+    "photography": {
+      "score": 1,
+      "pass": false,
+      "notes": "NO PHOTOGRAPHY: Document lacks authentic photography entirely. Brand guidelines require warm, natural-light photos showing authentic moments. Generic icons and stock graphics do not meet photography requirement. This severely impacts emotional connection and brand authenticity.",
+      "hasPhotography": false,
+      "photographyQuality": "none",
+      "warmTones": false,
+      "authentic": false
+    },
+    "logos": {
+      "score": 5,
+      "pass": false,
+      "notes": "LOGO CLEARSPACE VIOLATIONS: TEEI logo has only 4pt clearspace (should be minimum = icon height, ~40pt). AWS logo overlaps with text - zero clearspace maintained. Logo quality is acceptable but placement violates brand guidelines. Insufficient breathing room around logos makes layout feel cramped.",
+      "clearspaceCorrect": false,
+      "logoQuality": "acceptable"
+    }
+  },
+  "violations": [
+    {
+      "type": "color",
+      "severity": "critical",
+      "description": "Using copper/orange colors (#D17A3C, #E8985E) instead of TEEI brand colors",
+      "location": "Throughout document: header, section backgrounds, buttons, accents",
+      "recommendation": "Replace ALL copper/orange with Nordshore #00393F (primary), Sky #C9E4EC (accents), Sand #FFF1E2 (backgrounds), Gold #BA8F5A (metrics)",
+      "specificIssue": "Copper #D17A3C used in 8+ locations where Nordshore #00393F required"
+    },
+    {
+      "type": "color",
+      "severity": "critical",
+      "description": "Missing official TEEI primary color Nordshore #00393F entirely",
+      "location": "Entire document",
+      "recommendation": "Nordshore #00393F must be primary brand color (80% of colored elements). Use for headers, main text, primary buttons, key graphics.",
+      "specificIssue": "Zero instances of Nordshore #00393F found - complete absence of primary brand color"
+    },
+    {
+      "type": "typography",
+      "severity": "critical",
+      "description": "Using Arial and Helvetica instead of required Lora and Roboto Flex fonts",
+      "location": "All text throughout document",
+      "recommendation": "Replace ALL fonts: Headlines → Lora Bold/Semibold (28-42pt), Body text → Roboto Flex Regular (11pt), Subheads → Roboto Flex Medium (18pt)",
+      "specificIssue": "Arial used for body text (should be Roboto Flex), Helvetica Bold for headlines (should be Lora)"
+    },
+    {
+      "type": "layout",
+      "severity": "critical",
+      "description": "Text cutoff in header: 'THE EDUCATIONAL EQUALITY IN-' (incomplete word)",
+      "location": "Page 1, Header section",
+      "recommendation": "Increase text frame width by 20pt OR reduce font size by 2pt to fit complete text. NEVER allow text cutoffs - they are unprofessional and confusing.",
+      "specificIssue": "Word 'INITIATIVE' is cut off, only 'IN-' visible"
+    },
+    {
+      "type": "layout",
+      "severity": "critical",
+      "description": "Text cutoff in CTA: 'Ready to Transform Educa-' (incomplete word)",
+      "location": "Page 2, Call-to-action button",
+      "recommendation": "Expand button width to accommodate full text: 'Ready to Transform Education'. Critical for call-to-action to be complete and professional.",
+      "specificIssue": "Word 'Education' is cut off, only 'Educa-' visible"
+    },
+    {
+      "type": "content",
+      "severity": "major",
+      "description": "Placeholder 'XX Students Reached' not replaced with actual metric",
+      "location": "Page 1, Impact metrics section",
+      "recommendation": "Replace 'XX' with actual number (e.g., '15,000 Students Reached'). Placeholders make document look incomplete and unprofessional.",
+      "specificIssue": "Multiple 'XX' placeholders visible throughout metrics section"
+    },
+    {
+      "type": "photography",
+      "severity": "major",
+      "description": "No authentic photography - brand requires warm, natural-light images",
+      "location": "Entire document",
+      "recommendation": "Add 3-5 high-quality photos: (1) Hero image of Ukrainian students learning, (2) Classroom interaction shots, (3) Success story moments. Must be warm, natural lighting, authentic (not stock). Color grade to align with Sand/Beige palette.",
+      "specificIssue": "Zero photographs present - only generic icons and graphics"
+    },
+    {
+      "type": "logo",
+      "severity": "major",
+      "description": "Logo clearspace violations - insufficient breathing room",
+      "location": "Page 1 header (TEEI logo), Page 2 footer (AWS logo)",
+      "recommendation": "Maintain minimum clearspace = logo icon height (~40pt for TEEI logo, ~30pt for AWS logo). No text, graphics, or other elements within this zone.",
+      "specificIssue": "TEEI logo has only 4pt clearspace (need 40pt), AWS logo overlaps with adjacent text"
+    },
+    {
+      "type": "layout",
+      "severity": "minor",
+      "description": "Inconsistent margins (20-50pt range instead of standard 40pt)",
+      "location": "Throughout document",
+      "recommendation": "Standardize all margins to 40pt on all sides. Consistency is key for professional appearance.",
+      "specificIssue": "Top margin 20pt, right margin 50pt, bottom margin 30pt, left margin 40pt"
+    },
+    {
+      "type": "layout",
+      "severity": "minor",
+      "description": "Inconsistent section spacing (30-80pt range instead of standard 60pt)",
+      "location": "Between all major sections",
+      "recommendation": "Standardize section breaks to 60pt throughout. Creates predictable rhythm and breathing room.",
+      "specificIssue": "Section 1-2 break: 30pt, Section 2-3 break: 80pt, Section 3-4 break: 45pt"
+    }
+  ],
+  "strengths": [
+    "Document structure and content flow is logical (problem → solution → impact → CTA)",
+    "Whitespace usage attempts to create breathing room (though inconsistent)",
+    "Logo quality is acceptable resolution (vector-based, crisp)",
+    "Content is relevant and well-written (when complete)",
+    "Attempted visual hierarchy (though wrong fonts undermine it)"
+  ],
+  "keyLearnings": [
+    "CRITICAL: Copper/orange colors are NOT in TEEI brand palette - this is the #1 most common mistake",
+    "CRITICAL: Nordshore #00393F must be present and dominant (80% of colored elements)",
+    "CRITICAL: Text cutoffs are NEVER acceptable - they make document unprofessional and confusing",
+    "Typography matters: Arial/Helvetica destroy premium brand feel - must use Lora (headlines) and Roboto Flex (body)",
+    "Photography is required, not optional: authentic warm-tone photos create emotional connection",
+    "Logo clearspace violations show lack of attention to detail - minimum clearspace = icon height",
+    "Placeholders like 'XX Students' must be replaced before finalization - they signal incompleteness",
+    "Inconsistent spacing (margins, sections) creates amateur appearance - standardize to brand specs",
+    "When multiple critical violations compound (wrong colors + wrong fonts + text cutoffs + no photography), grade drops to D/F"
+  ],
+  "accessibilityNotes": {
+    "colorContrast": "Questionable contrast ratios: Copper #D17A3C on white provides only 3.1:1 ratio (fails WCAG AA 4.5:1 minimum for normal text). Some text may be difficult to read for users with visual impairments.",
+    "textSize": "Body text is 10pt Arial (below recommended 11-12pt minimum). Small text combined with poor color contrast creates accessibility issues.",
+    "readingOrder": "Visual hierarchy exists but is weakened by typography issues. Reading order is logical when text is complete, but cutoffs disrupt flow."
+  },
+  "usageInstructions": "Use this as PRIMARY example of CRITICAL violations. Show this in few-shot prompts to teach AI what to AVOID. Highlight: (1) wrong copper/orange colors (not Nordshore), (2) generic Arial/Helvetica fonts (not Lora/Roboto Flex), (3) text cutoffs (unprofessional), (4) missing photography (no emotional connection), (5) logo clearspace violations (lack of attention to detail). This example demonstrates how multiple violations compound to create failing grade.",
+  "metadata": {
+    "pageCount": 2,
+    "fileSize": "1.8 MB",
+    "dimensions": "8.5 x 11 inches",
+    "resolution": "300 DPI"
+  }
+}

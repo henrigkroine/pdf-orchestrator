@@ -1,0 +1,317 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://teei.org/schemas/training-annotation.schema.json",
+  "title": "TEEI Training Annotation Schema",
+  "description": "Schema for annotating TEEI brand compliance training examples (good and bad)",
+  "type": "object",
+  "properties": {
+    "documentId": {
+      "type": "string",
+      "description": "Unique identifier for the document (e.g., teei-aws-approved-v1)",
+      "pattern": "^[a-z0-9-]+$"
+    },
+    "documentName": {
+      "type": "string",
+      "description": "Human-readable document name"
+    },
+    "category": {
+      "type": "string",
+      "enum": ["good", "bad"],
+      "description": "Whether this is a good example (A/A+) or bad example (D/F)"
+    },
+    "grade": {
+      "type": "string",
+      "enum": ["A+", "A", "B+", "B", "C", "D", "F"],
+      "description": "Overall letter grade for this document"
+    },
+    "overallScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 10,
+      "description": "Overall numerical score (0-10 scale)"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Confidence level in this annotation (0.0-1.0)"
+    },
+    "annotatedBy": {
+      "type": "string",
+      "description": "Name or ID of person who created annotation"
+    },
+    "annotationDate": {
+      "type": "string",
+      "format": "date",
+      "description": "Date annotation was created (YYYY-MM-DD)"
+    },
+    "brandCompliance": {
+      "type": "object",
+      "description": "Brand compliance scores and notes",
+      "properties": {
+        "colors": {
+          "type": "object",
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "pass": {
+              "type": "boolean"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "correctColors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of correct TEEI colors used (e.g., Nordshore #00393F)"
+            },
+            "incorrectColors": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of incorrect colors found (e.g., Copper #D17A3C)"
+            }
+          },
+          "required": ["score", "pass"]
+        },
+        "typography": {
+          "type": "object",
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "pass": {
+              "type": "boolean"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "correctFonts": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of correct fonts used (Lora, Roboto Flex)"
+            },
+            "incorrectFonts": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of incorrect fonts found (Arial, Helvetica, etc.)"
+            }
+          },
+          "required": ["score", "pass"]
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "pass": {
+              "type": "boolean"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "gridCompliance": {
+              "type": "boolean",
+              "description": "Whether 12-column grid is followed"
+            },
+            "spacingCorrect": {
+              "type": "boolean",
+              "description": "Whether spacing follows guidelines (60pt sections, 20pt elements)"
+            },
+            "textCutoffs": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              },
+              "description": "List of any text cutoffs found"
+            }
+          },
+          "required": ["score", "pass"]
+        },
+        "photography": {
+          "type": "object",
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "pass": {
+              "type": "boolean"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "hasPhotography": {
+              "type": "boolean",
+              "description": "Whether document includes photography"
+            },
+            "photographyQuality": {
+              "type": "string",
+              "enum": ["excellent", "good", "fair", "poor", "none"],
+              "description": "Quality assessment of photography"
+            },
+            "warmTones": {
+              "type": "boolean",
+              "description": "Whether photos have warm, natural tones"
+            },
+            "authentic": {
+              "type": "boolean",
+              "description": "Whether photos feel authentic (not stock/staged)"
+            }
+          },
+          "required": ["score", "pass", "hasPhotography"]
+        },
+        "logos": {
+          "type": "object",
+          "properties": {
+            "score": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 10
+            },
+            "pass": {
+              "type": "boolean"
+            },
+            "notes": {
+              "type": "string"
+            },
+            "clearspaceCorrect": {
+              "type": "boolean",
+              "description": "Whether logo clearspace (min = icon height) is maintained"
+            },
+            "logoQuality": {
+              "type": "string",
+              "enum": ["high-resolution", "acceptable", "low-resolution", "pixelated"],
+              "description": "Quality of logo images"
+            }
+          },
+          "required": ["score", "pass"]
+        }
+      },
+      "required": ["colors", "typography", "layout"]
+    },
+    "violations": {
+      "type": "array",
+      "description": "List of brand violations found",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["color", "typography", "layout", "photography", "logo", "content", "accessibility"],
+            "description": "Type of violation"
+          },
+          "severity": {
+            "type": "string",
+            "enum": ["critical", "major", "minor"],
+            "description": "Severity level"
+          },
+          "description": {
+            "type": "string",
+            "description": "Detailed description of the violation"
+          },
+          "location": {
+            "type": "string",
+            "description": "Where the violation occurs (e.g., 'Page 1, Header', 'Page 2, Body text')"
+          },
+          "recommendation": {
+            "type": "string",
+            "description": "How to fix the violation"
+          },
+          "specificIssue": {
+            "type": "string",
+            "description": "Specific issue detail (e.g., 'Using Copper #D17A3C instead of Nordshore #00393F')"
+          }
+        },
+        "required": ["type", "severity", "description", "location", "recommendation"]
+      }
+    },
+    "strengths": {
+      "type": "array",
+      "description": "List of things this document does well",
+      "items": {
+        "type": "string"
+      }
+    },
+    "keyLearnings": {
+      "type": "array",
+      "description": "Key learnings from this example (what AI should learn)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "accessibilityNotes": {
+      "type": "object",
+      "description": "Accessibility compliance notes",
+      "properties": {
+        "colorContrast": {
+          "type": "string",
+          "description": "Notes on color contrast (WCAG AA 4.5:1 minimum)"
+        },
+        "textSize": {
+          "type": "string",
+          "description": "Notes on text size (12pt minimum)"
+        },
+        "readingOrder": {
+          "type": "string",
+          "description": "Notes on visual hierarchy and reading order"
+        }
+      }
+    },
+    "usageInstructions": {
+      "type": "string",
+      "description": "Instructions for how to use this example in few-shot learning"
+    },
+    "metadata": {
+      "type": "object",
+      "properties": {
+        "pageCount": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "fileSize": {
+          "type": "string",
+          "description": "File size (e.g., '2.4 MB')"
+        },
+        "dimensions": {
+          "type": "string",
+          "description": "Page dimensions (e.g., '8.5 x 11 inches')"
+        },
+        "resolution": {
+          "type": "string",
+          "description": "Resolution (e.g., '300 DPI')"
+        }
+      }
+    }
+  },
+  "required": [
+    "documentId",
+    "documentName",
+    "category",
+    "grade",
+    "overallScore",
+    "confidence",
+    "annotatedBy",
+    "annotationDate",
+    "brandCompliance",
+    "violations",
+    "strengths",
+    "keyLearnings"
+  ]
+}

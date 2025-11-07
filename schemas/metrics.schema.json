@@ -1,0 +1,369 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://pdf-orchestrator.teei.io/schemas/metrics.schema.json",
+  "title": "QA Metrics Schema",
+  "description": "Performance metrics for AI Vision QA system",
+  "type": "object",
+  "required": ["timestamp", "validation", "performance", "cost", "models"],
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Timestamp of metrics collection"
+    },
+    "period": {
+      "type": "object",
+      "description": "Time period for metrics aggregation",
+      "properties": {
+        "start": { "type": "string", "format": "date-time" },
+        "end": { "type": "string", "format": "date-time" },
+        "duration": { "type": "number", "description": "Duration in seconds" }
+      }
+    },
+    "validation": {
+      "type": "object",
+      "description": "Validation accuracy metrics",
+      "required": ["totalValidations", "averageScore", "averageAccuracy"],
+      "properties": {
+        "totalValidations": {
+          "type": "integer",
+          "minimum": 0,
+          "description": "Total number of validations performed"
+        },
+        "averageScore": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 10,
+          "description": "Average quality score (0-10)"
+        },
+        "averageAccuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Average accuracy percentage"
+        },
+        "falsePositiveRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "False positive rate percentage"
+        },
+        "falseNegativeRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "False negative rate percentage"
+        },
+        "gradeDistribution": {
+          "type": "object",
+          "description": "Distribution of grades",
+          "properties": {
+            "A+": { "type": "integer", "minimum": 0 },
+            "A": { "type": "integer", "minimum": 0 },
+            "A-": { "type": "integer", "minimum": 0 },
+            "B+": { "type": "integer", "minimum": 0 },
+            "B": { "type": "integer", "minimum": 0 },
+            "B-": { "type": "integer", "minimum": 0 },
+            "C+": { "type": "integer", "minimum": 0 },
+            "C": { "type": "integer", "minimum": 0 },
+            "C-": { "type": "integer", "minimum": 0 },
+            "D": { "type": "integer", "minimum": 0 },
+            "F": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "confidenceDistribution": {
+          "type": "object",
+          "description": "Distribution of confidence levels",
+          "properties": {
+            "high": { "type": "integer", "minimum": 0, "description": "Confidence > 0.90" },
+            "medium": { "type": "integer", "minimum": 0, "description": "Confidence 0.70-0.90" },
+            "low": { "type": "integer", "minimum": 0, "description": "Confidence < 0.70" }
+          }
+        },
+        "humanReviewRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage of validations requiring human review"
+        }
+      }
+    },
+    "performance": {
+      "type": "object",
+      "description": "System performance metrics",
+      "required": ["averageProcessingTime"],
+      "properties": {
+        "averageProcessingTime": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Average processing time in seconds"
+        },
+        "medianProcessingTime": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Median processing time in seconds"
+        },
+        "p95ProcessingTime": {
+          "type": "number",
+          "minimum": 0,
+          "description": "95th percentile processing time in seconds"
+        },
+        "p99ProcessingTime": {
+          "type": "number",
+          "minimum": 0,
+          "description": "99th percentile processing time in seconds"
+        },
+        "cacheHitRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Cache hit rate percentage"
+        },
+        "apiErrorRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "API error rate percentage"
+        },
+        "throughput": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Validations per hour"
+        },
+        "concurrency": {
+          "type": "object",
+          "properties": {
+            "average": { "type": "number", "minimum": 0 },
+            "peak": { "type": "number", "minimum": 0 }
+          }
+        }
+      }
+    },
+    "cost": {
+      "type": "object",
+      "description": "Cost metrics",
+      "required": ["totalCost", "costPerValidation"],
+      "properties": {
+        "totalCost": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Total cost in USD"
+        },
+        "costPerValidation": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Average cost per validation in USD"
+        },
+        "breakdown": {
+          "type": "object",
+          "description": "Cost breakdown by model",
+          "properties": {
+            "gemini": { "type": "number", "minimum": 0 },
+            "claude": { "type": "number", "minimum": 0 },
+            "gpt4v": { "type": "number", "minimum": 0 },
+            "infrastructure": { "type": "number", "minimum": 0 },
+            "storage": { "type": "number", "minimum": 0 }
+          }
+        },
+        "projectedMonthly": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Projected monthly cost based on current usage"
+        }
+      }
+    },
+    "models": {
+      "type": "object",
+      "description": "Per-model performance metrics",
+      "patternProperties": {
+        ".*": {
+          "type": "object",
+          "properties": {
+            "accuracy": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Model accuracy percentage"
+            },
+            "speed": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Average processing time in seconds"
+            },
+            "cost": {
+              "type": "number",
+              "minimum": 0,
+              "description": "Cost per validation in USD"
+            },
+            "usageCount": {
+              "type": "integer",
+              "minimum": 0,
+              "description": "Number of times used"
+            },
+            "confidence": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 1,
+              "description": "Average confidence score"
+            },
+            "errorRate": {
+              "type": "number",
+              "minimum": 0,
+              "maximum": 100,
+              "description": "Error rate percentage"
+            }
+          }
+        }
+      }
+    },
+    "quality": {
+      "type": "object",
+      "description": "Quality metrics and trends",
+      "properties": {
+        "accuracyTrend": {
+          "type": "string",
+          "description": "Accuracy trend vs. previous period (e.g., '+2.3%')"
+        },
+        "speedTrend": {
+          "type": "string",
+          "description": "Speed trend vs. previous period (e.g., '-15%')"
+        },
+        "costTrend": {
+          "type": "string",
+          "description": "Cost trend vs. previous period (e.g., '-8%')"
+        },
+        "issuesDetected": {
+          "type": "object",
+          "description": "Types of issues detected",
+          "properties": {
+            "brandCompliance": { "type": "integer", "minimum": 0 },
+            "accessibility": { "type": "integer", "minimum": 0 },
+            "typography": { "type": "integer", "minimum": 0 },
+            "layout": { "type": "integer", "minimum": 0 },
+            "spacing": { "type": "integer", "minimum": 0 },
+            "colors": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "mostCommonIssues": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "issue": { "type": "string" },
+              "count": { "type": "integer", "minimum": 0 },
+              "percentage": { "type": "number", "minimum": 0, "maximum": 100 }
+            }
+          }
+        }
+      }
+    },
+    "objectDetection": {
+      "type": "object",
+      "description": "Object detection specific metrics",
+      "properties": {
+        "totalElementsDetected": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "averageElementsPerPage": {
+          "type": "number",
+          "minimum": 0
+        },
+        "elementTypeDistribution": {
+          "type": "object",
+          "patternProperties": {
+            ".*": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "spatialViolations": {
+          "type": "object",
+          "properties": {
+            "overlaps": { "type": "integer", "minimum": 0 },
+            "clearspaceViolations": { "type": "integer", "minimum": 0 },
+            "alignmentIssues": { "type": "integer", "minimum": 0 },
+            "spacingIssues": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "averageBoundingBoxAccuracy": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Accuracy of bounding box detection"
+        }
+      }
+    },
+    "accessibility": {
+      "type": "object",
+      "description": "Accessibility compliance metrics",
+      "properties": {
+        "wcagLevel": {
+          "type": "string",
+          "enum": ["A", "AA", "AAA"],
+          "description": "Target WCAG level"
+        },
+        "complianceRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "Percentage of documents meeting WCAG standards"
+        },
+        "commonViolations": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "criterion": { "type": "string" },
+              "count": { "type": "integer", "minimum": 0 },
+              "severity": { "type": "string", "enum": ["critical", "major", "minor"] }
+            }
+          }
+        }
+      }
+    },
+    "humanFeedback": {
+      "type": "object",
+      "description": "Human-in-the-loop feedback metrics",
+      "properties": {
+        "totalFeedbackEntries": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "agreementRate": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "AI-human agreement percentage"
+        },
+        "averageCorrectionMagnitude": {
+          "type": "number",
+          "minimum": 0,
+          "description": "Average difference in scores (0-10 scale)"
+        },
+        "learningImprovement": {
+          "type": "string",
+          "description": "Improvement from adaptive learning (e.g., '+1.2% per month')"
+        }
+      }
+    },
+    "system": {
+      "type": "object",
+      "description": "System health metrics",
+      "properties": {
+        "uptime": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100,
+          "description": "System uptime percentage"
+        },
+        "version": {
+          "type": "string",
+          "description": "QA system version"
+        },
+        "environment": {
+          "type": "string",
+          "enum": ["development", "staging", "production"]
+        }
+      }
+    }
+  }
+}

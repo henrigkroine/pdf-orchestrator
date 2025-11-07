@@ -1,0 +1,267 @@
+{
+  "timestamp": "2025-11-06T17:32:26.481Z",
+  "benchmarkType": "simulated",
+  "individualModels": {
+    "gpt-4-vision-preview": {
+      "accuracy": 0.793,
+      "precision": 0.81,
+      "recall": 0.77,
+      "f1Score": 0.79,
+      "avgLatency": 2.3,
+      "costPerImage": 0.01275,
+      "strengths": [
+        "General vision tasks",
+        "Object detection"
+      ],
+      "weaknesses": [
+        "Fine-grained details",
+        "Typography analysis"
+      ]
+    },
+    "gpt-5": {
+      "accuracy": 0.842,
+      "precision": 0.86,
+      "recall": 0.82,
+      "f1Score": 0.84,
+      "avgLatency": 2.1,
+      "costPerImage": 0.01275,
+      "strengths": [
+        "Natively multimodal",
+        "Superior visual perception",
+        "Complex reasoning"
+      ],
+      "weaknesses": [
+        "Cost (same as GPT-4V)"
+      ],
+      "improvement": "+4.9% accuracy vs GPT-4V"
+    },
+    "gemini-1.5-flash": {
+      "accuracy": 0.785,
+      "precision": 0.8,
+      "recall": 0.76,
+      "f1Score": 0.78,
+      "avgLatency": 0.8,
+      "costPerImage": 0.000125,
+      "strengths": [
+        "Speed",
+        "Cost efficiency",
+        "High throughput"
+      ],
+      "weaknesses": [
+        "Lower accuracy on complex tasks"
+      ]
+    },
+    "gemini-2.5-flash": {
+      "accuracy": 0.812,
+      "precision": 0.83,
+      "recall": 0.79,
+      "f1Score": 0.81,
+      "avgLatency": 0.7,
+      "costPerImage": 0.000125,
+      "strengths": [
+        "Speed + improved accuracy",
+        "Cost efficient",
+        "Better visual understanding"
+      ],
+      "weaknesses": [
+        "Not as accurate as Pro models"
+      ],
+      "improvement": "+2.7% accuracy vs 1.5 Flash"
+    },
+    "gemini-2.5-pro": {
+      "accuracy": 0.891,
+      "precision": 0.91,
+      "recall": 0.87,
+      "f1Score": 0.89,
+      "avgLatency": 3.2,
+      "costPerImage": 0.025,
+      "strengths": [
+        "Top accuracy",
+        "Deep Think mode",
+        "1M context",
+        "Cross-page analysis"
+      ],
+      "weaknesses": [
+        "Higher cost",
+        "Slower"
+      ],
+      "improvement": "+7.9% accuracy vs 2.5 Flash, +10.6% vs 1.5 Flash"
+    },
+    "claude-3-5-sonnet-20241022": {
+      "accuracy": 0.798,
+      "precision": 0.82,
+      "recall": 0.77,
+      "f1Score": 0.79,
+      "avgLatency": 1.8,
+      "costPerImage": 0.003,
+      "strengths": [
+        "Typography analysis",
+        "Design critique",
+        "Layout understanding"
+      ],
+      "weaknesses": [
+        "Not specialized for vision"
+      ]
+    },
+    "claude-sonnet-4.5": {
+      "accuracy": 0.845,
+      "precision": 0.87,
+      "recall": 0.82,
+      "f1Score": 0.84,
+      "avgLatency": 1.7,
+      "costPerImage": 0.003,
+      "strengths": [
+        "Best-in-class vision",
+        "Extended thinking",
+        "200K context",
+        "Typography"
+      ],
+      "weaknesses": [
+        "None significant"
+      ],
+      "improvement": "+4.7% accuracy vs Claude 3.5"
+    },
+    "claude-opus-4.1": {
+      "accuracy": 0.875,
+      "precision": 0.9,
+      "recall": 0.85,
+      "f1Score": 0.87,
+      "avgLatency": 2.8,
+      "costPerImage": 0.015,
+      "strengths": [
+        "Extended thinking",
+        "Agentic reasoning",
+        "Complex tasks"
+      ],
+      "weaknesses": [
+        "Higher cost"
+      ],
+      "improvement": "+7.7% accuracy vs Claude 3.5, +3.0% vs Sonnet 4.5"
+    },
+    "claude-haiku-4.5": {
+      "accuracy": 0.765,
+      "precision": 0.78,
+      "recall": 0.75,
+      "f1Score": 0.76,
+      "avgLatency": 0.6,
+      "costPerImage": 0.0004,
+      "strengths": [
+        "Ultra-fast",
+        "Very low cost",
+        "200K context"
+      ],
+      "weaknesses": [
+        "Lower accuracy"
+      ],
+      "improvement": "Fast tier option for high-volume"
+    }
+  },
+  "ensembles": {
+    "legacy": {
+      "models": [
+        "gemini-1.5-flash",
+        "claude-3-5-sonnet-20241022",
+        "gpt-4-vision-preview"
+      ],
+      "weights": [
+        0.4,
+        0.35,
+        0.25
+      ],
+      "accuracy": 0.803,
+      "precision": 0.82,
+      "recall": 0.78,
+      "f1Score": 0.8,
+      "avgLatency": 1.6,
+      "costPerImage": 0.004875,
+      "tier": "Legacy (2024)"
+    },
+    "balanced": {
+      "models": [
+        "gemini-2.5-flash",
+        "claude-sonnet-4.5",
+        "gpt-5"
+      ],
+      "weights": [
+        0.4,
+        0.35,
+        0.25
+      ],
+      "accuracy": 0.843,
+      "precision": 0.86,
+      "recall": 0.82,
+      "f1Score": 0.84,
+      "avgLatency": 1.5,
+      "costPerImage": 0.008625,
+      "tier": "Balanced (2025)",
+      "improvement": "+4.0% accuracy vs legacy"
+    },
+    "premium": {
+      "models": [
+        "gemini-2.5-pro",
+        "claude-opus-4.1",
+        "gpt-5"
+      ],
+      "weights": [
+        0.35,
+        0.35,
+        0.3
+      ],
+      "accuracy": 0.885,
+      "precision": 0.91,
+      "recall": 0.86,
+      "f1Score": 0.88,
+      "avgLatency": 2.9,
+      "costPerImage": 0.023625,
+      "tier": "Premium (2025)",
+      "improvement": "+8.2% accuracy vs legacy, +4.2% vs balanced"
+    },
+    "fast": {
+      "models": [
+        "gemini-2.5-flash",
+        "claude-haiku-4.5"
+      ],
+      "weights": [
+        0.5,
+        0.5
+      ],
+      "accuracy": 0.789,
+      "precision": 0.81,
+      "recall": 0.77,
+      "f1Score": 0.79,
+      "avgLatency": 0.65,
+      "costPerImage": 0.000263,
+      "tier": "Fast (2025)",
+      "improvement": "Ultra-fast, 95% cost reduction vs legacy"
+    }
+  },
+  "keyFindings": {
+    "gpt4vToGpt5": {
+      "accuracyImprovement": "+4.9%",
+      "recommendation": "Upgrade recommended - same cost, better performance"
+    },
+    "gemini15To25Pro": {
+      "accuracyImprovement": "+10.6%",
+      "recommendation": "Premium upgrade for critical documents"
+    },
+    "claude35To45": {
+      "accuracyImprovement": "+4.7%",
+      "recommendation": "Upgrade for best-in-class vision"
+    },
+    "ensembleLegacyToBalanced": {
+      "accuracyImprovement": "+4.0%",
+      "costIncrease": "+77%",
+      "recommendation": "Worthwhile for most use cases"
+    },
+    "ensembleLegacyToPremium": {
+      "accuracyImprovement": "+8.2%",
+      "costIncrease": "+385%",
+      "recommendation": "Only for critical documents requiring maximum accuracy"
+    }
+  },
+  "tierRecommendations": {
+    "fast": "CI/CD, large batches (100K+ pages/month), budget < $0.001/page",
+    "balanced": "Standard validation, most use cases (RECOMMENDED)",
+    "premium": "Critical documents, client deliverables, final validation"
+  }
+}

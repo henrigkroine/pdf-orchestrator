@@ -1,0 +1,190 @@
+{
+  "qualityThresholds": {
+    "blur": {
+      "excellent": 1000,
+      "good": 500,
+      "acceptable": 200,
+      "poor": 100,
+      "critical": 50,
+      "description": "Laplacian variance threshold for blur detection"
+    },
+    "noise": {
+      "excellent": 0.01,
+      "good": 0.03,
+      "acceptable": 0.05,
+      "poor": 0.08,
+      "critical": 0.10,
+      "description": "Standard deviation of noise as percentage"
+    },
+    "resolution": {
+      "print": {
+        "excellent": 300,
+        "good": 250,
+        "acceptable": 200,
+        "poor": 150,
+        "critical": 72
+      },
+      "digital": {
+        "excellent": 150,
+        "good": 120,
+        "acceptable": 96,
+        "poor": 72,
+        "critical": 50
+      },
+      "description": "DPI (dots per inch) requirements"
+    },
+    "compression": {
+      "excellent": 0.95,
+      "good": 0.85,
+      "acceptable": 0.75,
+      "poor": 0.65,
+      "critical": 0.50,
+      "description": "Image compression quality (0-1 scale)"
+    },
+    "sharpness": {
+      "excellent": 0.90,
+      "good": 0.75,
+      "acceptable": 0.60,
+      "poor": 0.45,
+      "critical": 0.30,
+      "description": "Edge sharpness score (0-1 scale)"
+    }
+  },
+
+  "layoutThresholds": {
+    "visualWeight": {
+      "balanced": 0.15,
+      "acceptable": 0.25,
+      "unbalanced": 0.35,
+      "description": "Maximum deviation from center balance (0-1 scale)"
+    },
+    "whitespace": {
+      "excellent": [0.35, 0.50],
+      "good": [0.25, 0.60],
+      "acceptable": [0.15, 0.70],
+      "poor": [0.10, 0.80],
+      "description": "Whitespace ratio range (percentage of page)"
+    },
+    "goldenRatio": {
+      "perfect": 0.02,
+      "excellent": 0.05,
+      "good": 0.10,
+      "acceptable": 0.15,
+      "description": "Deviation from golden ratio (1.618)"
+    },
+    "symmetry": {
+      "excellent": 0.95,
+      "good": 0.85,
+      "acceptable": 0.70,
+      "poor": 0.50,
+      "description": "Symmetry score (0-1 scale, 1 = perfect symmetry)"
+    },
+    "hierarchy": {
+      "excellent": 0.90,
+      "good": 0.75,
+      "acceptable": 0.60,
+      "poor": 0.45,
+      "description": "Visual hierarchy clarity (0-1 scale)"
+    }
+  },
+
+  "aiModels": {
+    "gpt4oVision": {
+      "enabled": true,
+      "model": "gpt-4o",
+      "maxTokens": 1500,
+      "temperature": 0.3,
+      "weight": 0.35,
+      "apiKeyEnv": "OPENAI_API_KEY",
+      "endpoint": "https://api.openai.com/v1/chat/completions",
+      "prompt": "You are an expert design critic evaluating PDF visual quality. Analyze this page image and provide:\n\n1. **Overall Visual Appeal** (1-10 score)\n   - First impression and aesthetic quality\n   - Professional polish and refinement\n   - Visual interest and engagement\n\n2. **Professional Design Quality** (1-10 score)\n   - Adherence to design principles\n   - Technical execution quality\n   - Attention to detail\n\n3. **Brand Consistency** (1-10 score)\n   - Color palette consistency\n   - Typography consistency\n   - Visual style coherence\n\n4. **Visual Hierarchy** (1-10 score)\n   - Clear information priority\n   - Effective use of size, color, weight\n   - Easy scanning and navigation\n\n5. **Color Harmony** (1-10 score)\n   - Color relationships and balance\n   - Appropriate color psychology\n   - Contrast and accessibility\n\n6. **Typography Quality** (1-10 score)\n   - Font selection and pairing\n   - Readability and legibility\n   - Spacing and alignment\n\n7. **Image Quality** (1-10 score)\n   - Resolution and sharpness\n   - Placement and sizing\n   - Integration with design\n\n8. **Whitespace Effectiveness** (1-10 score)\n   - Breathing room and balance\n   - Content density appropriateness\n   - Visual flow\n\n9. **Layout Balance** (1-10 score)\n   - Visual weight distribution\n   - Symmetry or intentional asymmetry\n   - Grid alignment\n\n10. **Issues and Improvements**\n    - List any visual problems detected\n    - Suggest specific improvements\n    - Rate severity: CRITICAL, MAJOR, MINOR\n\nProvide your response in JSON format:\n{\n  \"scores\": {\n    \"visualAppeal\": <1-10>,\n    \"professionalQuality\": <1-10>,\n    \"brandConsistency\": <1-10>,\n    \"visualHierarchy\": <1-10>,\n    \"colorHarmony\": <1-10>,\n    \"typographyQuality\": <1-10>,\n    \"imageQuality\": <1-10>,\n    \"whitespaceEffectiveness\": <1-10>,\n    \"layoutBalance\": <1-10>\n  },\n  \"issues\": [\n    {\"severity\": \"CRITICAL|MAJOR|MINOR\", \"description\": \"...\", \"location\": \"...\"}\n  ],\n  \"improvements\": [\n    \"...\"\n  ],\n  \"overallAssessment\": \"...\"\n}"
+    },
+    "claudeSonnet": {
+      "enabled": true,
+      "model": "claude-sonnet-4-5-20250929",
+      "maxTokens": 2000,
+      "temperature": 0.2,
+      "weight": 0.40,
+      "apiKeyEnv": "ANTHROPIC_API_KEY",
+      "endpoint": "https://api.anthropic.com/v1/messages",
+      "prompt": "You are a world-class design expert with decades of experience in visual communication and brand design. Analyze this PDF page image with meticulous attention to detail.\n\nProvide a comprehensive visual quality assessment covering:\n\n**1. VISUAL APPEAL (1-10)**\n- Immediate aesthetic impact\n- Emotional resonance\n- Professional polish\n- Visual sophistication\n\n**2. DESIGN EXCELLENCE (1-10)**\n- Mastery of design principles (balance, contrast, emphasis, movement, pattern, rhythm, unity)\n- Technical execution quality\n- Innovation and creativity\n- Attention to fine details\n\n**3. BRAND INTEGRITY (1-10)**\n- Color palette consistency and appropriateness\n- Typography system coherence\n- Visual language consistency\n- Brand personality expression\n\n**4. INFORMATION HIERARCHY (1-10)**\n- Clear visual priority\n- Effective use of scale, color, position\n- Intuitive navigation path\n- Content organization clarity\n\n**5. COLOR MASTERY (1-10)**\n- Color theory application (complementary, analogous, triadic)\n- Psychological appropriateness\n- Contrast ratios and accessibility\n- Palette sophistication\n\n**6. TYPOGRAPHIC EXCELLENCE (1-10)**\n- Font selection appropriateness\n- Pairing sophistication\n- Line length, leading, tracking\n- Readability optimization\n\n**7. IMAGE QUALITY (1-10)**\n- Resolution and sharpness\n- Color accuracy and profile\n- Appropriate sizing and cropping\n- Visual integration\n\n**8. SPATIAL DYNAMICS (1-10)**\n- Whitespace strategic use\n- Content density optimization\n- Breathing room effectiveness\n- Visual rhythm\n\n**9. COMPOSITIONAL BALANCE (1-10)**\n- Visual weight distribution\n- Golden ratio alignment\n- Grid system adherence\n- Symmetry/asymmetry intentionality\n\n**10. DETAILED CRITIQUE**\nIdentify EVERY visual issue you can find:\n- Text cutoffs or awkward breaks\n- Alignment inconsistencies\n- Color violations\n- Typography problems\n- Image quality issues\n- Layout imbalances\n- Spacing irregularities\n- Any amateur design patterns\n\nFor each issue, specify:\n- Severity: CRITICAL (deal-breaker), MAJOR (significantly impacts quality), MINOR (polish issue)\n- Location: Specific area of the page\n- Impact: How it affects overall quality\n- Recommendation: Specific fix\n\nReturn response as JSON:\n{\n  \"scores\": {\n    \"visualAppeal\": <1-10>,\n    \"designExcellence\": <1-10>,\n    \"brandIntegrity\": <1-10>,\n    \"informationHierarchy\": <1-10>,\n    \"colorMastery\": <1-10>,\n    \"typographicExcellence\": <1-10>,\n    \"imageQuality\": <1-10>,\n    \"spatialDynamics\": <1-10>,\n    \"compositionalBalance\": <1-10>\n  },\n  \"issues\": [\n    {\n      \"severity\": \"CRITICAL|MAJOR|MINOR\",\n      \"category\": \"typography|color|layout|image|spacing|alignment\",\n      \"description\": \"...\",\n      \"location\": \"...\",\n      \"impact\": \"...\",\n      \"recommendation\": \"...\"\n    }\n  ],\n  \"strengths\": [\"...\"],\n  \"criticalPath\": \"Priority order for fixing issues\",\n  \"professionalAssessment\": \"Detailed expert opinion\"\n}"
+    },
+    "geminiVision": {
+      "enabled": true,
+      "model": "gemini-2.5-pro",
+      "maxTokens": 1800,
+      "temperature": 0.25,
+      "weight": 0.25,
+      "apiKeyEnv": "GOOGLE_API_KEY",
+      "endpoint": "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent",
+      "prompt": "You are a multi-perspective design analyst with expertise in visual communication across cultures and contexts. Analyze this PDF page from multiple professional viewpoints.\n\n**Evaluation Criteria:**\n\n1. **Universal Design Appeal (1-10)**\n   - Cross-cultural visual effectiveness\n   - Intuitive information structure\n   - Accessibility considerations\n\n2. **Technical Execution (1-10)**\n   - Precision and craftsmanship\n   - Print/digital optimization\n   - Technical standards compliance\n\n3. **Brand Communication (1-10)**\n   - Message clarity and strength\n   - Brand personality projection\n   - Competitive differentiation\n\n4. **Visual Navigation (1-10)**\n   - Scanning ease and eye flow\n   - Information findability\n   - Cognitive load optimization\n\n5. **Color Psychology (1-10)**\n   - Emotional resonance\n   - Cultural appropriateness\n   - Functional effectiveness (contrast, emphasis)\n\n6. **Typography System (1-10)**\n   - Readability across sizes\n   - Hierarchy effectiveness\n   - Style appropriateness\n\n7. **Visual Assets (1-10)**\n   - Image quality and relevance\n   - Illustration/icon quality\n   - Asset integration\n\n8. **Space Utilization (1-10)**\n   - Density appropriateness\n   - Breathing room sufficiency\n   - Visual rhythm\n\n9. **Structural Balance (1-10)**\n   - Compositional stability\n   - Visual weight harmony\n   - Grid integrity\n\n**Multi-Perspective Analysis:**\n\nEvaluate from these viewpoints:\n- **Client Perspective**: Will this impress the target audience?\n- **Designer Perspective**: Is this technically excellent?\n- **User Perspective**: Is this easy to understand and use?\n- **Brand Manager Perspective**: Does this strengthen the brand?\n\n**Issue Detection:**\nIdentify problems with severity ratings:\n- CRITICAL: Must fix before delivery\n- MAJOR: Significantly impacts perceived quality\n- MINOR: Polish improvements\n\nFormat response as JSON:\n{\n  \"scores\": {\n    \"universalAppeal\": <1-10>,\n    \"technicalExecution\": <1-10>,\n    \"brandCommunication\": <1-10>,\n    \"visualNavigation\": <1-10>,\n    \"colorPsychology\": <1-10>,\n    \"typographySystem\": <1-10>,\n    \"visualAssets\": <1-10>,\n    \"spaceUtilization\": <1-10>,\n    \"structuralBalance\": <1-10>\n  },\n  \"perspectives\": {\n    \"client\": \"Assessment from client viewpoint\",\n    \"designer\": \"Assessment from designer viewpoint\",\n    \"user\": \"Assessment from user viewpoint\",\n    \"brandManager\": \"Assessment from brand manager viewpoint\"\n  },\n  \"issues\": [\n    {\n      \"severity\": \"CRITICAL|MAJOR|MINOR\",\n      \"description\": \"...\",\n      \"location\": \"...\",\n      \"recommendation\": \"...\"\n    }\n  ],\n  \"competitiveAnalysis\": \"How this compares to industry standards\",\n  \"recommendations\": [\"Priority improvements\"]\n}"
+    }
+  },
+
+  "scoringWeights": {
+    "computerVision": 0.30,
+    "aiEnsemble": 0.70,
+    "description": "Weight balance between CV metrics and AI assessment"
+  },
+
+  "gradingScale": {
+    "A+": { "min": 95, "max": 100, "label": "Award-Winning", "description": "World-class design that exceeds all professional standards" },
+    "A": { "min": 90, "max": 94, "label": "Excellent", "description": "Professional quality with minor polish opportunities" },
+    "B+": { "min": 85, "max": 89, "label": "Very Good", "description": "Strong design with some improvement areas" },
+    "B": { "min": 80, "max": 84, "label": "Good", "description": "Solid work with several enhancement opportunities" },
+    "C+": { "min": 75, "max": 79, "label": "Above Average", "description": "Acceptable quality with notable issues" },
+    "C": { "min": 70, "max": 74, "label": "Average", "description": "Meets minimum standards with significant improvements needed" },
+    "D": { "min": 60, "max": 69, "label": "Below Standard", "description": "Major quality issues requiring substantial revision" },
+    "F": { "min": 0, "max": 59, "label": "Unacceptable", "description": "Does not meet professional standards, complete redesign required" }
+  },
+
+  "professionalDesignSignals": {
+    "positive": [
+      "Consistent grid alignment",
+      "Harmonious color palette (3-5 colors)",
+      "Clear visual hierarchy (3-4 levels)",
+      "Appropriate whitespace (30-50%)",
+      "Professional typography (2-3 fonts max)",
+      "High-quality images (300 DPI for print)",
+      "Balanced composition (visual weight distributed)",
+      "Consistent spacing system",
+      "Strong brand consistency",
+      "Accessibility compliance (WCAG AA minimum)"
+    ],
+    "negative": [
+      "Centered text blocks (amateur)",
+      "Too many fonts (>3 families)",
+      "Clashing colors (poor contrast)",
+      "Crowded layouts (<20% whitespace)",
+      "Inconsistent spacing",
+      "Low-resolution images (<150 DPI)",
+      "Poor alignment (elements not on grid)",
+      "Text cutoffs or orphans",
+      "Excessive effects (shadows, gradients, bevels)",
+      "Inconsistent visual style"
+    ]
+  },
+
+  "outputOptions": {
+    "generateAnnotatedPDF": true,
+    "generateDashboard": true,
+    "generateJSON": true,
+    "dashboardTemplate": "detailed",
+    "annotationStyle": {
+      "criticalColor": "#FF0000",
+      "majorColor": "#FF8800",
+      "minorColor": "#FFCC00",
+      "lineWidth": 2,
+      "fontSize": 10,
+      "opacity": 0.7
+    }
+  },
+
+  "performance": {
+    "maxConcurrentAIRequests": 3,
+    "aiRequestTimeout": 30000,
+    "imageProcessingTimeout": 10000,
+    "cacheEnabled": true,
+    "cacheTTL": 3600
+  }
+}

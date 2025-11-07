@@ -1,0 +1,774 @@
+{
+  "typography": {
+    "typeScale": {
+      "scale": 1.25,
+      "base": 16,
+      "sizes": {
+        "display": {
+          "px": 48.83,
+          "em": 3.05,
+          "rem": 3.05,
+          "pt": 36.62,
+          "lineHeight": 1,
+          "letterSpacing": -0.02,
+          "usage": "Hero sections, landing pages"
+        },
+        "h1": {
+          "px": 39.06,
+          "em": 2.44,
+          "rem": 2.44,
+          "pt": 29.3,
+          "lineHeight": 1.2,
+          "letterSpacing": -0.01,
+          "usage": "Page titles, main headlines"
+        },
+        "h2": {
+          "px": 31.25,
+          "em": 1.95,
+          "rem": 1.95,
+          "pt": 23.44,
+          "lineHeight": 1.2,
+          "letterSpacing": -0.01,
+          "usage": "Section headings, major divisions"
+        },
+        "h3": {
+          "px": 25,
+          "em": 1.56,
+          "rem": 1.56,
+          "pt": 18.75,
+          "lineHeight": 1.2,
+          "letterSpacing": -0.01,
+          "usage": "Sub-sections, article titles"
+        },
+        "h4": {
+          "px": 20,
+          "em": 1.25,
+          "rem": 1.25,
+          "pt": 15,
+          "lineHeight": 1.2,
+          "letterSpacing": -0.01,
+          "usage": "Card titles, minor headings"
+        },
+        "body": {
+          "px": 16,
+          "em": 1,
+          "rem": 1,
+          "pt": 12,
+          "lineHeight": 1.618,
+          "letterSpacing": 0,
+          "usage": "Body text, paragraphs"
+        },
+        "small": {
+          "px": 12.8,
+          "em": 0.8,
+          "rem": 0.8,
+          "pt": 9.6,
+          "lineHeight": 1.4,
+          "letterSpacing": 0.01,
+          "usage": "Captions, footnotes"
+        },
+        "tiny": {
+          "px": 10.24,
+          "em": 0.64,
+          "rem": 0.64,
+          "pt": 7.68,
+          "lineHeight": 1.4,
+          "letterSpacing": 0.01,
+          "usage": "Fine print, legal"
+        }
+      },
+      "metadata": {
+        "ratio": 1.25,
+        "intervalName": "Major Third",
+        "generatedAt": "2025-11-06T19:29:38.374Z"
+      }
+    },
+    "kerningAnalysis": {
+      "text": "The Educational Equality Institute",
+      "fontSize": 16,
+      "totalPairs": 0,
+      "pairs": [],
+      "recommendations": [],
+      "ligatures": [
+        {
+          "ligature": "st",
+          "position": 27,
+          "type": "discretionary",
+          "priority": "medium",
+          "reason": "Optional ligature for refined typography"
+        }
+      ],
+      "opticalSize": "regular"
+    },
+    "metadata": {
+      "scale": 1.25,
+      "scaleName": "Major Third",
+      "baseSize": 16,
+      "generatedAt": "2025-11-06T19:29:38.379Z"
+    }
+  },
+  "colors": {
+    "teei": {
+      "nordshore": "#00393F",
+      "hsl": {
+        "h": 186,
+        "s": 100,
+        "l": 12
+      },
+      "theory": "Split-Complementary",
+      "palette": {
+        "primary": "#00373D",
+        "secondary": "#3D071C",
+        "accent": "#3D2707"
+      }
+    },
+    "extended": {
+      "base": "#00373D",
+      "hsl": {
+        "h": 186,
+        "s": 100,
+        "l": 12
+      },
+      "tints": [
+        {
+          "level": 1,
+          "hsl": {
+            "h": 186,
+            "s": 97,
+            "l": 25.833333333333336
+          },
+          "hex": "#027582",
+          "name": "tint-1"
+        },
+        {
+          "level": 2,
+          "hsl": {
+            "h": 186,
+            "s": 94,
+            "l": 39.66666666666667
+          },
+          "hex": "#06B1C4",
+          "name": "tint-2"
+        },
+        {
+          "level": 3,
+          "hsl": {
+            "h": 186,
+            "s": 91,
+            "l": 53.5
+          },
+          "hex": "#1DDFF4",
+          "name": "tint-3"
+        },
+        {
+          "level": 4,
+          "hsl": {
+            "h": 186,
+            "s": 88,
+            "l": 67.33333333333334
+          },
+          "hex": "#62E6F5",
+          "name": "tint-4"
+        },
+        {
+          "level": 5,
+          "hsl": {
+            "h": 186,
+            "s": 85,
+            "l": 81.16666666666667
+          },
+          "hex": "#A6F0F8",
+          "name": "tint-5"
+        }
+      ],
+      "shades": [
+        {
+          "level": 1,
+          "hsl": {
+            "h": 186,
+            "s": 100,
+            "l": 10
+          },
+          "hex": "#002E33",
+          "name": "shade-1"
+        },
+        {
+          "level": 2,
+          "hsl": {
+            "h": 186,
+            "s": 100,
+            "l": 8
+          },
+          "hex": "#002529",
+          "name": "shade-2"
+        },
+        {
+          "level": 3,
+          "hsl": {
+            "h": 186,
+            "s": 100,
+            "l": 6
+          },
+          "hex": "#001C1F",
+          "name": "shade-3"
+        },
+        {
+          "level": 4,
+          "hsl": {
+            "h": 186,
+            "s": 100,
+            "l": 5
+          },
+          "hex": "#00171A",
+          "name": "shade-4"
+        },
+        {
+          "level": 5,
+          "hsl": {
+            "h": 186,
+            "s": 100,
+            "l": 5
+          },
+          "hex": "#00171A",
+          "name": "shade-5"
+        }
+      ],
+      "tones": [
+        {
+          "level": 1,
+          "hsl": {
+            "h": 186,
+            "s": 83.33333333333333,
+            "l": 12
+          },
+          "hex": "#053338",
+          "name": "tone-1"
+        },
+        {
+          "level": 2,
+          "hsl": {
+            "h": 186,
+            "s": 66.66666666666666,
+            "l": 12
+          },
+          "hex": "#0A2F33",
+          "name": "tone-2"
+        },
+        {
+          "level": 3,
+          "hsl": {
+            "h": 186,
+            "s": 50,
+            "l": 12
+          },
+          "hex": "#0F2B2E",
+          "name": "tone-3"
+        },
+        {
+          "level": 4,
+          "hsl": {
+            "h": 186,
+            "s": 33.33333333333333,
+            "l": 12
+          },
+          "hex": "#142729",
+          "name": "tone-4"
+        },
+        {
+          "level": 5,
+          "hsl": {
+            "h": 186,
+            "s": 16.66666666666667,
+            "l": 12
+          },
+          "hex": "#192324",
+          "name": "tone-5"
+        }
+      ]
+    },
+    "accessibility": [
+      {
+        "color": "#00393F",
+        "contrast": {
+          "ratio": 12.67,
+          "aa": {
+            "normalText": true,
+            "largeText": true
+          },
+          "aaa": {
+            "normalText": true,
+            "largeText": true
+          },
+          "grade": "AAA",
+          "recommendation": "Excellent! Passes WCAG AAA for all text sizes."
+        }
+      },
+      {
+        "color": "#C9E4EC",
+        "contrast": {
+          "ratio": 1.33,
+          "aa": {
+            "normalText": false,
+            "largeText": false
+          },
+          "aaa": {
+            "normalText": false,
+            "largeText": false
+          },
+          "grade": "Fail",
+          "recommendation": "Insufficient contrast. Adjust colors to meet WCAG standards."
+        }
+      },
+      {
+        "color": "#BA8F5A",
+        "contrast": {
+          "ratio": 2.93,
+          "aa": {
+            "normalText": false,
+            "largeText": false
+          },
+          "aaa": {
+            "normalText": false,
+            "largeText": false
+          },
+          "grade": "Fail",
+          "recommendation": "Insufficient contrast. Adjust colors to meet WCAG standards."
+        }
+      }
+    ]
+  },
+  "gradients": {
+    "teei": {
+      "type": "linear",
+      "angle": 135,
+      "stops": [
+        {
+          "color": "#00393F",
+          "position": 0,
+          "positionDecimal": 0
+        },
+        {
+          "color": "#65873B",
+          "position": 50,
+          "positionDecimal": 0.5
+        },
+        {
+          "color": "#BA8F5A",
+          "position": 100,
+          "positionDecimal": 1
+        }
+      ],
+      "css": "linear-gradient(135deg, #00393F 0%, #65873B 50%, #BA8F5A 100%)",
+      "svg": "<linearGradient id=\"gradient\" x1=\"85.35533905932738%\" y1=\"85.35533905932738%\" x2=\"14.644660940672622%\" y2=\"14.64466094067263%\">\n    <stop offset=\"0%\" stop-color=\"#00393F\"/>\n    <stop offset=\"50%\" stop-color=\"#65873B\"/>\n    <stop offset=\"100%\" stop-color=\"#BA8F5A\"/>\n</linearGradient>",
+      "indesign": {
+        "type": "Linear",
+        "angle": 135,
+        "center": [
+          50,
+          50
+        ],
+        "stops": [
+          {
+            "color": {
+              "r": 0,
+              "g": 57,
+              "b": 63
+            },
+            "location": 0,
+            "midpoint": 50
+          },
+          {
+            "color": {
+              "r": 101,
+              "g": 135,
+              "b": 59
+            },
+            "location": 0.5,
+            "midpoint": 50
+          },
+          {
+            "color": {
+              "r": 186,
+              "g": 143,
+              "b": 90
+            },
+            "location": 1,
+            "midpoint": 50
+          }
+        ],
+        "script": "// Apply linear gradient\nvar gradient = app.activeDocument.gradients.add();\ngradient.type = GradientType.LINEAR;\n\n    var stop0 = gradient.gradientStops.add();\n    stop0.stopColor = [0, 57, 63];\n    stop0.location = 0;\n    stop0.midpoint = 50;\n    var stop1 = gradient.gradientStops.add();\n    stop1.stopColor = [101, 135, 59];\n    stop1.location = 0.5;\n    stop1.midpoint = 50;\n    var stop2 = gradient.gradientStops.add();\n    stop2.stopColor = [186, 143, 90];\n    stop2.location = 1;\n    stop2.midpoint = 50;\n\n// Apply to selection\nif (app.selection.length > 0) {\n    var obj = app.selection[0];\n    obj.fillColor = gradient.color;\n    obj.gradientFillAngle = 135;\n}"
+      }
+    },
+    "presets": {
+      "sunset": {
+        "type": "linear",
+        "angle": 180,
+        "stops": [
+          {
+            "color": "#FF6B6B",
+            "position": 0,
+            "positionDecimal": 0
+          },
+          {
+            "color": "#FFA07A",
+            "position": 50,
+            "positionDecimal": 0.5
+          },
+          {
+            "color": "#FFD93D",
+            "position": 100,
+            "positionDecimal": 1
+          }
+        ],
+        "css": "linear-gradient(180deg, #FF6B6B 0%, #FFA07A 50%, #FFD93D 100%)",
+        "svg": "<linearGradient id=\"gradient\" x1=\"50%\" y1=\"100%\" x2=\"50%\" y2=\"0%\">\n    <stop offset=\"0%\" stop-color=\"#FF6B6B\"/>\n    <stop offset=\"50%\" stop-color=\"#FFA07A\"/>\n    <stop offset=\"100%\" stop-color=\"#FFD93D\"/>\n</linearGradient>",
+        "indesign": {
+          "type": "Linear",
+          "angle": 180,
+          "center": [
+            50,
+            50
+          ],
+          "stops": [
+            {
+              "color": {
+                "r": 255,
+                "g": 107,
+                "b": 107
+              },
+              "location": 0,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 255,
+                "g": 160,
+                "b": 122
+              },
+              "location": 0.5,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 255,
+                "g": 217,
+                "b": 61
+              },
+              "location": 1,
+              "midpoint": 50
+            }
+          ],
+          "script": "// Apply linear gradient\nvar gradient = app.activeDocument.gradients.add();\ngradient.type = GradientType.LINEAR;\n\n    var stop0 = gradient.gradientStops.add();\n    stop0.stopColor = [255, 107, 107];\n    stop0.location = 0;\n    stop0.midpoint = 50;\n    var stop1 = gradient.gradientStops.add();\n    stop1.stopColor = [255, 160, 122];\n    stop1.location = 0.5;\n    stop1.midpoint = 50;\n    var stop2 = gradient.gradientStops.add();\n    stop2.stopColor = [255, 217, 61];\n    stop2.location = 1;\n    stop2.midpoint = 50;\n\n// Apply to selection\nif (app.selection.length > 0) {\n    var obj = app.selection[0];\n    obj.fillColor = gradient.color;\n    obj.gradientFillAngle = 180;\n}"
+        }
+      },
+      "ocean": {
+        "type": "linear",
+        "angle": 180,
+        "stops": [
+          {
+            "color": "#006994",
+            "position": 0,
+            "positionDecimal": 0
+          },
+          {
+            "color": "#0099CC",
+            "position": 75,
+            "positionDecimal": 0.75
+          },
+          {
+            "color": "#66CCFF",
+            "position": 100,
+            "positionDecimal": 1
+          }
+        ],
+        "css": "linear-gradient(180deg, #006994 0%, #0099CC 75%, #66CCFF 100%)",
+        "svg": "<linearGradient id=\"gradient\" x1=\"50%\" y1=\"100%\" x2=\"50%\" y2=\"0%\">\n    <stop offset=\"0%\" stop-color=\"#006994\"/>\n    <stop offset=\"75%\" stop-color=\"#0099CC\"/>\n    <stop offset=\"100%\" stop-color=\"#66CCFF\"/>\n</linearGradient>",
+        "indesign": {
+          "type": "Linear",
+          "angle": 180,
+          "center": [
+            50,
+            50
+          ],
+          "stops": [
+            {
+              "color": {
+                "r": 0,
+                "g": 105,
+                "b": 148
+              },
+              "location": 0,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 0,
+                "g": 153,
+                "b": 204
+              },
+              "location": 0.75,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 102,
+                "g": 204,
+                "b": 255
+              },
+              "location": 1,
+              "midpoint": 50
+            }
+          ],
+          "script": "// Apply linear gradient\nvar gradient = app.activeDocument.gradients.add();\ngradient.type = GradientType.LINEAR;\n\n    var stop0 = gradient.gradientStops.add();\n    stop0.stopColor = [0, 105, 148];\n    stop0.location = 0;\n    stop0.midpoint = 50;\n    var stop1 = gradient.gradientStops.add();\n    stop1.stopColor = [0, 153, 204];\n    stop1.location = 0.75;\n    stop1.midpoint = 50;\n    var stop2 = gradient.gradientStops.add();\n    stop2.stopColor = [102, 204, 255];\n    stop2.location = 1;\n    stop2.midpoint = 50;\n\n// Apply to selection\nif (app.selection.length > 0) {\n    var obj = app.selection[0];\n    obj.fillColor = gradient.color;\n    obj.gradientFillAngle = 180;\n}"
+        }
+      },
+      "forest": {
+        "type": "linear",
+        "angle": 135,
+        "stops": [
+          {
+            "color": "#2C5F2D",
+            "position": 0,
+            "positionDecimal": 0
+          },
+          {
+            "color": "#65873B",
+            "position": 50,
+            "positionDecimal": 0.5
+          },
+          {
+            "color": "#97BC62",
+            "position": 100,
+            "positionDecimal": 1
+          }
+        ],
+        "css": "linear-gradient(135deg, #2C5F2D 0%, #65873B 50%, #97BC62 100%)",
+        "svg": "<linearGradient id=\"gradient\" x1=\"85.35533905932738%\" y1=\"85.35533905932738%\" x2=\"14.644660940672622%\" y2=\"14.64466094067263%\">\n    <stop offset=\"0%\" stop-color=\"#2C5F2D\"/>\n    <stop offset=\"50%\" stop-color=\"#65873B\"/>\n    <stop offset=\"100%\" stop-color=\"#97BC62\"/>\n</linearGradient>",
+        "indesign": {
+          "type": "Linear",
+          "angle": 135,
+          "center": [
+            50,
+            50
+          ],
+          "stops": [
+            {
+              "color": {
+                "r": 44,
+                "g": 95,
+                "b": 45
+              },
+              "location": 0,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 101,
+                "g": 135,
+                "b": 59
+              },
+              "location": 0.5,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 151,
+                "g": 188,
+                "b": 98
+              },
+              "location": 1,
+              "midpoint": 50
+            }
+          ],
+          "script": "// Apply linear gradient\nvar gradient = app.activeDocument.gradients.add();\ngradient.type = GradientType.LINEAR;\n\n    var stop0 = gradient.gradientStops.add();\n    stop0.stopColor = [44, 95, 45];\n    stop0.location = 0;\n    stop0.midpoint = 50;\n    var stop1 = gradient.gradientStops.add();\n    stop1.stopColor = [101, 135, 59];\n    stop1.location = 0.5;\n    stop1.midpoint = 50;\n    var stop2 = gradient.gradientStops.add();\n    stop2.stopColor = [151, 188, 98];\n    stop2.location = 1;\n    stop2.midpoint = 50;\n\n// Apply to selection\nif (app.selection.length > 0) {\n    var obj = app.selection[0];\n    obj.fillColor = gradient.color;\n    obj.gradientFillAngle = 135;\n}"
+        }
+      },
+      "royal": {
+        "type": "linear",
+        "angle": 180,
+        "stops": [
+          {
+            "color": "#4A148C",
+            "position": 0,
+            "positionDecimal": 0
+          },
+          {
+            "color": "#7B1FA2",
+            "position": 50,
+            "positionDecimal": 0.5
+          },
+          {
+            "color": "#BA68C8",
+            "position": 100,
+            "positionDecimal": 1
+          }
+        ],
+        "css": "linear-gradient(180deg, #4A148C 0%, #7B1FA2 50%, #BA68C8 100%)",
+        "svg": "<linearGradient id=\"gradient\" x1=\"50%\" y1=\"100%\" x2=\"50%\" y2=\"0%\">\n    <stop offset=\"0%\" stop-color=\"#4A148C\"/>\n    <stop offset=\"50%\" stop-color=\"#7B1FA2\"/>\n    <stop offset=\"100%\" stop-color=\"#BA68C8\"/>\n</linearGradient>",
+        "indesign": {
+          "type": "Linear",
+          "angle": 180,
+          "center": [
+            50,
+            50
+          ],
+          "stops": [
+            {
+              "color": {
+                "r": 74,
+                "g": 20,
+                "b": 140
+              },
+              "location": 0,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 123,
+                "g": 31,
+                "b": 162
+              },
+              "location": 0.5,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 186,
+                "g": 104,
+                "b": 200
+              },
+              "location": 1,
+              "midpoint": 50
+            }
+          ],
+          "script": "// Apply linear gradient\nvar gradient = app.activeDocument.gradients.add();\ngradient.type = GradientType.LINEAR;\n\n    var stop0 = gradient.gradientStops.add();\n    stop0.stopColor = [74, 20, 140];\n    stop0.location = 0;\n    stop0.midpoint = 50;\n    var stop1 = gradient.gradientStops.add();\n    stop1.stopColor = [123, 31, 162];\n    stop1.location = 0.5;\n    stop1.midpoint = 50;\n    var stop2 = gradient.gradientStops.add();\n    stop2.stopColor = [186, 104, 200];\n    stop2.location = 1;\n    stop2.midpoint = 50;\n\n// Apply to selection\nif (app.selection.length > 0) {\n    var obj = app.selection[0];\n    obj.fillColor = gradient.color;\n    obj.gradientFillAngle = 180;\n}"
+        }
+      },
+      "warmth": {
+        "type": "radial",
+        "position": {
+          "x": 0.5,
+          "y": 0.3
+        },
+        "stops": [
+          {
+            "color": "#FFE5B4",
+            "position": 0,
+            "positionDecimal": 0
+          },
+          {
+            "color": "#FFD4A3",
+            "position": 88,
+            "positionDecimal": 0.875
+          },
+          {
+            "color": "#FFC38B",
+            "position": 100,
+            "positionDecimal": 1
+          }
+        ],
+        "css": "radial-gradient(circle at 50% 30%, #FFE5B4 0%, #FFD4A3 88%, #FFC38B 100%)",
+        "svg": "<radialGradient id=\"gradient\" cx=\"50%\" cy=\"30%\">\n    <stop offset=\"0%\" stop-color=\"#FFE5B4\"/>\n    <stop offset=\"88%\" stop-color=\"#FFD4A3\"/>\n    <stop offset=\"100%\" stop-color=\"#FFC38B\"/>\n</radialGradient>",
+        "indesign": {
+          "type": "Radial",
+          "angle": 0,
+          "center": [
+            50,
+            30
+          ],
+          "stops": [
+            {
+              "color": {
+                "r": 255,
+                "g": 229,
+                "b": 180
+              },
+              "location": 0,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 255,
+                "g": 212,
+                "b": 163
+              },
+              "location": 0.875,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 255,
+                "g": 195,
+                "b": 139
+              },
+              "location": 1,
+              "midpoint": 50
+            }
+          ],
+          "script": "// Apply radial gradient\nvar gradient = app.activeDocument.gradients.add();\ngradient.type = GradientType.RADIAL;\n\n    var stop0 = gradient.gradientStops.add();\n    stop0.stopColor = [255, 229, 180];\n    stop0.location = 0;\n    stop0.midpoint = 50;\n    var stop1 = gradient.gradientStops.add();\n    stop1.stopColor = [255, 212, 163];\n    stop1.location = 0.875;\n    stop1.midpoint = 50;\n    var stop2 = gradient.gradientStops.add();\n    stop2.stopColor = [255, 195, 139];\n    stop2.location = 1;\n    stop2.midpoint = 50;\n\n// Apply to selection\nif (app.selection.length > 0) {\n    var obj = app.selection[0];\n    obj.fillColor = gradient.color;\n    obj.gradientFillCenter = [50, 30];\n}"
+        }
+      },
+      "teei": {
+        "type": "linear",
+        "angle": 135,
+        "stops": [
+          {
+            "color": "#00393F",
+            "position": 0,
+            "positionDecimal": 0
+          },
+          {
+            "color": "#65873B",
+            "position": 50,
+            "positionDecimal": 0.5
+          },
+          {
+            "color": "#BA8F5A",
+            "position": 100,
+            "positionDecimal": 1
+          }
+        ],
+        "css": "linear-gradient(135deg, #00393F 0%, #65873B 50%, #BA8F5A 100%)",
+        "svg": "<linearGradient id=\"gradient\" x1=\"85.35533905932738%\" y1=\"85.35533905932738%\" x2=\"14.644660940672622%\" y2=\"14.64466094067263%\">\n    <stop offset=\"0%\" stop-color=\"#00393F\"/>\n    <stop offset=\"50%\" stop-color=\"#65873B\"/>\n    <stop offset=\"100%\" stop-color=\"#BA8F5A\"/>\n</linearGradient>",
+        "indesign": {
+          "type": "Linear",
+          "angle": 135,
+          "center": [
+            50,
+            50
+          ],
+          "stops": [
+            {
+              "color": {
+                "r": 0,
+                "g": 57,
+                "b": 63
+              },
+              "location": 0,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 101,
+                "g": 135,
+                "b": 59
+              },
+              "location": 0.5,
+              "midpoint": 50
+            },
+            {
+              "color": {
+                "r": 186,
+                "g": 143,
+                "b": 90
+              },
+              "location": 1,
+              "midpoint": 50
+            }
+          ],
+          "script": "// Apply linear gradient\nvar gradient = app.activeDocument.gradients.add();\ngradient.type = GradientType.LINEAR;\n\n    var stop0 = gradient.gradientStops.add();\n    stop0.stopColor = [0, 57, 63];\n    stop0.location = 0;\n    stop0.midpoint = 50;\n    var stop1 = gradient.gradientStops.add();\n    stop1.stopColor = [101, 135, 59];\n    stop1.location = 0.5;\n    stop1.midpoint = 50;\n    var stop2 = gradient.gradientStops.add();\n    stop2.stopColor = [186, 143, 90];\n    stop2.location = 1;\n    stop2.midpoint = 50;\n\n// Apply to selection\nif (app.selection.length > 0) {\n    var obj = app.selection[0];\n    obj.fillColor = gradient.color;\n    obj.gradientFillAngle = 135;\n}"
+        }
+      }
+    }
+  }
+}

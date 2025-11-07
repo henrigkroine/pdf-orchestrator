@@ -1,0 +1,9 @@
+[
+  { "program": "Cloud Computing Training", "students": 1250, "satisfaction": 9.2 },
+  { "program": "Teacher Professional Development", "students": 875, "satisfaction": 9.5 },
+  { "program": "Digital Literacy", "students": 2100, "satisfaction": 8.8 },
+  { "program": "AWS Certification Prep", "students": 650, "satisfaction": 9.4 },
+  { "program": "Cybersecurity Fundamentals", "students": 420, "satisfaction": 9.0 },
+  { "program": "Data Analytics", "students": 580, "satisfaction": 8.9 },
+  { "program": "AI & Machine Learning Intro", "students": 340, "satisfaction": 9.3 }
+]

@@ -1,0 +1,158 @@
+{
+  "wcagVersion": "2.2",
+  "level": "AA",
+  "description": "WCAG 2.2 Level AA compliance configuration for TEEI PDF documents",
+
+  "checks": {
+    "colorContrast": {
+      "enabled": true,
+      "normalText": 4.5,
+      "largeText": 3.0,
+      "uiComponents": 3.0,
+      "description": "WCAG 1.4.3: Contrast (Minimum)",
+      "severity": "CRITICAL"
+    },
+    "textSize": {
+      "enabled": true,
+      "minimumBody": 11,
+      "minimumHeading": 14,
+      "minimumCaption": 9,
+      "description": "Text must be readable at minimum sizes",
+      "severity": "MAJOR"
+    },
+    "touchTargets": {
+      "enabled": true,
+      "minimum": 44,
+      "minimumAA": 24,
+      "spacing": 8,
+      "description": "WCAG 2.5.8: Target Size (Minimum)",
+      "severity": "MAJOR"
+    },
+    "altText": {
+      "enabled": true,
+      "required": true,
+      "description": "WCAG 1.1.1: Non-text Content",
+      "severity": "CRITICAL"
+    },
+    "headingHierarchy": {
+      "enabled": true,
+      "requireH1": true,
+      "allowSkippedLevels": false,
+      "description": "WCAG 2.4.6: Headings and Labels",
+      "severity": "MAJOR"
+    },
+    "textSpacing": {
+      "enabled": true,
+      "lineHeight": 1.5,
+      "paragraphSpacing": 2.0,
+      "letterSpacing": 0.12,
+      "wordSpacing": 0.16,
+      "description": "WCAG 1.4.12: Text Spacing",
+      "severity": "MAJOR"
+    },
+    "focusIndicators": {
+      "enabled": true,
+      "minimumContrast": 3.0,
+      "description": "WCAG 2.4.7: Focus Visible",
+      "severity": "MAJOR"
+    },
+    "colorBlindness": {
+      "enabled": true,
+      "testTypes": ["protanopia", "deuteranopia", "tritanopia"],
+      "minimumContrast": 3.0,
+      "description": "Content distinguishable without color perception",
+      "severity": "MAJOR"
+    },
+    "resizeText": {
+      "enabled": true,
+      "maximumZoom": 200,
+      "description": "WCAG 1.4.4: Resize Text",
+      "severity": "MAJOR"
+    },
+    "reflow": {
+      "enabled": false,
+      "minimumWidth": 320,
+      "description": "WCAG 1.4.10: Reflow (not applicable to PDFs)",
+      "severity": "INFO"
+    }
+  },
+
+  "teeiColors": {
+    "nordshore": { "hex": "#00393F", "rgb": [0, 57, 63], "name": "Nordshore" },
+    "sky": { "hex": "#C9E4EC", "rgb": [201, 228, 236], "name": "Sky" },
+    "sand": { "hex": "#FFF1E2", "rgb": [255, 241, 226], "name": "Sand" },
+    "beige": { "hex": "#EFE1DC", "rgb": [239, 225, 220], "name": "Beige" },
+    "moss": { "hex": "#65873B", "rgb": [101, 135, 59], "name": "Moss" },
+    "gold": { "hex": "#BA8F5A", "rgb": [186, 143, 90], "name": "Gold" },
+    "clay": { "hex": "#913B2F", "rgb": [145, 59, 47], "name": "Clay" },
+    "white": { "hex": "#FFFFFF", "rgb": [255, 255, 255], "name": "White" },
+    "black": { "hex": "#000000", "rgb": [0, 0, 0], "name": "Black" }
+  },
+
+  "commonColorCombinations": [
+    {
+      "name": "Nordshore on White",
+      "foreground": [0, 57, 63],
+      "background": [255, 255, 255],
+      "context": "Primary text"
+    },
+    {
+      "name": "Nordshore on Sand",
+      "foreground": [0, 57, 63],
+      "background": [255, 241, 226],
+      "context": "Primary text on warm background"
+    },
+    {
+      "name": "Black on Sky",
+      "foreground": [0, 0, 0],
+      "background": [201, 228, 236],
+      "context": "Text on accent background"
+    },
+    {
+      "name": "White on Nordshore",
+      "foreground": [255, 255, 255],
+      "background": [0, 57, 63],
+      "context": "Reversed text (headers)"
+    },
+    {
+      "name": "Gold on White",
+      "foreground": [186, 143, 90],
+      "background": [255, 255, 255],
+      "context": "Accent text/metrics"
+    }
+  ],
+
+  "reporting": {
+    "outputFormat": "html",
+    "includeScreenshots": true,
+    "includeRemediation": true,
+    "groupByCategory": true,
+    "showPassedChecks": true
+  },
+
+  "thresholds": {
+    "minimumPassRate": 80,
+    "criticalIssuesAllowed": 0,
+    "majorIssuesAllowed": 3,
+    "minorIssuesAllowed": 10
+  },
+
+  "manualReviewItems": [
+    "Alternative text quality (automated tools can only check presence)",
+    "Keyboard navigation functionality",
+    "Screen reader compatibility",
+    "Focus order and tab index",
+    "Form labels and instructions",
+    "Error identification and suggestions",
+    "Consistent navigation patterns",
+    "Link purpose from context"
+  ],
+
+  "notes": [
+    "PDF accessibility differs from web accessibility",
+    "Some WCAG criteria (like reflow) may not apply to fixed-layout PDFs",
+    "Manual testing with assistive technologies is always recommended",
+    "Color contrast should account for transparency and overlays",
+    "Touch targets may be less relevant for desktop PDFs but important for mobile viewing"
+  ]
+}

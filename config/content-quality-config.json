@@ -1,0 +1,621 @@
+{
+  "version": "1.0.0",
+  "description": "Content Quality Analysis Configuration for TEEI PDF Documents",
+
+  "qualityDimensions": {
+    "writingQuality": {
+      "weight": 0.15,
+      "enabled": true,
+      "criteria": {
+        "grammarAccuracy": {
+          "weight": 0.25,
+          "threshold": 95,
+          "description": "Grammar and spelling correctness"
+        },
+        "sentenceStructure": {
+          "weight": 0.20,
+          "threshold": 80,
+          "description": "Sentence variety and complexity"
+        },
+        "clarity": {
+          "weight": 0.25,
+          "threshold": 85,
+          "description": "Writing clarity and conciseness"
+        },
+        "activeVoice": {
+          "weight": 0.15,
+          "threshold": 70,
+          "description": "Percentage of active voice usage"
+        },
+        "coherence": {
+          "weight": 0.15,
+          "threshold": 80,
+          "description": "Paragraph and document coherence"
+        }
+      }
+    },
+
+    "messagingEffectiveness": {
+      "weight": 0.20,
+      "enabled": true,
+      "criteria": {
+        "valueProposition": {
+          "weight": 0.30,
+          "threshold": 85,
+          "description": "Value proposition clarity and strength"
+        },
+        "callToAction": {
+          "weight": 0.25,
+          "threshold": 80,
+          "description": "CTA presence and effectiveness"
+        },
+        "emotionalImpact": {
+          "weight": 0.20,
+          "threshold": 75,
+          "description": "Emotional resonance and appeal"
+        },
+        "persuasionTechniques": {
+          "weight": 0.15,
+          "threshold": 70,
+          "description": "Use of ethos, pathos, logos"
+        },
+        "targetAlignment": {
+          "weight": 0.10,
+          "threshold": 80,
+          "description": "Alignment with target audience"
+        }
+      }
+    },
+
+    "storytellingQuality": {
+      "weight": 0.15,
+      "enabled": true,
+      "criteria": {
+        "narrativeArc": {
+          "weight": 0.25,
+          "threshold": 75,
+          "description": "Clear narrative structure"
+        },
+        "storyStructure": {
+          "weight": 0.20,
+          "threshold": 70,
+          "description": "Beginning, middle, end coherence"
+        },
+        "characterClarity": {
+          "weight": 0.20,
+          "threshold": 80,
+          "description": "Subject and stakeholder clarity"
+        },
+        "conflictResolution": {
+          "weight": 0.20,
+          "threshold": 70,
+          "description": "Problem and solution presentation"
+        },
+        "emotionalJourney": {
+          "weight": 0.15,
+          "threshold": 75,
+          "description": "Emotional arc and engagement"
+        }
+      }
+    },
+
+    "brandVoiceConsistency": {
+      "weight": 0.15,
+      "enabled": true,
+      "criteria": {
+        "toneConsistency": {
+          "weight": 0.25,
+          "threshold": 85,
+          "description": "Consistent tone throughout"
+        },
+        "voiceAttributes": {
+          "weight": 0.30,
+          "threshold": 80,
+          "description": "TEEI voice attributes present"
+        },
+        "terminologyConsistency": {
+          "weight": 0.20,
+          "threshold": 90,
+          "description": "Consistent terminology usage"
+        },
+        "personalityAlignment": {
+          "weight": 0.15,
+          "threshold": 75,
+          "description": "Brand personality match"
+        },
+        "crossDocumentConsistency": {
+          "weight": 0.10,
+          "threshold": 80,
+          "description": "Consistency with other TEEI docs"
+        }
+      }
+    },
+
+    "contentCompleteness": {
+      "weight": 0.15,
+      "enabled": true,
+      "criteria": {
+        "requiredElements": {
+          "weight": 0.30,
+          "threshold": 100,
+          "description": "All required elements present"
+        },
+        "placeholderDetection": {
+          "weight": 0.25,
+          "threshold": 100,
+          "description": "No placeholders (XX, TBD, etc.)"
+        },
+        "dataAccuracy": {
+          "weight": 0.20,
+          "threshold": 95,
+          "description": "Accurate data and statistics"
+        },
+        "factualCorrectness": {
+          "weight": 0.15,
+          "threshold": 95,
+          "description": "Fact-checking validation"
+        },
+        "citationVerification": {
+          "weight": 0.10,
+          "threshold": 90,
+          "description": "Sources and citations verified"
+        }
+      }
+    },
+
+    "audienceAppropriateness": {
+      "weight": 0.10,
+      "enabled": true,
+      "criteria": {
+        "readingLevel": {
+          "weight": 0.25,
+          "threshold": 80,
+          "description": "Appropriate reading level"
+        },
+        "technicalDepth": {
+          "weight": 0.20,
+          "threshold": 75,
+          "description": "Right technical complexity"
+        },
+        "culturalSensitivity": {
+          "weight": 0.20,
+          "threshold": 95,
+          "description": "Culturally sensitive content"
+        },
+        "inclusiveLanguage": {
+          "weight": 0.20,
+          "threshold": 95,
+          "description": "Inclusive and respectful language"
+        },
+        "professionalTone": {
+          "weight": 0.15,
+          "threshold": 85,
+          "description": "Professional tone maintained"
+        }
+      }
+    },
+
+    "seoDiscoverability": {
+      "weight": 0.05,
+      "enabled": true,
+      "criteria": {
+        "keywordUsage": {
+          "weight": 0.30,
+          "threshold": 70,
+          "description": "Relevant keyword usage"
+        },
+        "headingHierarchy": {
+          "weight": 0.25,
+          "threshold": 85,
+          "description": "Proper heading structure"
+        },
+        "metaQuality": {
+          "weight": 0.15,
+          "threshold": 75,
+          "description": "Meta description quality"
+        },
+        "linkValidation": {
+          "weight": 0.15,
+          "threshold": 90,
+          "description": "Valid links and references"
+        },
+        "searchIntentMatch": {
+          "weight": 0.15,
+          "threshold": 70,
+          "description": "Matches search intent"
+        }
+      }
+    },
+
+    "emotionalIntelligence": {
+      "weight": 0.05,
+      "enabled": true,
+      "criteria": {
+        "sentimentBalance": {
+          "weight": 0.25,
+          "threshold": 75,
+          "description": "Balanced positive sentiment"
+        },
+        "emotionalAppeal": {
+          "weight": 0.25,
+          "threshold": 80,
+          "description": "Strong emotional appeal"
+        },
+        "empathyIndicators": {
+          "weight": 0.20,
+          "threshold": 75,
+          "description": "Empathy and understanding shown"
+        },
+        "trustBuilding": {
+          "weight": 0.20,
+          "threshold": 85,
+          "description": "Trust-building elements present"
+        },
+        "urgencyBalance": {
+          "weight": 0.10,
+          "threshold": 70,
+          "description": "Urgency without panic"
+        }
+      }
+    }
+  },
+
+  "teeiVoiceAttributes": {
+    "empowering": {
+      "keywords": ["empower", "enable", "support", "strengthen", "build", "grow", "achieve", "succeed"],
+      "avoidWords": ["help", "assist", "aid", "charity", "pity"],
+      "description": "Language that empowers rather than condescends"
+    },
+    "urgent": {
+      "keywords": ["now", "immediate", "critical", "essential", "vital", "priority", "urgent"],
+      "avoidWords": ["panic", "crisis", "emergency", "desperate"],
+      "description": "Conveys urgency without inducing panic"
+    },
+    "hopeful": {
+      "keywords": ["hope", "opportunity", "future", "possibility", "potential", "transform", "change"],
+      "avoidWords": ["naive", "unrealistic", "impossible", "hopeless"],
+      "description": "Maintains hope while being realistic"
+    },
+    "inclusive": {
+      "keywords": ["together", "partnership", "collaboration", "community", "shared", "collective"],
+      "avoidWords": ["exclusive", "elite", "select", "privileged"],
+      "description": "Celebrates diversity and inclusion"
+    },
+    "respectful": {
+      "keywords": ["respect", "honor", "value", "appreciate", "recognize", "acknowledge"],
+      "avoidWords": ["victims", "disadvantaged", "poor", "needy"],
+      "description": "Respectful of all stakeholders"
+    },
+    "clear": {
+      "avoidJargon": ["synergy", "leverage", "optimize", "ecosystem", "paradigm"],
+      "preferPlainLanguage": true,
+      "description": "Clear and jargon-free communication"
+    }
+  },
+
+  "requiredElements": {
+    "partnershipDocument": [
+      "Organization name (TEEI)",
+      "Partner name",
+      "Value proposition",
+      "Program details",
+      "Impact metrics",
+      "Call to action",
+      "Contact information",
+      "Next steps"
+    ],
+    "programOverview": [
+      "Program name",
+      "Target audience",
+      "Objectives",
+      "Methodology",
+      "Timeline",
+      "Expected outcomes",
+      "Success metrics"
+    ],
+    "impactReport": [
+      "Executive summary",
+      "Key metrics",
+      "Student outcomes",
+      "Partner contributions",
+      "Success stories",
+      "Future plans",
+      "Acknowledgments"
+    ]
+  },
+
+  "placeholderPatterns": [
+    "XX",
+    "TBD",
+    "TODO",
+    "FIXME",
+    "\\[INSERT.*?\\]",
+    "\\[.*?\\]",
+    "\\{\\{.*?\\}\\}",
+    "___+",
+    "\\.\\.\\.",
+    "Lorem ipsum",
+    "placeholder",
+    "coming soon",
+    "to be determined",
+    "update this",
+    "add here",
+    "replace with"
+  ],
+
+  "targetAudiences": {
+    "corporatePartners": {
+      "readingLevel": {
+        "min": 12,
+        "max": 16,
+        "description": "College to graduate level"
+      },
+      "technicalDepth": "moderate",
+      "tone": "professional",
+      "focus": ["ROI", "impact", "partnership benefits", "CSR alignment"]
+    },
+    "foundations": {
+      "readingLevel": {
+        "min": 14,
+        "max": 18,
+        "description": "Graduate level"
+      },
+      "technicalDepth": "high",
+      "tone": "academic",
+      "focus": ["methodology", "outcomes", "research", "sustainability"]
+    },
+    "educators": {
+      "readingLevel": {
+        "min": 12,
+        "max": 16,
+        "description": "College to graduate level"
+      },
+      "technicalDepth": "moderate-to-high",
+      "tone": "collaborative",
+      "focus": ["pedagogy", "student outcomes", "implementation", "support"]
+    },
+    "generalPublic": {
+      "readingLevel": {
+        "min": 8,
+        "max": 12,
+        "description": "Middle school to high school"
+      },
+      "technicalDepth": "low",
+      "tone": "accessible",
+      "focus": ["impact stories", "mission", "how to help", "transparency"]
+    }
+  },
+
+  "aiModels": {
+    "writingQuality": {
+      "primary": "gpt-5",
+      "fallback": "gpt-4o",
+      "temperature": 0.3,
+      "maxTokens": 2000,
+      "systemPrompt": "You are an expert writing coach and editor. Analyze the provided text for grammar, clarity, style, and effectiveness. Provide specific, actionable feedback."
+    },
+    "messaging": {
+      "primary": "claude-opus-4.1",
+      "fallback": "claude-sonnet-4.5",
+      "temperature": 0.4,
+      "maxTokens": 3000,
+      "systemPrompt": "You are a marketing and messaging expert. Analyze the text for value proposition clarity, persuasiveness, emotional impact, and call-to-action effectiveness."
+    },
+    "storytelling": {
+      "primary": "gemini-2.5-pro",
+      "fallback": "gpt-4o",
+      "temperature": 0.5,
+      "maxTokens": 3000,
+      "systemPrompt": "You are a storytelling expert and narrative analyst. Evaluate the narrative structure, emotional journey, character development, and story effectiveness."
+    },
+    "audience": {
+      "primary": "claude-sonnet-4.5",
+      "fallback": "gpt-4o",
+      "temperature": 0.3,
+      "maxTokens": 2000,
+      "systemPrompt": "You are an audience analysis expert. Evaluate if the content is appropriate for the target audience in terms of reading level, technical depth, tone, and cultural sensitivity."
+    },
+    "emotional": {
+      "primary": "gemini-2.5-pro",
+      "fallback": "claude-opus-4.1",
+      "temperature": 0.4,
+      "maxTokens": 2000,
+      "systemPrompt": "You are an emotional intelligence expert. Analyze the emotional tone, sentiment, empathy indicators, trust-building elements, and overall emotional impact."
+    },
+    "seo": {
+      "primary": "gpt-4o",
+      "fallback": "gpt-5",
+      "temperature": 0.3,
+      "maxTokens": 1500,
+      "systemPrompt": "You are an SEO expert. Analyze the content for keyword usage, heading structure, searchability, and discoverability optimization."
+    }
+  },
+
+  "scoringRanges": {
+    "exceptional": {
+      "min": 90,
+      "max": 100,
+      "label": "Exceptional",
+      "description": "World-class quality, best practices exemplified",
+      "color": "#00393F"
+    },
+    "veryGood": {
+      "min": 80,
+      "max": 89,
+      "label": "Very Good",
+      "description": "High quality with minor improvement opportunities",
+      "color": "#65873B"
+    },
+    "good": {
+      "min": 70,
+      "max": 79,
+      "label": "Good",
+      "description": "Solid quality with some areas needing attention",
+      "color": "#BA8F5A"
+    },
+    "fair": {
+      "min": 60,
+      "max": 69,
+      "label": "Fair",
+      "description": "Acceptable but multiple improvements needed",
+      "color": "#C9E4EC"
+    },
+    "belowStandard": {
+      "min": 50,
+      "max": 59,
+      "label": "Below Standard",
+      "description": "Significant work required to meet standards",
+      "color": "#913B2F"
+    },
+    "poor": {
+      "min": 0,
+      "max": 49,
+      "label": "Poor",
+      "description": "Major rewrite recommended",
+      "color": "#8B0000"
+    }
+  },
+
+  "issueSeverity": {
+    "critical": {
+      "scoreImpact": -15,
+      "color": "#8B0000",
+      "description": "Must fix before publication",
+      "examples": ["Factual errors", "Placeholder text", "Grammar errors", "Missing required elements"]
+    },
+    "major": {
+      "scoreImpact": -10,
+      "color": "#913B2F",
+      "description": "Should fix for quality standards",
+      "examples": ["Weak value proposition", "Poor CTA", "Inconsistent voice", "Reading level mismatch"]
+    },
+    "minor": {
+      "scoreImpact": -5,
+      "color": "#BA8F5A",
+      "description": "Nice to fix for optimization",
+      "examples": ["Passive voice usage", "Weak transitions", "SEO opportunities", "Minor inconsistencies"]
+    },
+    "suggestion": {
+      "scoreImpact": 0,
+      "color": "#65873B",
+      "description": "Enhancement opportunity",
+      "examples": ["Style improvements", "Flow optimization", "Emotional impact boost", "Clarity refinements"]
+    }
+  },
+
+  "improvementRecommendations": {
+    "writingQuality": {
+      "lowScore": [
+        "Run grammar and spell check",
+        "Break long sentences into shorter ones",
+        "Vary sentence structure for better flow",
+        "Replace passive voice with active voice",
+        "Remove unnecessary words and jargon",
+        "Use AI writing assistant for rewrites"
+      ],
+      "mediumScore": [
+        "Improve sentence variety",
+        "Enhance clarity with concrete examples",
+        "Strengthen transitions between paragraphs",
+        "Polish word choice for precision"
+      ],
+      "highScore": [
+        "Minor style refinements",
+        "Consider advanced rhetorical devices",
+        "Fine-tune rhythm and pacing"
+      ]
+    },
+    "messaging": {
+      "lowScore": [
+        "Clarify the core value proposition in first paragraph",
+        "Strengthen call-to-action with specific next steps",
+        "Add emotional appeal and benefits",
+        "Use persuasion techniques (testimonials, data, stories)",
+        "Align messaging with target audience priorities"
+      ],
+      "mediumScore": [
+        "Enhance value proposition specificity",
+        "Make CTA more compelling and urgent",
+        "Add social proof or credibility indicators",
+        "Increase emotional resonance"
+      ],
+      "highScore": [
+        "Test multiple CTA variations",
+        "A/B test messaging approaches",
+        "Optimize emotional journey"
+      ]
+    },
+    "storytelling": {
+      "lowScore": [
+        "Establish clear beginning, middle, and end",
+        "Introduce main characters/subjects early",
+        "Define the conflict or challenge clearly",
+        "Show the journey and transformation",
+        "End with clear resolution and impact"
+      ],
+      "mediumScore": [
+        "Strengthen narrative arc",
+        "Enhance emotional journey",
+        "Add more vivid details and examples",
+        "Build tension and resolution"
+      ],
+      "highScore": [
+        "Refine pacing and rhythm",
+        "Deepen character development",
+        "Polish emotional resonance"
+      ]
+    }
+  },
+
+  "webSearchFactChecking": {
+    "enabled": true,
+    "maxSearches": 5,
+    "confidenceThreshold": 0.7,
+    "categories": [
+      "statistics",
+      "dates",
+      "names",
+      "organizations",
+      "program details",
+      "research findings"
+    ]
+  },
+
+  "outputFormats": {
+    "json": {
+      "enabled": true,
+      "pretty": true,
+      "includeRawScores": true,
+      "includeRecommendations": true
+    },
+    "html": {
+      "enabled": true,
+      "template": "templates/content-quality-report.html",
+      "includeCharts": true,
+      "includeExamples": true
+    },
+    "csv": {
+      "enabled": true,
+      "includeAllDimensions": true,
+      "includeIssues": true
+    },
+    "markdown": {
+      "enabled": true,
+      "includeTableOfContents": true,
+      "includeCodeBlocks": true
+    }
+  },
+
+  "logging": {
+    "level": "info",
+    "logFile": "logs/content-quality-analysis.log",
+    "includeTimestamps": true,
+    "includeAIResponses": false
+  },
+
+  "cache": {
+    "enabled": true,
+    "ttl": 3600,
+    "directory": ".cache/content-quality"
+  }
+}

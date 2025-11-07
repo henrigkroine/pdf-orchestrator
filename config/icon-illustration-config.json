@@ -1,0 +1,205 @@
+{
+  "generator": {
+    "outputDir": "assets/generated",
+    "cacheDir": "assets/cache",
+    "quality": "hd",
+    "autoOptimizeSVG": true,
+    "generateVariations": true
+  },
+
+  "teeiStyle": {
+    "colors": {
+      "primary": {
+        "nordshore": "#00393F",
+        "sky": "#C9E4EC",
+        "sand": "#FFF1E2",
+        "beige": "#EFE1DC"
+      },
+      "accent": {
+        "moss": "#65873B",
+        "gold": "#BA8F5A",
+        "clay": "#913B2F"
+      }
+    },
+    "colorPalette": "Nordshore #00393F, Sky #C9E4EC, Sand #FFF1E2, Beige #EFE1DC, Moss #65873B, Gold #BA8F5A, Clay #913B2F",
+    "values": "Education, hope, empowerment, inclusion, equity, transformation",
+    "mood": "Inspiring, warm, authentic, professional, hopeful"
+  },
+
+  "iconStyles": {
+    "flat": {
+      "name": "Flat Design",
+      "description": "Modern flat design with simple geometric shapes and solid colors",
+      "characteristics": "Clean, minimal, 2D, no gradients or shadows",
+      "bestFor": "UI elements, app icons, infographics",
+      "recommended": true
+    },
+    "line": {
+      "name": "Line Art",
+      "description": "Clean line art with consistent stroke width",
+      "characteristics": "Outlined shapes, uniform line weight, no fill colors",
+      "bestFor": "Technical diagrams, minimalist icons, print materials",
+      "recommended": true
+    },
+    "isometric": {
+      "name": "Isometric 3D",
+      "description": "3D isometric style with depth and dimension",
+      "characteristics": "30-degree angles, pseudo-3D, geometric precision",
+      "bestFor": "Technical illustrations, architecture, product diagrams",
+      "recommended": false
+    },
+    "duotone": {
+      "name": "Duotone",
+      "description": "Two-color design with highlights and shadows",
+      "characteristics": "Two main colors, depth through shading, high contrast",
+      "bestFor": "Modern posters, social media graphics, hero images",
+      "recommended": true
+    },
+    "gradient": {
+      "name": "Gradient",
+      "description": "Smooth color transitions and modern effects",
+      "characteristics": "Flowing colors, depth, contemporary feel",
+      "bestFor": "App icons, modern branding, digital materials",
+      "recommended": false
+    },
+    "handDrawn": {
+      "name": "Hand-Drawn",
+      "description": "Sketch-like, organic, human-made feel",
+      "characteristics": "Imperfect lines, textured, warm and approachable",
+      "bestFor": "Education materials, friendly branding, storytelling",
+      "recommended": true
+    },
+    "geometric": {
+      "name": "Geometric",
+      "description": "Precise geometric shapes and mathematical patterns",
+      "characteristics": "Sharp angles, perfect circles, grid-based",
+      "bestFor": "Tech branding, modern design, professional materials",
+      "recommended": false
+    },
+    "organic": {
+      "name": "Organic",
+      "description": "Natural, flowing shapes inspired by nature",
+      "characteristics": "Curved lines, natural forms, soft edges",
+      "bestFor": "Wellness, education, environmental themes",
+      "recommended": true
+    }
+  },
+
+  "iconSizes": {
+    "small": {
+      "size": 64,
+      "usage": "UI elements, inline icons"
+    },
+    "medium": {
+      "size": 128,
+      "usage": "Section headers, buttons"
+    },
+    "large": {
+      "size": 256,
+      "usage": "Hero graphics, feature highlights"
+    },
+    "xlarge": {
+      "size": 512,
+      "usage": "Print materials, posters"
+    }
+  },
+
+  "illustrationSizes": {
+    "portrait": "1024x1792",
+    "landscape": "1792x1024",
+    "square": "1024x1024",
+    "wide": "2048x1024"
+  },
+
+  "svgOptimization": {
+    "precision": 2,
+    "removeComments": true,
+    "removeMetadata": true,
+    "removeUselessDefs": true,
+    "cleanupIDs": true,
+    "convertColors": true,
+    "mergePaths": true,
+    "sortAttrs": true,
+    "removeHiddenElems": true
+  },
+
+  "styleConsistency": {
+    "colorMatchThreshold": 50,
+    "sizeVarianceTolerance": 0.1,
+    "weightVarianceTolerance": 2.0,
+    "aspectRatioTolerance": 0.1,
+    "minimumScore": 7.0
+  },
+
+  "generation": {
+    "model": "dall-e-3",
+    "quality": "hd",
+    "rateLimitDelay": 5000,
+    "maxRetries": 3,
+    "timeout": 60000
+  },
+
+  "templates": {
+    "hero": {
+      "categories": ["hero"],
+      "defaultMood": "inspiring",
+      "defaultSize": "1792x1024"
+    },
+    "people": {
+      "categories": ["people"],
+      "defaultMood": "joyful",
+      "defaultSize": "1024x1024"
+    },
+    "technology": {
+      "categories": ["technology"],
+      "defaultMood": "innovative",
+      "defaultSize": "1792x1024"
+    },
+    "education": {
+      "categories": ["education"],
+      "defaultMood": "curious",
+      "defaultSize": "1024x1024"
+    },
+    "impact": {
+      "categories": ["impact"],
+      "defaultMood": "transformative",
+      "defaultSize": "1792x1024"
+    },
+    "abstract": {
+      "categories": ["abstract"],
+      "defaultMood": "hopeful",
+      "defaultSize": "1024x1024"
+    }
+  },
+
+  "accessibility": {
+    "minimumContrast": 4.5,
+    "enhancedContrast": 7.0,
+    "requireAltText": true,
+    "requireAriaLabels": true,
+    "requireTitle": true
+  },
+
+  "fileNaming": {
+    "pattern": "{concept}-{style}",
+    "sanitize": true,
+    "lowercase": true,
+    "separator": "-",
+    "maxLength": 50
+  },
+
+  "metadata": {
+    "includePrompt": true,
+    "includeUsageGuide": true,
+    "includeTimestamp": true,
+    "includeModel": true,
+    "format": "json"
+  },
+
+  "batch": {
+    "maxConcurrent": 1,
+    "delayBetweenRequests": 5000,
+    "saveProgress": true,
+    "resumeOnFailure": true
+  }
+}

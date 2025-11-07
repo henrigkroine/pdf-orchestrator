@@ -1,0 +1,99 @@
+{
+  "timestamp": "2025-11-06T17:05:28.205Z",
+  "period": {
+    "start": "2025-11-05T17:05:28.201Z",
+    "end": "2025-11-06T17:05:28.201Z",
+    "duration": 86400
+  },
+  "validation": {
+    "totalValidations": 0,
+    "averageScore": 0,
+    "averageAccuracy": 0,
+    "falsePositiveRate": 0,
+    "falseNegativeRate": 0,
+    "gradeDistribution": {},
+    "confidenceDistribution": {
+      "high": 0,
+      "medium": 0,
+      "low": 0
+    },
+    "humanReviewRate": 0
+  },
+  "performance": {
+    "averageProcessingTime": 0,
+    "medianProcessingTime": 0,
+    "p95ProcessingTime": 0,
+    "p99ProcessingTime": 0,
+    "cacheHitRate": 0,
+    "apiErrorRate": 0,
+    "throughput": 0,
+    "concurrency": {
+      "average": 0,
+      "peak": 0
+    }
+  },
+  "cost": {
+    "totalCost": 0,
+    "costPerValidation": 0,
+    "breakdown": {
+      "gemini": 0,
+      "claude": 0,
+      "gpt4v": 0,
+      "infrastructure": 0,
+      "storage": 0
+    },
+    "projectedMonthly": 0
+  },
+  "models": {
+    "gemini-1.5-flash": {
+      "accuracy": 93.2,
+      "speed": 3.8,
+      "cost": 0.000125,
+      "usageCount": 0,
+      "confidence": 0.88,
+      "errorRate": 0.8
+    }
+  },
+  "quality": {
+    "accuracyTrend": "N/A",
+    "speedTrend": "+5%",
+    "costTrend": "-8%",
+    "issuesDetected": {
+      "brandCompliance": 0,
+      "accessibility": 0,
+      "typography": 0,
+      "layout": 0,
+      "spacing": 0,
+      "colors": 0
+    },
+    "mostCommonIssues": []
+  },
+  "objectDetection": {
+    "totalElementsDetected": 0,
+    "averageElementsPerPage": 0,
+    "elementTypeDistribution": {},
+    "spatialViolations": {
+      "overlaps": 0,
+      "clearspaceViolations": 0,
+      "alignmentIssues": 0,
+      "spacingIssues": 0
+    },
+    "averageBoundingBoxAccuracy": 0
+  },
+  "accessibility": {
+    "wcagLevel": "AA",
+    "complianceRate": 0,
+    "commonViolations": []
+  },
+  "humanFeedback": {
+    "totalFeedbackEntries": 0,
+    "agreementRate": 0,
+    "averageCorrectionMagnitude": 0,
+    "learningImprovement": "N/A"
+  },
+  "system": {
+    "uptime": 99.9,
+    "version": "1.0.0",
+    "environment": "development"
+  }
+}

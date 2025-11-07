@@ -1,0 +1,144 @@
+{
+  "title": "TEEI & AWS Partnership Proposal",
+  "description": "Example document for testing layout and narrative systems",
+  "blocks": [
+    {
+      "type": "text",
+      "content": "TEEI & AWS: Transforming Education Together",
+      "fontSize": 42,
+      "hierarchyLevel": 1,
+      "emphasis": "high",
+      "width": 500,
+      "height": 80,
+      "color": "#00393F"
+    },
+    {
+      "type": "text",
+      "content": "Education inequality affects millions of displaced students worldwide. Traditional solutions can't keep pace with the scale of need.",
+      "fontSize": 18,
+      "hierarchyLevel": 2,
+      "width": 450,
+      "height": 60,
+      "color": "#00393F"
+    },
+    {
+      "type": "image",
+      "content": "Students learning with technology",
+      "width": 500,
+      "height": 300,
+      "image": true,
+      "importance": 1.0
+    },
+    {
+      "type": "text",
+      "content": "The Challenge",
+      "fontSize": 32,
+      "hierarchyLevel": 2,
+      "emphasis": "medium",
+      "width": 300,
+      "height": 50,
+      "color": "#00393F"
+    },
+    {
+      "type": "text",
+      "content": "Over 70 million displaced students lack access to quality education. Language barriers, resource constraints, and scalability challenges prevent traditional approaches from reaching those who need it most. The urgency is clear: we must act now.",
+      "fontSize": 11,
+      "hierarchyLevel": 3,
+      "width": 450,
+      "height": 80,
+      "color": "#000000"
+    },
+    {
+      "type": "text",
+      "content": "Our Solution: AI-Powered Education",
+      "fontSize": 32,
+      "hierarchyLevel": 2,
+      "emphasis": "high",
+      "width": 400,
+      "height": 50,
+      "color": "#BA8F5A"
+    },
+    {
+      "type": "text",
+      "content": "TEEI's platform combines AWS's cloud infrastructure with advanced AI to deliver personalized education at scale. Real-time translation, adaptive learning paths, and intelligent tutoring—all powered by AWS services.",
+      "fontSize": 11,
+      "hierarchyLevel": 3,
+      "width": 450,
+      "height": 80,
+      "color": "#000000"
+    },
+    {
+      "type": "callout",
+      "content": "250,000+ students reached across 15 countries",
+      "fontSize": 24,
+      "hierarchyLevel": 2,
+      "emphasis": "high",
+      "width": 400,
+      "height": 60,
+      "color": "#BA8F5A"
+    },
+    {
+      "type": "text",
+      "content": "Proven Impact",
+      "fontSize": 28,
+      "hierarchyLevel": 2,
+      "width": 300,
+      "height": 50,
+      "color": "#00393F"
+    },
+    {
+      "type": "text",
+      "content": "Our partnership has already delivered measurable results: 85% improvement in learning outcomes, 12-month reduction in time-to-proficiency, and 98% student satisfaction. These aren't just numbers—they represent transformed lives.",
+      "fontSize": 11,
+      "hierarchyLevel": 3,
+      "width": 450,
+      "height": 80,
+      "color": "#000000"
+    },
+    {
+      "type": "image",
+      "content": "Students celebrating success",
+      "width": 400,
+      "height": 250,
+      "image": true,
+      "importance": 0.8
+    },
+    {
+      "type": "text",
+      "content": "Join Us in Transforming Education",
+      "fontSize": 32,
+      "hierarchyLevel": 1,
+      "emphasis": "high",
+      "width": 450,
+      "height": 60,
+      "color": "#BA8F5A"
+    },
+    {
+      "type": "text",
+      "content": "Together, TEEI and AWS can reach millions more students. Your partnership amplifies our impact, bringing hope and opportunity to those who need it most. Let's build the future of education together.",
+      "fontSize": 14,
+      "hierarchyLevel": 2,
+      "width": 450,
+      "height": 70,
+      "color": "#000000"
+    },
+    {
+      "type": "cta",
+      "content": "Start Partnership Conversation →",
+      "fontSize": 18,
+      "hierarchyLevel": 1,
+      "emphasis": "high",
+      "width": 350,
+      "height": 60,
+      "color": "#FFFFFF",
+      "backgroundColor": "#BA8F5A",
+      "action": true
+    }
+  ],
+  "metadata": {
+    "author": "TEEI Partnership Team",
+    "date": "2025-11-06",
+    "version": "1.0.0",
+    "purpose": "AWS Partnership Proposal"
+  }
+}

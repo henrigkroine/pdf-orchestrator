@@ -1,0 +1,301 @@
+name: QA Validation Workflow
+
+on:
+  push:
+    branches: [main, develop]
+    paths:
+      - 'exports/**'
+      - 'templates/**'
+      - 'scripts/**'
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+    inputs:
+      threshold:
+        description: 'Minimum quality score (0-10)'
+        required: false
+        default: '8.0'
+
+env:
+  NODE_VERSION: '18.x'
+  QUALITY_THRESHOLD: ${{ github.event.inputs.threshold || '8.0' }}
+
+jobs:
+  # Job 1: Validate PDFs with AI Vision
+  validate-pdfs:
+    name: AI Vision QA
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: |
+          npm ci
+          npm install @google/generative-ai
+
+      - name: Verify PDF files exist
+        run: |
+          if [ -d "exports" ]; then
+            PDF_COUNT=$(find exports -name "*.pdf" | wc -l)
+            echo "Found $PDF_COUNT PDF files"
+            if [ $PDF_COUNT -eq 0 ]; then
+              echo "⚠️ No PDF files found in exports/"
+              exit 0
+            fi
+          else
+            echo "⚠️ No exports directory found"
+            exit 0
+          fi
+
+      - name: Convert PDFs to images
+        if: hashFiles('exports/*.pdf') != ''
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y poppler-utils imagemagick
+
+          mkdir -p exports/validation-images
+
+          for pdf in exports/*.pdf; do
+            if [ -f "$pdf" ]; then
+              basename=$(basename "$pdf" .pdf)
+              pdftoppm -png -singlefile "$pdf" "exports/validation-images/$basename"
+              echo "✓ Converted $basename.pdf"
+            fi
+          done
+
+      - name: Run AI Vision QA validation
+        if: hashFiles('exports/*.pdf') != ''
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          # Validate all converted images
+          for img in exports/validation-images/*.png; do
+            if [ -f "$img" ]; then
+              echo "🔍 Validating $(basename $img)..."
+              node scripts/validate-pdf-ai-vision.js "$img" || true
+            fi
+          done
+
+      - name: Check quality gate
+        if: hashFiles('exports/*.pdf') != ''
+        run: |
+          node scripts/check-quality-gate.js --threshold $QUALITY_THRESHOLD
+        continue-on-error: false
+
+      - name: Upload validation reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-validation-reports
+          path: |
+            exports/ai-validation-reports/
+            exports/validation-issues/
+          retention-days: 30
+
+  # Job 2: Object Detection Analysis
+  object-detection:
+    name: Object Detection QA
+    runs-on: ubuntu-latest
+    needs: validate-pdfs
+    if: hashFiles('exports/*.pdf') != ''
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download validation images
+        uses: actions/download-artifact@v4
+        with:
+          name: qa-validation-reports
+          path: exports/
+
+      - name: Run object detection
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+        run: |
+          for img in exports/validation-images/*.png; do
+            if [ -f "$img" ]; then
+              echo "🔍 Object detection: $(basename $img)..."
+              node scripts/validate-pdf-object-detection.js "$img" || true
+            fi
+          done
+
+      - name: Upload object detection reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: object-detection-reports
+          path: exports/object-detection-reports/
+          retention-days: 30
+
+  # Job 3: Collect Metrics
+  collect-metrics:
+    name: Collect QA Metrics
+    runs-on: ubuntu-latest
+    needs: [validate-pdfs, object-detection]
+    if: always()
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Download all reports
+        uses: actions/download-artifact@v4
+        with:
+          path: exports/
+
+      - name: Collect metrics
+        run: |
+          node scripts/collect-metrics.js 24
+
+      - name: Generate summary
+        run: |
+          echo "## 📊 QA Validation Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ -f "dashboard/data/metrics.json" ]; then
+            SCORE=$(jq -r '.validation.averageScore' dashboard/data/metrics.json)
+            VALIDATIONS=$(jq -r '.validation.totalValidations' dashboard/data/metrics.json)
+            ACCURACY=$(jq -r '.validation.averageAccuracy' dashboard/data/metrics.json)
+
+            echo "- **Average Score:** $SCORE/10" >> $GITHUB_STEP_SUMMARY
+            echo "- **Total Validations:** $VALIDATIONS" >> $GITHUB_STEP_SUMMARY
+            echo "- **Accuracy:** $ACCURACY%" >> $GITHUB_STEP_SUMMARY
+            echo "- **Quality Threshold:** $QUALITY_THRESHOLD" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "✅ QA validation complete!" >> $GITHUB_STEP_SUMMARY
+
+      - name: Upload metrics
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: qa-metrics
+          path: dashboard/data/
+          retention-days: 90
+
+  # Job 4: Post Comment (for PRs)
+  comment-results:
+    name: Post QA Results
+    runs-on: ubuntu-latest
+    needs: collect-metrics
+    if: github.event_name == 'pull_request'
+    permissions:
+      pull-requests: write
+
+    steps:
+      - name: Download metrics
+        uses: actions/download-artifact@v4
+        with:
+          name: qa-metrics
+          path: dashboard/data/
+
+      - name: Create PR comment
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const fs = require('fs');
+
+            let commentBody = '## 🎯 QA Validation Results\n\n';
+
+            try {
+              const metrics = JSON.parse(fs.readFileSync('dashboard/data/metrics.json', 'utf8'));
+
+              commentBody += '### 📊 Metrics\n\n';
+              commentBody += `| Metric | Value |\n`;
+              commentBody += `|--------|-------|\n`;
+              commentBody += `| Average Score | ${metrics.validation.averageScore}/10 |\n`;
+              commentBody += `| Validations | ${metrics.validation.totalValidations} |\n`;
+              commentBody += `| Accuracy | ${metrics.validation.averageAccuracy}% |\n`;
+              commentBody += `| Processing Time | ${metrics.performance.averageProcessingTime}s |\n`;
+              commentBody += '\n';
+
+              // Quality gate
+              const threshold = parseFloat(process.env.QUALITY_THRESHOLD);
+              const passed = metrics.validation.averageScore >= threshold;
+
+              commentBody += '### 🚦 Quality Gate\n\n';
+              commentBody += passed
+                ? `✅ **PASSED** - Score ${metrics.validation.averageScore} meets threshold ${threshold}`
+                : `❌ **FAILED** - Score ${metrics.validation.averageScore} below threshold ${threshold}`;
+
+            } catch (error) {
+              commentBody += '⚠️ Unable to load metrics data\n';
+            }
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });
+
+  # Job 5: Deploy Dashboard (on main branch)
+  deploy-dashboard:
+    name: Deploy Dashboard
+    runs-on: ubuntu-latest
+    needs: collect-metrics
+    if: github.ref == 'refs/heads/main' && github.event_name == 'push'
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Download metrics
+        uses: actions/download-artifact@v4
+        with:
+          name: qa-metrics
+          path: dashboard/data/
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dashboard
+          destination_dir: qa-dashboard
+          enable_jekyll: false
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+          commit_message: 'Update QA Dashboard'
+
+      - name: Comment deployment URL
+        if: github.event_name == 'pull_request'
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = `https://${context.repo.owner}.github.io/${context.repo.repo}/qa-dashboard/`;
+
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: `📊 QA Dashboard deployed: ${url}`
+            });

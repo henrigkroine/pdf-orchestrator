@@ -1,0 +1,393 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "Color Theory Configuration",
+  "description": "Configuration for color harmony and palette generation",
+
+  "colorTheories": {
+    "complementary": {
+      "name": "Complementary",
+      "description": "Colors opposite on the color wheel",
+      "angle": 180,
+      "colorCount": 2,
+      "character": "High contrast, vibrant, energetic",
+      "bestFor": ["Call-to-action", "Bold statements", "High energy brands"],
+      "examples": ["Red & Green", "Blue & Orange", "Yellow & Purple"],
+      "difficulty": "Easy to overuse, requires careful balance"
+    },
+    "splitComplementary": {
+      "name": "Split-Complementary",
+      "description": "Base color plus two adjacent to complement",
+      "angles": [150, 210],
+      "colorCount": 3,
+      "character": "Harmonious, warm, balanced",
+      "bestFor": ["Professional documents", "Educational materials", "Warm brands"],
+      "examples": ["Blue, Yellow-Orange, Red-Orange"],
+      "recommended": true,
+      "teeiDefault": true
+    },
+    "triadic": {
+      "name": "Triadic",
+      "description": "Three colors equally spaced (120° apart)",
+      "angles": [120, 240],
+      "colorCount": 3,
+      "character": "Balanced, dynamic, vibrant",
+      "bestFor": ["Playful brands", "Multi-category content", "Diverse audiences"],
+      "examples": ["Red, Yellow, Blue", "Orange, Green, Purple"],
+      "difficulty": "Can be overwhelming if all colors are equally saturated"
+    },
+    "tetradic": {
+      "name": "Tetradic (Double Complementary)",
+      "description": "Four colors in two complementary pairs",
+      "angles": [60, 180, 240],
+      "colorCount": 4,
+      "character": "Rich, complex, sophisticated",
+      "bestFor": ["Complex systems", "Multi-brand collaborations", "Rich editorial"],
+      "examples": ["Red, Orange, Blue, Green"],
+      "difficulty": "Hard to balance, needs one dominant color"
+    },
+    "analogous": {
+      "name": "Analogous",
+      "description": "Adjacent colors on the color wheel",
+      "angles": [-30, 30],
+      "colorCount": 3,
+      "character": "Peaceful, harmonious, serene",
+      "bestFor": ["Calming brands", "Nature themes", "Cohesive designs"],
+      "examples": ["Blue, Blue-Green, Green", "Red, Red-Orange, Orange"],
+      "difficulty": "Can lack contrast, needs careful hierarchy"
+    },
+    "monochromatic": {
+      "name": "Monochromatic",
+      "description": "Variations of a single hue",
+      "angles": [],
+      "colorCount": "3+",
+      "character": "Elegant, sophisticated, cohesive",
+      "bestFor": ["Minimalist brands", "Elegant products", "Focused content"],
+      "examples": ["Light Blue, Medium Blue, Dark Blue"],
+      "difficulty": "Can be boring, needs variety in value and saturation"
+    }
+  },
+
+  "wcag": {
+    "description": "WCAG 2.1 Color Contrast Requirements",
+    "levels": {
+      "aa": {
+        "normalText": {
+          "ratio": 4.5,
+          "description": "18pt or smaller, any weight"
+        },
+        "largeText": {
+          "ratio": 3.0,
+          "description": "18pt+ regular or 14pt+ bold"
+        }
+      },
+      "aaa": {
+        "normalText": {
+          "ratio": 7.0,
+          "description": "Enhanced contrast for better accessibility"
+        },
+        "largeText": {
+          "ratio": 4.5,
+          "description": "Enhanced contrast for large text"
+        }
+      }
+    },
+    "reference": "https://www.w3.org/WAI/WCAG21/Understanding/contrast-minimum.html"
+  },
+
+  "colorBlindness": {
+    "types": {
+      "protanopia": {
+        "name": "Protanopia (Red-Blind)",
+        "prevalence": "1% of males",
+        "description": "Cannot perceive red light",
+        "affectedColors": ["Red", "Green", "Brown", "Orange"]
+      },
+      "deuteranopia": {
+        "name": "Deuteranopia (Green-Blind)",
+        "prevalence": "1% of males",
+        "description": "Cannot perceive green light",
+        "affectedColors": ["Red", "Green", "Brown", "Purple"]
+      },
+      "tritanopia": {
+        "name": "Tritanopia (Blue-Blind)",
+        "prevalence": "< 0.01%",
+        "description": "Cannot perceive blue light",
+        "affectedColors": ["Blue", "Yellow", "Green", "Purple"]
+      },
+      "protanomaly": {
+        "name": "Protanomaly (Red-Weak)",
+        "prevalence": "1% of males",
+        "description": "Reduced sensitivity to red light"
+      },
+      "deuteranomaly": {
+        "name": "Deuteranomaly (Green-Weak)",
+        "prevalence": "5% of males, 0.4% of females",
+        "description": "Reduced sensitivity to green light",
+        "mostCommon": true
+      },
+      "tritanomaly": {
+        "name": "Tritanomaly (Blue-Weak)",
+        "prevalence": "< 0.01%",
+        "description": "Reduced sensitivity to blue light"
+      },
+      "achromatopsia": {
+        "name": "Achromatopsia (Total Color Blindness)",
+        "prevalence": "< 0.00003%",
+        "description": "Cannot perceive any color, sees only grayscale"
+      },
+      "achromatomaly": {
+        "name": "Achromatomaly (Partial Color Blindness)",
+        "prevalence": "Rare",
+        "description": "Partial loss of color vision"
+      }
+    },
+    "bestPractices": [
+      "Don't rely on color alone to convey information",
+      "Use patterns, icons, or labels in addition to color",
+      "Ensure sufficient contrast between colors",
+      "Avoid red-green combinations for critical info",
+      "Test designs with color blindness simulators",
+      "Use high-contrast color pairs",
+      "Provide alternative ways to distinguish elements"
+    ]
+  },
+
+  "colorPsychology": {
+    "red": {
+      "emotions": ["Passion", "Energy", "Urgency", "Danger"],
+      "cultural": {
+        "western": "Danger, love, excitement",
+        "eastern": "Good fortune, celebration, prosperity"
+      },
+      "usage": "Call-to-action, warnings, excitement",
+      "pairs": ["Green (complementary)", "Blue (cool contrast)"]
+    },
+    "blue": {
+      "emotions": ["Trust", "Calm", "Professional", "Reliable"],
+      "cultural": {
+        "universal": "Trust, stability, professionalism"
+      },
+      "usage": "Corporate, healthcare, technology",
+      "mostPopular": true,
+      "pairs": ["Orange (complementary)", "Yellow (warm accent)"]
+    },
+    "green": {
+      "emotions": ["Growth", "Health", "Nature", "Prosperity"],
+      "cultural": {
+        "western": "Environment, money, growth",
+        "islamic": "Sacred color, paradise"
+      },
+      "usage": "Environmental, health, finance",
+      "pairs": ["Red (complementary)", "Brown (natural)"]
+    },
+    "yellow": {
+      "emotions": ["Optimism", "Happiness", "Caution", "Energy"],
+      "cultural": {
+        "western": "Caution, happiness",
+        "eastern": "Royalty, prosperity"
+      },
+      "usage": "Attention, optimism, children's products",
+      "pairs": ["Purple (complementary)", "Blue (cool balance)"]
+    },
+    "orange": {
+      "emotions": ["Enthusiasm", "Creativity", "Adventure", "Warmth"],
+      "cultural": {
+        "western": "Fall, Halloween, energy",
+        "buddhist": "Humility, wisdom"
+      },
+      "usage": "Creative brands, food, entertainment",
+      "pairs": ["Blue (complementary)", "Teal (sophisticated)"]
+    },
+    "purple": {
+      "emotions": ["Luxury", "Creativity", "Wisdom", "Mystery"],
+      "cultural": {
+        "historical": "Royalty, nobility (expensive dye)"
+      },
+      "usage": "Luxury brands, creativity, spirituality",
+      "pairs": ["Yellow (complementary)", "Gold (luxury)"]
+    },
+    "pink": {
+      "emotions": ["Nurturing", "Playful", "Feminine", "Youthful"],
+      "cultural": {
+        "modern": "Femininity, youth, playfulness"
+      },
+      "usage": "Beauty, children, romantic brands",
+      "pairs": ["Green (fresh)", "Navy (sophisticated)"]
+    },
+    "brown": {
+      "emotions": ["Earthy", "Reliable", "Natural", "Comfortable"],
+      "cultural": {
+        "universal": "Nature, earth, stability"
+      },
+      "usage": "Organic, rustic, outdoor brands",
+      "pairs": ["Blue (natural)", "Green (earth)"]
+    },
+    "black": {
+      "emotions": ["Sophisticated", "Powerful", "Elegant", "Modern"],
+      "cultural": {
+        "western": "Elegance, mourning",
+        "eastern": "Masculinity, mystery"
+      },
+      "usage": "Luxury, fashion, modern tech",
+      "pairs": ["Gold (luxury)", "White (contrast)"]
+    },
+    "white": {
+      "emotions": ["Pure", "Clean", "Simple", "Peaceful"],
+      "cultural": {
+        "western": "Purity, innocence, weddings",
+        "eastern": "Mourning, death"
+      },
+      "usage": "Healthcare, minimalism, cleanliness",
+      "pairs": ["Any color (neutral background)"]
+    }
+  },
+
+  "teei": {
+    "description": "TEEI Brand Color Palette",
+    "primary": {
+      "nordshore": {
+        "hex": "#00393F",
+        "name": "Nordshore",
+        "hsl": { "h": 186, "s": 100, "l": 12 },
+        "rgb": { "r": 0, "g": 57, "b": 63 },
+        "usage": "Primary brand color, headlines, major sections",
+        "emotion": "Professional, trustworthy, deep",
+        "usagePercent": 60
+      }
+    },
+    "secondary": {
+      "sky": {
+        "hex": "#C9E4EC",
+        "name": "Sky",
+        "hsl": { "h": 194, "s": 44, "l": 85 },
+        "usage": "Accents, backgrounds, highlights",
+        "emotion": "Calm, hopeful, open",
+        "usagePercent": 20
+      }
+    },
+    "neutrals": {
+      "sand": {
+        "hex": "#FFF1E2",
+        "name": "Sand",
+        "hsl": { "h": 34, "s": 100, "l": 94 },
+        "usage": "Warm backgrounds, cards",
+        "emotion": "Warm, welcoming, soft",
+        "usagePercent": 15
+      },
+      "beige": {
+        "hex": "#EFE1DC",
+        "name": "Beige",
+        "hsl": { "h": 20, "s": 36, "l": 90 },
+        "usage": "Soft backgrounds, subtle sections",
+        "emotion": "Neutral, elegant, subtle"
+      }
+    },
+    "accents": {
+      "moss": {
+        "hex": "#65873B",
+        "name": "Moss",
+        "hsl": { "h": 85, "s": 40, "l": 38 },
+        "usage": "Growth, nature themes, subheads",
+        "emotion": "Natural, growth, hope"
+      },
+      "gold": {
+        "hex": "#BA8F5A",
+        "name": "Gold",
+        "hsl": { "h": 35, "s": 41, "l": 54 },
+        "usage": "Premium feel, metrics, highlights",
+        "emotion": "Warm, valuable, achievement",
+        "usagePercent": 5
+      },
+      "clay": {
+        "hex": "#913B2F",
+        "name": "Clay",
+        "hsl": { "h": 7, "s": 51, "l": 38 },
+        "usage": "Urgency, emphasis, warnings",
+        "emotion": "Warm, grounded, urgent"
+      }
+    },
+    "forbidden": {
+      "copper": "#B87333",
+      "orange": "#FF6600",
+      "reason": "Not in official TEEI brand palette"
+    },
+    "theory": "Split-complementary with Nordshore as base",
+    "mood": "Warm, empowering, hopeful, professional"
+  },
+
+  "gradients": {
+    "types": {
+      "linear": {
+        "description": "Straight line gradient",
+        "commonAngles": [0, 45, 90, 135, 180],
+        "usage": "Backgrounds, overlays, headers"
+      },
+      "radial": {
+        "description": "Circular gradient from center point",
+        "usage": "Spotlight effects, hero sections, buttons"
+      },
+      "conic": {
+        "description": "Rotates around center point",
+        "usage": "Pie charts, color wheels, modern effects"
+      },
+      "mesh": {
+        "description": "Multi-point gradient (advanced)",
+        "usage": "Organic backgrounds, modern illustrations"
+      }
+    },
+    "easingFunctions": {
+      "linear": "Equal distribution",
+      "easeIn": "Slow start, fast end",
+      "easeOut": "Fast start, slow end",
+      "easeInOut": "Smooth acceleration and deceleration"
+    }
+  },
+
+  "exportFormats": {
+    "css": {
+      "description": "CSS custom properties",
+      "usage": "Web development",
+      "supports": ["hex", "hsl", "rgb"]
+    },
+    "scss": {
+      "description": "Sass variables",
+      "usage": "Sass/SCSS projects",
+      "supports": ["hex", "hsl", "rgb", "functions"]
+    },
+    "json": {
+      "description": "JSON data",
+      "usage": "JavaScript, configuration files",
+      "supports": ["hex", "hsl", "rgb", "metadata"]
+    },
+    "ase": {
+      "description": "Adobe Swatch Exchange",
+      "usage": "Adobe Creative Suite",
+      "supports": ["rgb", "cmyk"],
+      "note": "Binary format, export metadata for conversion"
+    }
+  },
+
+  "bestPractices": [
+    "Use 60-30-10 rule: 60% dominant, 30% secondary, 10% accent",
+    "Limit palette to 5-7 colors maximum",
+    "Always test accessibility (WCAG AA minimum)",
+    "Consider color blindness (8% of males affected)",
+    "Use neutrals (grays, beige) to balance vibrant colors",
+    "Ensure brand colors work in grayscale",
+    "Test colors at different screen brightnesses",
+    "Consider cultural color meanings for global brands",
+    "Use color psychology to reinforce brand message",
+    "Create tints and shades for each base color",
+    "Document color usage guidelines",
+    "Test print vs. digital appearance (RGB vs. CMYK)"
+  ],
+
+  "references": [
+    "The Designer's Dictionary of Color - Sean Adams",
+    "Color Design Workbook - Terry Lee Stone",
+    "Interaction of Color - Josef Albers",
+    "WCAG 2.1 Guidelines - W3C",
+    "Color Matters - Jill Morton",
+    "The Secret Lives of Color - Kassia St. Clair"
+  ]
+}
