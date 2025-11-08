@@ -1,0 +1,67 @@
+[
+  {
+    "name": "documentTitle",
+    "fontFamily": "Lora",
+    "fontStyle": "Bold",
+    "pointSize": 42,
+    "leading": 50,
+    "tracking": -20,
+    "fillColor": "#00393F",
+    "justification": "center",
+    "hyphenation": false,
+    "spaceBefore": 0,
+    "spaceAfter": 84
+  },
+  {
+    "name": "sectionHeader",
+    "fontFamily": "Lora",
+    "fontStyle": "SemiBold",
+    "pointSize": 28,
+    "leading": 34,
+    "tracking": -10,
+    "fillColor": "#00393F",
+    "justification": "left",
+    "hyphenation": false,
+    "spaceBefore": 84,
+    "spaceAfter": 42
+  },
+  {
+    "name": "subhead",
+    "fontFamily": "Roboto Flex",
+    "fontStyle": "Medium",
+    "pointSize": 18,
+    "leading": 23,
+    "tracking": 0,
+    "fillColor": "#00393F",
+    "justification": "left",
+    "hyphenation": true,
+    "spaceBefore": 36,
+    "spaceAfter": 18
+  },
+  {
+    "name": "bodyText",
+    "fontFamily": "Roboto Flex",
+    "fontStyle": "Regular",
+    "pointSize": 11,
+    "leading": 18,
+    "tracking": 0,
+    "fillColor": "#333333",
+    "justification": "left",
+    "hyphenation": true,
+    "spaceBefore": 0,
+    "spaceAfter": 11
+  },
+  {
+    "name": "caption",
+    "fontFamily": "Roboto Flex",
+    "fontStyle": "Regular",
+    "pointSize": 9,
+    "leading": 13,
+    "tracking": 10,
+    "fillColor": "#666666",
+    "justification": "left",
+    "hyphenation": true,
+    "spaceBefore": 0,
+    "spaceAfter": 4
+  }
+]

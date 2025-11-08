@@ -1,0 +1,167 @@
+{
+  "document": {
+    "title": "TEEI AWS Partnership Document",
+    "brand": "TEEI",
+    "format": "Letter (8.5 x 11 inches)"
+  },
+  "elements": [
+    {
+      "id": "title-1",
+      "type": "title",
+      "content": "TEEI AWS Partnership",
+      "frameWidth": 500,
+      "frameHeight": 100,
+      "importance": 95,
+      "page": 1
+    },
+    {
+      "id": "header-1",
+      "type": "h2",
+      "content": "Together for Ukraine Program",
+      "frameWidth": 500,
+      "frameHeight": 80,
+      "importance": 85,
+      "page": 1
+    },
+    {
+      "id": "subhead-1",
+      "type": "h3",
+      "content": "Empowering Displaced Students Through Cloud Education",
+      "frameWidth": 450,
+      "frameHeight": 60,
+      "importance": 75,
+      "page": 1
+    },
+    {
+      "id": "body-1",
+      "type": "body",
+      "content": "Through AWS cloud education, we empower displaced students with critical technical skills for careers in cloud computing, data analytics, and software development. Our comprehensive curriculum combines hands-on training with mentorship and career support, creating pathways to economic opportunity for those affected by conflict.",
+      "frameWidth": 450,
+      "frameHeight": 250,
+      "importance": 50,
+      "page": 1
+    },
+    {
+      "id": "header-2",
+      "type": "h2",
+      "content": "Program Components",
+      "frameWidth": 500,
+      "frameHeight": 80,
+      "importance": 85,
+      "page": 1
+    },
+    {
+      "id": "subhead-2",
+      "type": "h3",
+      "content": "AWS Technical Training",
+      "frameWidth": 450,
+      "frameHeight": 60,
+      "importance": 75,
+      "page": 1
+    },
+    {
+      "id": "body-2",
+      "type": "body",
+      "content": "Students learn essential AWS services including EC2, S3, Lambda, RDS, and CloudFormation through real-world projects and industry-standard best practices. Each student completes hands-on labs and earns AWS certifications.",
+      "frameWidth": 450,
+      "frameHeight": 150,
+      "importance": 50,
+      "page": 1
+    },
+    {
+      "id": "subhead-3",
+      "type": "h3",
+      "content": "Career Development & Mentorship",
+      "frameWidth": 450,
+      "frameHeight": 60,
+      "importance": 75,
+      "page": 1
+    },
+    {
+      "id": "body-3",
+      "type": "body",
+      "content": "Professional mentors from AWS and partner companies provide guidance on resume building, interview preparation, and career planning. Students participate in mock interviews and networking events.",
+      "frameWidth": 450,
+      "frameHeight": 150,
+      "importance": 50,
+      "page": 1
+    },
+    {
+      "id": "caption-1",
+      "type": "caption",
+      "content": "Photo: Students learning AWS services in Kyiv, Ukraine",
+      "frameWidth": 300,
+      "frameHeight": 30,
+      "importance": 30,
+      "page": 1
+    },
+    {
+      "id": "header-3",
+      "type": "h2",
+      "content": "Program Impact",
+      "frameWidth": 500,
+      "frameHeight": 80,
+      "importance": 85,
+      "page": 2
+    },
+    {
+      "id": "body-4",
+      "type": "body",
+      "content": "Since launching in 2022, the Together for Ukraine program has achieved remarkable results: 50,000+ students trained across 15 countries, 85% job placement rate within 6 months of graduation, and partnerships with 40+ leading technology companies.",
+      "frameWidth": 450,
+      "frameHeight": 150,
+      "importance": 50,
+      "page": 2
+    },
+    {
+      "id": "subhead-4",
+      "type": "h3",
+      "content": "Student Success Stories",
+      "frameWidth": 450,
+      "frameHeight": 60,
+      "importance": 75,
+      "page": 2
+    },
+    {
+      "id": "body-5",
+      "type": "body",
+      "content": "Olena, a former teacher from Kharkiv, completed the program and now works as a cloud solutions architect in Berlin. Dmytro, who studied civil engineering before the war, transitioned to data analytics and secured a position with a Fortune 500 company in Warsaw.",
+      "frameWidth": 450,
+      "frameHeight": 150,
+      "importance": 50,
+      "page": 2
+    },
+    {
+      "id": "header-4",
+      "type": "h2",
+      "content": "Partnership Opportunities",
+      "frameWidth": 500,
+      "frameHeight": 80,
+      "importance": 85,
+      "page": 2
+    },
+    {
+      "id": "body-6",
+      "type": "body",
+      "content": "Join us in transforming lives through education. Partnership opportunities include curriculum development, mentorship programs, internship placements, and financial sponsorship. Together, we can create lasting impact for displaced students worldwide.",
+      "frameWidth": 450,
+      "frameHeight": 150,
+      "importance": 50,
+      "page": 2
+    },
+    {
+      "id": "caption-2",
+      "type": "caption",
+      "content": "For more information, visit teei.org or contact partnerships@teei.org",
+      "frameWidth": 400,
+      "frameHeight": 30,
+      "importance": 30,
+      "page": 2
+    }
+  ],
+  "metadata": {
+    "created": "2025-11-08",
+    "author": "TEEI Typography Automation",
+    "version": "1.0"
+  }
+}

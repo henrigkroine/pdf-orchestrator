@@ -1,0 +1,119 @@
+{
+  "title": "2024 Annual Report",
+  "subtitle": "Building Educational Equality Through Innovation",
+  "organization": "The Educational Equality Institute",
+  "fiscal_year": "2024",
+  "executive_summary": {
+    "overview": "In 2024, TEEI reached unprecedented milestones in our mission to provide world-class education to displaced students worldwide.",
+    "highlights": [
+      "Served 50,000+ students across 12 countries",
+      "Launched 3 new technology education programs",
+      "Formed strategic partnerships with AWS, Google, and Cornell University",
+      "Achieved 92% program completion rate",
+      "Placed 4,500 students in universities worldwide"
+    ],
+    "ceo_message": "This year proved that when we invest in education, we invest in hope, resilience, and the future of entire communities."
+  },
+  "financials": {
+    "revenue": {
+      "total": 12500000,
+      "grants": 7500000,
+      "partnerships": 3000000,
+      "donations": 2000000
+    },
+    "expenses": {
+      "total": 11000000,
+      "programs": 8800000,
+      "operations": 1650000,
+      "fundraising": 550000
+    },
+    "program_efficiency": "80%",
+    "reserve_fund": 3200000
+  },
+  "achievements": {
+    "programs": [
+      {
+        "name": "Together for Ukraine",
+        "investment": 4500000,
+        "students": 50000,
+        "outcomes": "89% completion rate, 4,500 university placements"
+      },
+      {
+        "name": "Tech Skills Initiative",
+        "investment": 2800000,
+        "students": 25000,
+        "outcomes": "8,500 industry certifications earned"
+      },
+      {
+        "name": "Global Language Program",
+        "investment": 1500000,
+        "students": 35000,
+        "outcomes": "92% proficiency achievement"
+      }
+    ],
+    "partnerships": [
+      {
+        "partner": "Amazon Web Services",
+        "type": "Technology Partner",
+        "value": "Cloud computing curriculum, AWS certifications"
+      },
+      {
+        "partner": "Google",
+        "type": "Education Partner",
+        "value": "Google Workspace, digital literacy training"
+      },
+      {
+        "partner": "Cornell University",
+        "type": "Academic Partner",
+        "value": "Curriculum development, faculty training"
+      }
+    ],
+    "impact_metrics": {
+      "students_served": 50000,
+      "countries": 12,
+      "learning_hours": 2500000,
+      "certifications": 8500,
+      "university_placements": 4500,
+      "job_placements": 2800
+    }
+  },
+  "future": {
+    "goals_2025": [
+      "Expand to 20 countries",
+      "Serve 100,000+ students",
+      "Launch AI/ML specialized curriculum",
+      "Establish TEEI Innovation Labs in 5 cities",
+      "Achieve 85% program efficiency ratio"
+    ],
+    "fundraising_target": 20000000,
+    "program_expansion": [
+      "STEM Education for Refugee Youth",
+      "Advanced AI/ML Training Program",
+      "Entrepreneurship & Innovation Track",
+      "Mental Health & Wellness Initiative"
+    ]
+  },
+  "board_of_directors": [
+    {
+      "name": "Dr. Sarah Mitchell",
+      "role": "Board Chair",
+      "affiliation": "Stanford University"
+    },
+    {
+      "name": "Henrik Røine",
+      "role": "Founder & CEO",
+      "affiliation": "TEEI"
+    },
+    {
+      "name": "James Chen",
+      "role": "Board Member",
+      "affiliation": "Tech for Good Foundation"
+    }
+  ],
+  "brand": {
+    "use_teei_colors": true,
+    "primary_color": "nordshore",
+    "accent_color": "gold",
+    "professional_design": true
+  }
+}

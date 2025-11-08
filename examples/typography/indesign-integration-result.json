@@ -1,0 +1,150 @@
+{
+  "elements": [
+    {
+      "original": {
+        "id": "text-frame-1",
+        "type": "title",
+        "content": "TEEI AWS Partnership",
+        "frameWidth": 500,
+        "frameHeight": 100,
+        "currentFont": "Arial",
+        "currentSize": 36,
+        "x": 40,
+        "y": 700,
+        "page": 1
+      },
+      "optimized": {
+        "font": "Lora",
+        "weight": "Bold",
+        "fontSize": 41.5,
+        "lineHeight": 1.2,
+        "tracking": -0.01,
+        "color": "#00393F",
+        "frameWidth": 500,
+        "frameHeight": 100,
+        "framePadding": {
+          "left": 10,
+          "right": 10,
+          "top": 5,
+          "bottom": 5
+        },
+        "alignment": "center",
+        "spacing": {
+          "marginTop": 0,
+          "marginBottom": 83,
+          "paragraphSpacing": 31
+        },
+        "hierarchyLevel": "documentTitle",
+        "adjustmentsMade": [
+          "fontSize"
+        ],
+        "cutoffPrevented": true,
+        "confidence": 96
+      }
+    },
+    {
+      "original": {
+        "id": "text-frame-2",
+        "type": "h2",
+        "content": "Together for Ukraine Program",
+        "frameWidth": 500,
+        "frameHeight": 80,
+        "currentFont": "Arial",
+        "currentSize": 24,
+        "x": 40,
+        "y": 600,
+        "page": 1
+      },
+      "optimized": {
+        "font": "Lora",
+        "weight": "SemiBold",
+        "fontSize": 28,
+        "lineHeight": 1.2,
+        "tracking": -0.01,
+        "color": "#00393F",
+        "frameWidth": 500,
+        "frameHeight": 80,
+        "framePadding": {
+          "left": 10,
+          "right": 10,
+          "top": 5,
+          "bottom": 5
+        },
+        "alignment": "left",
+        "spacing": {
+          "marginTop": 84,
+          "marginBottom": 42,
+          "paragraphSpacing": 21
+        },
+        "hierarchyLevel": "sectionHeader",
+        "adjustmentsMade": [],
+        "cutoffPrevented": false,
+        "confidence": 100
+      }
+    },
+    {
+      "original": {
+        "id": "text-frame-3",
+        "type": "body",
+        "content": "Through AWS cloud education, we empower displaced students with critical technical skills for careers in cloud computing, data analytics, and software development. Our comprehensive curriculum combines hands-on training with mentorship and career support.",
+        "frameWidth": 450,
+        "frameHeight": 300,
+        "currentFont": "Arial",
+        "currentSize": 12,
+        "x": 40,
+        "y": 500,
+        "page": 1
+      },
+      "optimized": {
+        "font": "Roboto Flex",
+        "weight": "Regular",
+        "fontSize": 8,
+        "lineHeight": 1.4,
+        "tracking": 0.01,
+        "color": "#333333",
+        "frameWidth": 450,
+        "frameHeight": 300,
+        "framePadding": {
+          "left": 10,
+          "right": 10,
+          "top": 5,
+          "bottom": 5
+        },
+        "alignment": "left",
+        "spacing": {
+          "marginTop": 0,
+          "marginBottom": 8,
+          "paragraphSpacing": 6
+        },
+        "hierarchyLevel": "bodyText",
+        "adjustmentsMade": [
+          "fontSize"
+        ],
+        "cutoffPrevented": true,
+        "confidence": -139
+      }
+    }
+  ],
+  "stats": {
+    "elementsProcessed": 3,
+    "cutoffsPrevented": 2,
+    "sizesOptimized": 2,
+    "lineHeightsAdjusted": 0,
+    "trackingAdjusted": 0
+  },
+  "summary": {
+    "totalElements": 3,
+    "hierarchyDistribution": {
+      "documentTitle": 1,
+      "sectionHeader": 1,
+      "bodyText": 1
+    },
+    "adjustments": {
+      "cutoffsPrevented": 2,
+      "sizesOptimized": 2,
+      "lineHeightsAdjusted": 0,
+      "trackingAdjusted": 0
+    },
+    "averageConfidence": 19
+  }
+}

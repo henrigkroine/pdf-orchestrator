@@ -1,0 +1,292 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TEEI Brand Compliance Configuration",
+  "description": "Official TEEI brand colors, typography, and design standards",
+  "version": "1.0.0",
+  "lastUpdated": "2025-11-08",
+
+  "colors": {
+    "official": {
+      "nordshore": {
+        "name": "Nordshore",
+        "description": "Primary brand color - deep teal, use for 80% of elements",
+        "hex": "#00393F",
+        "rgb": { "r": 0, "g": 57, "b": 63 },
+        "cmyk": { "c": 100, "m": 10, "y": 0, "k": 75 },
+        "hsl": { "h": 186, "s": 100, "l": 12 },
+        "usage": ["headers", "primary_text", "backgrounds", "accents", "overlays"],
+        "recommended_usage_percentage": 80,
+        "accessibility": {
+          "contrast_with_white": 12.8,
+          "contrast_with_sand": 8.2,
+          "wcag_aa_large": true,
+          "wcag_aa_normal": true,
+          "wcag_aaa": true
+        },
+        "overlay_opacity_range": [0.4, 0.6]
+      },
+
+      "sky": {
+        "name": "Sky",
+        "description": "Secondary accent - light blue, use for highlights and secondary elements",
+        "hex": "#C9E4EC",
+        "rgb": { "r": 201, "g": 228, "b": 236 },
+        "cmyk": { "c": 15, "m": 0, "y": 0, "k": 7 },
+        "hsl": { "h": 194, "s": 48, "l": 86 },
+        "usage": ["backgrounds", "accents", "highlights", "cards", "dividers"],
+        "recommended_usage_percentage": 10,
+        "accessibility": {
+          "contrast_with_black": 14.2,
+          "contrast_with_nordshore": 9.1,
+          "wcag_aa_large": true,
+          "wcag_aa_normal": false,
+          "wcag_aaa": false
+        },
+        "pairs_well_with": ["nordshore", "sand", "white"]
+      },
+
+      "sand": {
+        "name": "Sand",
+        "description": "Warm neutral background - creates welcoming feel",
+        "hex": "#FFF1E2",
+        "rgb": { "r": 255, "g": 241, "b": 226 },
+        "cmyk": { "c": 0, "m": 5, "y": 11, "k": 0 },
+        "hsl": { "h": 31, "s": 100, "l": 94 },
+        "usage": ["backgrounds", "cards", "sections"],
+        "recommended_usage_percentage": 5,
+        "accessibility": {
+          "contrast_with_black": 17.8,
+          "contrast_with_nordshore": 8.2,
+          "wcag_aa_large": true,
+          "wcag_aa_normal": true,
+          "wcag_aaa": true
+        },
+        "pairs_well_with": ["nordshore", "gold", "moss", "clay"]
+      },
+
+      "beige": {
+        "name": "Beige",
+        "description": "Soft neutral background - subtle alternative to sand",
+        "hex": "#EFE1DC",
+        "rgb": { "r": 239, "g": 225, "b": 220 },
+        "cmyk": { "c": 0, "m": 6, "y": 8, "k": 6 },
+        "hsl": { "h": 16, "s": 35, "l": 90 },
+        "usage": ["backgrounds", "cards", "alternating_sections"],
+        "recommended_usage_percentage": 5,
+        "accessibility": {
+          "contrast_with_black": 15.9,
+          "contrast_with_nordshore": 7.8,
+          "wcag_aa_large": true,
+          "wcag_aa_normal": true,
+          "wcag_aaa": true
+        },
+        "pairs_well_with": ["nordshore", "clay", "moss"]
+      },
+
+      "moss": {
+        "name": "Moss",
+        "description": "Natural green accent - use for growth, progress, success",
+        "hex": "#65873B",
+        "rgb": { "r": 101, "g": 135, "b": 59 },
+        "cmyk": { "c": 25, "m": 0, "y": 56, "k": 47 },
+        "hsl": { "h": 87, "s": 39, "l": 38 },
+        "usage": ["accents", "progress_indicators", "success_states", "metrics"],
+        "recommended_usage_percentage": 3,
+        "accessibility": {
+          "contrast_with_white": 4.8,
+          "contrast_with_sand": 3.2,
+          "wcag_aa_large": true,
+          "wcag_aa_normal": false,
+          "wcag_aaa": false
+        },
+        "pairs_well_with": ["sand", "beige", "white"],
+        "semantic_meaning": ["growth", "sustainability", "progress", "success"]
+      },
+
+      "gold": {
+        "name": "Gold",
+        "description": "Warm metallic accent - use for premium feel, awards, key metrics",
+        "hex": "#BA8F5A",
+        "rgb": { "r": 186, "g": 143, "b": 90 },
+        "cmyk": { "c": 0, "m": 23, "y": 52, "k": 27 },
+        "hsl": { "h": 33, "s": 42, "l": 54 },
+        "usage": ["accents", "metrics", "awards", "premium_elements", "dividers"],
+        "recommended_usage_percentage": 5,
+        "accessibility": {
+          "contrast_with_white": 3.2,
+          "contrast_with_nordshore": 2.8,
+          "wcag_aa_large": true,
+          "wcag_aa_normal": false,
+          "wcag_aaa": false
+        },
+        "pairs_well_with": ["nordshore", "sand", "beige", "white"],
+        "semantic_meaning": ["premium", "achievement", "value", "excellence"]
+      },
+
+      "clay": {
+        "name": "Clay",
+        "description": "Rich terracotta accent - use sparingly for warmth and urgency",
+        "hex": "#913B2F",
+        "rgb": { "r": 145, "g": 59, "b": 47 },
+        "cmyk": { "c": 0, "m": 59, "y": 68, "k": 43 },
+        "hsl": { "h": 7, "s": 51, "l": 38 },
+        "usage": ["accents", "urgent_elements", "call_to_action"],
+        "recommended_usage_percentage": 2,
+        "accessibility": {
+          "contrast_with_white": 6.1,
+          "contrast_with_sand": 4.2,
+          "wcag_aa_large": true,
+          "wcag_aa_normal": true,
+          "wcag_aaa": false
+        },
+        "pairs_well_with": ["sand", "beige", "white"],
+        "semantic_meaning": ["urgency", "importance", "warmth", "action"]
+      }
+    },
+
+    "forbidden": {
+      "copper": {
+        "name": "Copper/Orange",
+        "hex_patterns": ["#C87137", "#FF6B35", "#E67E22", "#D35400"],
+        "reason": "Not in TEEI brand palette - causes brand confusion",
+        "acceptable_exception": "AWS logo only (partner branding)"
+      }
+    },
+
+    "neutral": {
+      "white": {
+        "name": "White",
+        "hex": "#FFFFFF",
+        "rgb": { "r": 255, "g": 255, "b": 255 },
+        "usage": ["backgrounds", "text_on_dark", "spacing"]
+      },
+      "black": {
+        "name": "Black",
+        "hex": "#000000",
+        "rgb": { "r": 0, "g": 0, "b": 0 },
+        "usage": ["body_text", "high_contrast_elements"]
+      },
+      "gray": {
+        "name": "Gray",
+        "hex": "#666666",
+        "rgb": { "r": 102, "g": 102, "b": 102 },
+        "usage": ["captions", "secondary_text", "metadata"]
+      }
+    }
+  },
+
+  "typography": {
+    "families": {
+      "primary": {
+        "name": "Lora",
+        "type": "serif",
+        "usage": ["headlines", "section_headers", "document_titles"],
+        "weights": ["regular", "medium", "semibold", "bold"],
+        "fallbacks": ["Georgia", "Times New Roman", "serif"]
+      },
+      "secondary": {
+        "name": "Roboto Flex",
+        "type": "sans-serif",
+        "usage": ["body_text", "captions", "ui_elements"],
+        "weights": ["regular", "medium", "bold"],
+        "fallbacks": ["Roboto", "Arial", "Helvetica", "sans-serif"]
+      }
+    },
+
+    "scale": {
+      "document_title": {
+        "family": "Lora",
+        "weight": "bold",
+        "size": "42pt",
+        "line_height": 1.2,
+        "color": "nordshore"
+      },
+      "section_header": {
+        "family": "Lora",
+        "weight": "semibold",
+        "size": "28pt",
+        "line_height": 1.2,
+        "color": "nordshore"
+      },
+      "subhead": {
+        "family": "Roboto Flex",
+        "weight": "medium",
+        "size": "18pt",
+        "line_height": 1.4,
+        "color": "nordshore"
+      },
+      "body_text": {
+        "family": "Roboto Flex",
+        "weight": "regular",
+        "size": "11pt",
+        "line_height": 1.5,
+        "color": "black"
+      },
+      "caption": {
+        "family": "Roboto Flex",
+        "weight": "regular",
+        "size": "9pt",
+        "line_height": 1.4,
+        "color": "gray"
+      }
+    }
+  },
+
+  "layout": {
+    "grid": {
+      "columns": 12,
+      "gutter": "20pt",
+      "margins": "40pt"
+    },
+    "spacing": {
+      "section_breaks": "60pt",
+      "between_elements": "20pt",
+      "between_paragraphs": "12pt",
+      "minimum_padding": "10pt"
+    },
+    "logo_clearspace": {
+      "rule": "Minimum clearspace equals height of logo icon element",
+      "enforcement": "No text, graphics, or other logos within clearspace zone"
+    }
+  },
+
+  "photography": {
+    "requirements": {
+      "lighting": "Natural (not studio)",
+      "tone": "Warm (align with Sand/Beige palette)",
+      "style": "Authentic moments (not staged corporate stock)",
+      "representation": "Diverse",
+      "emotion": "Connection and hope"
+    },
+    "color_grading": {
+      "temperature": "Warm (+10-15)",
+      "tint": "Slight toward sand tones",
+      "saturation": "Natural (not oversaturated)"
+    }
+  },
+
+  "brand_voice": {
+    "attributes": [
+      "Empowering (not condescending)",
+      "Urgent (without panic)",
+      "Hopeful (not naive)",
+      "Inclusive (celebrating diversity)",
+      "Respectful (of all stakeholders)",
+      "Clear and jargon-free"
+    ]
+  },
+
+  "quality_thresholds": {
+    "contrast_minimum": {
+      "large_text": 3.0,
+      "normal_text": 4.5,
+      "preferred": 7.0
+    },
+    "image_resolution": {
+      "print": "300 DPI",
+      "digital": "150 DPI minimum"
+    },
+    "text_cutoff_tolerance": 0,
+    "color_accuracy_delta_e": 2.0
+  }
+}

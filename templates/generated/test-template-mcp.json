@@ -1,0 +1,652 @@
+{
+  "action": "create_template",
+  "template": {
+    "name": "Partnership Brochure",
+    "documentType": "partnershipBrochure",
+    "document": {
+      "size": {
+        "width": 8.5,
+        "height": 11,
+        "unit": "inches"
+      },
+      "margins": {
+        "top": 40,
+        "bottom": 40,
+        "left": 40,
+        "right": 40,
+        "unit": "pt"
+      },
+      "columns": {
+        "count": 12,
+        "gutter": 20,
+        "unit": "pt"
+      },
+      "baseline": {
+        "increment": 16.5,
+        "unit": "pt"
+      },
+      "colorMode": "RGB",
+      "pageCount": 8
+    },
+    "masterPages": {
+      "default": {
+        "name": "A-Master",
+        "basedOn": null,
+        "margins": {
+          "top": 40,
+          "bottom": 40,
+          "left": 40,
+          "right": 40,
+          "unit": "pt"
+        },
+        "columns": {
+          "count": 12,
+          "gutter": 20,
+          "unit": "pt"
+        },
+        "elements": [
+          {
+            "type": "footer",
+            "component": "footer",
+            "position": {
+              "x": 40,
+              "y": 720
+            },
+            "locked": true
+          }
+        ]
+      },
+      "cover": {
+        "name": "B-Cover",
+        "basedOn": null,
+        "margins": {
+          "top": 0,
+          "bottom": 0,
+          "left": 0,
+          "right": 0
+        },
+        "columns": {
+          "count": 1,
+          "gutter": 0
+        },
+        "elements": []
+      }
+    },
+    "pages": [
+      {
+        "pageNumber": 1,
+        "masterPage": "cover",
+        "pattern": "coverHero",
+        "grid": "hierarchical",
+        "structure": {
+          "heroImage": {
+            "position": "fullBleed",
+            "overlay": 0.4
+          },
+          "title": {
+            "position": "center",
+            "style": "documentTitle",
+            "color": "white"
+          },
+          "subtitle": {
+            "position": "belowTitle",
+            "style": "subsectionHeader",
+            "color": "white"
+          },
+          "logo": {
+            "position": "topLeft",
+            "size": 80,
+            "clearspace": 40
+          }
+        },
+        "visualDensity": "high",
+        "background": {
+          "color": "#FFFFFF",
+          "opacity": 1
+        },
+        "layout": {
+          "gridType": "Hierarchical Grid",
+          "columns": 1,
+          "gutter": 20
+        }
+      },
+      {
+        "pageNumber": 2,
+        "masterPage": "default",
+        "pattern": "twoColumnSplit",
+        "grid": "twoColumn",
+        "structure": {
+          "leftColumn": {
+            "width": "60%",
+            "type": "text"
+          },
+          "rightColumn": {
+            "width": "40%",
+            "type": "image"
+          },
+          "gutter": 20
+        },
+        "visualDensity": "medium",
+        "background": {
+          "color": "#C9E4EC",
+          "opacity": 0.3
+        },
+        "layout": {
+          "gridType": "Two-Column Grid",
+          "columns": 2,
+          "gutter": 20,
+          "variations": [
+            "50/50",
+            "60/40",
+            "70/30"
+          ]
+        }
+      },
+      {
+        "pageNumber": 3,
+        "masterPage": "default",
+        "pattern": "twoColumnSplit",
+        "grid": "twoColumn",
+        "structure": {
+          "leftColumn": {
+            "width": "60%",
+            "type": "text"
+          },
+          "rightColumn": {
+            "width": "40%",
+            "type": "image"
+          },
+          "gutter": 20
+        },
+        "visualDensity": "medium",
+        "background": {
+          "color": "#FFFFFF",
+          "opacity": 1
+        },
+        "layout": {
+          "gridType": "Two-Column Grid",
+          "columns": 2,
+          "gutter": 20,
+          "variations": [
+            "50/50",
+            "60/40",
+            "70/30"
+          ]
+        }
+      },
+      {
+        "pageNumber": 4,
+        "masterPage": "default",
+        "pattern": "statsModular",
+        "grid": "modular",
+        "structure": {
+          "grid": "2x2",
+          "module": {
+            "icon": {
+              "size": 80,
+              "position": "top"
+            },
+            "number": {
+              "style": "statNumber",
+              "position": "middle"
+            },
+            "label": {
+              "style": "bodyText",
+              "position": "bottom"
+            }
+          },
+          "spacing": 60
+        },
+        "visualDensity": "high",
+        "background": {
+          "color": "#FFF1E2",
+          "opacity": 1
+        },
+        "layout": {
+          "gridType": "Modular Grid",
+          "columns": 1,
+          "gutter": 20,
+          "structure": "4x6"
+        }
+      },
+      {
+        "pageNumber": 5,
+        "masterPage": "default",
+        "pattern": "threeColumn",
+        "grid": "threeColumn",
+        "structure": {},
+        "visualDensity": "medium",
+        "background": {
+          "color": "#FFFFFF",
+          "opacity": 1
+        },
+        "layout": {
+          "gridType": "Three-Column Grid",
+          "columns": 3,
+          "gutter": 20,
+          "variations": [
+            "equal",
+            "sidebar"
+          ]
+        }
+      },
+      {
+        "pageNumber": 6,
+        "masterPage": "default",
+        "pattern": "fullWidthPhoto",
+        "grid": "hierarchical",
+        "structure": {},
+        "visualDensity": "medium",
+        "background": {
+          "color": "#00393F",
+          "opacity": 1
+        },
+        "layout": {
+          "gridType": "Hierarchical Grid",
+          "columns": 1,
+          "gutter": 20
+        }
+      },
+      {
+        "pageNumber": 7,
+        "masterPage": "default",
+        "pattern": "diagonalSplit",
+        "grid": "twoColumn",
+        "structure": {},
+        "visualDensity": "medium",
+        "background": {
+          "color": "#FFFFFF",
+          "opacity": 1
+        },
+        "layout": {
+          "gridType": "Two-Column Grid",
+          "columns": 2,
+          "gutter": 20,
+          "variations": [
+            "50/50",
+            "60/40",
+            "70/30"
+          ]
+        }
+      },
+      {
+        "pageNumber": 8,
+        "masterPage": "default",
+        "pattern": "ctaPage",
+        "grid": "manuscript",
+        "structure": {
+          "headline": {
+            "style": "sectionHeader",
+            "position": "top"
+          },
+          "supportingText": {
+            "style": "bodyText",
+            "width": "60%",
+            "position": "middle"
+          },
+          "button": {
+            "height": 50,
+            "width": 200,
+            "style": "buttonText",
+            "position": "center"
+          },
+          "whitespace": "70%"
+        },
+        "visualDensity": "low",
+        "background": {
+          "color": "#FFFFFF",
+          "opacity": 1
+        },
+        "layout": {
+          "gridType": "Manuscript Grid",
+          "columns": 1,
+          "gutter": 20
+        }
+      }
+    ],
+    "styles": {
+      "paragraph": {
+        "Document Title": {
+          "name": "Document Title",
+          "basedOn": "Basic Paragraph",
+          "fontFamily": "Lora",
+          "fontStyle": "Bold",
+          "fontSize": 42,
+          "leading": 46.2,
+          "color": "#00393F",
+          "alignment": "left",
+          "spaceBefore": 0,
+          "spaceAfter": 12,
+          "hyphenation": false
+        },
+        "Section Header": {
+          "name": "Section Header",
+          "basedOn": "Basic Paragraph",
+          "fontFamily": "Lora",
+          "fontStyle": "SemiBold",
+          "fontSize": 28,
+          "leading": 33.6,
+          "color": "#00393F",
+          "alignment": "left",
+          "spaceBefore": 60,
+          "spaceAfter": 24,
+          "hyphenation": false
+        },
+        "Subsection Header": {
+          "name": "Subsection Header",
+          "basedOn": "Basic Paragraph",
+          "fontFamily": "Roboto Flex",
+          "fontStyle": "Medium",
+          "fontSize": 18,
+          "leading": 23.400000000000002,
+          "color": "#00393F",
+          "alignment": "left",
+          "spaceBefore": 60,
+          "spaceAfter": 24,
+          "hyphenation": false
+        },
+        "Body Text": {
+          "name": "Body Text",
+          "basedOn": "No Paragraph Style",
+          "fontFamily": "Roboto Flex",
+          "fontStyle": "Regular",
+          "fontSize": 11,
+          "leading": 16.5,
+          "color": "black",
+          "alignment": "left",
+          "spaceBefore": 0,
+          "spaceAfter": 12,
+          "hyphenation": true
+        },
+        "Caption": {
+          "name": "Caption",
+          "basedOn": "Basic Paragraph",
+          "fontFamily": "Roboto Flex",
+          "fontStyle": "Regular",
+          "fontSize": 9,
+          "leading": 12.6,
+          "color": "#666666",
+          "alignment": "left",
+          "spaceBefore": 0,
+          "spaceAfter": 12,
+          "hyphenation": false
+        },
+        "Pull Quote": {
+          "name": "Pull Quote",
+          "basedOn": "Basic Paragraph",
+          "fontFamily": "Lora",
+          "fontStyle": "Italic",
+          "fontSize": 18,
+          "leading": 23.400000000000002,
+          "color": "#00393F",
+          "alignment": "left",
+          "spaceBefore": 0,
+          "spaceAfter": 12,
+          "hyphenation": false
+        },
+        "Stat Number": {
+          "name": "Stat Number",
+          "basedOn": "Basic Paragraph",
+          "fontFamily": "Lora",
+          "fontStyle": "Bold",
+          "fontSize": 48,
+          "leading": 48,
+          "color": "#BA8F5A",
+          "alignment": "left",
+          "spaceBefore": 0,
+          "spaceAfter": 12,
+          "hyphenation": false
+        },
+        "Button Text": {
+          "name": "Button Text",
+          "basedOn": "Basic Paragraph",
+          "fontFamily": "Roboto Flex",
+          "fontStyle": "Bold",
+          "fontSize": 18,
+          "leading": 18,
+          "color": "white",
+          "alignment": "left",
+          "spaceBefore": 0,
+          "spaceAfter": 12,
+          "hyphenation": false
+        }
+      },
+      "character": {}
+    },
+    "colors": [
+      {
+        "name": "Nordshore",
+        "colorModel": "RGB",
+        "colorValue": [
+          0,
+          57,
+          63
+        ],
+        "colorSpace": "sRGB"
+      },
+      {
+        "name": "Nordshore CMYK",
+        "colorModel": "CMYK",
+        "colorValue": [
+          100,
+          10,
+          0,
+          75
+        ],
+        "colorSpace": "FOGRA39"
+      },
+      {
+        "name": "Sky",
+        "colorModel": "RGB",
+        "colorValue": [
+          201,
+          228,
+          236
+        ],
+        "colorSpace": "sRGB"
+      },
+      {
+        "name": "Sky CMYK",
+        "colorModel": "CMYK",
+        "colorValue": [
+          15,
+          3,
+          0,
+          7
+        ],
+        "colorSpace": "FOGRA39"
+      },
+      {
+        "name": "Sand",
+        "colorModel": "RGB",
+        "colorValue": [
+          255,
+          241,
+          226
+        ],
+        "colorSpace": "sRGB"
+      },
+      {
+        "name": "Sand CMYK",
+        "colorModel": "CMYK",
+        "colorValue": [
+          0,
+          6,
+          11,
+          0
+        ],
+        "colorSpace": "FOGRA39"
+      },
+      {
+        "name": "Beige",
+        "colorModel": "RGB",
+        "colorValue": [
+          239,
+          225,
+          220
+        ],
+        "colorSpace": "sRGB"
+      },
+      {
+        "name": "Beige CMYK",
+        "colorModel": "CMYK",
+        "colorValue": [
+          0,
+          6,
+          8,
+          6
+        ],
+        "colorSpace": "FOGRA39"
+      },
+      {
+        "name": "Gold",
+        "colorModel": "RGB",
+        "colorValue": [
+          186,
+          143,
+          90
+        ],
+        "colorSpace": "sRGB"
+      },
+      {
+        "name": "Gold CMYK",
+        "colorModel": "CMYK",
+        "colorValue": [
+          0,
+          23,
+          52,
+          27
+        ],
+        "colorSpace": "FOGRA39"
+      },
+      {
+        "name": "Moss",
+        "colorModel": "RGB",
+        "colorValue": [
+          101,
+          135,
+          59
+        ],
+        "colorSpace": "sRGB"
+      },
+      {
+        "name": "Moss CMYK",
+        "colorModel": "CMYK",
+        "colorValue": [
+          25,
+          0,
+          56,
+          47
+        ],
+        "colorSpace": "FOGRA39"
+      },
+      {
+        "name": "Clay",
+        "colorModel": "RGB",
+        "colorValue": [
+          145,
+          59,
+          47
+        ],
+        "colorSpace": "sRGB"
+      },
+      {
+        "name": "Clay CMYK",
+        "colorModel": "CMYK",
+        "colorValue": [
+          0,
+          59,
+          68,
+          43
+        ],
+        "colorSpace": "FOGRA39"
+      }
+    ],
+    "components": {
+      "pullQuote": {
+        "name": "Pull Quote",
+        "variants": [
+          "floating",
+          "sidebar",
+          "fullWidth",
+          "overlapping"
+        ],
+        "defaultStyle": {
+          "background": {
+            "color": "sky",
+            "opacity": 0.2
+          },
+          "padding": 20,
+          "textStyle": "pullQuote",
+          "border": {
+            "width": 0,
+            "style": "none"
+          }
+        },
+        "id": "component-pullQuote",
+        "brand": "TEEI"
+      },
+      "statCard": {
+        "name": "Statistic Card",
+        "structure": {
+          "icon": {
+            "size": 60,
+            "color": "nordshore"
+          },
+          "number": {
+            "style": "statNumber",
+            "color": "gold"
+          },
+          "label": {
+            "style": "caption",
+            "color": "#666666"
+          },
+          "background": {
+            "color": "sand",
+            "opacity": 1
+          }
+        },
+        "id": "component-statCard",
+        "brand": "TEEI"
+      },
+      "sectionHeader": {
+        "name": "Section Header",
+        "defaultStyle": {
+          "textStyle": "sectionHeader",
+          "underline": {
+            "color": "sky",
+            "width": 5,
+            "offset": 10
+          },
+          "spaceBefore": 60,
+          "spaceAfter": 24
+        },
+        "id": "component-sectionHeader",
+        "brand": "TEEI"
+      },
+      "footer": {
+        "name": "Running Footer",
+        "structure": {
+          "logo": {
+            "size": 40,
+            "position": "left"
+          },
+          "pageNumber": {
+            "style": "caption",
+            "position": "center"
+          },
+          "tagline": {
+            "style": "caption",
+            "position": "right"
+          },
+          "separator": {
+            "width": 1,
+            "color": "nordshore"
+          }
+        },
+        "id": "component-footer",
+        "brand": "TEEI"
+      }
+    }
+  }
+}

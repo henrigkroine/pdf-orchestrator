@@ -1,0 +1,56 @@
+{
+  "title": "AWS Partnership Proposal",
+  "subtitle": "Empowering Ukrainian Students Through Technology",
+  "organization": "The Educational Equality Institute",
+  "partner": "Amazon Web Services",
+  "overview": {
+    "mission": "TEEI partners with leading organizations to provide world-class educational opportunities to displaced Ukrainian students.",
+    "value_proposition": "By partnering with AWS, we can scale our technology education programs to reach 50,000+ students across Europe.",
+    "impact": "Together, we're building the next generation of tech leaders from refugee communities."
+  },
+  "programs": [
+    {
+      "name": "Cloud Computing Curriculum",
+      "description": "Comprehensive AWS training for high school and university students",
+      "students_reached": 15000,
+      "success_rate": "92%",
+      "certification_rate": "78%"
+    },
+    {
+      "name": "AI/ML Learning Path",
+      "description": "Hands-on machine learning projects using AWS services",
+      "students_reached": 8000,
+      "success_rate": "88%",
+      "certification_rate": "65%"
+    },
+    {
+      "name": "Career Pathways Program",
+      "description": "Job readiness training and AWS certification preparation",
+      "students_reached": 12000,
+      "success_rate": "95%",
+      "placement_rate": "72%"
+    }
+  ],
+  "metrics": {
+    "students_reached": 50000,
+    "countries": 12,
+    "partner_organizations": 45,
+    "aws_certifications": 3500
+  },
+  "call_to_action": {
+    "headline": "Ready to Transform Education Together?",
+    "description": "Join us in empowering the next generation of technology leaders.",
+    "action": "Schedule a Partnership Discussion",
+    "contact": {
+      "name": "Henrik Røine",
+      "email": "hello@teei.global",
+      "phone": "+1 (555) 123-4567"
+    }
+  },
+  "brand": {
+    "use_teei_colors": true,
+    "primary_color": "nordshore",
+    "accent_color": "sky",
+    "warm_backgrounds": true
+  }
+}

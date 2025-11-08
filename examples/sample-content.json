@@ -1,0 +1,130 @@
+{
+  "blocks": [
+    {
+      "type": "h1",
+      "content": "Transforming Education Through Technology Partnership",
+      "size": "xlarge",
+      "isHeading": true
+    },
+    {
+      "type": "body",
+      "content": "The Educational Equality Institute (TEEI) partners with leading technology companies to bridge the digital divide and provide world-class educational opportunities to underserved communities worldwide."
+    },
+    {
+      "type": "h2",
+      "content": "Our Impact",
+      "size": "large",
+      "isHeading": true,
+      "isSection": true
+    },
+    {
+      "type": "stat",
+      "content": "50,000+",
+      "isStat": true
+    },
+    {
+      "type": "caption",
+      "content": "Students Reached Globally"
+    },
+    {
+      "type": "stat",
+      "content": "127",
+      "isStat": true
+    },
+    {
+      "type": "caption",
+      "content": "Partner Organizations"
+    },
+    {
+      "type": "stat",
+      "content": "23",
+      "isStat": true
+    },
+    {
+      "type": "caption",
+      "content": "Countries Served"
+    },
+    {
+      "type": "h2",
+      "content": "Partnership Programs",
+      "size": "large",
+      "isHeading": true,
+      "isSection": true
+    },
+    {
+      "type": "h3",
+      "content": "Cloud Skills Training",
+      "size": "medium",
+      "isHeading": true
+    },
+    {
+      "type": "body",
+      "content": "Our Cloud Skills Training program provides hands-on experience with enterprise cloud platforms, preparing students for high-demand technology careers. Participants gain practical skills through project-based learning and receive industry-recognized certifications."
+    },
+    {
+      "type": "h3",
+      "content": "AI & Machine Learning Education",
+      "size": "medium",
+      "isHeading": true
+    },
+    {
+      "type": "body",
+      "content": "Students learn cutting-edge artificial intelligence and machine learning concepts through interactive courses designed by industry experts. The curriculum covers everything from fundamentals to advanced applications in real-world scenarios."
+    },
+    {
+      "type": "h3",
+      "content": "Digital Literacy Initiative",
+      "size": "medium",
+      "isHeading": true
+    },
+    {
+      "type": "body",
+      "content": "Building foundational digital skills is essential for success in the modern workforce. Our Digital Literacy Initiative ensures every student has access to computers, internet connectivity, and comprehensive training in essential software tools."
+    },
+    {
+      "type": "quote",
+      "content": "TEEI's partnership approach has transformed how we think about educational equity. Together, we're creating pathways to success that didn't exist before.",
+      "isQuote": true
+    },
+    {
+      "type": "caption",
+      "content": "— Program Director, Partner Organization"
+    },
+    {
+      "type": "h2",
+      "content": "Why Partner with TEEI?",
+      "size": "large",
+      "isHeading": true,
+      "isSection": true
+    },
+    {
+      "type": "body",
+      "content": "TEEI brings deep expertise in educational program design, strong relationships with underserved communities, and a proven track record of measurable impact. Our partners benefit from enhanced corporate social responsibility programs, meaningful employee engagement opportunities, and the satisfaction of creating lasting positive change."
+    },
+    {
+      "type": "callout",
+      "content": "✓ Proven Impact Model\n✓ Comprehensive Reporting\n✓ Scalable Programs\n✓ Long-term Sustainability",
+      "isCallout": true
+    },
+    {
+      "type": "h2",
+      "content": "Ready to Transform Education Together?",
+      "size": "large",
+      "isHeading": true,
+      "isSection": true
+    },
+    {
+      "type": "body",
+      "content": "Join leading companies in creating educational opportunities that change lives. Contact us today to learn more about partnership opportunities and how we can work together to build a more equitable future through technology education."
+    },
+    {
+      "type": "cta",
+      "content": "Schedule a Partnership Discussion",
+      "isCTA": true
+    },
+    {
+      "type": "body",
+      "content": "Email: partnerships@teei.org | Phone: (555) 123-4567 | Website: www.teei.org"
+    }
+  ]
+}

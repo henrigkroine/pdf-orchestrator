@@ -420,6 +420,64 @@ Or open InDesign → Type Tool → Font menu → Search for "Lora" and "Roboto"
 
 ---
 
+## Export Optimizer (NEW)
+
+**Perfect PDFs in one command - Zero manual settings**
+
+The Export Optimizer is an intelligent system that automatically selects optimal PDF export settings based on document purpose. It eliminates manual configuration and ensures world-class quality every time.
+
+### Quick Start
+
+```python
+from export_optimizer import ExportOptimizer, ExportPurpose
+
+optimizer = ExportOptimizer()
+result = optimizer.export_document(
+    output_path="exports/TEEI_AWS_Partnership.pdf",
+    purpose=ExportPurpose.PARTNERSHIP_PRESENTATION.value
+)
+
+print(f"✓ Exported: {result['file_size_mb']} MB")
+```
+
+### 7 Export Profiles
+
+| Profile | When to Use | Quality | Size |
+|---------|------------|---------|------|
+| **print_production** | Commercial printing | PDF/X-4, 300 DPI, CMYK | Large |
+| **partnership_presentation** | Stakeholder presentations | High-quality, 150 DPI | Medium |
+| **digital_marketing** | Email campaigns | Web-optimized, 96 DPI | Small |
+| **accessibility_first** | Government/education | PDF/UA, WCAG 2.1 AA | Medium |
+| **draft_review** | Internal review | Fast preview, 72 DPI | Tiny |
+| **archive_preservation** | Long-term storage | PDF/A-2, 300 DPI | Large |
+| **web_optimized** | Website embedding | Linearized, 96 DPI | Small |
+
+### CLI Usage
+
+```bash
+# Python
+python export_optimizer.py exports/document.pdf --purpose partnership_presentation
+
+# JavaScript
+node scripts/export-optimizer.js exports/document.pdf --purpose partnership_presentation
+
+# List all profiles
+python export_optimizer.py --list-profiles
+
+# Get profile information
+python export_optimizer.py --profile-info print_production
+```
+
+### Documentation
+
+- **Quick Start**: `/EXPORT-OPTIMIZER-QUICK-START.md` (30-second start)
+- **Complete Guide**: `/docs/EXPORT-OPTIMIZER-GUIDE.md` (full API reference)
+- **Technical Spec**: `/docs/EXPORT-OPTIMIZER-SPEC.md` (architecture)
+- **Examples**: `/example-jobs/export-optimizer-examples.py` (12 examples)
+- **README**: `/README-EXPORT-OPTIMIZER.md` (overview)
+
+---
+
 ## Common Commands
 
 ### Development
@@ -444,15 +502,20 @@ python run_diagnostics.py
 python validate_world_class.py
 ```
 
-### Export
+### Export (NEW - Use Export Optimizer)
 ```bash
-# Export world-class PDF
+# Export with intelligent optimization (RECOMMENDED)
+python export_optimizer.py exports/TEEI_AWS.pdf --purpose partnership_presentation
+
+# Export for commercial printing (PDF/X-4)
+python export_optimizer.py exports/TEEI_Brochure.pdf --purpose print_production
+
+# Export for web (small file size)
+python export_optimizer.py exports/TEEI_Newsletter.pdf --purpose web_optimized
+
+# Legacy export scripts (still available)
 python export_world_class_pdf.py
-
-# Export final production PDF
 python export_final_pdf.py
-
-# Export via ExtendScript
 python export_via_extendscript.py
 ```
 

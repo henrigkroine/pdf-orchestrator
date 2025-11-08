@@ -1,0 +1,154 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Template Specification Schema",
+  "description": "Schema for template generation specifications",
+  "type": "object",
+  "required": ["metadata", "document", "pages", "styles", "colors"],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["name", "documentType", "version"],
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Template name"
+        },
+        "documentType": {
+          "type": "string",
+          "enum": ["partnershipBrochure", "programOverview", "annualReport", "oneSheet", "presentation"],
+          "description": "Type of document"
+        },
+        "version": {
+          "type": "string",
+          "description": "Template version"
+        },
+        "generated": {
+          "type": "string",
+          "format": "date-time",
+          "description": "Generation timestamp"
+        },
+        "brand": {
+          "type": "string",
+          "description": "Brand identifier (e.g., TEEI)"
+        }
+      }
+    },
+    "document": {
+      "type": "object",
+      "required": ["size", "margins", "pageCount"],
+      "properties": {
+        "size": {
+          "type": "object",
+          "properties": {
+            "width": { "type": "number" },
+            "height": { "type": "number" },
+            "unit": { "type": "string", "enum": ["inches", "pt", "mm"] }
+          }
+        },
+        "margins": {
+          "type": "object",
+          "properties": {
+            "top": { "type": "number" },
+            "bottom": { "type": "number" },
+            "left": { "type": "number" },
+            "right": { "type": "number" },
+            "unit": { "type": "string", "enum": ["pt", "mm", "inches"] }
+          }
+        },
+        "columns": {
+          "type": "object",
+          "properties": {
+            "count": { "type": "integer", "minimum": 1, "maximum": 24 },
+            "gutter": { "type": "number" },
+            "unit": { "type": "string" }
+          }
+        },
+        "baseline": {
+          "type": "object",
+          "properties": {
+            "increment": { "type": "number" },
+            "unit": { "type": "string" }
+          }
+        },
+        "colorMode": {
+          "type": "string",
+          "enum": ["RGB", "CMYK"],
+          "description": "Color mode for document"
+        },
+        "pageCount": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Number of pages in template"
+        }
+      }
+    },
+    "masterPages": {
+      "type": "object",
+      "description": "Master page definitions",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "basedOn": { "type": ["string", "null"] },
+          "margins": { "type": "object" },
+          "columns": { "type": "object" },
+          "elements": {
+            "type": "array",
+            "items": { "type": "object" }
+          }
+        }
+      }
+    },
+    "pages": {
+      "type": "array",
+      "description": "Page-by-page specifications",
+      "items": {
+        "type": "object",
+        "properties": {
+          "pageNumber": { "type": "integer" },
+          "masterPage": { "type": "string" },
+          "pattern": { "type": "string" },
+          "grid": { "type": "string" },
+          "structure": { "type": "object" },
+          "visualDensity": {
+            "type": "string",
+            "enum": ["low", "medium", "high"]
+          },
+          "background": { "type": "object" },
+          "layout": { "type": "object" }
+        }
+      }
+    },
+    "styles": {
+      "type": "object",
+      "properties": {
+        "paragraph": {
+          "type": "object",
+          "description": "Paragraph style definitions"
+        },
+        "character": {
+          "type": "object",
+          "description": "Character style definitions"
+        }
+      }
+    },
+    "colors": {
+      "type": "array",
+      "description": "Color swatch definitions",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "colorModel": { "type": "string", "enum": ["RGB", "CMYK"] },
+          "colorValue": { "type": "array" },
+          "colorSpace": { "type": "string" }
+        }
+      }
+    },
+    "components": {
+      "type": "object",
+      "description": "Reusable component definitions",
+      "additionalProperties": { "type": "object" }
+    }
+  }
+}

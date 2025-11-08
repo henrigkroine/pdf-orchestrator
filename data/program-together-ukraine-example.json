@@ -1,0 +1,83 @@
+{
+  "title": "Together for Ukraine",
+  "subtitle": "2024 Impact Report",
+  "organization": "The Educational Equality Institute",
+  "program_name": "Together for Ukraine",
+  "summary": {
+    "mission": "Providing comprehensive educational support to displaced Ukrainian students across Europe.",
+    "duration": "March 2022 - Present",
+    "scope": "12 countries, 45 partner organizations, 50,000+ students served"
+  },
+  "impact": {
+    "students_reached": 50000,
+    "countries_active": 12,
+    "partner_schools": 85,
+    "volunteer_educators": 1200,
+    "learning_hours_delivered": 2500000,
+    "certifications_earned": 8500
+  },
+  "stories": [
+    {
+      "name": "Olena, Age 17",
+      "location": "Warsaw, Poland",
+      "story": "After fleeing Kyiv, Olena enrolled in our Computer Science program. She's now studying AI at the University of Warsaw with a full scholarship.",
+      "quote": "TEEI gave me hope when I had none. Now I'm building my future in technology."
+    },
+    {
+      "name": "Dmytro, Age 22",
+      "location": "Berlin, Germany",
+      "story": "Dmytro completed our Cloud Computing curriculum and earned AWS certifications. He now works as a junior developer at a Berlin startup.",
+      "quote": "The skills I learned didn't just help me get a job—they gave me a new career path."
+    }
+  ],
+  "programs": [
+    {
+      "name": "Tech Skills Training",
+      "students": 25000,
+      "completion_rate": "89%",
+      "subjects": ["Programming", "Cloud Computing", "Cybersecurity", "Data Science"]
+    },
+    {
+      "name": "Language Support",
+      "students": 35000,
+      "completion_rate": "92%",
+      "languages": ["English", "German", "Polish", "French"]
+    },
+    {
+      "name": "University Preparation",
+      "students": 15000,
+      "completion_rate": "87%",
+      "university_placements": 4500
+    },
+    {
+      "name": "Mental Health Services",
+      "students": 20000,
+      "sessions_provided": 75000,
+      "satisfaction_rate": "96%"
+    }
+  ],
+  "data": {
+    "enrollment_by_month": [
+      {"month": "Jan 2024", "students": 3200},
+      {"month": "Feb 2024", "students": 3800},
+      {"month": "Mar 2024", "students": 4100},
+      {"month": "Apr 2024", "students": 4500},
+      {"month": "May 2024", "students": 5000},
+      {"month": "Jun 2024", "students": 5200}
+    ],
+    "top_subjects": [
+      {"subject": "Programming", "students": 12000},
+      {"subject": "English Language", "students": 15000},
+      {"subject": "Mathematics", "students": 8000},
+      {"subject": "Cloud Computing", "students": 6500},
+      {"subject": "Data Science", "students": 4200}
+    ]
+  },
+  "brand": {
+    "use_teei_colors": true,
+    "primary_color": "nordshore",
+    "accent_color": "sky",
+    "warm_backgrounds": true,
+    "photography_style": "warm_authentic"
+  }
+}

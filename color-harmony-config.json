@@ -1,0 +1,446 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "TEEI Color Harmony Configuration",
+  "description": "Color theory rules, harmonies, and pre-configured schemes for TEEI documents",
+  "version": "1.0.0",
+  "lastUpdated": "2025-11-08",
+
+  "color_theory": {
+    "harmony_rules": {
+      "complementary": {
+        "description": "Colors opposite on color wheel - high contrast, vibrant",
+        "teei_pairs": [
+          ["nordshore", "gold"],
+          ["moss", "clay"]
+        ],
+        "use_case": "Headers with accents, call-to-action sections"
+      },
+      "analogous": {
+        "description": "Adjacent colors on wheel - harmonious, serene",
+        "teei_groups": [
+          ["nordshore", "sky", "moss"],
+          ["sand", "beige", "gold"]
+        ],
+        "use_case": "Background gradients, section transitions"
+      },
+      "triadic": {
+        "description": "Three colors evenly spaced - balanced, vibrant",
+        "teei_groups": [
+          ["nordshore", "gold", "moss"],
+          ["sky", "sand", "clay"]
+        ],
+        "use_case": "Infographics, metric displays, multi-section layouts"
+      },
+      "split_complementary": {
+        "description": "Base color plus two adjacent to complement - sophisticated",
+        "teei_groups": [
+          ["nordshore", "gold", "sand"],
+          ["sky", "moss", "beige"]
+        ],
+        "use_case": "Premium partnership documents, executive summaries"
+      },
+      "monochromatic": {
+        "description": "Single color with varying opacity - clean, professional",
+        "teei_schemes": {
+          "nordshore_mono": {
+            "base": "nordshore",
+            "opacities": [1.0, 0.7, 0.4, 0.2, 0.1]
+          },
+          "sky_mono": {
+            "base": "sky",
+            "opacities": [1.0, 0.8, 0.5, 0.3, 0.15]
+          }
+        },
+        "use_case": "Data visualizations, progress bars, backgrounds"
+      }
+    },
+
+    "contrast_ratios": {
+      "wcag_aa_normal": 4.5,
+      "wcag_aa_large": 3.0,
+      "wcag_aaa": 7.0,
+      "recommended_minimum": 4.5,
+      "preferred": 7.0
+    },
+
+    "color_psychology": {
+      "nordshore": {
+        "emotions": ["trust", "professionalism", "stability", "depth"],
+        "associations": ["ocean", "knowledge", "education", "reliability"],
+        "best_for": ["corporate", "trustworthy", "professional"]
+      },
+      "sky": {
+        "emotions": ["calm", "hope", "openness", "clarity"],
+        "associations": ["sky", "freedom", "peace", "possibility"],
+        "best_for": ["backgrounds", "breathing_room", "positive_sections"]
+      },
+      "sand": {
+        "emotions": ["warmth", "comfort", "accessibility", "welcome"],
+        "associations": ["earth", "natural", "approachable", "human"],
+        "best_for": ["backgrounds", "people_focused", "community"]
+      },
+      "moss": {
+        "emotions": ["growth", "sustainability", "health", "success"],
+        "associations": ["nature", "progress", "renewal", "life"],
+        "best_for": ["metrics", "progress", "environmental", "growth"]
+      },
+      "gold": {
+        "emotions": ["prestige", "value", "achievement", "excellence"],
+        "associations": ["awards", "premium", "quality", "success"],
+        "best_for": ["key_metrics", "awards", "premium_partnerships"]
+      },
+      "clay": {
+        "emotions": ["urgency", "warmth", "importance", "action"],
+        "associations": ["earth", "grounding", "passion", "energy"],
+        "best_for": ["call_to_action", "important_alerts", "urgent"]
+      }
+    }
+  },
+
+  "document_schemes": {
+    "partnership_document": {
+      "name": "Partnership Document (Premium)",
+      "description": "World-class partnership materials with professional sophistication",
+      "primary_color": "nordshore",
+      "secondary_colors": ["sky", "gold"],
+      "accent_colors": ["moss", "sand"],
+      "background_colors": ["white", "sand", "beige"],
+
+      "color_blocking": {
+        "header": {
+          "background": "nordshore",
+          "text": "white",
+          "accent": "gold",
+          "overlay_opacity": 0.95
+        },
+        "hero_section": {
+          "background": "sand",
+          "text": "nordshore",
+          "accent": "gold",
+          "image_overlay": {
+            "color": "nordshore",
+            "opacity": 0.4
+          }
+        },
+        "program_sections": {
+          "background": "white",
+          "cards": {
+            "background": "sky",
+            "border": "nordshore",
+            "accent": "gold"
+          },
+          "text": "black",
+          "headers": "nordshore"
+        },
+        "metrics": {
+          "background": "white",
+          "card_backgrounds": ["nordshore", "moss", "gold"],
+          "numbers": "white",
+          "labels": "white",
+          "accent_stripes": "gold"
+        },
+        "call_to_action": {
+          "background": "gold",
+          "text": "nordshore",
+          "button": {
+            "background": "nordshore",
+            "text": "white",
+            "hover": "clay"
+          }
+        },
+        "footer": {
+          "background": "nordshore",
+          "text": "white",
+          "accent": "sky"
+        }
+      },
+
+      "usage_distribution": {
+        "nordshore": 0.40,
+        "sky": 0.15,
+        "gold": 0.10,
+        "sand": 0.20,
+        "white": 0.10,
+        "moss": 0.03,
+        "clay": 0.02
+      }
+    },
+
+    "program_overview": {
+      "name": "Program Overview (Approachable)",
+      "description": "Community-focused program materials with warm, welcoming feel",
+      "primary_color": "nordshore",
+      "secondary_colors": ["sand", "sky"],
+      "accent_colors": ["moss", "gold"],
+      "background_colors": ["white", "sand", "beige"],
+
+      "color_blocking": {
+        "header": {
+          "background": "sand",
+          "text": "nordshore",
+          "accent": "moss",
+          "border": "nordshore"
+        },
+        "sections": {
+          "alternating_backgrounds": ["white", "beige"],
+          "text": "black",
+          "headers": "nordshore",
+          "dividers": "sky"
+        },
+        "highlights": {
+          "background": "sky",
+          "text": "nordshore",
+          "border": "nordshore"
+        },
+        "call_to_action": {
+          "background": "moss",
+          "text": "white",
+          "accent": "gold"
+        }
+      },
+
+      "usage_distribution": {
+        "nordshore": 0.30,
+        "sand": 0.25,
+        "sky": 0.20,
+        "white": 0.15,
+        "moss": 0.05,
+        "gold": 0.03,
+        "beige": 0.02
+      }
+    },
+
+    "impact_report": {
+      "name": "Impact Report (Data-Driven)",
+      "description": "Data-rich reports with clear visual hierarchy and metrics",
+      "primary_color": "nordshore",
+      "secondary_colors": ["moss", "gold"],
+      "accent_colors": ["sky", "clay"],
+      "background_colors": ["white", "beige"],
+
+      "color_blocking": {
+        "header": {
+          "background": "nordshore",
+          "text": "white",
+          "accent": "gold"
+        },
+        "data_visualizations": {
+          "palette": ["nordshore", "moss", "gold", "sky", "clay"],
+          "background": "white",
+          "grid_lines": "beige",
+          "labels": "black"
+        },
+        "key_metrics": {
+          "positive": "moss",
+          "neutral": "gold",
+          "urgent": "clay",
+          "background": "white",
+          "borders": "nordshore"
+        },
+        "narrative_sections": {
+          "background": "beige",
+          "text": "black",
+          "headers": "nordshore",
+          "quotes": {
+            "background": "sand",
+            "accent": "gold"
+          }
+        }
+      },
+
+      "usage_distribution": {
+        "nordshore": 0.35,
+        "white": 0.25,
+        "moss": 0.15,
+        "gold": 0.10,
+        "beige": 0.08,
+        "sky": 0.05,
+        "clay": 0.02
+      }
+    },
+
+    "executive_summary": {
+      "name": "Executive Summary (Minimal)",
+      "description": "High-level summaries with clean, sophisticated design",
+      "primary_color": "nordshore",
+      "secondary_colors": ["gold", "white"],
+      "accent_colors": ["sky"],
+      "background_colors": ["white", "beige"],
+
+      "color_blocking": {
+        "header": {
+          "background": "white",
+          "text": "nordshore",
+          "accent": "gold",
+          "border": "nordshore"
+        },
+        "sections": {
+          "background": "white",
+          "text": "black",
+          "headers": "nordshore",
+          "dividers": "gold"
+        },
+        "highlights": {
+          "background": "beige",
+          "text": "nordshore",
+          "accent": "gold"
+        },
+        "conclusion": {
+          "background": "nordshore",
+          "text": "white",
+          "accent": "gold"
+        }
+      },
+
+      "usage_distribution": {
+        "white": 0.50,
+        "nordshore": 0.30,
+        "gold": 0.10,
+        "beige": 0.08,
+        "sky": 0.02
+      }
+    }
+  },
+
+  "overlay_configurations": {
+    "image_overlays": {
+      "dark_overlay": {
+        "color": "nordshore",
+        "opacity_range": [0.4, 0.6],
+        "blend_mode": "multiply",
+        "use_case": "Text on photos - ensures white text readability"
+      },
+      "light_overlay": {
+        "color": "sand",
+        "opacity_range": [0.3, 0.5],
+        "blend_mode": "screen",
+        "use_case": "Darkening bright photos while maintaining warmth"
+      },
+      "gradient_overlay": {
+        "colors": ["nordshore", "transparent"],
+        "direction": "to bottom",
+        "opacity": 0.6,
+        "use_case": "Hero images with text overlay"
+      }
+    },
+
+    "section_backgrounds": {
+      "subtle_gradient": {
+        "colors": ["white", "sky"],
+        "direction": "to bottom",
+        "opacity": 0.3,
+        "use_case": "Section separation without hard lines"
+      },
+      "warm_gradient": {
+        "colors": ["sand", "beige"],
+        "direction": "to bottom right",
+        "opacity": 0.5,
+        "use_case": "Community/people-focused sections"
+      },
+      "professional_gradient": {
+        "colors": ["nordshore", "nordshore"],
+        "opacity_range": [1.0, 0.8],
+        "direction": "to right",
+        "use_case": "Headers and footers"
+      }
+    }
+  },
+
+  "accessibility_matrix": {
+    "description": "Pre-calculated contrast ratios for all TEEI color combinations",
+    "text_on_backgrounds": {
+      "white_background": {
+        "nordshore": { "ratio": 12.8, "wcag_aa": true, "wcag_aaa": true },
+        "moss": { "ratio": 4.8, "wcag_aa": true, "wcag_aaa": false },
+        "gold": { "ratio": 3.2, "wcag_aa": false, "wcag_aaa": false },
+        "clay": { "ratio": 6.1, "wcag_aa": true, "wcag_aaa": false },
+        "black": { "ratio": 21.0, "wcag_aa": true, "wcag_aaa": true }
+      },
+      "sand_background": {
+        "nordshore": { "ratio": 8.2, "wcag_aa": true, "wcag_aaa": true },
+        "moss": { "ratio": 3.2, "wcag_aa": false, "wcag_aaa": false },
+        "gold": { "ratio": 2.1, "wcag_aa": false, "wcag_aaa": false },
+        "clay": { "ratio": 4.2, "wcag_aa": true, "wcag_aaa": false },
+        "black": { "ratio": 17.8, "wcag_aa": true, "wcag_aaa": true }
+      },
+      "nordshore_background": {
+        "white": { "ratio": 12.8, "wcag_aa": true, "wcag_aaa": true },
+        "sky": { "ratio": 9.1, "wcag_aa": true, "wcag_aaa": true },
+        "sand": { "ratio": 8.2, "wcag_aa": true, "wcag_aaa": true },
+        "gold": { "ratio": 2.8, "wcag_aa": false, "wcag_aaa": false }
+      },
+      "sky_background": {
+        "nordshore": { "ratio": 9.1, "wcag_aa": true, "wcag_aaa": true },
+        "black": { "ratio": 14.2, "wcag_aa": true, "wcag_aaa": true },
+        "moss": { "ratio": 3.1, "wcag_aa": false, "wcag_aaa": false }
+      }
+    },
+
+    "safe_combinations": [
+      { "text": "nordshore", "background": "white", "use": "headers, body" },
+      { "text": "nordshore", "background": "sand", "use": "headers, body" },
+      { "text": "nordshore", "background": "beige", "use": "headers, body" },
+      { "text": "white", "background": "nordshore", "use": "headers, CTAs" },
+      { "text": "white", "background": "moss", "use": "success messages" },
+      { "text": "white", "background": "clay", "use": "urgent CTAs" },
+      { "text": "black", "background": "white", "use": "body text" },
+      { "text": "black", "background": "sand", "use": "body text" },
+      { "text": "black", "background": "sky", "use": "body text" }
+    ],
+
+    "avoid_combinations": [
+      { "text": "gold", "background": "white", "reason": "Low contrast (3.2)" },
+      { "text": "gold", "background": "sand", "reason": "Low contrast (2.1)" },
+      { "text": "moss", "background": "sand", "reason": "Low contrast (3.2)" },
+      { "text": "sky", "background": "white", "reason": "Too light, minimal contrast" }
+    ]
+  },
+
+  "color_application_rules": {
+    "primary_content": {
+      "text": "black",
+      "headings": "nordshore",
+      "background": "white",
+      "accents": "gold"
+    },
+    "emphasis": {
+      "high_importance": "clay",
+      "medium_importance": "gold",
+      "positive": "moss",
+      "neutral": "nordshore"
+    },
+    "ui_elements": {
+      "primary_button": {
+        "background": "nordshore",
+        "text": "white",
+        "hover_background": "moss"
+      },
+      "secondary_button": {
+        "background": "gold",
+        "text": "nordshore",
+        "hover_background": "clay"
+      },
+      "borders": "nordshore",
+      "dividers": "sky",
+      "links": "nordshore"
+    }
+  },
+
+  "validation_rules": {
+    "required_checks": [
+      "All colors must be from official TEEI palette",
+      "Forbidden colors (copper/orange) not used except in partner logos",
+      "Contrast ratios meet WCAG AA minimum (4.5 for normal text)",
+      "Primary color (Nordshore) used for 40-80% of color elements",
+      "Color combinations from safe_combinations list",
+      "Image overlays use Nordshore at 40-60% opacity",
+      "Background colors provide sufficient contrast for text"
+    ],
+    "warnings": [
+      "If gold or moss used on light backgrounds, increase text weight",
+      "If using gradients, ensure text remains readable throughout",
+      "Test color schemes at different brightness levels",
+      "Verify colors render correctly in print (CMYK conversion)"
+    ]
+  }
+}

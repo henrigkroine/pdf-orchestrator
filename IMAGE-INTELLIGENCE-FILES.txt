@@ -1,0 +1,175 @@
+IMAGE INTELLIGENCE ENGINE - FILE MANIFEST
+==========================================
+
+Created: 2025-11-08
+Total Files: 8
+Total Size: ~130 KB
+
+MAIN IMPLEMENTATION FILES
+========================
+
+1. /home/user/pdf-orchestrator/image-intelligence.js (37 KB)
+   - Core JavaScript engine
+   - All 7 core features implemented
+   - CLI interface included
+   - Production-ready
+
+2. /home/user/pdf-orchestrator/image_automation.py (21 KB)
+   - Python wrapper for InDesign/MCP integration
+   - Bridges JS engine with InDesign automation
+   - Batch processing support
+   - Production-ready
+
+3. /home/user/pdf-orchestrator/examples/image-intelligence-demo.js (5.3 KB)
+   - Complete feature demonstrations
+   - All 7 features tested
+   - Working examples with output
+   - Run with: node examples/image-intelligence-demo.js
+
+DOCUMENTATION FILES
+==================
+
+4. /home/user/pdf-orchestrator/IMAGE-INTELLIGENCE-QUICKSTART.md (6.6 KB)
+   - 5-minute quick start guide
+   - Common commands and examples
+   - CLI reference
+   - Troubleshooting quick tips
+
+5. /home/user/pdf-orchestrator/IMAGE-INTELLIGENCE-SUMMARY.md (12 KB)
+   - Executive summary
+   - Feature overview
+   - Usage examples
+   - Getting started guide
+
+6. /home/user/pdf-orchestrator/docs/IMAGE-INTELLIGENCE-GUIDE.md (28 KB)
+   - Complete user documentation
+   - Full API reference (JavaScript & Python)
+   - Integration examples
+   - TEEI brand compliance guide
+   - Advanced usage patterns
+   - Cost estimation
+
+7. /home/user/pdf-orchestrator/docs/IMAGE-INTELLIGENCE-TECHNICAL-SPEC.md (25 KB)
+   - Technical implementation details
+   - Architecture overview
+   - Algorithms explained (with pseudocode)
+   - Data structures
+   - Performance characteristics
+   - Testing strategy
+   - Future roadmap
+
+8. /home/user/pdf-orchestrator/IMAGE-INTELLIGENCE-FILES.txt (this file)
+   - File manifest and quick reference
+
+QUICK START
+===========
+
+1. Install dependencies:
+   cd /home/user/pdf-orchestrator
+   npm install
+
+2. Run demo:
+   node examples/image-intelligence-demo.js
+
+3. Test CLI:
+   node image-intelligence.js stats
+
+4. Python test:
+   python3 image_automation.py example
+
+CORE FEATURES
+=============
+
+1. Intelligent Image Sizing - Automatic sizing to fill frames without distortion
+2. Logo Clearspace Enforcement - TEEI brand compliance (clearspace = logo height)
+3. AI Hero Generation - DALL-E 3 with TEEI brand prompts
+4. Brand Overlays - Apply Nordshore/Sky/Sand tints at correct opacity
+5. Intelligent Cropping - Golden ratio, rule of thirds, AI-guided
+6. Quality Optimization - 300 DPI print, 150+ digital, web
+7. Batch Processing - Efficient multi-image operations
+
+CLI COMMANDS
+============
+
+node image-intelligence.js generate "concept"          # Generate hero
+node image-intelligence.js optimize image.jpg print    # Optimize
+node image-intelligence.js overlay image.jpg nordshore 0.4  # Overlay
+node image-intelligence.js crop image.jpg golden-ratio # Crop
+node image-intelligence.js clearspace logo.png         # Clearspace
+node image-intelligence.js stats                       # Statistics
+
+JAVASCRIPT API
+==============
+
+const ImageIntelligence = require('./image-intelligence.js');
+const imageAI = new ImageIntelligence();
+
+await imageAI.placeImageInFrame(imagePath, width, height, options);
+await imageAI.generateHeroImage(concept, options);
+await imageAI.applyBrandOverlay(imagePath, color, opacity);
+await imageAI.intelligentCrop(imagePath, { strategy: 'golden-ratio' });
+await imageAI.calculateLogoClearspace(logoPath, { createGuide: true });
+await imageAI.optimizeImageQuality(imagePath, 'print');
+await imageAI.batchProcess(imagePaths, operation, options);
+
+PYTHON API
+==========
+
+from image_automation import ImageAutomation
+img = ImageAutomation()
+
+img.place_hero_image(path, page_number=1, apply_overlay=True)
+img.enforce_logo_clearspace(logo_path, x=100, y=100)
+img.generate_and_place_hero(concept, page_number=1)
+img.batch_place_images(image_mappings)
+
+DOCUMENTATION HIERARCHY
+=======================
+
+START HERE → IMAGE-INTELLIGENCE-QUICKSTART.md
+            ↓
+FULL GUIDE → docs/IMAGE-INTELLIGENCE-GUIDE.md
+            ↓
+TECHNICAL → docs/IMAGE-INTELLIGENCE-TECHNICAL-SPEC.md
+
+INTEGRATION WITH EXISTING SYSTEM
+=================================
+
+Leverages existing modules:
+✓ scripts/lib/photo-composition.js (rule of thirds, golden ratio)
+✓ scripts/lib/photo-enhancer.js (TEEI color grading)
+✓ scripts/lib/icon-illustration-generator.js (DALL-E integration patterns)
+
+Dependencies (already in package.json):
+✓ sharp (image processing)
+✓ openai (DALL-E 3)
+✓ @anthropic-ai/sdk (Claude vision)
+✓ playwright (already installed)
+
+TEEI BRAND COMPLIANCE
+=====================
+
+All operations follow TEEI Design Guidelines:
+✓ Official color palette (Nordshore, Sky, Sand, Beige, Moss, Gold, Clay)
+✓ Logo clearspace = logo height (per brand guidelines)
+✓ Photography requirements (natural light, warm tones, authentic)
+✓ Quality standards (300 DPI print, 150+ digital)
+
+NEXT STEPS
+==========
+
+1. npm install
+2. node examples/image-intelligence-demo.js
+3. Read IMAGE-INTELLIGENCE-QUICKSTART.md
+4. Integrate into your workflows
+
+SUPPORT
+=======
+
+Documentation: All docs in /home/user/pdf-orchestrator/docs/
+Examples: /home/user/pdf-orchestrator/examples/
+TEEI Guidelines: reports/TEEI_AWS_Design_Fix_Report.md
+
+Version: 1.0.0
+Status: Production Ready
+Date: 2025-11-08

@@ -1,0 +1,138 @@
+{
+  "hierarchy": {
+    "documentTitle": {
+      "size": 42,
+      "font": "Lora",
+      "weight": "Bold",
+      "color": "#00393F",
+      "lineHeight": 1.2,
+      "tracking": -0.02,
+      "usage": "Main document title"
+    },
+    "sectionHeader": {
+      "size": 28,
+      "font": "Lora",
+      "weight": "SemiBold",
+      "color": "#00393F",
+      "lineHeight": 1.2,
+      "tracking": -0.01,
+      "usage": "Section headers"
+    },
+    "subhead": {
+      "size": 18,
+      "font": "Roboto Flex",
+      "weight": "Medium",
+      "color": "#00393F",
+      "lineHeight": 1.3,
+      "tracking": 0,
+      "usage": "Subheadings"
+    },
+    "bodyText": {
+      "size": 11,
+      "font": "Roboto Flex",
+      "weight": "Regular",
+      "color": "#333333",
+      "lineHeight": 1.618,
+      "tracking": 0,
+      "usage": "Body text"
+    },
+    "caption": {
+      "size": 9,
+      "font": "Roboto Flex",
+      "weight": "Regular",
+      "color": "#666666",
+      "lineHeight": 1.4,
+      "tracking": 0.01,
+      "usage": "Captions"
+    }
+  },
+  "styles": [
+    {
+      "name": "documentTitle",
+      "fontFamily": "Lora",
+      "fontStyle": "Bold",
+      "pointSize": 42,
+      "leading": 50,
+      "tracking": -20,
+      "fillColor": "#00393F",
+      "justification": "center",
+      "hyphenation": false,
+      "spaceBefore": 0,
+      "spaceAfter": 84
+    },
+    {
+      "name": "sectionHeader",
+      "fontFamily": "Lora",
+      "fontStyle": "SemiBold",
+      "pointSize": 28,
+      "leading": 34,
+      "tracking": -10,
+      "fillColor": "#00393F",
+      "justification": "left",
+      "hyphenation": false,
+      "spaceBefore": 84,
+      "spaceAfter": 42
+    },
+    {
+      "name": "subhead",
+      "fontFamily": "Roboto Flex",
+      "fontStyle": "Medium",
+      "pointSize": 18,
+      "leading": 23,
+      "tracking": 0,
+      "fillColor": "#00393F",
+      "justification": "left",
+      "hyphenation": true,
+      "spaceBefore": 36,
+      "spaceAfter": 18
+    },
+    {
+      "name": "bodyText",
+      "fontFamily": "Roboto Flex",
+      "fontStyle": "Regular",
+      "pointSize": 11,
+      "leading": 18,
+      "tracking": 0,
+      "fillColor": "#333333",
+      "justification": "left",
+      "hyphenation": true,
+      "spaceBefore": 0,
+      "spaceAfter": 11
+    },
+    {
+      "name": "caption",
+      "fontFamily": "Roboto Flex",
+      "fontStyle": "Regular",
+      "pointSize": 9,
+      "leading": 13,
+      "tracking": 10,
+      "fillColor": "#666666",
+      "justification": "left",
+      "hyphenation": true,
+      "spaceBefore": 0,
+      "spaceAfter": 4
+    }
+  ],
+  "config": {
+    "brand": "TEEI",
+    "typeScale": 1.25,
+    "baseSize": 11,
+    "preventCutoffs": true,
+    "cutoffThreshold": 0.95,
+    "minFontSizeReduction": 0.5,
+    "maxFontSizeReduction": 6,
+    "framePadding": {
+      "left": 10,
+      "right": 10,
+      "top": 5,
+      "bottom": 5
+    }
+  },
+  "stats": {
+    "elementsProcessed": 3,
+    "cutoffsPrevented": 2,
+    "sizesOptimized": 2,
+    "lineHeightsAdjusted": 0,
+    "trackingAdjusted": 0
+  }
+}

@@ -5,6 +5,7 @@
   "main": "orchestrator.js",
   "scripts": {
     "start": "node orchestrator.js",
+    "create-world-class": "node create-world-class-pdf.js",
     "test": "node tests/telemetry.test.js",
     "test:telemetry": "node tests/telemetry.test.js",
     "test:cost": "node tests/cost-tracker.test.js",
