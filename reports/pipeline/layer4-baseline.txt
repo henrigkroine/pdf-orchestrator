@@ -1,0 +1,33 @@
+============================================================
+GEMINI VISION DESIGN REVIEW
+============================================================
+
+[GEMINI] PDF: exports/TEEI-AWS-Partnership-TFU-V2-DIGITAL.pdf
+[GEMINI] Job Config: example-jobs/tfu-aws-partnership-v2.json
+[GEMINI] Output: reports/pipeline/layer4-baseline.json
+[GEMINI] Min Score: 0.9
+
+[GEMINI] Step 1: Extracting PDF pages...
+[PDF→PNG] Converting TEEI-AWS-Partnership-TFU-V2-DIGITAL.pdf to images...
+[PDF→PNG] Cache directory: D:\Dev\VS Projects\Projects\pdf-orchestrator\exports\gemini-cache\TEEI-AWS-Partnership-TFU-V2-DIGITAL
+[PDF→PNG] Using cached images (4 pages)
+[GEMINI] Extracted 4 page(s)
+
+[GEMINI] Step 2: Analyzing with Gemini Vision...
+
+============================================================
+GEMINI REVIEW ERROR
+============================================================
+
+Error: [GEMINI] GEMINI_API_KEY environment variable is required. Set DRY_RUN_GEMINI_VISION=1 for testing without API access.
+
+Configuration Issue:
+- Set GEMINI_API_KEY environment variable with your API key
+- OR set DRY_RUN_GEMINI_VISION=1 for testing without API access
+
+Example:
+  export GEMINI_API_KEY=your-api-key-here
+  # OR for dry-run testing:
+  export DRY_RUN_GEMINI_VISION=1
+
+============================================================

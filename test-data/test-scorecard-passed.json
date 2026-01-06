@@ -1,0 +1,32 @@
+{
+  "jobId": "test-approval-workflow",
+  "jobName": "Test Approval Workflow",
+  "pdfPath": "./exports/test-document.pdf",
+  "timestamp": "2025-11-13T14:30:00.000Z",
+  "totalScore": 145,
+  "maxScore": 150,
+  "threshold": 80,
+  "tfuCompliance": true,
+  "qaProfile": {
+    "id": "test-profile",
+    "min_score": 80,
+    "min_tfu_score": 140,
+    "max_visual_diff_percent": 5.0,
+    "visual_baseline_id": "test-baseline"
+  },
+  "visualDiffPercent": 2.3,
+  "maxVisualDiffAllowed": 5.0,
+  "visualBaseline": "test-baseline",
+  "baseline_status": "used",
+  "baseline_created": false,
+  "metrics": {
+    "runtime_seconds": 45.2,
+    "steps_completed": 5,
+    "steps_failed": 0,
+    "validation_time": 12.3,
+    "visual_regression_time": 8.7
+  },
+  "passed": true,
+  "steps": 5,
+  "failedSteps": 0
+}

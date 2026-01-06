@@ -1,0 +1,91 @@
+{
+  "budget": {
+    "maxCostPerDocument": 1.00,
+    "dailyCap": 25.00,
+    "monthlyCap": 500.00
+  },
+  "alerts": {
+    "dailyAlertThreshold": 20.00,
+    "monthlyAlertThreshold": 375.00,
+    "thresholdPercentage": 75
+  },
+  "services": {
+    "openai_images": {
+      "dall-e-3-hd": 0.12,
+      "dall-e-3-standard": 0.08,
+      "dall-e-2-1024x1024": 0.02
+    },
+    "adobe_pdf_services": {
+      "document_generation": 0.10,
+      "autotag": 0.15,
+      "export_pdf": 0.05,
+      "combine_files": 0.05
+    },
+    "lightroom": {
+      "auto_tone": 0.00,
+      "color_grade": 0.00,
+      "note": "Included in Creative Cloud plan"
+    },
+    "unsplash": {
+      "download": 0.00,
+      "note": "Free tier - 1000 downloads/month"
+    }
+  },
+  "estimatedCosts": {
+    "typical_document": {
+      "hero_image": 0.12,
+      "section_images": 0.24,
+      "pdf_generation": 0.10,
+      "accessibility_autotag": 0.15,
+      "color_grading": 0.00,
+      "total": 0.61
+    },
+    "notes": [
+      "Typical document cost: $0.61",
+      "100 documents/month = $61/month",
+      "Well under $500/month cap"
+    ]
+  },
+  "rateLimit": {
+    "adobe_pdf_services": {
+      "requestsPerMinute": 25,
+      "concurrentRequests": 5,
+      "transactionsPerMonth": 10000
+    },
+    "openai_images": {
+      "requestsPerMinute": 7,
+      "concurrentRequests": 5,
+      "imagesPerDay": 200
+    },
+    "lightroom": {
+      "requestsPerMinute": 60,
+      "uploadPerMinute": 10,
+      "concurrentRequests": 3
+    },
+    "unsplash": {
+      "requestsPerHour": 50,
+      "downloadsPerMonth": 1000
+    }
+  },
+  "alertDestinations": {
+    "slack": {
+      "enabled": false,
+      "channel": "#pdf-orchestrator-alerts",
+      "webhookUrl": ""
+    },
+    "email": {
+      "enabled": false,
+      "recipients": ["tech-lead@teei.org"],
+      "smtpConfig": {}
+    },
+    "console": {
+      "enabled": true
+    }
+  },
+  "circuitBreaker": {
+    "failureThreshold": 5,
+    "timeout": 60000,
+    "resetTimeout": 300000,
+    "note": "5 failures triggers OPEN state, 5 minute reset"
+  }
+}

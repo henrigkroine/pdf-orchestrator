@@ -1,0 +1,50 @@
+=====================================
+VISUAL REGRESSION TEST
+=====================================
+
+Test PDF: D:\Dev\VS Projects\Projects\pdf-orchestrator\exports\TEEI-AWS-Partnership-TFU-V2-DIGITAL.pdf
+Baseline: tfu-aws-partnership-v2
+
+Baseline pages: 4
+Baseline created: 2025-11-14T10:26:15.537Z
+
+📄 Converting test PDF to images...
+
+📸 Page 1:
+   Diff: 0.06% ✅ PASS
+   Screenshots:
+     Test: page-1-test.png
+     Diff: page-1-diff.png
+     Comparison: page-1-comparison.png
+
+📸 Page 2:
+   Diff: 12.34% ⚠️ WARNING
+   Screenshots:
+     Test: page-2-test.png
+     Diff: page-2-diff.png
+     Comparison: page-2-comparison.png
+
+📸 Page 3:
+   Diff: 7.56% ⚠️ MINOR
+   Screenshots:
+     Test: page-3-test.png
+     Diff: page-3-diff.png
+     Comparison: page-3-comparison.png
+
+📸 Page 4:
+   Diff: 0.06% ✅ PASS
+   Screenshots:
+     Test: page-4-test.png
+     Diff: page-4-diff.png
+     Comparison: page-4-comparison.png
+
+=====================================
+VISUAL REGRESSION COMPLETE
+=====================================
+
+Overall Diff: 5% ⚠️ MINOR
+Status: ❌ FAILED
+
+Report: D:\Dev\VS Projects\Projects\pdf-orchestrator\comparisons\tfu-aws-partnership-v2-2025-11-14T15-31-55-621Z\comparison-report.json
+Output: D:\Dev\VS Projects\Projects\pdf-orchestrator\comparisons\tfu-aws-partnership-v2-2025-11-14T15-31-55-621Z
+

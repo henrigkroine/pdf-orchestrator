@@ -1,0 +1,167 @@
+{
+  "name": "TFU Partnership Template",
+  "description": "Together for Ukraine Partnership Proposal Template - Copy and customize for new partners",
+  "template": "partnership",
+  "design_system": "tfu",
+  "validate_tfu": true,
+  "client": "REPLACE_ME_CLIENT_NAME",
+  "data": {
+    "title": "REPLACE_ME Partnership Proposal",
+    "subtitle": "REPLACE_ME: Partnership subtitle or tagline",
+    "organization": "The Educational Equality Institute",
+    "partner": "REPLACE_ME_PARTNER_NAME",
+    "overview": {
+      "mission": "REPLACE_ME: Explain TEEI's mission and the partnership context",
+      "value_proposition": "REPLACE_ME: Explain what this partnership will achieve",
+      "impact": "REPLACE_ME: Describe the expected impact and outcomes"
+    },
+    "programs": [
+      {
+        "name": "REPLACE_ME: Program 1 Name",
+        "description": "REPLACE_ME: Program 1 description",
+        "students_reached": 0,
+        "success_rate": "0%",
+        "certification_rate": "0%"
+      },
+      {
+        "name": "REPLACE_ME: Program 2 Name",
+        "description": "REPLACE_ME: Program 2 description",
+        "students_reached": 0,
+        "success_rate": "0%",
+        "certification_rate": "0%"
+      },
+      {
+        "name": "REPLACE_ME: Program 3 Name",
+        "description": "REPLACE_ME: Program 3 description",
+        "students_reached": 0,
+        "success_rate": "0%",
+        "placement_rate": "0%"
+      }
+    ],
+    "metrics": {
+      "students_reached": 0,
+      "countries": 0,
+      "partner_organizations": 0,
+      "certifications": 0
+    },
+    "call_to_action": {
+      "headline": "REPLACE_ME: CTA Headline",
+      "description": "REPLACE_ME: CTA description text",
+      "action": "REPLACE_ME: Action text (e.g., Schedule a Partnership Discussion)",
+      "contact": {
+        "name": "Henrik Røine",
+        "email": "henrik@theeducationalequalityinstitute.org",
+        "phone": "+47 919 08 939"
+      }
+    }
+  },
+  "content_sources": {
+    "content_json": "data/REPLACE_ME-partnership.json",
+    "content_markdown": "deliverables/REPLACE_ME-Partnership-Content.md"
+  },
+  "output": {
+    "formats": ["indd", "pdf_print", "pdf_digital"],
+    "intent": "print",
+    "filename_base": "TEEI-REPLACE_ME-Partnership-TFU",
+    "export_path": "./exports",
+    "pdf_settings": {
+      "print": {
+        "preset": "PDF/X-4:2010",
+        "color_space": "CMYK",
+        "resolution": 300,
+        "bleed": "3mm",
+        "crop_marks": true
+      },
+      "digital": {
+        "preset": "High Quality",
+        "color_space": "RGB",
+        "resolution": 150,
+        "optimize_web": true
+      }
+    }
+  },
+  "quality": {
+    "validation_threshold": 140,
+    "auto_fix": false,
+    "strict_mode": true,
+    "required_checks": [
+      "tfu_compliance",
+      "typography_design",
+      "pdf_structure",
+      "content"
+    ]
+  },
+  "tfu_requirements": {
+    "page_count": 4,
+    "primary_color": "#00393F",
+    "forbidden_colors": ["#BA8F5A"],
+    "required_fonts": ["Lora", "Roboto"],
+    "forbidden_fonts": ["Roboto Flex"],
+    "required_elements": [
+      "TFU badge (blue + yellow)",
+      "Partner logo grid (3×3)",
+      "Full teal cover page",
+      "Full teal closing page",
+      "Light blue stats sidebar",
+      "Two-column program matrix"
+    ]
+  },
+  "tfu_rules": {
+    "require_logo_grid": true,
+    "require_tfu_badge": true,
+    "allow_flexible_metrics": false
+  },
+  "qa_profile": {
+    "use_tfu_certification": true,
+    "visual_baseline_id": "REPLACE_ME-tfu-v1"
+  },
+  "notes": [
+    "========================================",
+    "HOW TO USE THIS TEMPLATE",
+    "========================================",
+    "",
+    "1. COPY this file to a new file named after your partner:",
+    "   example-jobs/tfu-[partner-name]-partnership.json",
+    "",
+    "2. REPLACE all instances of 'REPLACE_ME' with actual values:",
+    "   - CLIENT_NAME: Partner's display name (e.g., 'Google', 'Microsoft')",
+    "   - PARTNER_NAME: Full partner organization name",
+    "   - Partnership content: title, subtitle, programs, metrics, CTA",
+    "   - File paths: content_json, content_markdown, filename_base",
+    "   - visual_baseline_id: Unique ID for visual regression baseline",
+    "",
+    "3. CREATE content files:",
+    "   - data/[partner-name]-partnership.json (copy structure from data/partnership-aws-example.json)",
+    "   - deliverables/[Partner]-Partnership-Content.md (optional long-form content)",
+    "",
+    "4. GENERATE layout:",
+    "   - Option A: Run python create_tfu_partnership_from_json.py --content-json data/[partner]-partnership.json",
+    "   - Option B: Edit scripts/generate_tfu_from_json.jsx and run in InDesign",
+    "",
+    "5. VALIDATE:",
+    "   - python validate_document.py exports/TEEI-[Partner]-Partnership-TFU-PRINT.pdf --job-config example-jobs/tfu-[partner]-partnership.json --strict",
+    "",
+    "6. CERTIFY:",
+    "   - Ensure TFU certification criteria met (score ≥ 140/150, all CRITICAL checks pass)",
+    "   - Record results in TFU-MIGRATION-STEP-7-FINAL-VERIFICATION.md",
+    "",
+    "========================================",
+    "TFU CERTIFICATION REQUIREMENTS",
+    "========================================",
+    "- Scoring threshold: 140/150 (93%+)",
+    "- Page count: Exactly 4 (not 3, not 5)",
+    "- Primary color: Teal #00393F (NO gold #BA8F5A)",
+    "- Fonts: Lora + Roboto (NOT Roboto Flex)",
+    "- Required elements: TFU badge, logo grid, full teal cover/closing",
+    "",
+    "========================================",
+    "OPTIONAL: TFU_RULES CUSTOMIZATION",
+    "========================================",
+    "The 'tfu_rules' section allows per-partner flexibility:",
+    "- require_logo_grid: Set to false if partner doesn't have 9 logos",
+    "- require_tfu_badge: Set to false if non-TFU variant (not recommended)",
+    "- allow_flexible_metrics: Set to true if metrics section differs",
+    "",
+    "Note: Changing these may affect TFU certification status."
+  ]
+}

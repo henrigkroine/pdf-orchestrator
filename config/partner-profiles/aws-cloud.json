@@ -1,0 +1,57 @@
+{
+  "id": "aws-cloud",
+  "name": "Amazon Web Services",
+  "industry": "Cloud Computing",
+  "region": "Global",
+  "company_size": "enterprise",
+  "tone": "strategic_b2b_professional",
+  "key_themes": [
+    "cloud skills",
+    "technical training",
+    "employability",
+    "Ukraine tech talent",
+    "AWS certification",
+    "cloud-native workforce",
+    "digital transformation"
+  ],
+  "preferred_metrics": [
+    "students_reached",
+    "aws_certifications",
+    "employment_rate",
+    "job_placements",
+    "program_completion",
+    "skills_acquired"
+  ],
+  "language_preferences": ["en"],
+  "cta_style": "co_marketing_long_term",
+  "content_emphasis": {
+    "cover": "strategic partnership value",
+    "intro": "problem statement + AWS role",
+    "programs": "concrete outcomes + AWS branding",
+    "cta": "clear next steps + mutual benefits"
+  },
+  "terminology": {
+    "preferred": ["cloud computing", "AWS", "technical skills", "certification", "employability"],
+    "avoid": ["generic IT", "basic computer skills"]
+  },
+  "visual_preferences": {
+    "imagery_style": "professional_documentary",
+    "color_emphasis": "aws_orange_accent_ok",
+    "logo_prominence": "high"
+  },
+  "partnership_tier": {
+    "level": "strategic",
+    "annual_value": 150000,
+    "benefits": [
+      "Co-marketing materials",
+      "AWS branding on all materials",
+      "Quarterly impact reports",
+      "Direct access to program leadership"
+    ]
+  },
+  "metadata": {
+    "created": "2025-11-14",
+    "last_updated": "2025-11-14",
+    "notes": "TFU AWS V2 partnership - strategic tech partner"
+  }
+}

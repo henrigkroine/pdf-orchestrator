@@ -135,9 +135,10 @@
     }
   },
 
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
   "aiModels": {
     "fileSize": {
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "provider": "openai",
       "purpose": "File size and structure optimization strategies",
       "temperature": 0.3,
@@ -146,7 +147,7 @@
     },
 
     "rendering": {
-      "model": "gpt-5",
+      "model": "gpt-5.1",
       "provider": "openai",
       "purpose": "Rendering optimization and complexity analysis",
       "temperature": 0.3,
@@ -155,7 +156,7 @@
     },
 
     "loading": {
-      "model": "claude-opus-4.1",
+      "model": "claude-opus-4.5",
       "provider": "anthropic",
       "purpose": "Loading strategy and compatibility reasoning",
       "temperature": 0.2,
@@ -164,7 +165,7 @@
     },
 
     "fonts": {
-      "model": "claude-sonnet-4.5",
+      "model": "claude-opus-4.5",
       "provider": "anthropic",
       "purpose": "Font optimization strategy",
       "temperature": 0.3,
@@ -173,7 +174,7 @@
     },
 
     "images": {
-      "model": "gemini-2.5-pro-vision",
+      "model": "gemini-pro-3.0",
       "provider": "google",
       "purpose": "Image optimization and quality assessment",
       "temperature": 0.3,
@@ -182,7 +183,7 @@
     },
 
     "structure": {
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "provider": "openai",
       "purpose": "PDF structure optimization",
       "temperature": 0.3,
@@ -191,7 +192,7 @@
     },
 
     "compatibility": {
-      "model": "claude-opus-4.1",
+      "model": "claude-opus-4.5",
       "provider": "anthropic",
       "purpose": "Compatibility analysis and version optimization",
       "temperature": 0.2,

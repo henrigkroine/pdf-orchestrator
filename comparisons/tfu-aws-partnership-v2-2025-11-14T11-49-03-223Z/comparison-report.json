@@ -1,0 +1,51 @@
+{
+  "testPDF": "D:\\Dev\\VS Projects\\Projects\\pdf-orchestrator\\exports\\TEEI-AWS-Partnership-TFU-V2-DIGITAL.pdf",
+  "baseline": "tfu-aws-partnership-v2",
+  "timestamp": "2025-11-14T11:49:03.297Z",
+  "comparisonDir": "D:\\Dev\\VS Projects\\Projects\\pdf-orchestrator\\comparisons\\tfu-aws-partnership-v2-2025-11-14T11-49-03-223Z",
+  "pages": [
+    {
+      "page": 1,
+      "diffPercent": 0.06,
+      "diffPixels": 2442,
+      "totalPixels": 4362336,
+      "verdict": "PASS",
+      "testImage": "page-1-test.png",
+      "diffImage": "page-1-diff.png",
+      "comparisonImage": "page-1-comparison.png"
+    },
+    {
+      "page": 2,
+      "diffPercent": 12.34,
+      "diffPixels": 538268,
+      "totalPixels": 4362336,
+      "verdict": "WARNING",
+      "testImage": "page-2-test.png",
+      "diffImage": "page-2-diff.png",
+      "comparisonImage": "page-2-comparison.png"
+    },
+    {
+      "page": 3,
+      "diffPercent": 7.56,
+      "diffPixels": 329823,
+      "totalPixels": 4362336,
+      "verdict": "MINOR",
+      "testImage": "page-3-test.png",
+      "diffImage": "page-3-diff.png",
+      "comparisonImage": "page-3-comparison.png"
+    },
+    {
+      "page": 4,
+      "diffPercent": 0.06,
+      "diffPixels": 2452,
+      "totalPixels": 4362336,
+      "verdict": "PASS",
+      "testImage": "page-4-test.png",
+      "diffImage": "page-4-diff.png",
+      "comparisonImage": "page-4-comparison.png"
+    }
+  ],
+  "overallDiffPercent": 5,
+  "passed": false,
+  "verdict": "MINOR"
+}

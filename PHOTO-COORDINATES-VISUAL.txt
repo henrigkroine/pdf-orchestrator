@@ -1,0 +1,205 @@
+========================================================================
+TEEI-AWS PARTNERSHIP DOCUMENT - IMAGE PLACEMENT VISUAL REFERENCE
+========================================================================
+
+Document: 8.5" x 11" (612pt x 792pt) | Margins: 40pt all sides
+Content Area: 532pt x 712pt | Grid: 12 columns with 20pt gutters
+
+========================================================================
+PAGE 1: HERO IMAGE
+========================================================================
+
+    0pt                                                          612pt
+    ├──────────────────────────────────────────────────────────────┤
+ 0pt┤                                                              │
+    │   MARGIN (40pt)                                              │
+    │   ┌────────────────────────────────────────────────────┐   │
+40pt│   │ TEEI-AWS Partnership Document                      │   │
+    │   │ [Document Title & Overview Text Section]            │   │
+    │   │                                                      │   │
+    │   └────────────────────────────────────────────────────┘   │
+    │   ┌────────────────────────────────────────────────────┐   │
+180pt   │ ╔══════════════════════════════════════════════════╗   │
+    │   │ ║   HERO IMAGE: hero-ukraine-education.jpg        ║   │
+    │   │ ║   Classroom scene with natural lighting         ║   │
+    │   │ ║                                                  ║   │
+    │   │ ║   Size: 532pt wide × 180pt tall                 ║   │
+    │   │ ║   Position: X=40pt, Y=180pt                     ║   │
+    │   │ ║   Overlay: 20% Nordshore (#00393F)              ║   │
+360pt   │ ╚══════════════════════════════════════════════════╝   │
+    │   │                                                      │   │
+    │   │ Partnership Benefits Section...                      │   │
+    │   │ [Continue with text content]                         │   │
+    │   │                                                      │   │
+    │   └────────────────────────────────────────────────────┘   │
+792pt                                                              │
+    └──────────────────────────────────────────────────────────────┘
+
+HERO IMAGE SPECS:
+- File: assets/images/hero-ukraine-education.jpg (2.84 MB)
+- Top-Left: (40pt, 180pt)
+- Bottom-Right: (572pt, 360pt)
+- Dimensions: 532pt × 180pt
+- Fit: Proportional fill, centered
+- Overlay: Yes (20% Nordshore for text readability)
+
+
+========================================================================
+PAGE 2: MENTORSHIP SECTION
+========================================================================
+
+    0pt                                                          612pt
+    ├──────────────────────────────────────────────────────────────┤
+ 0pt┤                                                              │
+    │   MARGIN (40pt)                                              │
+    │   ┌────────────────────────────────────────────────────┐   │
+40pt│   │ Program Features Section                           │   │
+    │   │ [Program card 1]                                     │   │
+    │   │ [Program card 2]                                     │   │
+    │   │                                                      │   │
+    │   │           ┌──────────────────────┐                  │   │
+340pt   │           │ ╔═══════════════════╗│                  │   │
+    │   │           │ ║  MENTORSHIP IMG  ║│                  │   │
+    │   │           │ ║  Hands/teamwork  ║│                  │   │
+    │   │           │ ║  Sand background ║│                  │   │
+480pt   │           │ ╚═══════════════════╝│                  │   │
+    │   │           └──────────────────────┘                  │   │
+    │   │              Centered horizontally                   │   │
+    │   │                                                      │   │
+    │   │ [Program card 3]                                     │   │
+    │   │ [Program card 4]                                     │   │
+    │   └────────────────────────────────────────────────────┘   │
+792pt                                                              │
+    └──────────────────────────────────────────────────────────────┘
+
+MENTORSHIP IMAGE SPECS:
+- File: assets/images/mentorship-hands.jpg (32 KB)
+- Top-Left: (206pt, 340pt) - Centered horizontally
+- Bottom-Right: (406pt, 480pt)
+- Dimensions: 200pt × 140pt
+- Fit: Proportional fill, centered
+- Overlay: No (warm Sand background already present)
+
+
+========================================================================
+PAGE 3: TEAM COLLABORATION
+========================================================================
+
+    0pt                                                          612pt
+    ├──────────────────────────────────────────────────────────────┤
+ 0pt┤                                                              │
+    │   MARGIN (40pt)                                              │
+    │   ┌────────────────────────────────────────────────────┐   │
+40pt│   │ Call to Action Lead-in Text                        │   │
+    │   │ "Transform education with AWS partnership..."        │   │
+    │   │                                                      │   │
+    │   │                                                      │   │
+    │   │ ┌──────────────────────────┐                        │   │
+540pt   │ │ ╔═══════════════════════╗│                        │   │
+    │   │ │ ║   TEAM COLLABORATION ║│                        │   │
+    │   │ │ ║   Meeting/teamwork   ║│                        │   │
+    │   │ │ ║   Sky blue background║│                        │   │
+660pt   │ │ ╚═══════════════════════╝│                        │   │
+    │   │ └──────────────────────────┘                        │   │
+    │   │   Left-aligned with margin                           │   │
+    │   │                                                      │   │
+    │   │ ┌────────────────────────────────────────────────┐ │   │
+    │   │ │ READY TO TRANSFORM EDUCATION?                 │ │   │
+    │   │ │ Contact: partnerships@teei.org                │ │   │
+    │   │ └────────────────────────────────────────────────┘ │   │
+    │   └────────────────────────────────────────────────────┘   │
+792pt                                                              │
+    └──────────────────────────────────────────────────────────────┘
+
+TEAM IMAGE SPECS:
+- File: assets/images/mentorship-team.jpg (35 KB)
+- Top-Left: (40pt, 540pt) - Left margin alignment
+- Bottom-Right: (290pt, 660pt)
+- Dimensions: 250pt × 120pt
+- Fit: Proportional fill, centered
+- Overlay: No (Sky background complements CTA section)
+
+
+========================================================================
+GRID ALIGNMENT REFERENCE
+========================================================================
+
+12-Column Grid Breakdown:
+- Total page width: 612pt
+- Margins: 40pt (left) + 40pt (right) = 80pt
+- Content width: 532pt (612 - 80 = 532)
+- Gutter: 20pt between columns
+- Column width: ≈41pt
+
+Grid positions:
+┌────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┬────┐
+│ 1  │ 2  │ 3  │ 4  │ 5  │ 6  │ 7  │ 8  │ 9  │ 10 │ 11 │ 12 │
+└────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┴────┘
+40pt                                                       572pt
+
+HERO IMAGE: Spans all 12 columns (full width)
+├───────────────────────────────────────────────────────────┤
+40pt                                                     572pt
+
+MENTORSHIP IMAGE: Spans ~5 columns (centered)
+            ├─────────────────────┤
+           206pt                406pt
+
+TEAM IMAGE: Spans ~6 columns (left-aligned)
+├──────────────────────────┤
+40pt                     290pt
+
+
+========================================================================
+MEASUREMENT CONVERSION TABLE
+========================================================================
+
+Points to Inches (at 72 DPI):
+- 40pt = 0.56 inches (margin)
+- 180pt = 2.50 inches (hero Y position)
+- 532pt = 7.39 inches (content width)
+- 612pt = 8.50 inches (page width)
+- 792pt = 11.00 inches (page height)
+
+Image Heights:
+- Hero: 180pt = 2.50 inches
+- Mentorship: 140pt = 1.94 inches
+- Team: 120pt = 1.67 inches
+
+
+========================================================================
+QUICK COPY-PASTE COORDINATES
+========================================================================
+
+FOR EXTENDSCRIPT OR PYTHON MCP CALLS:
+
+// Page 1 - Hero Image
+bounds: [180, 40, 360, 572]  // [top, left, bottom, right]
+
+// Page 2 - Mentorship Image
+bounds: [340, 206, 480, 406]
+
+// Page 3 - Team Image
+bounds: [540, 40, 660, 290]
+
+
+========================================================================
+VERIFICATION CHECKLIST
+========================================================================
+
+After placing images, verify:
+□ All images visible and sharp at 100% zoom
+□ No distortion or stretching (aspect ratios maintained)
+□ Images align with margins (40pt left/right)
+□ Spacing between text and images: minimum 20pt
+□ No text cutoffs or overlap with images
+□ Color balance consistent across all 3 photos
+□ File size: <10 MB total for digital distribution
+
+
+========================================================================
+GENERATED BY: add_program_photos.py
+PROJECT: PDF Orchestrator - TEEI AWS Partnership Automation
+DATE: 2025-11-13
+VERSION: 1.0
+========================================================================

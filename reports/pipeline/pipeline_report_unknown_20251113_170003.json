@@ -1,0 +1,19 @@
+{
+  "timestamp": "2025-11-13T17:00:01.380280",
+  "steps": [
+    {
+      "name": "Locate PDF",
+      "success": true,
+      "timestamp": "2025-11-13T17:00:01.380343",
+      "details": "exports\\TEEI-AWS-Partnership-PRINT.pdf"
+    },
+    {
+      "name": "Validate PDF",
+      "success": false,
+      "timestamp": "2025-11-13T17:00:03.641710",
+      "error": "Score: 88/125"
+    }
+  ],
+  "success": false,
+  "score": 88
+}

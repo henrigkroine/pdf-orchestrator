@@ -1,0 +1,152 @@
+{
+  "$schema": "../schemas/document-schema.json",
+  "jobType": "report",
+  "humanSession": true,
+  "worldClass": true,
+  "metadata": {
+    "title": "TEEI × AWS Partnership Overview",
+    "subtitle": "Educational Equality Through Cloud Innovation",
+    "author": "The Educational Equality Institute",
+    "date": "2025-11-10",
+    "version": "1.0",
+    "confidential": false
+  },
+  "output": {
+    "quality": "high",
+    "format": "pdf",
+    "filename": "TEEI-AWS-Partnership-Overview-WorldClass.pdf",
+    "intent": "print",
+    "_comment_intent": "Delivery intent: 'print' (300 DPI, CMYK) for physical distribution OR 'screen' (150 DPI, RGB) for digital delivery"
+  },
+  "export": {
+    "pdfPreset": "High Quality Print",
+    "resolution": 300,
+    "colorSpace": "CMYK",
+    "bleed": {
+      "top": 9,
+      "bottom": 9,
+      "left": 9,
+      "right": 9
+    }
+  },
+  "qa": {
+    "enabled": true,
+    "threshold": 95,
+    "_comment_threshold": "World-Class requires 95+ (not 90). Use 90 for A+ quality, 95 for World-Class.",
+    "strictMode": true,
+    "fonts_embedded": true
+  },
+  "brand": {
+    "organization": "TEEI",
+    "colors": {
+      "primary": "#00393F",
+      "secondary": "#1A8F8F",
+      "accent": "#BA8F5A"
+    },
+    "fonts": {
+      "heading": "Lora",
+      "body": "Roboto Flex"
+    },
+    "logo": "./assets/images/teei-logo-horizontal.png"
+  },
+  "content": {
+    "sections": [
+      {
+        "type": "cover",
+        "title": "TEEI × AWS Partnership",
+        "subtitle": "Transforming Education Through Cloud Technology",
+        "backgroundImage": "./assets/images/hero-education-aws.jpg",
+        "layout": "centered"
+      },
+      {
+        "type": "overview",
+        "title": "Partnership Overview",
+        "content": "The Educational Equality Institute (TEEI) and Amazon Web Services (AWS) have formed a strategic partnership to leverage cloud technology for educational equity. This collaboration aims to provide scalable, reliable infrastructure for educational programs serving underrepresented communities.",
+        "highlights": [
+          "Cloud infrastructure for 10,000+ students",
+          "$50,000 in AWS credits annually",
+          "Technical support and training",
+          "Access to AWS education resources"
+        ]
+      },
+      {
+        "type": "programs",
+        "title": "Joint Programs",
+        "items": [
+          {
+            "name": "Cloud Skills Training",
+            "description": "Comprehensive AWS certification preparation for high school students",
+            "impact": "500 students trained annually",
+            "image": "./assets/images/program-cloud-training.jpg"
+          },
+          {
+            "name": "EdTech Platform",
+            "description": "Scalable learning management system hosted on AWS",
+            "impact": "10,000+ active users",
+            "image": "./assets/images/program-edtech.jpg"
+          }
+        ]
+      },
+      {
+        "type": "metrics",
+        "title": "Impact Metrics (2024)",
+        "data": [
+          {
+            "label": "Students Reached",
+            "value": "12,437",
+            "change": "+42%"
+          },
+          {
+            "label": "AWS Certifications Earned",
+            "value": "247",
+            "change": "+156%"
+          },
+          {
+            "label": "Platform Uptime",
+            "value": "99.97%",
+            "change": "+0.15%"
+          },
+          {
+            "label": "Cost Savings",
+            "value": "$83,200",
+            "change": "+28%"
+          }
+        ]
+      },
+      {
+        "type": "cta",
+        "title": "Partner With Us",
+        "content": "Join TEEI and AWS in transforming educational outcomes through technology. Together, we can create pathways to opportunity for underserved students.",
+        "button": {
+          "text": "Learn More",
+          "url": "https://theeducationalequalityinstitute.org/partnerships"
+        },
+        "contact": {
+          "email": "partnerships@theeducationalequalityinstitute.org",
+          "phone": "+1 (555) 123-4567"
+        }
+      }
+    ]
+  },
+  "design": {
+    "template": "report-annual-v1",
+    "pages": 5,
+    "columns": 12,
+    "margins": {
+      "top": 40,
+      "bottom": 40,
+      "left": 40,
+      "right": 40
+    },
+    "grid": {
+      "baseline": 12,
+      "columns": 12,
+      "gutter": 20
+    },
+    "typography": {
+      "scale": "major-third",
+      "lineHeight": 1.6,
+      "kerning": "optical"
+    }
+  }
+}

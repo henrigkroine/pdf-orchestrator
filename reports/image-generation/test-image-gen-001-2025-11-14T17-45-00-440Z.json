@@ -1,0 +1,61 @@
+{
+  "jobId": "test-image-gen-001",
+  "timestamp": "2025-11-14T17:45:00.438Z",
+  "images": [
+    {
+      "name": "hero",
+      "category": "hero",
+      "prompt": "Diverse Ukrainian students collaborating on cloud computing projects with laptops, warm natural lighting, window light, inspiring environment, 35mm photography, warm color tones, NOT staged, NOT corporate stock photography, NOT harsh lighting, NOT studio lighting, NOT posed, NOT artificial",
+      "cached": false,
+      "web": null,
+      "print": null,
+      "generation": {
+        "provider": "placeholder",
+        "prompt": "Diverse Ukrainian students collaborating on cloud computing projects with laptops, warm natural lighting, window light, inspiring environment, 35mm photography, warm color tones, NOT staged, NOT corporate stock photography, NOT harsh lighting, NOT studio lighting, NOT posed, NOT artificial",
+        "category": "hero",
+        "generatedAt": "2025-11-14T17:45:00.439Z",
+        "dryRun": true,
+        "cost": 0
+      }
+    },
+    {
+      "name": "program_1",
+      "category": "program",
+      "prompt": "Students engaged in hands-on AWS training, modern learning environment, window light, empowering scene, natural composition, soft beige and sky blue accents, NOT staged, NOT corporate stock photography, NOT harsh lighting, NOT studio lighting, NOT posed, NOT artificial",
+      "cached": false,
+      "web": null,
+      "print": null,
+      "generation": {
+        "provider": "placeholder",
+        "prompt": "Students engaged in hands-on AWS training, modern learning environment, window light, empowering scene, natural composition, soft beige and sky blue accents, NOT staged, NOT corporate stock photography, NOT harsh lighting, NOT studio lighting, NOT posed, NOT artificial",
+        "category": "program",
+        "generatedAt": "2025-11-14T17:45:00.439Z",
+        "dryRun": true,
+        "cost": 0
+      }
+    },
+    {
+      "name": "cover",
+      "category": "cover",
+      "prompt": "Hopeful Ukrainian learner using educational technology, bright inspiring atmosphere, diffused daylight, hopeful atmosphere, photorealistic, warm color tones, NOT staged, NOT corporate stock photography, NOT harsh lighting, NOT studio lighting, NOT posed, NOT artificial",
+      "cached": false,
+      "web": null,
+      "print": null,
+      "generation": {
+        "provider": "placeholder",
+        "prompt": "Hopeful Ukrainian learner using educational technology, bright inspiring atmosphere, diffused daylight, hopeful atmosphere, photorealistic, warm color tones, NOT staged, NOT corporate stock photography, NOT harsh lighting, NOT studio lighting, NOT posed, NOT artificial",
+        "category": "cover",
+        "generatedAt": "2025-11-14T17:45:00.439Z",
+        "dryRun": true,
+        "cost": 0
+      }
+    }
+  ],
+  "stats": {
+    "generated": 3,
+    "cached": 0,
+    "failed": 0,
+    "totalCost": 0,
+    "totalDuration": 1
+  }
+}

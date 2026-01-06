@@ -1,0 +1,32 @@
+{
+  "jobId": "unknown",
+  "jobName": "",
+  "pdfPath": "exports/TEEI-AWS-Partnership-TFU-DIGITAL.pdf",
+  "timestamp": "2025-11-13T21:19:04.603045",
+  "totalScore": 110,
+  "maxScore": 125,
+  "threshold": 95,
+  "tfuCompliance": false,
+  "qaProfile": {
+    "id": "tfu_aws_partnership",
+    "min_score": 95,
+    "min_tfu_score": 140,
+    "max_visual_diff_percent": 5.0,
+    "visual_baseline_id": "tfu-aws-partnership-v1"
+  },
+  "visualDiffPercent": null,
+  "maxVisualDiffAllowed": 5.0,
+  "visualBaseline": null,
+  "baseline_status": "used",
+  "baseline_created": false,
+  "metrics": {
+    "runtime_seconds": 2.685145139694214,
+    "steps_completed": 3,
+    "steps_failed": 1,
+    "validation_time": 2.3038055896759033,
+    "visual_regression_time": 2.683962821960449
+  },
+  "passed": false,
+  "steps": 3,
+  "failedSteps": 1
+}

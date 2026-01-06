@@ -1,0 +1,1584 @@
+{
+  "summary": {
+    "file": "TEEI-AWS-Partnership-TFU-V2-DIGITAL.pdf",
+    "pageCount": 4,
+    "totalTextBlocks": 83,
+    "totalColors": 1,
+    "totalFontCombinations": 21,
+    "uniqueFontFamilies": 9,
+    "analysisTime": "0.24s"
+  },
+  "dimensions": {
+    "pageCount": 4,
+    "pages": [
+      {
+        "page": 1,
+        "width": 612,
+        "height": 792,
+        "widthInches": 8.5,
+        "heightInches": 11,
+        "aspectRatio": 0.77,
+        "format": "Letter"
+      },
+      {
+        "page": 2,
+        "width": 612,
+        "height": 792,
+        "widthInches": 8.5,
+        "heightInches": 11,
+        "aspectRatio": 0.77,
+        "format": "Letter"
+      },
+      {
+        "page": 3,
+        "width": 612,
+        "height": 792,
+        "widthInches": 8.5,
+        "heightInches": 11,
+        "aspectRatio": 0.77,
+        "format": "Letter"
+      },
+      {
+        "page": 4,
+        "width": 612,
+        "height": 792,
+        "widthInches": 8.5,
+        "heightInches": 11,
+        "aspectRatio": 0.77,
+        "format": "Letter"
+      }
+    ]
+  },
+  "textBlocks": [
+    {
+      "page": 1,
+      "text": "Scaling Tech",
+      "bbox": {
+        "x": 125.61,
+        "y": 310.36,
+        "width": 360.77,
+        "height": 60
+      },
+      "fontSize": 60,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 306,
+        "y": 340.36
+      }
+    },
+    {
+      "page": 1,
+      "text": "Education",
+      "bbox": {
+        "x": 161.55,
+        "y": 378.36,
+        "width": 288.9,
+        "height": 60
+      },
+      "fontSize": 60,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 306,
+        "y": 408.36
+      }
+    },
+    {
+      "page": 1,
+      "text": "Together for Ukraine × AWS Partnership",
+      "bbox": {
+        "x": 137.85,
+        "y": 418.11,
+        "width": 336.29,
+        "height": 18
+      },
+      "fontSize": 18,
+      "fontName": "g_d3_f2",
+      "center": {
+        "x": 306,
+        "y": 427.11
+      }
+    },
+    {
+      "page": 1,
+      "text": "50,000 STUDENTS · 12 COUNTRIES · AWS-POWERED LEARNING",
+      "bbox": {
+        "x": 97.12,
+        "y": 460.5,
+        "width": 417.72,
+        "height": 14
+      },
+      "fontSize": 14,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 305.98,
+        "y": 467.5
+      }
+    },
+    {
+      "page": 1,
+      "text": "The Educational Equality Institute · Together for Ukraine · Page 1 of 4",
+      "bbox": {
+        "x": 169.31,
+        "y": 773.75,
+        "width": 273.39,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 306.01,
+        "y": 778.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "The Challenge",
+      "bbox": {
+        "x": 40,
+        "y": 244.14,
+        "width": 163.03,
+        "height": 24
+      },
+      "fontSize": 24,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 121.51,
+        "y": 256.14
+      }
+    },
+    {
+      "page": 2,
+      "text": "Russia’s invasion has displaced over 14 million Ukrainians,",
+      "bbox": {
+        "x": 40,
+        "y": 269.75,
+        "width": 335.46,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 207.73,
+        "y": 276.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "including 2.5 million students. Traditional education",
+      "bbox": {
+        "x": 40,
+        "y": 289.75,
+        "width": 297.22,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 188.61,
+        "y": 296.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "infrastructure is destroyed or inaccessible. Yet these",
+      "bbox": {
+        "x": 40,
+        "y": 309.75,
+        "width": 301.64,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 190.82,
+        "y": 316.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "students represent Ukraine’s future tech workforce—if we",
+      "bbox": {
+        "x": 40,
+        "y": 329.75,
+        "width": 327.84,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 203.92,
+        "y": 336.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "can deliver world-class digital education at scale.",
+      "bbox": {
+        "x": 40,
+        "y": 349.75,
+        "width": 282.55,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 181.28,
+        "y": 356.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "Our Approach",
+      "bbox": {
+        "x": 40,
+        "y": 394.14,
+        "width": 160.46,
+        "height": 24
+      },
+      "fontSize": 24,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 120.23,
+        "y": 406.14
+      }
+    },
+    {
+      "page": 2,
+      "text": "Together for Ukraine delivers AWS-powered cloud",
+      "bbox": {
+        "x": 40,
+        "y": 419.75,
+        "width": 284.62,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 182.31,
+        "y": 426.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "education to displaced students across 12 European",
+      "bbox": {
+        "x": 40,
+        "y": 439.75,
+        "width": 302.41,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 191.21,
+        "y": 446.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "countries. We’ve built a proven model: industry-aligned",
+      "bbox": {
+        "x": 40,
+        "y": 459.75,
+        "width": 312.78,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 196.39,
+        "y": 466.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "curriculum, hands-on AWS projects, certification pathways,",
+      "bbox": {
+        "x": 40,
+        "y": 479.75,
+        "width": 337.23,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f4",
+      "center": {
+        "x": 208.61,
+        "y": 486.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "and direct hiring pipelines with 45+ partner organizations.",
+      "bbox": {
+        "x": 40,
+        "y": 499.75,
+        "width": 330.96,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 205.48,
+        "y": 506.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "Why AWS Partnership",
+      "bbox": {
+        "x": 40,
+        "y": 554.14,
+        "width": 255.74,
+        "height": 24
+      },
+      "fontSize": 24,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 167.87,
+        "y": 566.14
+      }
+    },
+    {
+      "page": 2,
+      "text": "AWS isn’t just infrastructure—it’s the skill set that",
+      "bbox": {
+        "x": 40,
+        "y": 579.75,
+        "width": 280.19,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 180.1,
+        "y": 586.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "transforms displaced students into employable cloud",
+      "bbox": {
+        "x": 40,
+        "y": 599.75,
+        "width": 306.29,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 193.15,
+        "y": 606.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "engineers. Our AWS-certified graduates see 3× higher",
+      "bbox": {
+        "x": 40,
+        "y": 619.75,
+        "width": 306.62,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f4",
+      "center": {
+        "x": 193.31,
+        "y": 626.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "placement rates. We need AWS to scale from 50,000 to",
+      "bbox": {
+        "x": 40,
+        "y": 639.75,
+        "width": 316.47,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 198.24,
+        "y": 646.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "100,000 students by 2026, expand to 6 new countries, and",
+      "bbox": {
+        "x": 40,
+        "y": 659.75,
+        "width": 333.86,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 206.93,
+        "y": 666.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "launch advanced AI/ML tracks.",
+      "bbox": {
+        "x": 40,
+        "y": 679.75,
+        "width": 178.76,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 129.38,
+        "y": 686.25
+      }
+    },
+    {
+      "page": 2,
+      "text": "50,000+",
+      "bbox": {
+        "x": 429.69,
+        "y": 102.19,
+        "width": 122.62,
+        "height": 32
+      },
+      "fontSize": 32,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 491,
+        "y": 118.19
+      }
+    },
+    {
+      "page": 2,
+      "text": "STUDENTS",
+      "bbox": {
+        "x": 462.46,
+        "y": 122.25,
+        "width": 57.07,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 490.99,
+        "y": 127.75
+      }
+    },
+    {
+      "page": 2,
+      "text": "REACHED",
+      "bbox": {
+        "x": 465.54,
+        "y": 136.25,
+        "width": 50.92,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 491,
+        "y": 141.75
+      }
+    },
+    {
+      "page": 2,
+      "text": "10,000+",
+      "bbox": {
+        "x": 431.83,
+        "y": 227.19,
+        "width": 118.34,
+        "height": 32
+      },
+      "fontSize": 32,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 491,
+        "y": 243.19
+      }
+    },
+    {
+      "page": 2,
+      "text": "PARTNER",
+      "bbox": {
+        "x": 466.27,
+        "y": 247.25,
+        "width": 49.46,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 491,
+        "y": 252.75
+      }
+    },
+    {
+      "page": 2,
+      "text": "ORGANIZATIONS",
+      "bbox": {
+        "x": 446.45,
+        "y": 261.25,
+        "width": 89.1,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 491,
+        "y": 266.75
+      }
+    },
+    {
+      "page": 2,
+      "text": "2,600+",
+      "bbox": {
+        "x": 440.44,
+        "y": 352.19,
+        "width": 101.12,
+        "height": 32
+      },
+      "fontSize": 32,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 491,
+        "y": 368.19
+      }
+    },
+    {
+      "page": 2,
+      "text": "AWS",
+      "bbox": {
+        "x": 479.07,
+        "y": 372.25,
+        "width": 23.86,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 491,
+        "y": 377.75
+      }
+    },
+    {
+      "page": 2,
+      "text": "CERTIFICATIONS",
+      "bbox": {
+        "x": 446.73,
+        "y": 386.25,
+        "width": 88.53,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 491,
+        "y": 391.75
+      }
+    },
+    {
+      "page": 2,
+      "text": "97%",
+      "bbox": {
+        "x": 459.82,
+        "y": 477.19,
+        "width": 62.37,
+        "height": 32
+      },
+      "fontSize": 32,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 491,
+        "y": 493.19
+      }
+    },
+    {
+      "page": 2,
+      "text": "SUCCESS",
+      "bbox": {
+        "x": 466.2,
+        "y": 497.25,
+        "width": 49.58,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 490.99,
+        "y": 502.75
+      }
+    },
+    {
+      "page": 2,
+      "text": "RATE",
+      "bbox": {
+        "x": 477.38,
+        "y": 511.25,
+        "width": 27.23,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 491,
+        "y": 516.75
+      }
+    },
+    {
+      "page": 2,
+      "text": "The Educational Equality Institute · Together for Ukraine · Page 2 of 4",
+      "bbox": {
+        "x": 169.31,
+        "y": 773.75,
+        "width": 273.39,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 306.01,
+        "y": 778.25
+      }
+    },
+    {
+      "page": 3,
+      "text": "Programs powered by AWS",
+      "bbox": {
+        "x": 40,
+        "y": 68.17,
+        "width": 357.08,
+        "height": 28
+      },
+      "fontSize": 28,
+      "fontName": "g_d3_f5",
+      "center": {
+        "x": 218.54,
+        "y": 82.17
+      }
+    },
+    {
+      "page": 3,
+      "text": "PROGRAM 1",
+      "bbox": {
+        "x": 40.19,
+        "y": 198.25,
+        "width": 64.53,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f6",
+      "center": {
+        "x": 72.46,
+        "y": 203.75
+      }
+    },
+    {
+      "page": 3,
+      "text": "Cloud Computing",
+      "bbox": {
+        "x": 40,
+        "y": 232.13,
+        "width": 183.98,
+        "height": 22
+      },
+      "fontSize": 22,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 131.99,
+        "y": 243.13
+      }
+    },
+    {
+      "page": 3,
+      "text": "From fundamentals to AWS Solutions Architect",
+      "bbox": {
+        "x": 40,
+        "y": 255,
+        "width": 243.18,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f7",
+      "center": {
+        "x": 161.59,
+        "y": 261
+      }
+    },
+    {
+      "page": 3,
+      "text": "Comprehensive 12-month pathway: EC2, S3,",
+      "bbox": {
+        "x": 40,
+        "y": 279,
+        "width": 233.95,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f4",
+      "center": {
+        "x": 156.97,
+        "y": 285
+      }
+    },
+    {
+      "page": 3,
+      "text": "Lambda, RDS, CloudFormation. Students build",
+      "bbox": {
+        "x": 40,
+        "y": 297,
+        "width": 244.83,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 162.41,
+        "y": 303
+      }
+    },
+    {
+      "page": 3,
+      "text": "real applications, deploy to production, and",
+      "bbox": {
+        "x": 40,
+        "y": 315,
+        "width": 227.67,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 153.83,
+        "y": 321
+      }
+    },
+    {
+      "page": 3,
+      "text": "→ 78% achieve AWS certification within 8 months",
+      "bbox": {
+        "x": 40,
+        "y": 328.25,
+        "width": 238.15,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f8",
+      "center": {
+        "x": 159.07,
+        "y": 333.75
+      }
+    },
+    {
+      "page": 3,
+      "text": "→ 92% employment rate for certified graduates",
+      "bbox": {
+        "x": 40,
+        "y": 344.25,
+        "width": 226.44,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f8",
+      "center": {
+        "x": 153.22,
+        "y": 349.75
+      }
+    },
+    {
+      "page": 3,
+      "text": "PROGRAM 2",
+      "bbox": {
+        "x": 316.19,
+        "y": 198.25,
+        "width": 64.53,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f8",
+      "center": {
+        "x": 348.46,
+        "y": 203.75
+      }
+    },
+    {
+      "page": 3,
+      "text": "AI/ML Learning Path",
+      "bbox": {
+        "x": 316,
+        "y": 232.13,
+        "width": 226.93,
+        "height": 22
+      },
+      "fontSize": 22,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 429.46,
+        "y": 243.13
+      }
+    },
+    {
+      "page": 3,
+      "text": "SageMaker, Rekognition, and applied machine",
+      "bbox": {
+        "x": 316,
+        "y": 255,
+        "width": 237.04,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f7",
+      "center": {
+        "x": 434.52,
+        "y": 261
+      }
+    },
+    {
+      "page": 3,
+      "text": "Hands-on ML track using AWS managed",
+      "bbox": {
+        "x": 316,
+        "y": 279,
+        "width": 214.17,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 423.08,
+        "y": 285
+      }
+    },
+    {
+      "page": 3,
+      "text": "services. Students build computer vision",
+      "bbox": {
+        "x": 316,
+        "y": 297,
+        "width": 215.4,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 423.7,
+        "y": 303
+      }
+    },
+    {
+      "page": 3,
+      "text": "models, NLP applications, and predictive",
+      "bbox": {
+        "x": 316,
+        "y": 315,
+        "width": 215.72,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 423.86,
+        "y": 321
+      }
+    },
+    {
+      "page": 3,
+      "text": "→ 65% AWS ML certification rate",
+      "bbox": {
+        "x": 316,
+        "y": 328.25,
+        "width": 156.41,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f8",
+      "center": {
+        "x": 394.2,
+        "y": 333.75
+      }
+    },
+    {
+      "page": 3,
+      "text": "→ 88% project completion with production",
+      "bbox": {
+        "x": 316,
+        "y": 344.25,
+        "width": 202.45,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f8",
+      "center": {
+        "x": 417.22,
+        "y": 349.75
+      }
+    },
+    {
+      "page": 3,
+      "text": "PROGRAM 3",
+      "bbox": {
+        "x": 40.19,
+        "y": 458.25,
+        "width": 64.53,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f6",
+      "center": {
+        "x": 72.46,
+        "y": 463.75
+      }
+    },
+    {
+      "page": 3,
+      "text": "Career Pathways",
+      "bbox": {
+        "x": 40,
+        "y": 492.13,
+        "width": 176.57,
+        "height": 22
+      },
+      "fontSize": 22,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 128.28,
+        "y": 503.13
+      }
+    },
+    {
+      "page": 3,
+      "text": "Job readiness + hiring pipeline to AWS partners",
+      "bbox": {
+        "x": 40,
+        "y": 515,
+        "width": 244.74,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f7",
+      "center": {
+        "x": 162.37,
+        "y": 521
+      }
+    },
+    {
+      "page": 3,
+      "text": "Portfolio development, interview prep, resume",
+      "bbox": {
+        "x": 40,
+        "y": 539,
+        "width": 243.76,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 161.88,
+        "y": 545
+      }
+    },
+    {
+      "page": 3,
+      "text": "workshops, and direct introductions to 45+",
+      "bbox": {
+        "x": 40,
+        "y": 557,
+        "width": 227.21,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 153.6,
+        "y": 563
+      }
+    },
+    {
+      "page": 3,
+      "text": "hiring partners including Google, Bain, Cornell",
+      "bbox": {
+        "x": 40,
+        "y": 575,
+        "width": 241.51,
+        "height": 12
+      },
+      "fontSize": 12,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 160.75,
+        "y": 581
+      }
+    },
+    {
+      "page": 3,
+      "text": "→ 72% placed within 90 days of certification",
+      "bbox": {
+        "x": 40,
+        "y": 588.25,
+        "width": 211.94,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f8",
+      "center": {
+        "x": 145.97,
+        "y": 593.75
+      }
+    },
+    {
+      "page": 3,
+      "text": "→ Average starting salary: €45k/year",
+      "bbox": {
+        "x": 40,
+        "y": 604.25,
+        "width": 176.52,
+        "height": 11
+      },
+      "fontSize": 11,
+      "fontName": "g_d3_f8",
+      "center": {
+        "x": 128.26,
+        "y": 609.75
+      }
+    },
+    {
+      "page": 3,
+      "text": "The Educational Equality Institute · Together for Ukraine · Page 3 of 4",
+      "bbox": {
+        "x": 169.31,
+        "y": 773.75,
+        "width": 273.39,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f4",
+      "center": {
+        "x": 306.01,
+        "y": 778.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Together for",
+      "bbox": {
+        "x": 212.41,
+        "y": 90,
+        "width": 88.22,
+        "height": 16
+      },
+      "fontSize": 16,
+      "fontName": "g_d3_f8",
+      "center": {
+        "x": 256.51,
+        "y": 98
+      }
+    },
+    {
+      "page": 4,
+      "text": "Strategic Partner Tier",
+      "bbox": {
+        "x": 115.38,
+        "y": 186.22,
+        "width": 381.24,
+        "height": 36
+      },
+      "fontSize": 36,
+      "fontName": "g_d3_f1",
+      "center": {
+        "x": 306,
+        "y": 204.22
+      }
+    },
+    {
+      "page": 4,
+      "text": "$150,000/year",
+      "bbox": {
+        "x": 222.91,
+        "y": 229.14,
+        "width": 166.18,
+        "height": 24
+      },
+      "fontSize": 24,
+      "fontName": "g_d3_f5",
+      "center": {
+        "x": 306,
+        "y": 241.14
+      }
+    },
+    {
+      "page": 4,
+      "text": "• 5,000 students enrolled in co-branded AWS track",
+      "bbox": {
+        "x": 162.55,
+        "y": 254.75,
+        "width": 286.9,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 306,
+        "y": 261.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "• Dedicated AWS advisory council seat (quarterly)",
+      "bbox": {
+        "x": 163.71,
+        "y": 274.75,
+        "width": 284.59,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 306,
+        "y": 281.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "• Priority hiring pipeline for certified graduates",
+      "bbox": {
+        "x": 174.19,
+        "y": 294.75,
+        "width": 263.62,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f4",
+      "center": {
+        "x": 306.01,
+        "y": 301.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "• Joint case studies and PR (AWS + TEEI brand)",
+      "bbox": {
+        "x": 169.8,
+        "y": 314.75,
+        "width": 272.41,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 306,
+        "y": 321.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Schedule 30-min partnership discussion",
+      "bbox": {
+        "x": 190.46,
+        "y": 349.75,
+        "width": 231.11,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f4",
+      "center": {
+        "x": 306.02,
+        "y": 356.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Henrik Røine · Partnership Director",
+      "bbox": {
+        "x": 206.58,
+        "y": 384.75,
+        "width": 198.82,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 306,
+        "y": 391.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "henrik@theeducationalequalityinstitute.org · +47 919 08 939",
+      "bbox": {
+        "x": 132.37,
+        "y": 404.75,
+        "width": 347.36,
+        "height": 13
+      },
+      "fontSize": 13,
+      "fontName": "g_d3_f4",
+      "center": {
+        "x": 306.05,
+        "y": 411.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Google",
+      "bbox": {
+        "x": 191.65,
+        "y": 471.75,
+        "width": 28.69,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f9",
+      "center": {
+        "x": 206,
+        "y": 476.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Kintell",
+      "bbox": {
+        "x": 293.09,
+        "y": 471.75,
+        "width": 25.82,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f9",
+      "center": {
+        "x": 306,
+        "y": 476.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Babbel",
+      "bbox": {
+        "x": 392.02,
+        "y": 471.75,
+        "width": 27.95,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f9",
+      "center": {
+        "x": 406,
+        "y": 476.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Sanoma",
+      "bbox": {
+        "x": 189.45,
+        "y": 571.75,
+        "width": 33.1,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f9",
+      "center": {
+        "x": 206,
+        "y": 576.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Oxford",
+      "bbox": {
+        "x": 292.31,
+        "y": 571.75,
+        "width": 27.37,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f9",
+      "center": {
+        "x": 306,
+        "y": 576.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "AWS",
+      "bbox": {
+        "x": 396.36,
+        "y": 571.75,
+        "width": 19.29,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f9",
+      "center": {
+        "x": 406,
+        "y": 576.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Cornell",
+      "bbox": {
+        "x": 191.53,
+        "y": 671.75,
+        "width": 28.94,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f9",
+      "center": {
+        "x": 206,
+        "y": 676.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Inco",
+      "bbox": {
+        "x": 297.28,
+        "y": 671.75,
+        "width": 17.44,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f9",
+      "center": {
+        "x": 306,
+        "y": 676.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "Bain",
+      "bbox": {
+        "x": 397,
+        "y": 671.75,
+        "width": 17.99,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f9",
+      "center": {
+        "x": 406,
+        "y": 676.25
+      }
+    },
+    {
+      "page": 4,
+      "text": "The Educational Equality Institute · Together for Ukraine · Page 4 of 4",
+      "bbox": {
+        "x": 169.31,
+        "y": 773.75,
+        "width": 273.39,
+        "height": 9
+      },
+      "fontSize": 9,
+      "fontName": "g_d3_f3",
+      "center": {
+        "x": 306.01,
+        "y": 778.25
+      }
+    }
+  ],
+  "colors": [
+    {
+      "color": "#000000",
+      "usage": "fill|stroke",
+      "count": 43
+    }
+  ],
+  "fonts": [
+    {
+      "family": "g_d4_f3",
+      "originalName": "g_d4_f3",
+      "size": 13,
+      "usage_count": 18,
+      "pages": [
+        2,
+        4
+      ]
+    },
+    {
+      "family": "g_d4_f9",
+      "originalName": "g_d4_f9",
+      "size": 9,
+      "usage_count": 9,
+      "pages": [
+        4
+      ]
+    },
+    {
+      "family": "g_d4_f3",
+      "originalName": "g_d4_f3",
+      "size": 11,
+      "usage_count": 8,
+      "pages": [
+        2
+      ]
+    },
+    {
+      "family": "g_d4_f3",
+      "originalName": "g_d4_f3",
+      "size": 12,
+      "usage_count": 8,
+      "pages": [
+        3
+      ]
+    },
+    {
+      "family": "g_d4_f8",
+      "originalName": "g_d4_f8",
+      "size": 11,
+      "usage_count": 7,
+      "pages": [
+        3
+      ]
+    },
+    {
+      "family": "g_d4_f4",
+      "originalName": "g_d4_f4",
+      "size": 13,
+      "usage_count": 5,
+      "pages": [
+        2,
+        4
+      ]
+    },
+    {
+      "family": "g_d4_f1",
+      "originalName": "g_d4_f1",
+      "size": 32,
+      "usage_count": 4,
+      "pages": [
+        2
+      ]
+    },
+    {
+      "family": "g_d4_f3",
+      "originalName": "g_d4_f3",
+      "size": 9,
+      "usage_count": 3,
+      "pages": [
+        1,
+        2,
+        4
+      ]
+    },
+    {
+      "family": "g_d4_f1",
+      "originalName": "g_d4_f1",
+      "size": 24,
+      "usage_count": 3,
+      "pages": [
+        2
+      ]
+    },
+    {
+      "family": "g_d4_f1",
+      "originalName": "g_d4_f1",
+      "size": 22,
+      "usage_count": 3,
+      "pages": [
+        3
+      ]
+    },
+    {
+      "family": "g_d4_f7",
+      "originalName": "g_d4_f7",
+      "size": 12,
+      "usage_count": 3,
+      "pages": [
+        3
+      ]
+    },
+    {
+      "family": "g_d4_f1",
+      "originalName": "g_d4_f1",
+      "size": 60,
+      "usage_count": 2,
+      "pages": [
+        1
+      ]
+    },
+    {
+      "family": "g_d4_f6",
+      "originalName": "g_d4_f6",
+      "size": 11,
+      "usage_count": 2,
+      "pages": [
+        3
+      ]
+    },
+    {
+      "family": "g_d4_f2",
+      "originalName": "g_d4_f2",
+      "size": 18,
+      "usage_count": 1,
+      "pages": [
+        1
+      ]
+    },
+    {
+      "family": "g_d4_f3",
+      "originalName": "g_d4_f3",
+      "size": 14,
+      "usage_count": 1,
+      "pages": [
+        1
+      ]
+    },
+    {
+      "family": "g_d4_f5",
+      "originalName": "g_d4_f5",
+      "size": 28,
+      "usage_count": 1,
+      "pages": [
+        3
+      ]
+    },
+    {
+      "family": "g_d4_f4",
+      "originalName": "g_d4_f4",
+      "size": 12,
+      "usage_count": 1,
+      "pages": [
+        3
+      ]
+    },
+    {
+      "family": "g_d4_f4",
+      "originalName": "g_d4_f4",
+      "size": 9,
+      "usage_count": 1,
+      "pages": [
+        3
+      ]
+    },
+    {
+      "family": "g_d4_f8",
+      "originalName": "g_d4_f8",
+      "size": 16,
+      "usage_count": 1,
+      "pages": [
+        4
+      ]
+    },
+    {
+      "family": "g_d4_f1",
+      "originalName": "g_d4_f1",
+      "size": 36,
+      "usage_count": 1,
+      "pages": [
+        4
+      ]
+    },
+    {
+      "family": "g_d4_f5",
+      "originalName": "g_d4_f5",
+      "size": 24,
+      "usage_count": 1,
+      "pages": [
+        4
+      ]
+    }
+  ]
+}

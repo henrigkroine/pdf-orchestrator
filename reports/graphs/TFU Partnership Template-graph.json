@@ -1,0 +1,42 @@
+{
+  "jobId": "TFU Partnership Template",
+  "generatedAt": "2025-11-13T20:46:22.289722",
+  "nodes": [
+    {
+      "id": "job",
+      "type": "job",
+      "label": "TFU Partnership Template",
+      "status": "completed"
+    },
+    {
+      "id": "indesign_app",
+      "type": "indesign",
+      "label": "InDesign",
+      "status": "pending"
+    },
+    {
+      "id": "validator",
+      "type": "qa",
+      "label": "Document Validator",
+      "status": "failed"
+    }
+  ],
+  "edges": [
+    {
+      "from": "job",
+      "to": "indesign_app",
+      "label": "layout"
+    },
+    {
+      "from": "indesign_app",
+      "to": "validator",
+      "label": "validate"
+    }
+  ],
+  "metadata": {
+    "jobType": "unknown",
+    "client": "REPLACE_ME_CLIENT_NAME",
+    "style": "default",
+    "mcpMode": false
+  }
+}

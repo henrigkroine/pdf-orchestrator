@@ -1,0 +1,73 @@
+{
+  "jobId": "aws-partnership-20251110",
+  "jobType": "partnership",
+  "humanSession": true,
+  "worldClass": true,
+  "templateId": "partnership-v1",
+  "output": { "quality": "high", "intent": "print", "formats": ["pdf"] },
+  "export": { "pdfPreset": "High Quality Print" },
+  "qa": { "enabled": true, "threshold": 95 },
+  "data": {
+    "title": "TEEI × Amazon Web Services",
+    "subtitle": "Global Education and AI Programs 2025",
+    "partner": {
+      "name": "Amazon Web Services",
+      "logo_path": "assets/images/partner-logos/aws.png",
+      "website": "https://aws.amazon.com"
+    },
+    "brand": {
+      "primary": "Nordshore",
+      "accents": ["Teal", "Gold"]
+    },
+    "hero_image": "assets/images/partners/aws/hero.jpg",
+    "sections": [
+      {
+        "id": "overview",
+        "h1": "A strategic collaboration for global learning",
+        "bullets": [
+          "Cloud credits to expand learning infrastructure",
+          "AI features for speech and multilingual access",
+          "Programs across EMEA and APAC"
+        ]
+      },
+      {
+        "id": "impact",
+        "h2": "Measured outcomes",
+        "metrics": [
+          {"label": "Learners reached", "value": "250,000"},
+          {"label": "Countries", "value": "32"},
+          {"label": "Programs launched", "value": "47"},
+          {"label": "Avg. completion rate", "value": "84%"}
+        ]
+      },
+      {
+        "id": "programs",
+        "h2": "Programs powered by AWS",
+        "items": [
+          {
+            "name": "Cloud Skills for Youth",
+            "desc": "AWS Academy content adapted by TEEI"
+          },
+          {
+            "name": "Accessible AI Labs",
+            "desc": "Speech-to-text and translation"
+          },
+          {
+            "name": "Data for Good",
+            "desc": "Secure pipelines for learning analytics"
+          }
+        ]
+      },
+      {
+        "id": "cta",
+        "h2": "Next steps",
+        "paragraph": "Co-fund 2026 expansion; align on KPIs and reporting cadence."
+      }
+    ],
+    "contact": {
+      "org": "The Educational Equality Institute",
+      "name": "Henrik",
+      "email": "contact@teei.org"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+{
+  "timestamp": "2025-11-07T09:27:41.696Z",
+  "summary": {
+    "totalPDFs": 3,
+    "passedPDFs": 0,
+    "failedPDFs": 3,
+    "totalPages": 8,
+    "cachedPages": 0,
+    "analyzedPages": 0,
+    "failedPages": 8,
+    "averageScore": "0.00",
+    "duration": "2.05",
+    "cacheHitRate": "0.0"
+  },
+  "results": [
+    {
+      "pdfName": "TEEI_AWS_Partnership.pdf",
+      "pdfPath": "T:\\Projects\\pdf-orchestrator\\exports\\TEEI_AWS_Partnership.pdf",
+      "totalPages": 2,
+      "successfulPages": 0,
+      "failedPages": 2,
+      "overallGrade": "F",
+      "scores": {
+        "overall": "0.00",
+        "brandCompliance": "0.00"
+      },
+      "criticalViolations": [],
+      "pageResults": [
+        {
+          "success": false,
+          "pageNumber": 1,
+          "error": "GEMINI_API_KEY not configured"
+        },
+        {
+          "success": false,
+          "pageNumber": 2,
+          "error": "GEMINI_API_KEY not configured"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "pdfName": "ukraine-final.pdf",
+      "pdfPath": "T:\\Projects\\pdf-orchestrator\\exports\\ukraine-final.pdf",
+      "totalPages": 4,
+      "successfulPages": 0,
+      "failedPages": 4,
+      "overallGrade": "F",
+      "scores": {
+        "overall": "0.00",
+        "brandCompliance": "0.00"
+      },
+      "criticalViolations": [],
+      "pageResults": [
+        {
+          "success": false,
+          "pageNumber": 1,
+          "error": "GEMINI_API_KEY not configured"
+        },
+        {
+          "success": false,
+          "pageNumber": 2,
+          "error": "GEMINI_API_KEY not configured"
+        },
+        {
+          "success": false,
+          "pageNumber": 3,
+          "error": "GEMINI_API_KEY not configured"
+        },
+        {
+          "success": false,
+          "pageNumber": 4,
+          "error": "GEMINI_API_KEY not configured"
+        }
+      ],
+      "passed": false
+    },
+    {
+      "pdfName": "WorldClass_TEEI_AWS.pdf",
+      "pdfPath": "T:\\Projects\\pdf-orchestrator\\exports\\WorldClass_TEEI_AWS.pdf",
+      "totalPages": 2,
+      "successfulPages": 0,
+      "failedPages": 2,
+      "overallGrade": "F",
+      "scores": {
+        "overall": "0.00",
+        "brandCompliance": "0.00"
+      },
+      "criticalViolations": [],
+      "pageResults": [
+        {
+          "success": false,
+          "pageNumber": 1,
+          "error": "GEMINI_API_KEY not configured"
+        },
+        {
+          "success": false,
+          "pageNumber": 2,
+          "error": "GEMINI_API_KEY not configured"
+        }
+      ],
+      "passed": false
+    }
+  ]
+}

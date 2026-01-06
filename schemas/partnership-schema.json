@@ -1,0 +1,123 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Premium Partnership Job Schema",
+  "description": "Schema for premium partnership document generation jobs with intent-aware validation",
+  "type": "object",
+  "required": ["jobType", "data", "output"],
+  "properties": {
+    "jobType": {
+      "type": "string",
+      "const": "partnership",
+      "description": "Type of PDF generation job"
+    },
+    "templateId": {
+      "type": "string",
+      "description": "ID of the InDesign/Illustrator template to use"
+    },
+    "humanSession": {
+      "type": "boolean",
+      "default": false,
+      "description": "If true, routes to MCP worker for interactive session"
+    },
+    "data": {
+      "type": "object",
+      "required": ["title", "partner"],
+      "properties": {
+        "title": {
+          "type": "string",
+          "description": "Partnership document title"
+        },
+        "partner": {
+          "type": "object",
+          "required": ["name"],
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Partner organization name"
+            },
+            "logo": {
+              "type": "string",
+              "description": "Path to partner logo file"
+            },
+            "website": {
+              "type": "string",
+              "format": "uri",
+              "description": "Partner website URL"
+            }
+          }
+        },
+        "organization": {
+          "type": "object",
+          "properties": {
+            "name": {
+              "type": "string",
+              "description": "Your organization name"
+            },
+            "logo": {
+              "type": "string",
+              "description": "Path to your organization logo file"
+            }
+          }
+        },
+        "content": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type"],
+            "properties": {
+              "type": {
+                "type": "string",
+                "enum": ["overview", "programs", "metrics", "testimonials", "cta"]
+              },
+              "content": {
+                "description": "Content varies by section type"
+              }
+            }
+          }
+        },
+        "metadata": {
+          "type": "object",
+          "properties": {
+            "author": { "type": "string" },
+            "date": { "type": "string", "format": "date" },
+            "version": { "type": "string" },
+            "confidential": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "output": {
+      "type": "object",
+      "required": ["format", "intent", "quality"],
+      "properties": {
+        "format": {
+          "type": "string",
+          "enum": ["pdf", "pdf-print", "pdf-interactive"]
+        },
+        "intent": {
+          "type": "string",
+          "enum": ["print", "screen"],
+          "description": "Delivery intent: print (300 DPI, CMYK) or screen (150 DPI, RGB)"
+        },
+        "quality": {
+          "type": "string",
+          "enum": ["high"],
+          "description": "Quality level - premium partnership docs require 'high' quality"
+        },
+        "destination": {
+          "type": "string",
+          "description": "Output path or R2 bucket key"
+        },
+        "accessibility": {
+          "type": "string",
+          "enum": ["autotag"],
+          "description": "Optional: Enable PDF accessibility auto-tagging (adds cost)"
+        }
+      }
+    },
+    "worldClass": {
+      "type": "boolean",
+      "description": "If true, uses world-class Python CLI for highest quality output"
+    }
+  }
+}

@@ -292,40 +292,40 @@
       }
     }
   },
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
   "aiModels": {
     "colorTheory": {
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "provider": "openai",
       "purpose": "Color harmony and theory analysis",
       "temperature": 0.3
     },
     "colorPsychology": {
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "provider": "openai",
       "purpose": "Emotional impact and psychology",
-      "temperature": 0.4,
-      "note": "Will use GPT-5 when available"
+      "temperature": 0.4
     },
     "brandCompliance": {
-      "model": "claude-opus-4-20250514",
+      "model": "claude-opus-4.5",
       "provider": "anthropic",
       "purpose": "Brand color critique and aesthetic judgment",
       "temperature": 0.3
     },
     "consistency": {
-      "model": "claude-sonnet-4-20250514",
-      "provider": "anthropic",
+      "model": "gemini-pro-3.0",
+      "provider": "google",
       "purpose": "Cross-page consistency analysis",
       "temperature": 0.3
     },
     "accessibility": {
-      "model": "gemini-2.0-flash-exp",
+      "model": "gemini-pro-3.0",
       "provider": "google",
       "purpose": "Accessibility and color blindness validation",
       "temperature": 0.3
     },
     "technical": {
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "provider": "openai",
       "purpose": "Technical color validation (RGB/CMYK, profiles)",
       "temperature": 0.2

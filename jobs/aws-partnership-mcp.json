@@ -1,0 +1,63 @@
+{
+  "jobId": "aws-partnership-20251110-mcp",
+  "jobType": "partnership",
+  "humanSession": true,
+  "templateId": "partnership-v1",
+  "output": {
+    "format": "pdf-print",
+    "quality": "high",
+    "intent": "print"
+  },
+  "export": {
+    "pdfPreset": "High Quality Print"
+  },
+  "qa": {
+    "enabled": true,
+    "threshold": 95,
+    "auto_fix_colors": true
+  },
+  "data": {
+    "title": "TEEI × Amazon Web Services",
+    "subtitle": "Global Education and AI Programs 2025",
+    "partner": {
+      "name": "Amazon Web Services",
+      "logo": "assets/images/partner-logos/aws.png",
+      "website": "https://aws.amazon.com"
+    },
+    "organization": {
+      "name": "The Educational Equality Institute",
+      "logo": "assets/images/teei-logo-primary.png"
+    },
+    "content": [
+      {
+        "type": "overview",
+        "content": "TEEI partners with AWS to deliver scalable AI-integrated education programs across global markets, combining cloud infrastructure excellence with measurable learning outcomes and sustainable cost transparency."
+      },
+      {
+        "type": "programs",
+        "content": [
+          "AI in Education",
+          "Teacher Training",
+          "Open Datasets"
+        ]
+      },
+      {
+        "type": "metrics",
+        "content": [
+          {"label": "Learners reached", "value": "50,000+"},
+          {"label": "Countries", "value": "15"},
+          {"label": "Programs launched", "value": "8"},
+          {"label": "Avg. completion rate", "value": "87%"}
+        ]
+      },
+      {
+        "type": "cta",
+        "content": "Contact TEEI to launch joint programs on AWS"
+      }
+    ],
+    "metadata": {
+      "author": "Henrik",
+      "date": "2025-11-10"
+    }
+  }
+}

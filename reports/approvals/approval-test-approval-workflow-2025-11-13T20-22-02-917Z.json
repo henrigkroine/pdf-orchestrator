@@ -1,0 +1,12 @@
+{
+  "approved": true,
+  "note": "auto_approved_no_webhook",
+  "timestamp": "2025-11-13T20:22:02.917Z",
+  "mode": "slack",
+  "duration_seconds": 0.005,
+  "scorecard": {
+    "jobId": "test-approval-workflow",
+    "score": 145,
+    "passed": true
+  }
+}

@@ -1,0 +1,164 @@
+{
+  "jobType": "partnership",
+  "humanSession": true,
+  "worldClass": true,
+  "templateId": "partnership-v1",
+  "data": {
+    "title": "TEEI × AWS Partnership Proposal",
+    "subtitle": "Transforming Education Through Cloud Technology",
+    "partner": {
+      "name": "Amazon Web Services",
+      "logo": "assets/partner-logos/aws.svg",
+      "website": "https://aws.amazon.com"
+    },
+    "organization": {
+      "name": "The Educational Equality Institute",
+      "logo": "assets/images/teei-logo-dark.png"
+    },
+    "content": [
+      {
+        "type": "overview",
+        "content": {
+          "heading": "Partnership Vision",
+          "body": "TEEI partners with AWS to deliver world-class cloud-based educational resources to underserved communities worldwide. By leveraging AWS infrastructure, we can scale our impact and reach students who need it most.",
+          "highlights": [
+            "Cloud-based learning platform serving 50,000+ students",
+            "99.9% uptime ensuring continuous access to education",
+            "AI-powered personalized learning paths",
+            "Global reach across 12 countries"
+          ]
+        }
+      },
+      {
+        "type": "programs",
+        "content": [
+          {
+            "name": "Digital Learning Platform",
+            "description": "AWS-powered cloud infrastructure delivering educational content to remote communities",
+            "impact": {
+              "studentsReached": 35000,
+              "completionRate": 94,
+              "countries": 8
+            }
+          },
+          {
+            "name": "Teacher Training Initiative",
+            "description": "Professional development program equipping educators with modern cloud-based teaching tools",
+            "impact": {
+              "studentsReached": 10000,
+              "completionRate": 97,
+              "countries": 6
+            }
+          },
+          {
+            "name": "STEM Excellence Program",
+            "description": "Advanced computer science curriculum hosted on AWS infrastructure",
+            "impact": {
+              "studentsReached": 5000,
+              "completionRate": 91,
+              "countries": 4
+            }
+          }
+        ]
+      },
+      {
+        "type": "metrics",
+        "content": {
+          "totalStudents": 50000,
+          "avgCompletionRate": 95,
+          "totalCountries": 12,
+          "resourcesDeployed": 2400000,
+          "teachersTrained": 1200,
+          "avgImprovement": 27
+        }
+      },
+      {
+        "type": "testimonials",
+        "content": [
+          {
+            "quote": "This partnership has transformed our ability to serve students in the most remote regions. AWS infrastructure ensures our content reaches everyone.",
+            "author": "Dr. Sarah Johnson",
+            "title": "Program Director, TEEI"
+          },
+          {
+            "quote": "The cloud-based platform is reliable, scalable, and has enabled us to multiply our impact by 10x in just two years.",
+            "author": "Michael Chen",
+            "title": "Technology Director, TEEI"
+          }
+        ]
+      },
+      {
+        "type": "cta",
+        "content": {
+          "heading": "Join Us in Making a Difference",
+          "body": "Together, we can reach 100,000 students by 2026. Partner with TEEI to transform educational outcomes globally.",
+          "contact": {
+            "name": "Sarah Johnson",
+            "title": "Partnership Director",
+            "email": "sarah.johnson@teei.org",
+            "phone": "+1 (555) 123-4567"
+          }
+        }
+      }
+    ]
+  },
+  "output": {
+    "format": "pdf",
+    "intent": "print",
+    "quality": "high",
+    "destination": "exports/TEEI-AWS-Partnership-WorldClass.pdf"
+  },
+  "qa": {
+    "enabled": true,
+    "threshold": 95,
+    "checks": [
+      "brand-compliance",
+      "typography-hierarchy",
+      "color-accuracy",
+      "layout-perfection",
+      "accessibility-wcag-aa",
+      "print-production",
+      "content-completeness",
+      "visual-balance",
+      "professional-impression",
+      "call-to-action-clarity"
+    ]
+  },
+  "export": {
+    "pdfPreset": "High Quality Print",
+    "compression": "Maximum Quality",
+    "colorProfile": "U.S. Web Coated (SWOP) v2",
+    "cropMarks": true,
+    "bleedMarks": true,
+    "registrationMarks": true,
+    "resolution": 300
+  },
+  "brand": {
+    "organization": "TEEI",
+    "colors": {
+      "primary": "#00393F",
+      "secondary": "#C9E4EC",
+      "accent": "#BA8F5A",
+      "background": "#FFF1E2"
+    },
+    "typography": {
+      "headline": "Lora",
+      "body": "Roboto Flex",
+      "weights": {
+        "headline": "SemiBold",
+        "body": "Regular"
+      }
+    },
+    "guidelines": "reports/TEEI_AWS_Design_Fix_Report.md"
+  },
+  "routing": {
+    "preferredWorker": "mcp",
+    "reason": "World-class partnership document requires human oversight, brand compliance, and full QA validation"
+  },
+  "metadata": {
+    "author": "The Educational Equality Institute",
+    "subject": "AWS Partnership Proposal 2025",
+    "keywords": ["AWS", "education", "partnership", "cloud", "TEEI", "technology"],
+    "creator": "PDF Orchestrator v1.0 (MCP Worker + World-Class QA)"
+  }
+}

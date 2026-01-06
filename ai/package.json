@@ -1,0 +1,6 @@
+{
+  "name": "pdf-orchestrator-ai",
+  "version": "1.0.0",
+  "description": "AI subsystem for PDF quality analysis",
+  "type": "module"
+}

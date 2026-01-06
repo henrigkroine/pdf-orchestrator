@@ -1,0 +1,43 @@
+{
+  "overallScore": 3,
+  "gradeLevel": "F",
+  "brandCompliance": {
+    "score": 1,
+    "colors": {
+      "pass": false,
+      "issues": [
+        "Primary brand color (TEEI Blue) is not used.",
+        "Secondary brand color (TEEI Green) is not used for section headings.",
+        "Title text is black instead of white on gradient header.",
+        "Text elements are all black, instead of properly colored."
+      ],
+      "correctColors": []
+    }
+  },
+  "designQuality": {
+    "score": 5,
+    "visualHierarchy": {
+      "pass": false,
+      "issues": [
+        "The document lacks visual hierarchy, due to the absence of color and proper formatting."
+      ]
+    }
+  },
+  "criticalViolations": [
+    "Text elements are all black instead of being colored.",
+    "The gradient header is missing.",
+    "Section headings are not TEEI Green.",
+    "Title text is not WHITE on the gradient."
+  ],
+  "recommendations": [
+    "Implement the primary and secondary brand colors as specified in the guidelines.",
+    "Ensure that all text elements are properly colored and not just black.",
+    "Add the gradient header with TEEI Blue transitioning to TEEI Green.",
+    "Make sure the title text is white when placed on the gradient header.",
+    "Use TEEI Green for section headings to comply with the brand guidelines.",
+    "Apply professional serif or sans-serif fonts for headlines and readable sans-serif fonts for body text.",
+    "Check for any text cutoffs or incomplete content."
+  ],
+  "strengths": [],
+  "summary": "The document fails to adhere to the TEEI brand guidelines. Significant issues include the lack of color application, missing gradient header, incorrect text color, and absence of proper visual hierarchy. Immediate corrective actions are necessary to align with the brand standards."
+}

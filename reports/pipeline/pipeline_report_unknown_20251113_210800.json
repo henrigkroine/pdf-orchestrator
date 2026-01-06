@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-11-13T21:07:58.172226",
+  "steps": [
+    {
+      "name": "Locate PDF",
+      "success": true,
+      "timestamp": "2025-11-13T21:07:58.172452",
+      "duration_seconds": 0.00023245811462402344,
+      "details": "exports/TEEI-AWS-Partnership-PRINT.pdf"
+    },
+    {
+      "name": "Validate PDF",
+      "success": true,
+      "timestamp": "2025-11-13T21:08:00.606763",
+      "duration_seconds": 2.4345428943634033,
+      "details": "Score: 106/125"
+    },
+    {
+      "name": "Visual Regression",
+      "success": false,
+      "timestamp": "2025-11-13T21:08:00.681190",
+      "duration_seconds": 2.5089707374572754,
+      "error": "D:\\Dev\\VS Projects\\Projects\\pdf-orchestrator\\scripts\\compare-pdf-visual.js:15\nconst { pdf } = require('pdf-to-img');\n\n                ^\n\nError [ERR_REQUIRE_ESM]: require() of ES Module D:\\Dev\\VS Projects\\Projects\\pdf-orchestrator\\node_modules\\pdf-to-img\\dist\\index.js from D:\\Dev\\VS Projects\\Projects\\pdf-orchestrator\\scripts\\compare-pdf-visual.js not supported.\nInstead change the require of index.js in D:\\Dev\\VS Projects\\Projects\\pdf-orchestrator\\scripts\\compare-pdf-visual.js to a dynamic import() which is available in all CommonJS modules.\n    at Object.<anonymous> (D:\\Dev\\VS Projects\\Projects\\pdf-orchestrator\\scripts\\compare-pdf-visual.js:15:17) {\n  code: 'ERR_REQUIRE_ESM'\n}\n\nNode.js v20.18.1\n"
+    }
+  ],
+  "success": false,
+  "score": 106
+}

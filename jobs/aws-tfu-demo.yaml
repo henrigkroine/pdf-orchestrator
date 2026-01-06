@@ -1,0 +1,9 @@
+# Minimal demo job spec for testing autopilot
+job_id: aws-tfu-demo
+partner_profile_id: aws-cloud
+title: "AWS Partnership Overview"
+objectives:
+  - "Showcase cloud training impact"
+  - "Demonstrate partnership value"
+audience:
+  - "AWS partnership team"

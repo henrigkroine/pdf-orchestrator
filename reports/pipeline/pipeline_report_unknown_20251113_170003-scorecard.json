@@ -1,0 +1,16 @@
+{
+  "jobId": "unknown",
+  "jobName": "",
+  "pdfPath": "exports\\TEEI-AWS-Partnership-PRINT.pdf",
+  "timestamp": "2025-11-13T17:00:01.380280",
+  "totalScore": 88,
+  "maxScore": 125,
+  "threshold": 90,
+  "tfuCompliance": false,
+  "visualDiffPercent": null,
+  "maxVisualDiffAllowed": 5.0,
+  "visualBaseline": null,
+  "passed": false,
+  "steps": 2,
+  "failedSteps": 1
+}

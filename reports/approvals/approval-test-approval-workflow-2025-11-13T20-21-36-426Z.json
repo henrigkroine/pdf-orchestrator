@@ -1,0 +1,12 @@
+{
+  "approved": true,
+  "note": "approval_not_required",
+  "timestamp": "2025-11-13T20:21:36.425Z",
+  "mode": "none",
+  "duration_seconds": 0.005,
+  "scorecard": {
+    "jobId": "test-approval-workflow",
+    "score": 145,
+    "passed": true
+  }
+}

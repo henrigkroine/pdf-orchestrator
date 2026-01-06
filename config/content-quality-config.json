@@ -386,45 +386,40 @@
     }
   },
 
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
   "aiModels": {
     "writingQuality": {
-      "primary": "gpt-5",
-      "fallback": "gpt-4o",
+      "primary": "gpt-5.1",
       "temperature": 0.3,
       "maxTokens": 2000,
       "systemPrompt": "You are an expert writing coach and editor. Analyze the provided text for grammar, clarity, style, and effectiveness. Provide specific, actionable feedback."
     },
     "messaging": {
-      "primary": "claude-opus-4.1",
-      "fallback": "claude-sonnet-4.5",
+      "primary": "claude-opus-4.5",
       "temperature": 0.4,
       "maxTokens": 3000,
       "systemPrompt": "You are a marketing and messaging expert. Analyze the text for value proposition clarity, persuasiveness, emotional impact, and call-to-action effectiveness."
     },
     "storytelling": {
-      "primary": "gemini-2.5-pro",
-      "fallback": "gpt-4o",
+      "primary": "gemini-pro-3.0",
       "temperature": 0.5,
       "maxTokens": 3000,
       "systemPrompt": "You are a storytelling expert and narrative analyst. Evaluate the narrative structure, emotional journey, character development, and story effectiveness."
     },
     "audience": {
-      "primary": "claude-sonnet-4.5",
-      "fallback": "gpt-4o",
+      "primary": "claude-opus-4.5",
       "temperature": 0.3,
       "maxTokens": 2000,
       "systemPrompt": "You are an audience analysis expert. Evaluate if the content is appropriate for the target audience in terms of reading level, technical depth, tone, and cultural sensitivity."
     },
     "emotional": {
-      "primary": "gemini-2.5-pro",
-      "fallback": "claude-opus-4.1",
+      "primary": "gemini-pro-3.0",
       "temperature": 0.4,
       "maxTokens": 2000,
       "systemPrompt": "You are an emotional intelligence expert. Analyze the emotional tone, sentiment, empathy indicators, trust-building elements, and overall emotional impact."
     },
     "seo": {
-      "primary": "gpt-4o",
-      "fallback": "gpt-5",
+      "primary": "gpt-5.1",
       "temperature": 0.3,
       "maxTokens": 1500,
       "systemPrompt": "You are an SEO expert. Analyze the content for keyword usage, heading structure, searchability, and discoverability optimization."

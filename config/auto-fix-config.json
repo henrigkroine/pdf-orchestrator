@@ -117,7 +117,7 @@
           "estimated_time_seconds": 600,
           "ai_generation": {
             "enabled": true,
-            "model": "gpt-4",
+            "model": "gpt-5.1",
             "max_tokens": 200,
             "temperature": 0.7,
             "requires_human_review": true
@@ -142,7 +142,7 @@
           "estimated_time_seconds": 120,
           "ai_generation": {
             "enabled": true,
-            "model": "gpt-4-vision",
+            "model": "gpt-5.1",
             "requires_human_review": true
           }
         },

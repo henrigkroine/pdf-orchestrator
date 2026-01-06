@@ -1,0 +1,31 @@
+{
+  "jobId": "image-gen-test-2025",
+  "jobType": "partnership",
+  "client": "AWS",
+  "style": "TEEI",
+
+  "imageGeneration": {
+    "enabled": true,
+    "dryRun": true,
+    "provider": "dalle3",
+    "quality": "standard",
+    "caching": true
+  },
+
+  "data": {
+    "partner": {
+      "name": "AWS"
+    },
+    "aiImageSlots": {
+      "hero": "Diverse Ukrainian students collaborating on AWS cloud computing projects in modern learning space, warm natural lighting, authentic educational moment, hopeful atmosphere",
+      "program_1": "Students engaged in hands-on AWS training with laptops, modern computer lab, soft window light, genuine connection, candid shot",
+      "cover": "Hopeful Ukrainian learner using educational technology in bright inspiring space, natural daylight, empowering scene, documentary photography"
+    }
+  },
+
+  "notes": [
+    "Test job for AI image generation pipeline",
+    "Dry run mode: no API costs, placeholder images",
+    "Tests prompt engineering, caching, optimization"
+  ]
+}

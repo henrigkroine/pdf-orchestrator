@@ -1,0 +1,3 @@
+usage: validate_document.py [-h] [--json] [--strict] [--job-config JOB_CONFIG]
+                            [pdf_path]
+validate_document.py: error: unrecognized arguments: --pdf --output reports/pipeline/layer1-baseline.json

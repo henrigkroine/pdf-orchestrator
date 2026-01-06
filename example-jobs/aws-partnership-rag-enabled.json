@@ -1,0 +1,49 @@
+{
+  "name": "AWS Partnership - RAG Enabled",
+  "description": "AWS partnership document with RAG content intelligence",
+
+  "planning": {
+    "rag_enabled": true,
+    "use_proven_patterns": true
+  },
+
+  "content": {
+    "partner_name": "Amazon Web Services",
+    "industry": "Technology",
+    "partnership_type": "corporate",
+    "title": "Together for Ukraine × AWS Partnership",
+    "subtitle": "Empowering Ukrainian Students Through Cloud Technology"
+  },
+
+  "tfu_requirements": {
+    "primary_color": "#00393F",
+    "brand_name": "Together for Ukraine",
+    "tagline": "Education without borders",
+    "program_count": 5,
+    "student_count": 12500,
+    "typography_requirements": {
+      "min_type_sizes": 5,
+      "hierarchy_levels": ["cover", "section", "heading", "body", "caption"]
+    }
+  },
+
+  "output": {
+    "filename_base": "TEEI-AWS-Partnership-TFU-RAG",
+    "formats": ["pdf"],
+    "quality": "world_class"
+  },
+
+  "validation": {
+    "validate_tfu": true,
+    "brand_compliance_required": true,
+    "ai_analysis": true
+  },
+
+  "metadata": {
+    "industry": "Technology",
+    "region": "Global",
+    "partnership_stage": "proposal",
+    "created_date": "2025-11-14",
+    "notes": "Uses RAG to suggest content from past successful tech partnerships"
+  }
+}

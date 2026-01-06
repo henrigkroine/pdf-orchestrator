@@ -1,0 +1,31 @@
+============================================================
+PIPELINE EXECUTION REPORT
+============================================================
+Timestamp: 2025-11-13T21:07:58.172226
+Config: CI Mode
+
+EXECUTION STEPS:
+------------------------------------------------------------
+1. [OK] Locate PDF
+   Details: exports/TEEI-AWS-Partnership-PRINT.pdf
+2. [OK] Validate PDF
+   Details: Score: 106/125
+3. [FAIL] Visual Regression
+   Error: D:\Dev\VS Projects\Projects\pdf-orchestrator\scripts\compare-pdf-visual.js:15
+const { pdf } = require('pdf-to-img');
+
+                ^
+
+Error [ERR_REQUIRE_ESM]: require() of ES Module D:\Dev\VS Projects\Projects\pdf-orchestrator\node_modules\pdf-to-img\dist\index.js from D:\Dev\VS Projects\Projects\pdf-orchestrator\scripts\compare-pdf-visual.js not supported.
+Instead change the require of index.js in D:\Dev\VS Projects\Projects\pdf-orchestrator\scripts\compare-pdf-visual.js to a dynamic import() which is available in all CommonJS modules.
+    at Object.<anonymous> (D:\Dev\VS Projects\Projects\pdf-orchestrator\scripts\compare-pdf-visual.js:15:17) {
+  code: 'ERR_REQUIRE_ESM'
+}
+
+Node.js v20.18.1
+
+
+============================================================
+FINAL SCORE: 106/100
+STATUS: FAILED
+============================================================

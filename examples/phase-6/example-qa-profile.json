@@ -1,0 +1,98 @@
+{
+  "jobId": "example-qa-profile",
+  "jobType": "partnership",
+  "client": "Example Client",
+
+  "data": {
+    "title": "Example Partnership Document",
+    "partner": {
+      "name": "Example Partner",
+      "logo": "assets/partner-logos/example.svg"
+    },
+    "subtitle": "Demonstrating QA Profile Configuration",
+    "metrics": {
+      "studentsReached": 1000,
+      "coursesOffered": 50,
+      "completionRate": 85,
+      "employmentRate": 70
+    }
+  },
+
+  "output": {
+    "format": "pdf",
+    "quality": "high",
+    "filename": "Example-QA-Profile"
+  },
+
+  "qaProfile": {
+    "id": "world_class_example",
+    "name": "World-Class Example Profile",
+    "description": "Demonstrates all QA profile features",
+
+    "min_score": 95,
+    "min_tfu_score": 140,
+
+    "visual_baseline_id": "example-baseline-v1",
+    "max_visual_diff_percent": 5,
+    "create_baseline_on_first_pass": true,
+
+    "fail_on_brand_violations": true,
+    "fail_on_text_cutoff": true,
+    "fail_on_accessibility_errors": false,
+
+    "checks": {
+      "typography": {
+        "enabled": true,
+        "weight": 20,
+        "min_score": 90,
+        "config": {
+          "allowed_fonts": ["Lora", "Roboto Flex"],
+          "headline_fonts": ["Lora"],
+          "body_fonts": ["Roboto Flex"],
+          "min_font_size": 9,
+          "max_font_size": 72
+        }
+      },
+      "colors": {
+        "enabled": true,
+        "weight": 25,
+        "min_score": 95,
+        "config": {
+          "brand_colors": ["#00393F", "#C9E4EC", "#FFF1E2", "#BA8F5A"],
+          "forbidden_colors": ["#FF6B35", "#C87941"]
+        }
+      },
+      "layout": {
+        "enabled": true,
+        "weight": 20,
+        "min_score": 85,
+        "config": {
+          "grid_columns": 12,
+          "gutter_width": 20,
+          "margins": { "top": 40, "right": 40, "bottom": 40, "left": 40 }
+        }
+      },
+      "accessibility": {
+        "enabled": true,
+        "weight": 15,
+        "min_score": 90,
+        "config": {
+          "wcag_level": "AA",
+          "wcag_version": "2.1"
+        }
+      },
+      "visual_regression": {
+        "enabled": true,
+        "weight": 20
+      }
+    }
+  },
+
+  "notes": [
+    "This example demonstrates all QA profile features",
+    "Auto-creates baseline on first successful run",
+    "Minimum score: 95 (world-class quality)",
+    "Visual regression enabled with 5% max diff",
+    "Brand violations cause hard failure"
+  ]
+}

@@ -1,72 +1,48 @@
 {
   "system": {
     "name": "Multi-Agent Reasoning Validator",
-    "version": "1.0.0",
-    "description": "Advanced PDF validation using reasoning models and collaborative AI agents"
+    "version": "2.0.0",
+    "description": "Advanced PDF validation using Claude Opus 4.5, Gemini Pro 3.0, and GPT-5.1"
   },
 
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
+
   "reasoning_models": {
-    "o3-mini": {
-      "provider": "openai",
-      "model_id": "o3-mini",
-      "reasoning_enabled": true,
-      "reasoning_effort": "high",
-      "temperature": 0.3,
-      "max_tokens": 4096,
-      "cost_per_million_tokens": 15.0,
-      "capabilities": ["vision", "chain_of_thought", "self_verification"],
-      "recommended_for": ["complex_analysis", "high_accuracy_required"],
-      "notes": "State-of-the-art reasoning model, 96.7% AIME accuracy"
-    },
-
-    "deepseek-r1": {
-      "provider": "deepseek",
-      "model_id": "deepseek-reasoner",
-      "reasoning_enabled": true,
-      "visible_reasoning": true,
-      "temperature": 0.3,
-      "max_tokens": 4096,
-      "cost_per_million_tokens": 0.55,
-      "capabilities": ["vision", "visible_reasoning", "cost_optimization"],
-      "recommended_for": ["cost_optimization", "high_volume"],
-      "notes": "95% cheaper than OpenAI, 671B parameters, visible reasoning chains"
-    },
-
-    "gpt-4o": {
-      "provider": "openai",
-      "model_id": "gpt-4o",
-      "reasoning_enabled": true,
-      "temperature": 0.3,
-      "max_tokens": 4096,
-      "cost_per_million_tokens": 5.0,
-      "capabilities": ["vision", "reasoning", "production_ready"],
-      "recommended_for": ["production", "balanced_performance"],
-      "notes": "Current production model with excellent vision capabilities"
-    },
-
-    "claude-opus-4": {
+    "claude-opus-4.5": {
       "provider": "anthropic",
-      "model_id": "claude-opus-4-20250514",
+      "model_id": "claude-opus-4-5-20251001",
       "reasoning_enabled": true,
       "extended_thinking": true,
-      "thinking_budget_tokens": 2000,
-      "max_tokens": 4096,
+      "thinking_budget_tokens": 10000,
+      "max_tokens": 8192,
       "cost_per_million_tokens": 15.0,
-      "capabilities": ["vision", "extended_thinking", "detailed_analysis"],
-      "recommended_for": ["complex_documents", "detailed_analysis"],
-      "notes": "Extended thinking capability for deep analysis"
+      "capabilities": ["vision", "extended_thinking", "detailed_analysis", "brand_compliance"],
+      "recommended_for": ["complex_documents", "detailed_analysis", "brand_validation"],
+      "notes": "Claude Opus 4.5 - Extended thinking for deep brand compliance analysis"
     },
 
-    "gemini-2.5-pro": {
+    "gemini-pro-3.0": {
       "provider": "google",
-      "model_id": "gemini-2.5-pro-latest",
+      "model_id": "gemini-3.0-pro",
       "reasoning_enabled": true,
       "temperature": 0.3,
       "response_format": "json",
       "cost_per_million_tokens": 3.5,
-      "capabilities": ["vision", "reasoning", "cost_effective"],
-      "recommended_for": ["cost_effective", "fast_processing"],
-      "notes": "Fast and cost-effective with strong vision capabilities"
+      "capabilities": ["vision", "reasoning", "cross_page_analysis", "2M_context"],
+      "recommended_for": ["document_wide_analysis", "consistency_checking", "multi_page"],
+      "notes": "Gemini Pro 3.0 - 2M context window for full document analysis"
+    },
+
+    "gpt-5.1": {
+      "provider": "openai",
+      "model_id": "gpt-5.1",
+      "reasoning_enabled": true,
+      "temperature": 0.3,
+      "max_tokens": 8192,
+      "cost_per_million_tokens": 10.0,
+      "capabilities": ["vision", "reasoning", "production_ready", "quality_assessment"],
+      "recommended_for": ["production", "balanced_performance", "final_validation"],
+      "notes": "GPT-5.1 - Natively multimodal with excellent vision capabilities"
     }
   },
 
@@ -75,55 +51,55 @@
       "role": "Brand Compliance Expert",
       "goal": "Ensure perfect TEEI brand compliance in all visual elements",
       "backstory": "Expert in TEEI color palette (Nordshore, Sky, Sand, Gold), typography (Lora, Roboto Flex), and logo guidelines. 15 years experience in brand management.",
-      "model": "gpt-4o",
+      "model": "claude-opus-4.5",
       "expertise": ["colors", "typography", "logos", "brand_guidelines"],
       "weight": 1.2,
       "temperature": 0.2,
-      "max_tokens": 2048
+      "max_tokens": 4096
     },
 
     "designCritic": {
       "role": "Design Quality Critic",
       "goal": "Validate layout quality, visual hierarchy, and design best practices",
       "backstory": "Award-winning designer with 20 years experience. Expert in layout, whitespace, visual hierarchy, and professional document design.",
-      "model": "claude-sonnet-4-20250514",
+      "model": "claude-opus-4.5",
       "expertise": ["layout", "hierarchy", "whitespace", "visual_balance", "grid_systems"],
       "weight": 1.0,
       "temperature": 0.3,
-      "max_tokens": 2048
+      "max_tokens": 4096
     },
 
     "accessibilityExpert": {
       "role": "Accessibility Specialist",
       "goal": "Ensure WCAG 2.2 AA compliance and inclusive design",
       "backstory": "WCAG certified accessibility auditor. Expert in color contrast, readability, screen reader compatibility, and inclusive design principles.",
-      "model": "gemini-2.5-flash",
+      "model": "gemini-pro-3.0",
       "expertise": ["wcag_2.2", "color_contrast", "readability", "inclusive_design"],
       "weight": 1.1,
       "temperature": 0.2,
-      "max_tokens": 2048
+      "max_tokens": 4096
     },
 
     "contentEditor": {
       "role": "Content Quality Editor",
       "goal": "Validate text quality, completeness, grammar, and brand voice",
       "backstory": "Professional editor for educational content. Expert in grammar, tone, clarity, and brand voice alignment. 12 years in educational publishing.",
-      "model": "claude-sonnet-4-20250514",
+      "model": "gpt-5.1",
       "expertise": ["grammar", "tone", "clarity", "completeness", "brand_voice"],
       "weight": 0.9,
       "temperature": 0.3,
-      "max_tokens": 2048
+      "max_tokens": 4096
     },
 
     "coordinator": {
       "role": "Quality Assurance Coordinator",
       "goal": "Synthesize all agent findings and make final quality decision",
       "backstory": "Senior QA manager with expertise in multi-stakeholder decision-making. Resolves conflicts between agents using systematic reasoning.",
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "expertise": ["synthesis", "conflict_resolution", "final_decision"],
       "weight": 1.5,
       "temperature": 0.3,
-      "max_tokens": 4096,
+      "max_tokens": 8192,
       "reasoning_enabled": true
     }
   },
@@ -150,9 +126,9 @@
   },
 
   "cost_optimization": {
-    "use_cheapest_for_simple_tasks": true,
-    "simple_task_model": "gemini-2.5-flash",
-    "complex_task_model": "gpt-4o",
+    "use_cheapest_for_simple_tasks": false,
+    "default_model": "gemini-pro-3.0",
+    "complex_task_model": "claude-opus-4.5",
     "budget_per_validation": 0.50,
     "alert_on_budget_exceeded": true
   },

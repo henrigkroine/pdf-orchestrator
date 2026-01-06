@@ -1,0 +1,135 @@
+{
+  "jobType": "report",
+  "templateId": "teei-showcase-indesign",
+  "humanSession": true,
+  "data": {
+    "title": "🌟 TEEI AI-Powered Education Revolution 2025",
+    "subtitle": "World-Class Partnership Showcase Document",
+    "content": [
+      "The Educational Equality Institute (TEEI) has transformed global education through AI-powered learning platforms, reaching 127,000+ students across 89 countries with a 92% success rate.",
+      "",
+      "Revolutionary AI Platform Features:",
+      "",
+      "🤖 Adaptive Learning AI - Personalized curriculum adapting to each student's pace",
+      "📊 Real-Time Analytics - Track progress and optimize outcomes with live dashboards",
+      "🌐 Multi-Language Support - 47 languages with real-time translation",
+      "♿ Universal Accessibility - WCAG 2.2 AAA compliant platform",
+      "🎯 Skills-Based Learning - Practical skills for today's job market",
+      "🔒 Enterprise Security - Bank-level encryption and compliance (GDPR, FERPA, COPPA)",
+      "",
+      "Global Impact Metrics:",
+      "• Students Reached: 127,000+",
+      "• Countries: 89",
+      "• Partner Schools: 450+",
+      "• Success Rate: 92%",
+      "",
+      "Partnership Tiers:",
+      "",
+      "Foundation Partner ($50K/year): Up to 1,000 students, platform access, basic analytics, email support (24-48hr), quarterly training",
+      "",
+      "Strategic Partner ⭐ ($150K/year): Up to 5,000 students, advanced AI insights, priority support (4-8hr), monthly training, custom integrations, co-branding",
+      "",
+      "Enterprise Partner (Custom): Unlimited students, full customization, 24/7 dedicated team, weekly sessions, white-label, research collaboration",
+      "",
+      "Ready to Transform Education?",
+      "",
+      "Join 450+ partner organizations making education accessible to every student, everywhere.",
+      "",
+      "✅ Schedule Partnership Call: theeducationalequalityinstitute.org/partner",
+      "✅ Download Partnership Deck: theeducationalequalityinstitute.org/resources"
+    ],
+    "metadata": {
+      "author": "The Educational Equality Institute",
+      "date": "2025-01-07",
+      "organization": "TEEI"
+    }
+  },
+  "output": {
+    "format": "pdf",
+    "destination": "exports/TEEI-SHOWCASE-SIMPLE.pdf",
+    "quality": "high"
+  },
+  "design": {
+    "colors": {
+      "primary": {
+        "name": "TEEI-Primary",
+        "rgb": [
+          0,
+          57,
+          63
+        ]
+      },
+      "accent": {
+        "name": "TEEI-Accent",
+        "rgb": [
+          0,
+          150,
+          136
+        ]
+      },
+      "text": {
+        "name": "TEEI-Text",
+        "rgb": [
+          51,
+          51,
+          51
+        ]
+      },
+      "textLight": {
+        "name": "TEEI-Gray",
+        "rgb": [
+          100,
+          100,
+          100
+        ]
+      }
+    },
+    "pageSetup": {
+      "pageWidth": 612,
+      "pageHeight": 792,
+      "margins": {
+        "top": 72,
+        "bottom": 72,
+        "left": 72,
+        "right": 72
+      },
+      "columns": {
+        "count": 1,
+        "gutter": 12
+      }
+    },
+    "typography": {
+      "title": {
+        "font": "Arial",
+        "size": 32,
+        "bold": true,
+        "color": "TEEI-Primary",
+        "align": "center"
+      },
+      "subtitle": {
+        "font": "Arial",
+        "size": 16,
+        "color": "TEEI-Gray",
+        "align": "center"
+      },
+      "heading": {
+        "font": "Arial",
+        "size": 14,
+        "bold": true,
+        "color": "TEEI-Primary"
+      },
+      "body": {
+        "font": "Arial",
+        "size": 11,
+        "color": "TEEI-Text",
+        "leading": 16
+      },
+      "bullet": {
+        "font": "Arial",
+        "size": 11,
+        "color": "TEEI-Text",
+        "indent": 18
+      }
+    }
+  }
+}

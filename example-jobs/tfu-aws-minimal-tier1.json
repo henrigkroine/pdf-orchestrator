@@ -1,0 +1,205 @@
+{
+  "name": "TFU AWS Partnership - Minimal Tier 1",
+  "description": "Together for Ukraine AWS Partnership with ONLY Tier 1 AI features (typography, whitespace, color validation)",
+  "template": "partnership",
+  "design_system": "tfu",
+  "validate_tfu": true,
+
+  "generator": {
+    "type": "tfu_aws_minimal",
+    "jsx_script": "scripts/generate_tfu_aws_v2.jsx"
+  },
+
+  "data": {
+    "title": "Building Europe's Cloud-Native Workforce",
+    "subtitle": "Together for Ukraine · AWS Strategic Partnership",
+    "organization": "The Educational Equality Institute",
+    "partner": "Amazon Web Services"
+  },
+
+  "typography_sidecar": "exports/TEEI-AWS-Partnership-TFU-Minimal-typography.json",
+
+  "expected_metrics": {
+    "core": ["50,000", "50000", "12", "45", "3,500", "3500"],
+    "outcomes": ["78%", "92%", "€45k", "45k", "72%", "65%", "88%"],
+    "strategic": ["$150,000", "$150k", "150,000", "150k"]
+  },
+
+  "output": {
+    "formats": ["indd", "pdf_digital"],
+    "intent": "screen",
+    "filename_base": "TEEI-AWS-Partnership-TFU-Minimal-Tier1",
+    "export_path": "./exports",
+    "pdf_settings": {
+      "digital": {
+        "preset": "[High Quality Print]",
+        "color_space": "RGB",
+        "resolution": 150,
+        "optimize_web": true
+      }
+    }
+  },
+
+  "quality": {
+    "validation_threshold": 100,
+    "auto_fix": false,
+    "strict_mode": false,
+    "required_checks": [
+      "tfu_compliance",
+      "typography_design",
+      "pdf_structure",
+      "content"
+    ]
+  },
+
+  "mcp_requirements": {
+    "require_mcp_for_validation": false,
+    "proxy_url": "http://localhost:8013",
+    "timeout": 30
+  },
+
+  "qaProfile": {
+    "id": "tfu_aws_minimal_tier1",
+    "min_score": 100,
+    "min_tfu_score": 100,
+    "max_visual_diff_percent": 10.0,
+    "visual_baseline_id": "tfu-aws-minimal-baseline",
+    "create_baseline_on_first_pass": false
+  },
+
+  "gemini_vision": {
+    "enabled": false,
+    "min_score": 0.85,
+    "fail_on_critical": false,
+    "output_dir": "reports/gemini"
+  },
+
+  "planning": {
+    "rag": {
+      "enabled": false
+    },
+    "personalization_enabled": false,
+    "partner_profile_id": "aws-cloud",
+    "performance_recommendations": false,
+    "partner_profiles_db": "data/partner-profiles.json"
+  },
+
+  "generation": {
+    "figma": {
+      "enabled": false
+    },
+    "imageGeneration": {
+      "enabled": false
+    },
+    "fontPairing": {
+      "enabled": true,
+      "strategy": "constrained",
+      "allow_alternatives": false,
+      "tfu_brand_lock": true
+    },
+    "layoutIteration": {
+      "enabled": false
+    }
+  },
+
+  "validation": {
+    "smoldocling": {
+      "enabled": false
+    },
+    "accessibility": {
+      "enabled": false
+    }
+  },
+
+  "analytics": {
+    "performance_tracking": false,
+    "partner_id": "aws",
+    "doc_family": "tfu_partnership",
+    "analytics_db": "sqlite:///database/performance.db"
+  },
+
+  "ai": {
+    "enabled": true,
+    "dryRun": false,
+    "advancedMode": false,
+    "features": {
+      "typography": {
+        "enabled": true,
+        "weight": 0.4,
+        "minScore": 0.85
+      },
+      "whitespace": {
+        "enabled": true,
+        "weight": 0.3,
+        "minScore": 0.80
+      },
+      "color": {
+        "enabled": true,
+        "weight": 0.3,
+        "minScore": 0.90
+      },
+      "layout": {
+        "enabled": false,
+        "weight": 0.25,
+        "minScore": 0.85
+      }
+    },
+    "thresholds": {
+      "minNormalizedScore": 0.85,
+      "failOnCriticalIssues": true
+    },
+    "output": {
+      "reportDir": "reports/ai",
+      "includeInLayer1Score": true,
+      "layer1Points": 10
+    }
+  },
+
+  "mode": "standard",
+  "tfu_requirements": {
+    "page_count": 4,
+    "primary_color": "#00393F",
+    "forbidden_colors": ["#BA8F5A"],
+    "required_fonts": ["Lora", "Roboto"],
+    "forbidden_fonts": ["Roboto Flex"],
+    "paragraph_style_prefix": "TFU_",
+    "content_page_number": 4,
+    "required_elements": [
+      "TFU badge (blue + yellow)",
+      "Partner logo grid (3×3)",
+      "Full teal cover page",
+      "Full teal closing page",
+      "Light blue stats sidebar",
+      "Two-column program matrix"
+    ],
+    "typography_requirements": {
+      "min_type_sizes": 11,
+      "hierarchy_levels": [
+        "cover_title",
+        "section_heading",
+        "cta_heading",
+        "stat_number",
+        "program_name",
+        "subheading",
+        "body_lead",
+        "body",
+        "caption",
+        "label",
+        "fine_print"
+      ]
+    }
+  },
+
+  "notes": [
+    "MINIMAL TIER 1 CONFIGURATION - Core AI features only",
+    "Tier 1: Typography, Whitespace, Color AI validation (heuristic mode)",
+    "NO Tier 1.5 features (no advanced mode, no layout validation)",
+    "NO Tier 2 features (no RAG, no personalization)",
+    "NO Tier 3 features (no image generation, no accessibility auto-remediation)",
+    "Target: 100/150 validation score (solid quality baseline)",
+    "AI score threshold: 0.85 (good quality)",
+    "All TFU brand compliance rules enforced",
+    "Uses existing images and manual accessibility tagging",
+    "Fastest pipeline execution, lowest AI cost"
+  ]
+}

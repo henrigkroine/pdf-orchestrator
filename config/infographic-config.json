@@ -179,20 +179,26 @@
     }
   },
 
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
   "aiSettings": {
     "openai": {
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "temperature": 0.3,
-      "maxTokens": 1000
+      "maxTokens": 2000
     },
     "anthropic": {
-      "model": "claude-opus-4-20250514",
+      "model": "claude-opus-4.5",
       "temperature": 0.3,
       "maxTokens": 4000,
       "thinking": {
         "enabled": true,
-        "budgetTokens": 3000
+        "budgetTokens": 10000
       }
+    },
+    "google": {
+      "model": "gemini-pro-3.0",
+      "temperature": 0.3,
+      "maxTokens": 4000
     }
   },
 

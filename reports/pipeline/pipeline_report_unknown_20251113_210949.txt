@@ -1,0 +1,35 @@
+============================================================
+PIPELINE EXECUTION REPORT
+============================================================
+Timestamp: 2025-11-13T21:09:47.179792
+Config: CI Mode
+
+EXECUTION STEPS:
+------------------------------------------------------------
+1. [OK] Locate PDF
+   Details: exports/TEEI-AWS-Partnership-PRINT.pdf
+2. [OK] Validate PDF
+   Details: Score: 106/125
+3. [FAIL] Create Baseline
+   Error: (node:259744) Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+(Use `node --trace-warnings ...` to show where the warning was created)
+D:\Dev\VS Projects\Projects\pdf-orchestrator\scripts\create-reference-screenshots.js:15
+import { pdf } from 'pdf-to-img';
+^^^^^^
+
+SyntaxError: Cannot use import statement outside a module
+    at wrapSafe (node:internal/modules/cjs/loader:1378:20)
+    at Module._compile (node:internal/modules/cjs/loader:1428:41)
+    at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)
+    at Module.load (node:internal/modules/cjs/loader:1288:32)
+    at Module._load (node:internal/modules/cjs/loader:1104:12)
+    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)
+    at node:internal/main/run_main_module:28:49
+
+Node.js v20.18.1
+
+
+============================================================
+FINAL SCORE: 106/100
+STATUS: PASSED
+============================================================

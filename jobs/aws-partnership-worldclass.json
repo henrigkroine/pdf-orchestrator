@@ -1,0 +1,62 @@
+{
+  "jobId": "aws-partnership-20251110",
+  "jobType": "partnership",
+  "humanSession": true,
+  "worldClass": true,
+  "templateId": "partnership-v1",
+  "output": {
+    "quality": "high",
+    "intent": "print",
+    "accessibility": "autotag"
+  },
+  "export": {
+    "pdfPreset": "High Quality Print"
+  },
+  "qa": {
+    "enabled": true,
+    "threshold": 95
+  },
+  "data": {
+    "title": "TEEI × Amazon Web Services",
+    "subtitle": "Global Education and AI Programs 2025",
+    "partner_name": "Amazon Web Services",
+    "executive_summary": "TEEI partners with AWS to deliver scalable AI-integrated education programs across global markets, combining cloud infrastructure excellence with measurable learning outcomes and sustainable cost transparency.",
+    "value_proposition": [
+      "Scalable AI-driven learning programs on AWS infrastructure",
+      "Sustainability and cost transparency across regions",
+      "Measurable impact reporting with standardized KPIs"
+    ],
+    "metrics": [
+      {"label": "Learners reached", "value": "50,000+"},
+      {"label": "Countries", "value": "15"},
+      {"label": "Programs launched", "value": "8"},
+      {"label": "Avg. completion rate", "value": "87%"}
+    ],
+    "contact": {
+      "name": "Henrik",
+      "email": "henrik@teei.org",
+      "website": "https://theeducationalequality.org"
+    },
+    "brand": {
+      "primary_accent": "Gold",
+      "required_colors": ["Nordshore", "Teal", "Gold"],
+      "forbidden_colors": ["#C87137", "#FF6600", "#FF0000", "#00FF00"]
+    },
+    "assets": {
+      "teei_logo": "assets/images/teei-logo-primary.png",
+      "partner_logo": "assets/images/partner-logos/aws.png",
+      "hero_image": "assets/images/partners/aws/hero.jpg",
+      "gallery": [
+        "assets/images/partners/aws/01.jpg",
+        "assets/images/partners/aws/02.jpg"
+      ]
+    },
+    "sections": {
+      "header": true,
+      "overview": true,
+      "programs": ["AI in Education", "Teacher Training", "Open Datasets"],
+      "impact_metrics": true,
+      "cta": "Contact TEEI to launch joint programs on AWS"
+    }
+  }
+}

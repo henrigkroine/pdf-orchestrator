@@ -1,0 +1,110 @@
+{
+  "name": "aws-tfu-2025 - Autopilot Generated",
+  "description": "Auto-generated from aws-tfu-2025 job spec",
+  "template": "partnership",
+  "design_system": "tfu",
+  "validate_tfu": true,
+  "generator": {
+    "type": "tfu_aws_v2",
+    "jsx_script": "scripts/generate_tfu_aws_v2.jsx"
+  },
+  "data": {
+    "title": "Building Europe's Cloud-Native Workforce",
+    "subtitle": "Together for Ukraine \u00b7 Amazon Web Services Strategic Partnership",
+    "organization": "The Educational Equality Institute",
+    "partner": "Amazon Web Services"
+  },
+  "typography_sidecar": "exports/aws-tfu-2025-typography.json",
+  "output": {
+    "formats": [
+      "indd",
+      "pdf_digital"
+    ],
+    "intent": "print",
+    "filename_base": "TEEI-AWS-TFU-2025",
+    "export_path": "./exports"
+  },
+  "quality": {
+    "validation_threshold": 145,
+    "auto_fix": false,
+    "strict_mode": true
+  },
+  "llm": {
+    "provider": "anthropic",
+    "model": "claude-3-opus-20240229",
+    "max_tokens": 1024,
+    "temperature": 0.3,
+    "fail_on_llm_error": false
+  },
+  "planning": {
+    "rag": {
+      "enabled": true,
+      "store_dir": "rag_store",
+      "sources": [
+        "deliverables/TEEI-AWS-Partnership-Document-Content.md"
+      ],
+      "retrievalCount": 5,
+      "embeddingProvider": "local"
+    },
+    "personalization_enabled": true,
+    "partner_profile_id": "aws-cloud",
+    "partner_profiles_dir": "config/partner-profiles",
+    "performance_recommendations": true
+  },
+  "generation": {
+    "layoutIteration": {
+      "enabled": true,
+      "num_variations": 5,
+      "variation_strategies": [
+        "spacing",
+        "emphasis",
+        "color_balance"
+      ]
+    }
+  },
+  "validation": {
+    "smoldocling": {
+      "enabled": false
+    },
+    "accessibility": {
+      "enabled": true,
+      "standards": {
+        "wcag22AA": {
+          "enabled": true,
+          "failOnViolation": true
+        }
+      }
+    }
+  },
+  "gemini_vision": {
+    "enabled": true,
+    "min_score": 0.92
+  },
+  "ai": {
+    "enabled": true,
+    "thresholds": {
+      "minNormalizedScore": 0.9
+    }
+  },
+  "i18n": {
+    "enabled": false,
+    "target_language": "en",
+    "fallback": "en",
+    "provider": "llm"
+  },
+  "mode": "world_class",
+  "tfu_requirements": {
+    "page_count": 4,
+    "primary_color": "#00393F",
+    "forbidden_colors": [
+      "#BA8F5A"
+    ],
+    "required_fonts": [
+      "Lora",
+      "Roboto"
+    ]
+  },
+  "_layout_variant": {
+    "description": "Standard variant variant-E"
+  }
+}

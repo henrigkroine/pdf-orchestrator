@@ -1,0 +1,35 @@
+{
+  "documents": {
+    "5fa5228f50492e18410cea014a1b2257": {
+      "source_path": "deliverables\\TEEI-AWS-Partnership-Document-Content.md",
+      "num_chunks": 28,
+      "indexed_at": "2025-11-14T19:53:47.713213"
+    },
+    "9ba57228b880bd9efb97c286cde0cc05": {
+      "source_path": "reports\\TEEI_AWS_Design_Fix_Report.md",
+      "num_chunks": 19,
+      "indexed_at": "2025-11-14T19:53:47.715170"
+    },
+    "724f4a17bd2255da70aec4ca8de9b2ee": {
+      "source_path": "reports\\WORLD_CLASS_DESIGN_SPECIFICATION.md",
+      "num_chunks": 32,
+      "indexed_at": "2025-11-14T19:53:47.718532"
+    },
+    "f256819ba9576e3bc716d9e2f339c4a0": {
+      "source_path": "reports\\WORLD_CLASS_NONPROFIT_DESIGN_ANALYSIS.md",
+      "num_chunks": 52,
+      "indexed_at": "2025-11-14T19:53:47.723450"
+    },
+    "d8fdf26a95bade9dbb9d45d26b9ea1b0": {
+      "source_path": "deliverables/TEEI-AWS-Partnership-Document-Content.md",
+      "num_chunks": 28,
+      "indexed_at": "2025-11-15T22:00:39.101867"
+    }
+  },
+  "metadata": {
+    "last_updated": "2025-11-15T22:00:39.102035",
+    "num_documents": 5,
+    "num_chunks": 159,
+    "embedding_provider": "local"
+  }
+}

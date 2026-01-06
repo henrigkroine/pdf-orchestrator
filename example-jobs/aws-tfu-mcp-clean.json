@@ -1,0 +1,113 @@
+{
+  "jobId": "aws-partnership-tfu-mcp-clean-2025",
+  "jobType": "partnership",
+  "client": "AWS",
+  "style": "TFU",
+  "mcpMode": true,
+  "humanSession": false,
+
+  "templateId": "partnership-v1",
+
+  "data": {
+    "title": "Together for Ukraine Partnership",
+    "partner": {
+      "name": "AWS",
+      "logo": "assets/partner-logos/aws.svg"
+    },
+    "subtitle": "Empowering Ukrainian Students Through Cloud Education",
+    "heroImage": {
+      "source": "ai",
+      "prompt": "Warm natural lighting photo of diverse Ukrainian students collaborating on laptops, authentic educational setting, hopeful atmosphere, TEEI brand style"
+    },
+    "programs": [
+      {
+        "name": "AWS Cloud Education",
+        "description": "Comprehensive cloud computing curriculum for displaced Ukrainian students",
+        "studentsReached": 5000,
+        "coursesOffered": 120
+      }
+    ],
+    "metrics": {
+      "studentsReached": 5000,
+      "coursesOffered": 120,
+      "completionRate": 89,
+      "employmentRate": 76
+    }
+  },
+
+  "content": {
+    "source": "file",
+    "path": "deliverables/TEEI-AWS-Partnership-Document-Content.md"
+  },
+
+  "design": {
+    "profile": "TFU",
+    "brandSource": "figma",
+    "figmaFileId": "TEEI-Brand-System"
+  },
+
+  "output": {
+    "format": "pdf",
+    "quality": "high",
+    "intent": "screen",
+    "exportPresets": {
+      "print": "High Quality Print",
+      "digital": "[High Quality Print]"
+    },
+    "filename": "TEEI-AWS-Partnership-TFU"
+  },
+
+  "export": {
+    "pdfPreset": "High Quality Print",
+    "formats": ["pdf", "indd"]
+  },
+
+  "qa": {
+    "enabled": true,
+    "threshold": 140,
+    "auto_fix_colors": true,
+    "visualRegression": {
+      "enabled": true,
+      "baseline": "teei-aws-tfu-v1",
+      "maxDiffPercent": 5
+    }
+  },
+
+  "mcpFeatures": {
+    "useFigmaBrandCheck": false,
+    "useAiImages": false,
+    "useGitHubSync": false,
+    "useNotionSummary": false,
+    "useMongoArchive": false
+  },
+
+  "mcp": {
+    "workflow": "generate-tfu-partnership-pdf",
+    "servers": {
+      "figma": {
+        "enabled": false
+      },
+      "dalle": {
+        "enabled": false
+      },
+      "indesign": {
+        "enabled": true,
+        "actions": ["executeExtendScript", "exportPDF"]
+      },
+      "playwright": {
+        "enabled": false
+      },
+      "github": {
+        "enabled": false
+      }
+    }
+  },
+
+  "notes": [
+    "Clean TFU job without worldClass flag - uses MCP Manager path only",
+    "TFU failsafe: MUST use MCP Manager (cannot fallback to Python CLI)",
+    "QA threshold: 140/150 (TFU certification requirement)",
+    "Uses certified TFU script: scripts/generate_tfu_aws.jsx",
+    "Visual regression baseline: teei-aws-tfu-v1"
+  ]
+}

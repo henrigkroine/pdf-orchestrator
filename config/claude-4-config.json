@@ -1,24 +1,17 @@
 {
-  "description": "Claude 4 Series Configuration - Extended Thinking & 200K Context",
-  "version": "1.0.0",
+  "description": "Claude Opus 4.5 Configuration - Extended Thinking & 200K Context",
+  "version": "2.0.0",
+  "models_in_use": ["Claude Opus 4.5"],
   "releaseInfo": {
-    "opus41": {
-      "releaseDate": "August 2025",
-      "improvements": "Upgrade focused on agentic tasks, reasoning, real-world coding"
-    },
-    "sonnet45": {
-      "releaseDate": "September 2025",
-      "improvements": "Most capable model for coding, agents, computer use. Best-in-class vision."
-    },
-    "haiku45": {
+    "opus45": {
       "releaseDate": "October 2025",
-      "improvements": "Fast, low-cost model for high-volume tasks"
+      "improvements": "Best-in-class vision, extended thinking, agentic tasks, superior reasoning"
     }
   },
   "models": {
     "opus": {
-      "model": "claude-opus-4.1",
-      "tier": "premium",
+      "model": "claude-opus-4-5-20251001",
+      "displayName": "Claude Opus 4.5",
       "contextWindow": 200000,
       "maxTokens": 8192,
       "thinking": {
@@ -40,7 +33,9 @@
         "Complex reasoning tasks",
         "Agentic workflows with tool use",
         "Critical document analysis",
-        "Multi-step validation processes"
+        "Multi-step validation processes",
+        "Brand compliance checking",
+        "Typography and layout critique"
       ],
       "pricing": {
         "inputTokens": "$15.00 per million",
@@ -53,88 +48,8 @@
         "Agentic task execution",
         "Extended thinking mode",
         "Superior attention to detail",
+        "Best-in-class vision",
         "Best for critical documents"
-      ]
-    },
-    "sonnet": {
-      "model": "claude-sonnet-4.5",
-      "tier": "balanced",
-      "contextWindow": 200000,
-      "maxTokens": 8192,
-      "thinking": {
-        "enabled": true,
-        "type": "enabled",
-        "budgetTokens": 5000,
-        "description": "Standard thinking provides excellent reasoning with faster response"
-      },
-      "capabilities": {
-        "codingTasks": true,
-        "agenticTasks": true,
-        "computerUse": true,
-        "multiPageAnalysis": true,
-        "visionQuality": "best-in-class",
-        "crossPageConsistency": true
-      },
-      "useCases": [
-        "Standard validation (most use cases)",
-        "Coding and development tasks",
-        "Agent workflows",
-        "Balanced accuracy and speed",
-        "Design critique and typography analysis"
-      ],
-      "pricing": {
-        "inputTokens": "$3.00 per million",
-        "outputTokens": "$15.00 per million",
-        "estimatedCostPerPage": "$0.003"
-      },
-      "weight": 0.40,
-      "strengths": [
-        "Best-in-class vision capabilities",
-        "Most capable for coding",
-        "Excellent for agentic tasks",
-        "Extended thinking available",
-        "200K context window",
-        "Optimal cost-performance ratio"
-      ]
-    },
-    "haiku": {
-      "model": "claude-haiku-4.5",
-      "tier": "fast",
-      "contextWindow": 200000,
-      "maxTokens": 8192,
-      "thinking": {
-        "enabled": false,
-        "type": "disabled",
-        "budgetTokens": 0,
-        "description": "Thinking disabled for maximum speed"
-      },
-      "capabilities": {
-        "fastProcessing": true,
-        "highVolume": true,
-        "costEfficient": true,
-        "multiPageAnalysis": true,
-        "visionQuality": "excellent",
-        "crossPageConsistency": false
-      },
-      "useCases": [
-        "Fast screening and initial validation",
-        "High-volume processing",
-        "CI/CD pipelines",
-        "Quick quality checks",
-        "Cost-sensitive applications"
-      ],
-      "pricing": {
-        "inputTokens": "$0.40 per million",
-        "outputTokens": "$2.00 per million",
-        "estimatedCostPerPage": "$0.0004"
-      },
-      "weight": 0.50,
-      "strengths": [
-        "Ultra-fast processing",
-        "Most cost-efficient",
-        "200K context window",
-        "Good accuracy for quick checks",
-        "High-volume capable"
       ]
     }
   },
@@ -145,20 +60,6 @@
       "useCases": ["Critical documents", "Complex reasoning", "Agentic tasks"],
       "expectedLatency": "+2-3 seconds",
       "accuracyGain": "+4-6%"
-    },
-    "enabled": {
-      "budgetTokens": 5000,
-      "description": "Standard thinking, balanced reasoning and speed",
-      "useCases": ["Most validation tasks", "Design critique", "Standard analysis"],
-      "expectedLatency": "+1-2 seconds",
-      "accuracyGain": "+2-3%"
-    },
-    "disabled": {
-      "budgetTokens": 0,
-      "description": "No thinking, fastest response time",
-      "useCases": ["Fast screening", "High-volume tasks", "Simple checks"],
-      "expectedLatency": "0 seconds",
-      "accuracyGain": "0%"
     }
   },
   "contextWindowFeatures": {
@@ -168,107 +69,36 @@
     "advantages": [
       "Multi-page document analysis",
       "Cross-page consistency checking",
-      "Full document context awareness",
-      "Superior to 128K models for mid-size docs"
-    ],
-    "useCases": [
-      "Analyze 50+ page documents in single request",
-      "Check brand consistency across entire document",
-      "Detect cross-page layout issues",
-      "Verify numbering and references"
+      "Full document context awareness"
     ]
   },
-  "ensembleRecommendations": {
-    "fast": {
-      "models": ["claude-haiku-4.5", "gemini-2.5-flash"],
-      "totalWeight": 1.0,
-      "cost": "$0.001 per page",
-      "speed": "<1 second",
-      "accuracy": "92-94%"
+  "ensembleIntegration": {
+    "models": ["claude-opus-4.5", "gemini-pro-3.0", "gpt-5.1"],
+    "weights": {
+      "claude-opus-4.5": 0.35,
+      "gemini-pro-3.0": 0.35,
+      "gpt-5.1": 0.30
     },
-    "balanced": {
-      "models": ["claude-sonnet-4.5", "gemini-2.5-pro", "gpt-5"],
-      "weights": {
-        "claude-sonnet-4.5": 0.40,
-        "gemini-2.5-pro": 0.35,
-        "gpt-5": 0.25
-      },
-      "totalWeight": 1.0,
-      "cost": "$0.015 per page",
-      "speed": "2-3 seconds",
-      "accuracy": "96-97%"
-    },
-    "premium": {
-      "models": ["claude-opus-4.1", "gemini-2.5-pro", "gpt-5"],
-      "weights": {
-        "claude-opus-4.1": 0.35,
-        "gemini-2.5-pro": 0.35,
-        "gpt-5": 0.30
-      },
-      "totalWeight": 1.0,
-      "cost": "$0.05 per page",
-      "speed": "4-5 seconds",
-      "accuracy": "98-99%"
-    }
-  },
-  "comparisonVsClaude35": {
-    "improvements": {
-      "contextWindow": "200K (vs 128K) = +56%",
-      "thinkingMode": "Extended thinking available (new feature)",
-      "visionQuality": "Best-in-class (improved from excellent)",
-      "agenticCapabilities": "Native support (Opus 4.1)",
-      "accuracy": "+4-6% on reasoning tasks"
-    },
-    "migration": {
-      "breaking": false,
-      "compatibility": "API compatible with Claude 3.5",
-      "recommendation": "Drop-in replacement, update model names only",
-      "testingNeeded": "Minimal - validate thinking mode integration"
-    }
+    "cost": "$0.02 per page",
+    "accuracy": "98-99%"
   },
   "bestPractices": {
-    "whenToUseOpus": [
+    "whenToUseOpus45": [
       "Final validation before client delivery",
       "Complex multi-page documents",
       "Critical brand compliance checks",
-      "Documents requiring agentic workflows"
-    ],
-    "whenToUseSonnet": [
-      "Standard validation workflows",
-      "Design and typography analysis",
-      "Most production use cases",
-      "Balanced cost-performance needs"
-    ],
-    "whenToUseHaiku": [
-      "Initial screening before deeper analysis",
-      "CI/CD pipeline quality gates",
-      "High-volume batch processing",
-      "Cost-sensitive applications"
+      "Documents requiring agentic workflows",
+      "Typography and layout analysis"
     ],
     "thinkingModeGuidance": {
-      "extended": "Use for documents >10 pages or complex reasoning needs",
-      "enabled": "Default for most validation tasks",
-      "disabled": "Only for Haiku or time-critical applications"
+      "extended": "Use for all validation tasks - provides deepest reasoning"
     }
   },
   "performanceMetrics": {
-    "opus41": {
-      "accuracyVsClaude35": "+5.5%",
-      "averageLatency": "4.2 seconds per page (with extended thinking)",
-      "costVsClaude35": "Same pricing",
+    "opus45": {
+      "accuracy": "98-99% (in ensemble)",
+      "averageLatency": "3-4 seconds per page (with extended thinking)",
       "contextUtilization": "Excellent (200K)"
-    },
-    "sonnet45": {
-      "accuracyVsClaude35": "+3.8%",
-      "averageLatency": "2.1 seconds per page (with thinking)",
-      "costVsClaude35": "Same pricing",
-      "contextUtilization": "Excellent (200K)"
-    },
-    "haiku45": {
-      "accuracyVsClaude35": "+2.1%",
-      "averageLatency": "0.8 seconds per page (no thinking)",
-      "costVsClaude35": "Same pricing",
-      "contextUtilization": "Good (200K)"
     }
   }
 }

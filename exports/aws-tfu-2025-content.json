@@ -1,0 +1,49 @@
+{
+  "cover_title": "Building Europe's Cloud-Native Workforce",
+  "cover_subtitle": "Together for Ukraine · Amazon Web Services Strategic Partnership",
+  "intro_text": "The Educational Equality Institute (TEEI) is proud to partner with Amazon Web Services to empower Ukrainian refugees across Europe with in-demand cloud computing skills. Through this strategic collaboration, TEEI and AWS will provide technical training and certification pathways, enabling displaced Ukrainian talent to reskill for the cloud-native workforce. Together, we aim to drive positive social impact at scale, accelerating employability and digital transformation in the communities we serve.",
+  "programs": [
+    {
+      "name": "Cloud Fundamentals",
+      "description": "Introduction to cloud computing with focus on employment outcomes.",
+      "_partner_branding": true
+    },
+    {
+      "name": "Advanced Skills Development",
+      "description": "Specialized technical training for career advancement.",
+      "_partner_branding": true
+    }
+  ],
+  "cta_text": "Ready to expand our Amazon Web Services partnership and transform education through technology and create lasting impact?",
+  "metrics": {
+    "students_reached": "50,000",
+    "countries": "12",
+    "programs": "45",
+    "partners": "3,500",
+    "employment_rate": "78%",
+    "avg_salary": "â‚¬45k",
+    "certification_rate": "92%",
+    "mentor_hours": "72,000",
+    "satisfaction_score": "88%",
+    "aws_certifications": "3,200",
+    "annual_partnership_value": "$150,000"
+  },
+  "_metadata": {
+    "personalized": true,
+    "partner_id": "aws-cloud",
+    "partner_name": "Amazon Web Services",
+    "industry": "Cloud Computing"
+  },
+  "_autopilot_notes": [
+    "Highlight concrete employability outcomes (78% employment rate, €45k avg salary)",
+    "Emphasize Europe/Ukraine narrative - refugees building new careers",
+    "Include AWS Academy partnership expansion details",
+    "Mention specific success stories from cloud training programs",
+    "Strong call-to-action around scaling partnership impact"
+  ],
+  "_autopilot_objectives": [
+    "Scale cloud skills training for displaced Ukrainian learners across Europe",
+    "Increase AWS certification completion rates and employment outcomes",
+    "Establish strategic multi-year partnership framework with measurable impact"
+  ]
+}

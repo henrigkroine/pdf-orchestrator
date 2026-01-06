@@ -3,39 +3,40 @@
   "level": "AAA",
   "description": "WCAG 2.2 Level AAA compliance configuration for TEEI PDF documents with AI-powered validation",
 
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
   "aiModels": {
     "altTextGeneration": {
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "temperature": 0.3,
       "maxTokens": 150,
       "description": "Generate and assess alt text quality"
     },
     "readabilityAnalysis": {
-      "model": "claude-opus-4.1",
+      "model": "claude-opus-4.5",
       "temperature": 0.2,
       "maxTokens": 500,
       "description": "Analyze readability and plain language"
     },
     "structureValidation": {
-      "model": "claude-sonnet-4.5",
+      "model": "claude-opus-4.5",
       "temperature": 0.1,
       "maxTokens": 300,
       "description": "Validate document structure and semantics"
     },
     "cognitiveAccessibility": {
-      "model": "gpt-5",
+      "model": "gpt-5.1",
       "temperature": 0.2,
       "maxTokens": 400,
       "description": "Assess cognitive load and memory demands"
     },
     "internationalAccessibility": {
-      "model": "gemini-2.5-pro",
+      "model": "gemini-pro-3.0",
       "temperature": 0.2,
       "maxTokens": 300,
       "description": "Validate international and cultural accessibility"
     },
     "colorHarmony": {
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "temperature": 0.3,
       "maxTokens": 200,
       "description": "Balance color harmony with accessibility"

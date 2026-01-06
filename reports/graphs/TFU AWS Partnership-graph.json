@@ -1,0 +1,58 @@
+{
+  "jobId": "TFU AWS Partnership",
+  "generatedAt": "2025-11-14T12:49:47.670362",
+  "nodes": [
+    {
+      "id": "job",
+      "type": "job",
+      "label": "TFU AWS Partnership",
+      "status": "completed"
+    },
+    {
+      "id": "indesign_app",
+      "type": "indesign",
+      "label": "InDesign",
+      "status": "completed"
+    },
+    {
+      "id": "validator",
+      "type": "qa",
+      "label": "Document Validator",
+      "status": "completed"
+    },
+    {
+      "id": "visual",
+      "type": "qa",
+      "label": "Visual Regression",
+      "status": "completed"
+    }
+  ],
+  "edges": [
+    {
+      "from": "job",
+      "to": "indesign_app",
+      "label": "layout"
+    },
+    {
+      "from": "indesign_app",
+      "to": "validator",
+      "label": "validate"
+    },
+    {
+      "from": "validator",
+      "to": "visual",
+      "label": "compare"
+    }
+  ],
+  "metadata": {
+    "jobType": "unknown",
+    "client": "unknown",
+    "style": "default",
+    "mcpMode": false
+  },
+  "executionMetrics": {
+    "totalScore": 140,
+    "passed": true,
+    "runtime_seconds": 9.816020011901855
+  }
+}

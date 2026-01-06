@@ -1,0 +1,60 @@
+{
+  "jobId": "aws-tfu-mcp-integration-test",
+  "jobType": "partnership",
+  "client": "AWS",
+  "style": "TFU",
+  "mcpMode": true,
+  "humanSession": false,
+  "worldClass": false,
+
+  "templateId": "partnership-v1",
+
+  "data": {
+    "title": "Together for Ukraine Partnership",
+    "partner": {
+      "name": "AWS",
+      "logo": "assets/partner-logos/aws.svg"
+    },
+    "subtitle": "Empowering Ukrainian Students Through Cloud Education",
+    "programs": [
+      {
+        "name": "AWS Cloud Education",
+        "description": "Comprehensive cloud computing curriculum",
+        "studentsReached": 5000
+      }
+    ],
+    "metrics": {
+      "studentsReached": 5000,
+      "coursesOffered": 120
+    }
+  },
+
+  "output": {
+    "format": "pdf",
+    "quality": "high",
+    "intent": "screen"
+  },
+
+  "qa": {
+    "enabled": true,
+    "threshold": 90
+  },
+
+  "mcpFeatures": {
+    "useFigmaBrandCheck": false,
+    "useAiImages": false,
+    "useGitHubSync": false,
+    "useNotionSummary": false,
+    "useMongoArchive": false
+  },
+
+  "mcp": {
+    "workflow": "generate-partnership-pdf",
+    "servers": {
+      "indesign": {
+        "enabled": true,
+        "actions": ["openTemplate", "bindData", "exportPDF"]
+      }
+    }
+  }
+}

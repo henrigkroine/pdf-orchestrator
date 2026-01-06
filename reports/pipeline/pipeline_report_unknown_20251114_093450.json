@@ -1,0 +1,37 @@
+{
+  "timestamp": "2025-11-14T09:34:35.549557",
+  "steps": [
+    {
+      "name": "Locate PDF",
+      "success": true,
+      "timestamp": "2025-11-14T09:34:35.549631",
+      "duration_seconds": 7.700920104980469e-05,
+      "details": "exports/TEEI-AWS-Partnership-TFU-DIGITAL.pdf"
+    },
+    {
+      "name": "Validate PDF",
+      "success": false,
+      "timestamp": "2025-11-14T09:34:43.920494",
+      "duration_seconds": 8.3709397315979,
+      "error": "Score: 115/150"
+    },
+    {
+      "name": "PDF Quality Validation",
+      "success": true,
+      "timestamp": "2025-11-14T09:34:46.306823",
+      "duration_seconds": 10.757269620895386
+    },
+    {
+      "name": "Visual Regression",
+      "success": true,
+      "timestamp": "2025-11-14T09:34:50.514490",
+      "duration_seconds": 14.964936256408691,
+      "details": "Diff 0.00%"
+    }
+  ],
+  "success": false,
+  "score": 115,
+  "metrics": {
+    "graph_generation_seconds": 0.06324243545532227
+  }
+}

@@ -6,6 +6,48 @@ Intelligent PDF automation system that routes jobs between local MCP workers (fo
 
 ---
 
+## 🚨 CRITICAL: MCP Routing Required
+
+**All premium documents (partnership, program, report) MUST route through MCP (not PDF Services)**
+
+Premium documents require brand-compliant InDesign automation with human oversight. The Adobe PDF Services API lacks the precision and quality control needed for partnership materials.
+
+### Quick Verification (90 seconds)
+
+```powershell
+# Run verification script
+.\scripts\verify-mcp-routing.ps1
+
+# Should show: 🟢 ALL CHECKS PASSED
+```
+
+**If issues found**: See **[QUICK-START-MCP-ROUTING.md](QUICK-START-MCP-ROUTING.md)** for fixes.
+
+### One-Liner Rules
+
+```json
+// In config/orchestrator.config.json
+{
+  "routing": {
+    "defaultWorker": "mcp",  // ✅ MUST be "mcp" for premium docs
+    "rules": [
+      {
+        "condition": "jobType === 'partnership' || jobType === 'program' || jobType === 'report'",
+        "worker": "mcp"
+      }
+    ]
+  }
+}
+```
+
+**Why This Matters**:
+- ❌ **Wrong**: `defaultWorker: "pdfServices"` → Low-quality API automation, no brand compliance
+- ✅ **Correct**: `defaultWorker: "mcp"` → High-quality InDesign automation, full brand control
+
+**Test with Sample**: `node orchestrator.js example-jobs/premium-sample.json`
+
+---
+
 ## 📋 Table of Contents
 
 - [Overview](#overview)
@@ -34,6 +76,7 @@ PDF Orchestrator is a sophisticated automation system that intelligently routes 
 
 ## ✨ Features
 
+### Core Features
 - ✅ **Intelligent Job Routing**: Automatically selects the best worker based on job requirements
 - ✅ **Brand Compliance**: Built-in TEEI brand guidelines enforcement
 - ✅ **MCP Integration**: Direct control of Adobe InDesign and Illustrator via MCP protocol
@@ -42,6 +85,16 @@ PDF Orchestrator is a sophisticated automation system that intelligently routes 
 - ✅ **Template Management**: Flexible template registry system
 - ✅ **Cloudflare R2 Integration**: Automatic upload to cloud storage
 - ✅ **Logging & Diagnostics**: Comprehensive logging for debugging
+
+### Phase 6 Enterprise Features (NEW)
+- ✅ **QA Profiles**: Config-driven validation with automatic baseline creation
+- ✅ **MCP Flows**: Multi-server workflow orchestration (Figma + DALL-E + InDesign)
+- ✅ **Approval Workflows**: Human-in-the-loop Slack integration
+- ✅ **Experiment Mode**: A/B testing for PDF variants
+- ✅ **Runtime Metrics**: Performance tracking and dashboards
+- ✅ **Job Dependencies**: Multi-job workflow orchestration
+
+📖 **[Complete Phase 6 Guide](docs/PHASE-6-GUIDE.md)**
 
 ---
 
@@ -567,6 +620,15 @@ node -e "require('dotenv').config({path:'./config/.env'}); console.log('R2:', pr
 
 ## 📚 Additional Documentation
 
+### Phase 6 Documentation (NEW)
+- **Phase 6 Overview**: `docs/PHASE-6-GUIDE.md` - Complete Phase 6 features guide
+- **QA Profiles**: `docs/QAPROFILE-GUIDE.md` - Config-driven validation
+- **MCP Flows**: `docs/MCP-FLOWS-GUIDE.md` - Multi-server workflows
+- **Experiment Mode**: `docs/EXPERIMENT-MODE-GUIDE.md` - A/B testing
+- **Migration Guide**: `docs/MIGRATION-TO-PHASE-6.md` - Upgrade from Phase 5
+- **Examples**: `examples/phase-6/` - Complete working examples
+
+### Core Documentation
 - **Design Fix Report**: `reports/TEEI_AWS_Design_Fix_Report.md` - Comprehensive brand compliance guide
 - **Quick Start**: `QUICKSTART.md` - 5-minute setup guide
 - **MCP Setup**: `mcp-local/README.md` - Detailed MCP server documentation

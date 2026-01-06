@@ -1,0 +1,14 @@
+{
+  "approved": false,
+  "note": "auto_rejected_validation_failed",
+  "score": 65,
+  "threshold": 80,
+  "timestamp": "2025-11-13T20:21:33.431Z",
+  "mode": "auto",
+  "duration_seconds": 0.006,
+  "scorecard": {
+    "jobId": "test-approval-workflow-failed",
+    "score": 65,
+    "passed": false
+  }
+}

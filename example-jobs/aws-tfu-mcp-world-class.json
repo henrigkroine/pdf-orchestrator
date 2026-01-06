@@ -1,0 +1,139 @@
+{
+  "jobId": "aws-partnership-tfu-mcp-2025",
+  "jobType": "partnership",
+  "client": "AWS",
+  "style": "TFU",
+  "mcpMode": true,
+  "worldClass": true,
+  "humanSession": false,
+
+  "templateId": "tfu-partnership-v1",
+
+  "data": {
+    "title": "Together for Ukraine Partnership",
+    "partner": {
+      "name": "AWS",
+      "logo": "assets/partner-logos/aws.svg"
+    },
+    "subtitle": "Empowering Ukrainian Students Through Cloud Education",
+    "heroImage": {
+      "source": "ai",
+      "prompt": "Warm natural lighting photo of diverse Ukrainian students collaborating on laptops, authentic educational setting, hopeful atmosphere, TEEI brand style"
+    },
+    "aiImageSlots": {
+      "cover": "Hopeful Ukrainian students using cloud technology in modern learning space, warm natural lighting, authentic educational moment",
+      "hero": "Diverse group of Ukrainian learners collaborating on AWS cloud computing projects, bright hopeful atmosphere",
+      "program_1": "Students engaged in hands-on cloud computing training, modern laptops, collaborative workspace"
+    },
+    "programs": [
+      {
+        "name": "AWS Cloud Education",
+        "description": "Comprehensive cloud computing curriculum for displaced Ukrainian students",
+        "studentsReached": 5000,
+        "coursesOffered": 120
+      }
+    ],
+    "metrics": {
+      "studentsReached": 5000,
+      "coursesOffered": 120,
+      "completionRate": 89,
+      "employmentRate": 76
+    }
+  },
+
+  "content": {
+    "source": "file",
+    "path": "deliverables/TEEI-AWS-Partnership-Document-Content.md"
+  },
+
+  "design": {
+    "profile": "TFU",
+    "brandSource": "figma",
+    "figmaFileId": "TEEI-Brand-System"
+  },
+
+  "output": {
+    "format": "pdf",
+    "quality": "high",
+    "intent": "screen",
+    "exportPresets": {
+      "print": "High Quality Print",
+      "digital": "[High Quality Print]"
+    },
+    "filename": "TEEI-AWS-Partnership-TFU"
+  },
+
+  "export": {
+    "pdfPreset": "High Quality Print",
+    "formats": ["pdf", "indd"]
+  },
+
+  "qa": {
+    "enabled": true,
+    "threshold": 95,
+    "auto_fix_colors": true,
+    "visualRegression": {
+      "enabled": true,
+      "baseline": "teei-aws-tfu-v1",
+      "maxDiffPercent": 5
+    }
+  },
+
+  "qaProfile": {
+    "id": "aws_tfu_world_class",
+    "min_score": 95,
+    "min_tfu_score": 140,
+    "max_visual_diff_percent": 5,
+    "visual_baseline_id": "tfu-aws-v1",
+    "create_baseline_on_first_pass": true
+  },
+
+  "approval": {
+    "mode": "none",
+    "channel": "#design-approvals"
+  },
+
+  "mode": "normal",
+
+  "mcpFeatures": {
+    "useFigmaBrandCheck": false,
+    "useAiImages": false,
+    "useGitHubSync": true,
+    "useNotionSummary": false,
+    "useMongoArchive": false
+  },
+
+  "mcp": {
+    "workflow": "generate-partnership-pdf",
+    "servers": {
+      "figma": {
+        "enabled": true,
+        "action": "extractDesignTokens"
+      },
+      "dalle": {
+        "enabled": true,
+        "action": "generateHeroImage"
+      },
+      "indesign": {
+        "enabled": true,
+        "actions": ["openTemplate", "applyBrandColors", "bindData", "placeImage", "exportPDF"]
+      },
+      "playwright": {
+        "enabled": true,
+        "action": "validateQA"
+      },
+      "github": {
+        "enabled": false,
+        "action": "commitResults"
+      }
+    }
+  },
+
+  "notes": [
+    "This job uses MCP InDesign for world-class TFU layout",
+    "QA threshold: 95 (world-class gate)",
+    "Visual regression baseline: teei-aws-tfu-v1",
+    "Optional: Figma brand token extraction (if configured)",
+    "Optional: DALL-E AI image generation (if configured)"
+  ]
+}

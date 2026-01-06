@@ -82,54 +82,55 @@
     "trackImageQuality": true
   },
 
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
   "ai": {
     "enabled": true,
     "models": {
       "changeImpact": {
         "provider": "openai",
-        "model": "gpt-5",
+        "model": "gpt-5.1",
         "temperature": 0.3,
         "maxTokens": 2000
       },
       "benchmarking": {
         "provider": "anthropic",
-        "model": "claude-opus-4.1",
+        "model": "claude-opus-4.5",
         "temperature": 0.2,
         "maxTokens": 3000
       },
       "insights": {
         "provider": "anthropic",
-        "model": "claude-opus-4.1",
+        "model": "claude-opus-4.5",
         "temperature": 0.3,
         "maxTokens": 2500
       },
       "consistency": {
-        "provider": "openai",
-        "model": "gpt-4o",
+        "provider": "google",
+        "model": "gemini-pro-3.0",
         "temperature": 0.2,
         "maxTokens": 2000
       },
       "trends": {
         "provider": "google",
-        "model": "gemini-2.5-pro",
+        "model": "gemini-pro-3.0",
         "temperature": 0.3,
         "maxTokens": 2500
       },
       "competitive": {
         "provider": "google",
-        "model": "gemini-2.5-pro",
+        "model": "gemini-pro-3.0",
         "temperature": 0.3,
         "maxTokens": 3000
       },
       "statistics": {
         "provider": "openai",
-        "model": "gpt-5",
+        "model": "gpt-5.1",
         "temperature": 0.1,
         "maxTokens": 2000
       },
       "reporting": {
         "provider": "anthropic",
-        "model": "claude-sonnet-4.5",
+        "model": "claude-opus-4.5",
         "temperature": 0.4,
         "maxTokens": 4000
       }

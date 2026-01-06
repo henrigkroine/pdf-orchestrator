@@ -1,0 +1,1 @@
+{"timestamp":"2025-11-05T11:04:39.252Z","period_start":"2025-11-05T10:49:39.248Z","period_end":"2025-11-05T11:04:39.248Z","total_operations":19,"latency":{"p50":1500,"p95":3000,"p99":3000,"avg":1895},"success_rate":84.21,"error_rate":15.79,"total_cost":9.25,"operations_by_type":{"test_operation":19},"errors_by_service":{"unknown":3}}

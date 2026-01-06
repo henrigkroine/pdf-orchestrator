@@ -1,0 +1,82 @@
+{
+  "jobType": "report",
+  "templateId": "report-annual-v1",
+  "humanSession": false,
+  "data": {
+    "title": "🌟 TEEI AI-Powered Education Revolution 2025",
+    "subtitle": "World-Class Partnership Showcase Document",
+    "content": [
+      {
+        "type": "text",
+        "content": "The Educational Equality Institute (TEEI) has transformed global education through AI-powered learning platforms, reaching 127,000+ students across 89 countries with a 92% success rate."
+      },
+      {
+        "type": "chart",
+        "chartType": "bar",
+        "title": "Global Impact Metrics",
+        "data": {
+          "labels": ["Students Reached", "Countries", "Partner Schools", "Success Rate %"],
+          "values": [127000, 89, 450, 92],
+          "colors": ["#BA8F5A", "#65873B", "#913B2F", "#00393F"]
+        }
+      },
+      {
+        "type": "text",
+        "content": "Revolutionary AI Platform Features:\n\n🤖 Adaptive Learning AI - Personalized curriculum adapting to each student's pace\n📊 Real-Time Analytics - Track progress and optimize outcomes with live dashboards\n🌐 Multi-Language Support - 47 languages with real-time translation\n♿ Universal Accessibility - WCAG 2.2 AAA compliant platform\n🎯 Skills-Based Learning - Practical skills for today's job market\n🔒 Enterprise Security - Bank-level encryption and compliance (GDPR, FERPA, COPPA)"
+      },
+      {
+        "type": "chart",
+        "chartType": "line",
+        "title": "Student Performance Growth (12-Month Study)",
+        "data": {
+          "labels": ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"],
+          "datasets": [
+            {
+              "label": "Math Proficiency",
+              "data": [45, 52, 58, 64, 71, 76, 80, 84, 87, 90, 92, 94],
+              "color": "#BA8F5A"
+            },
+            {
+              "label": "Reading Comprehension",
+              "data": [51, 56, 61, 67, 72, 77, 81, 85, 88, 91, 93, 95],
+              "color": "#65873B"
+            },
+            {
+              "label": "Critical Thinking",
+              "data": [38, 44, 51, 58, 64, 70, 75, 80, 84, 87, 90, 92],
+              "color": "#913B2F"
+            }
+          ]
+        }
+      },
+      {
+        "type": "table",
+        "title": "Partnership Tiers",
+        "headers": ["Tier", "Investment", "Students", "Key Features"],
+        "rows": [
+          ["Foundation Partner", "$50K/year", "Up to 1,000", "Platform access, Basic analytics, Email support (24-48hr), Quarterly training"],
+          ["Strategic Partner ⭐", "$150K/year", "Up to 5,000", "Advanced AI insights, Priority support (4-8hr), Monthly training, Custom integrations, Co-branding"],
+          ["Enterprise Partner", "Custom", "Unlimited", "Full customization, 24/7 dedicated team, Weekly sessions, White-label, Research collaboration"]
+        ]
+      },
+      {
+        "type": "text",
+        "content": "Partner Testimonials:\n\n\"TEEI's platform transformed our school. We've seen a 300% increase in student engagement and 45% improvement in test scores. The AI-powered personalization means every student gets exactly what they need.\"\n- Dr. Sarah Johnson, Principal, Lagos International School, Nigeria\n\n\"The accessibility features are game-changing. Finally, all our students can learn together, regardless of their abilities. TEEI has made inclusive education a reality, not just an aspiration.\"\n- Maria Rodriguez, Special Education Director, São Paulo Education Network, Brazil"
+      },
+      {
+        "type": "text",
+        "content": "Ready to Transform Education?\n\nJoin 450+ partner organizations making education accessible to every student, everywhere.\n\n✅ Schedule Partnership Call: theeducationalequalityinstitute.org/partner\n✅ Download Partnership Deck: theeducationalequalityinstitute.org/resources"
+      }
+    ],
+    "metadata": {
+      "author": "The Educational Equality Institute",
+      "date": "2025-01-07",
+      "organization": "TEEI"
+    }
+  },
+  "output": {
+    "format": "pdf-interactive",
+    "destination": "exports/TEEI-INSANE-SHOWCASE.pdf",
+    "quality": "high"
+  }
+}

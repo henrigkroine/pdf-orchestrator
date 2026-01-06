@@ -382,43 +382,28 @@
     }
   },
 
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
   "ai": {
     "models": {
-      "claudeOpus41": {
+      "claudeOpus45": {
         "provider": "anthropic",
-        "model": "claude-opus-4.1",
-        "role": "Golden ratio and deep layout reasoning",
-        "useCases": ["goldenRatio", "professionalStandards"],
+        "model": "claude-opus-4.5",
+        "role": "Golden ratio, deep layout reasoning, alignment and precision critique",
+        "useCases": ["goldenRatio", "professionalStandards", "alignment", "precision"],
         "temperature": 0.3,
-        "maxTokens": 4096
+        "maxTokens": 8192
       },
-      "gpt4o": {
+      "gpt51": {
         "provider": "openai",
-        "model": "gpt-4o",
-        "role": "Grid system and proximity analysis",
-        "useCases": ["gridAlignment", "proximity"],
-        "temperature": 0.2,
-        "maxTokens": 4096
-      },
-      "gpt5": {
-        "provider": "openai",
-        "model": "gpt-5",
-        "role": "Spacing optimization and anomaly detection",
-        "useCases": ["spacing", "optimization"],
+        "model": "gpt-5.1",
+        "role": "Grid system, proximity analysis, spacing optimization",
+        "useCases": ["gridAlignment", "proximity", "spacing", "optimization"],
         "temperature": 0.2,
         "maxTokens": 8192
       },
-      "claudeSonnet45": {
-        "provider": "anthropic",
-        "model": "claude-sonnet-4.5",
-        "role": "Alignment and precision critique",
-        "useCases": ["alignment", "precision"],
-        "temperature": 0.1,
-        "maxTokens": 4096
-      },
-      "gemini25Pro": {
+      "geminiPro30": {
         "provider": "google",
-        "model": "gemini-2.5-pro",
+        "model": "gemini-pro-3.0",
         "role": "Hierarchy, balance, and visual weight analysis",
         "useCases": ["hierarchy", "balance", "visualWeight"],
         "temperature": 0.3,

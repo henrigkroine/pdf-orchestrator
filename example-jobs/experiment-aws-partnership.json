@@ -1,0 +1,170 @@
+{
+  "jobId": "aws-partnership-experiment-2025",
+  "jobType": "partnership",
+  "client": "AWS",
+  "style": "TFU",
+  "mcpMode": true,
+  "worldClass": true,
+  "humanSession": false,
+
+  "mode": "experiment",
+
+  "experiment": {
+    "name": "AWS Partnership Layout Optimization",
+    "description": "Testing 3 design approaches to find optimal layout for AWS partnership document",
+    "variants": 3,
+    "weights": {
+      "totalScore": 0.5,
+      "tfuScore": 0.3,
+      "visualDiff": 0.15,
+      "passed": 0.05
+    },
+    "variantConfigs": [
+      {
+        "description": "Classic Professional (Nordshore primary)",
+        "design": {
+          "profile": "TFU",
+          "colorScheme": "nordshore-primary",
+          "layout": "classic",
+          "brandSource": "figma",
+          "figmaFileId": "TEEI-Brand-System"
+        },
+        "output": {
+          "quality": "high",
+          "intent": "screen"
+        }
+      },
+      {
+        "description": "Modern Vibrant (Sky accent colors)",
+        "design": {
+          "profile": "TFU",
+          "colorScheme": "sky-accent",
+          "layout": "modern",
+          "brandSource": "figma",
+          "figmaFileId": "TEEI-Brand-System"
+        },
+        "output": {
+          "quality": "high",
+          "intent": "screen"
+        }
+      },
+      {
+        "description": "Premium Bold (Gold highlights)",
+        "design": {
+          "profile": "TFU",
+          "colorScheme": "gold-highlight",
+          "layout": "bold",
+          "brandSource": "figma",
+          "figmaFileId": "TEEI-Brand-System"
+        },
+        "output": {
+          "quality": "high",
+          "intent": "screen"
+        }
+      }
+    ]
+  },
+
+  "templateId": "partnership-v1",
+
+  "data": {
+    "title": "Together for Ukraine Partnership",
+    "partner": {
+      "name": "AWS",
+      "logo": "assets/partner-logos/aws.svg"
+    },
+    "subtitle": "Empowering Ukrainian Students Through Cloud Education",
+    "heroImage": {
+      "source": "ai",
+      "prompt": "Warm natural lighting photo of diverse Ukrainian students collaborating on laptops, authentic educational setting, hopeful atmosphere, TEEI brand style"
+    },
+    "programs": [
+      {
+        "name": "AWS Cloud Education",
+        "description": "Comprehensive cloud computing curriculum for displaced Ukrainian students",
+        "studentsReached": 5000,
+        "coursesOffered": 120
+      }
+    ],
+    "metrics": {
+      "studentsReached": 5000,
+      "coursesOffered": 120,
+      "completionRate": 89,
+      "employmentRate": 76
+    }
+  },
+
+  "content": {
+    "source": "file",
+    "path": "deliverables/TEEI-AWS-Partnership-Document-Content.md"
+  },
+
+  "output": {
+    "format": "pdf",
+    "exportPresets": {
+      "print": "High Quality Print",
+      "digital": "[High Quality Print]"
+    },
+    "filename": "TEEI-AWS-Partnership-Experiment"
+  },
+
+  "export": {
+    "pdfPreset": "High Quality Print",
+    "formats": ["pdf"]
+  },
+
+  "qa": {
+    "enabled": true,
+    "threshold": 95,
+    "auto_fix_colors": true,
+    "visualRegression": {
+      "enabled": true,
+      "baseline": "teei-aws-tfu-v1",
+      "maxDiffPercent": 5
+    }
+  },
+
+  "qaProfile": {
+    "id": "aws_tfu_experiment",
+    "min_score": 95,
+    "min_tfu_score": 140,
+    "max_visual_diff_percent": 5,
+    "visual_baseline_id": "tfu-aws-v1",
+    "create_baseline_on_first_pass": false
+  },
+
+  "approval": {
+    "mode": "none"
+  },
+
+  "mcpFeatures": {
+    "useFigmaBrandCheck": false,
+    "useAiImages": false,
+    "useGitHubSync": false,
+    "useNotionSummary": false,
+    "useMongoArchive": false
+  },
+
+  "mcp": {
+    "workflow": "generate-partnership-pdf",
+    "servers": {
+      "indesign": {
+        "enabled": true,
+        "actions": ["openTemplate", "applyBrandColors", "bindData", "placeImage", "exportPDF"]
+      },
+      "playwright": {
+        "enabled": true,
+        "action": "validateQA"
+      }
+    }
+  },
+
+  "notes": [
+    "EXPERIMENT MODE: Tests 3 design variants",
+    "Variant 1: Classic Professional (Nordshore primary)",
+    "Variant 2: Modern Vibrant (Sky accent)",
+    "Variant 3: Premium Bold (Gold highlights)",
+    "Winner selected by composite score (quality + TFU + visual regression)",
+    "Results saved to reports/experiments/"
+  ]
+}

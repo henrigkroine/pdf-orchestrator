@@ -1,0 +1,32 @@
+{
+  "jobId": "test-approval-workflow-failed",
+  "jobName": "Test Approval Workflow (Failed)",
+  "pdfPath": "./exports/test-document-failed.pdf",
+  "timestamp": "2025-11-13T14:35:00.000Z",
+  "totalScore": 65,
+  "maxScore": 150,
+  "threshold": 80,
+  "tfuCompliance": true,
+  "qaProfile": {
+    "id": "test-profile",
+    "min_score": 80,
+    "min_tfu_score": 140,
+    "max_visual_diff_percent": 5.0,
+    "visual_baseline_id": "test-baseline"
+  },
+  "visualDiffPercent": 8.5,
+  "maxVisualDiffAllowed": 5.0,
+  "visualBaseline": "test-baseline",
+  "baseline_status": "used",
+  "baseline_created": false,
+  "metrics": {
+    "runtime_seconds": 42.1,
+    "steps_completed": 5,
+    "steps_failed": 2,
+    "validation_time": 11.2,
+    "visual_regression_time": 7.9
+  },
+  "passed": false,
+  "steps": 5,
+  "failedSteps": 2
+}

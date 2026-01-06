@@ -1,5 +1,26 @@
 {
   "templates": {
+    "tfu-partnership-v1": {
+      "file": "./partnerships/tfu-partnership.indt",
+      "application": "indesign",
+      "version": "1.0",
+      "description": "Together for Ukraine partnership document - 4-page premium layout with TFU design system",
+      "cloudAssetId": null,
+      "requiredFields": ["title", "partner", "organization", "year", "metrics"],
+      "designSystem": "tfu",
+      "pages": 4,
+      "colors": {
+        "primary": "#00393F",
+        "accent": "#C9E4EC",
+        "forbidden": ["#BA8F5A", "#D4AF37"]
+      },
+      "fonts": {
+        "headlines": "Lora",
+        "body": "Roboto"
+      },
+      "script": "scripts/generate_tfu_aws_v2.jsx",
+      "targetScore": 145
+    },
     "report-annual-v1": {
       "file": "./reports/annual-report.indt",
       "application": "indesign",
@@ -15,6 +36,22 @@
       "description": "Monthly summary report template",
       "cloudAssetId": null,
       "requiredFields": ["title", "month", "year", "content"]
+    },
+    "partnership-v1": {
+      "file": "./partnerships/partnership-proposal.indt",
+      "application": "indesign",
+      "version": "1.0",
+      "description": "Premium partnership proposal template",
+      "cloudAssetId": null,
+      "requiredFields": ["title", "partner", "organization", "content"]
+    },
+    "program-v1": {
+      "file": "./programs/program-documentation.indt",
+      "application": "indesign",
+      "version": "1.0",
+      "description": "Premium program documentation template",
+      "cloudAssetId": null,
+      "requiredFields": ["title", "program", "content"]
     },
     "campaign-flyer-v2": {
       "file": "./campaigns/flyer-template.ait",

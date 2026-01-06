@@ -1,0 +1,14 @@
+{
+  "approved": true,
+  "note": "auto_approved_validation_passed",
+  "score": 145,
+  "threshold": 80,
+  "timestamp": "2025-11-13T20:21:28.979Z",
+  "mode": "auto",
+  "duration_seconds": 0.005,
+  "scorecard": {
+    "jobId": "test-approval-workflow",
+    "score": 145,
+    "passed": true
+  }
+}

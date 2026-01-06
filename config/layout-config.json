@@ -289,11 +289,12 @@
     }
   },
 
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
   "ai": {
     "enabled": true,
-    "defaultModel": "claude-opus-4-20250514",
-    "fallbackModel": "claude-sonnet-4-20250514",
-    "thinkingBudget": 5000,
+    "defaultModel": "claude-opus-4.5",
+    "fallbackModel": "gemini-pro-3.0",
+    "thinkingBudget": 10000,
     "refinementSettings": {
       "layoutCritique": true,
       "narrativeOptimization": true,

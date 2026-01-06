@@ -1,0 +1,107 @@
+{
+  "jobId": "example-experiment",
+  "jobType": "partnership",
+  "client": "Example Client",
+
+  "data": {
+    "title": "Example Partnership Document",
+    "partner": {
+      "name": "Example Partner"
+    },
+    "subtitle": "Demonstrating A/B Testing with Experiment Mode"
+  },
+
+  "output": {
+    "format": "pdf",
+    "quality": "high",
+    "filename": "Example-Experiment"
+  },
+
+  "qaProfile": {
+    "id": "standard",
+    "min_score": 85
+  },
+
+  "experimentMode": {
+    "enabled": true,
+    "parallel": false,
+    "archiveVariants": true,
+
+    "variants": [
+      {
+        "id": "variant-a-classic",
+        "name": "Classic Layout",
+        "description": "Traditional 12-column grid with Nordshore colors",
+        "design": {
+          "layout": "classic",
+          "grid": { "columns": 12, "gutter": 20 },
+          "colorScheme": "nordshore",
+          "primaryColor": "#00393F",
+          "accentColor": "#BA8F5A",
+          "headlineSize": 42,
+          "bodySize": 11
+        }
+      },
+      {
+        "id": "variant-b-modern",
+        "name": "Modern Layout",
+        "description": "Asymmetric 16-column grid with Sky colors",
+        "design": {
+          "layout": "asymmetric",
+          "grid": { "columns": 16, "gutter": 16 },
+          "colorScheme": "sky",
+          "primaryColor": "#C9E4EC",
+          "accentColor": "#65873B",
+          "headlineSize": 48,
+          "bodySize": 12
+        }
+      },
+      {
+        "id": "variant-c-balanced",
+        "name": "Balanced Layout",
+        "description": "Hybrid approach with balanced colors",
+        "design": {
+          "layout": "classic",
+          "grid": { "columns": 12, "gutter": 20 },
+          "colorScheme": "balanced",
+          "primaryColor": "#00393F",
+          "accentColor": "#C9E4EC",
+          "headlineSize": 45,
+          "bodySize": 11.5
+        }
+      }
+    ],
+
+    "selectionCriteria": {
+      "metrics": [
+        { "name": "qa_score", "weight": 0.6, "mode": "highest" },
+        { "name": "file_size", "weight": 0.2, "mode": "lowest" },
+        { "name": "generation_time", "weight": 0.2, "mode": "lowest" }
+      ],
+      "aggregation": "weighted_sum"
+    },
+
+    "tracking": {
+      "experimentId": "example-layout-test-2025-11",
+      "hypothesis": "Modern asymmetric layout will score higher than classic layout",
+      "tags": ["layout", "colors", "experiment"],
+      "notes": "Testing three layout variants for partnership documents"
+    },
+
+    "reviewMode": {
+      "generateComparison": true,
+      "openInBrowser": false,
+      "requireManualApproval": false
+    }
+  },
+
+  "notes": [
+    "This example demonstrates A/B testing with experiment mode",
+    "Generates 3 variants with different layouts and colors",
+    "Winner selected by weighted combination of:",
+    "  - QA score (60%)",
+    "  - File size (20%)",
+    "  - Generation time (20%)",
+    "All variants archived to exports/experiments/example-experiment/"
+  ]
+}

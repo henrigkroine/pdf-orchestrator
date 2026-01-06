@@ -1,0 +1,46 @@
+{
+  "model": "gemini-1.5-pro (DRY RUN)",
+  "overall_score": 0.93,
+  "summary": "This is a DRY RUN response. The document shows strong TFU compliance with clear hierarchy and strategic narrative. Minor improvements possible in visual balance and photo sizing.",
+  "page_scores": [
+    {
+      "page": 1,
+      "score": 0.91,
+      "role": "cover",
+      "issues": []
+    },
+    {
+      "page": 2,
+      "score": 0.92,
+      "role": "about",
+      "issues": []
+    },
+    {
+      "page": 3,
+      "score": 0.93,
+      "role": "programs",
+      "issues": [
+        {
+          "severity": "minor",
+          "area": "imagery",
+          "description": "Program photos could be larger to show more student engagement details",
+          "suggested_fix": "Increase photo height from 80pt to 100pt"
+        }
+      ]
+    },
+    {
+      "page": 4,
+      "score": 0.9400000000000001,
+      "role": "cta",
+      "issues": []
+    }
+  ],
+  "recommendations_md": "## Priority Improvements (DRY RUN)\n\n1. **Visual Balance** - Consider slightly larger program photos to showcase authentic student moments\n2. **Whitespace** - Page 3 could benefit from 10-15pt additional spacing between program cards\n3. **CTA Clarity** - Excellent strategic tier presentation with concrete $ amount\n\nOverall: Ready for executive review with minor polish opportunities.",
+  "requires_changes": false,
+  "metadata": {
+    "pdf_path": "exports/TEEI-AWS-Partnership-TFU-V2-DIGITAL.pdf",
+    "job_config": "example-jobs/tfu-aws-partnership-v2.json",
+    "generated_at": "2025-11-14T14:22:28.684Z",
+    "min_score_threshold": 0.9
+  }
+}

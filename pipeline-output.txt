@@ -1,0 +1,26 @@
+
+============================================================
+WORLD-CLASS 4-LAYER PIPELINE
+============================================================
+
+[Job] TFU AWS Partnership V2 - World-Class
+[Config] example-jobs/tfu-aws-partnership-v2.json
+
+[Step 0] GENERATION
+------------------------------------------------------------
+Testing MCP connection...
+✓ MCP connection healthy
+
+Executing V2 generator...
+❌ V2 generator failed (exit 1)
+============================================================
+TFU AWS Partnership V2 - World-Class Generator
+============================================================
+
+Reading V2 script: scripts/generate_tfu_aws_v2.jsx
+Script size: 32,723 characters
+
+Sending to InDesign...
+
+Exception: Error returned from indesign: Error calling executeExtendScript: ExtendScript execution failed: Design Axes are not supported for the font.
+

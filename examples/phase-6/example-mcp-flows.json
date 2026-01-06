@@ -1,0 +1,107 @@
+{
+  "jobId": "example-mcp-flows",
+  "jobType": "partnership",
+  "client": "Example Client",
+
+  "data": {
+    "title": "Example Partnership Document",
+    "partner": {
+      "name": "Example Partner"
+    },
+    "subtitle": "Demonstrating MCP Multi-Server Workflows"
+  },
+
+  "output": {
+    "format": "pdf",
+    "quality": "high",
+    "filename": "Example-MCP-Flows"
+  },
+
+  "mcp": {
+    "workflow": "generate-partnership-pdf",
+    "servers": {
+      "figma": {
+        "enabled": true,
+        "action": "extractDesignTokens",
+        "timeout_ms": 5000,
+        "retry": {
+          "enabled": true,
+          "max_attempts": 3,
+          "backoff_ms": 1000
+        },
+        "config": {
+          "fileId": "TEEI-Brand-System",
+          "extractColors": true,
+          "extractTypography": true,
+          "extractSpacing": true
+        }
+      },
+      "dalle": {
+        "enabled": true,
+        "action": "generateHeroImage",
+        "timeout_ms": 30000,
+        "retry": {
+          "enabled": true,
+          "max_attempts": 2,
+          "backoff_ms": 2000
+        },
+        "config": {
+          "model": "dall-e-3",
+          "quality": "hd",
+          "size": "1792x1024",
+          "style": "natural",
+          "prompts": {
+            "hero": "Warm natural lighting photo of diverse students collaborating, modern learning space, hopeful atmosphere",
+            "program_1": "Students engaged in hands-on training, collaborative workspace"
+          }
+        }
+      },
+      "indesign": {
+        "enabled": true,
+        "actions": [
+          "openTemplate",
+          "applyBrandColors",
+          "bindData",
+          "placeImage",
+          "exportPDF"
+        ],
+        "timeout_ms": 120000,
+        "config": {
+          "templatePath": "templates/partnership-v1.indt",
+          "exportPreset": "High Quality Print"
+        }
+      },
+      "playwright": {
+        "enabled": true,
+        "action": "validateQA",
+        "timeout_ms": 20000,
+        "config": {
+          "qaProfile": "standard",
+          "generateScreenshots": true
+        }
+      },
+      "github": {
+        "enabled": false,
+        "action": "commitResults",
+        "timeout_ms": 10000,
+        "config": {
+          "repo": "example/repo",
+          "branch": "main",
+          "commitMessage": "Add example partnership PDF"
+        }
+      }
+    }
+  },
+
+  "qaProfile": {
+    "id": "standard",
+    "min_score": 85
+  },
+
+  "notes": [
+    "This example demonstrates multi-server MCP workflows",
+    "Requires FIGMA_ACCESS_TOKEN and OPENAI_API_KEY env vars",
+    "Flow: Figma → DALL-E → InDesign → Playwright",
+    "GitHub commit disabled by default (enable if needed)"
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "name": "pdf-orchestrator",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Intelligent PDF automation system routing between MCP workers and Adobe PDF Services API",
   "main": "orchestrator.js",
   "scripts": {
@@ -70,11 +70,13 @@
     "@xenova/transformers": "^2.17.2",
     "ajv": "^8.12.0",
     "ajv-formats": "^3.0.1",
+    "async-mutex": "^0.5.0",
     "axios": "^1.6.7",
     "canvas": "^3.2.0",
     "color-blind": "^0.1.2",
     "commander": "^12.0.0",
     "dotenv": "^16.4.0",
+    "express": "^4.21.2",
     "glob": "^10.3.10",
     "jimp": "^0.22.10",
     "mammoth": "^1.11.0",
@@ -90,9 +92,11 @@
     "pngjs": "^7.0.0",
     "potrace": "^2.1.8",
     "sharp": "^0.34.4",
+    "socket.io-client": "^4.7.2",
     "sqlite3": "^5.1.7",
     "svgo": "^3.2.0",
-    "uuid": "^10.0.0"
+    "uuid": "^10.0.0",
+    "ws": "^8.18.3"
   },
   "devDependencies": {
     "eslint": "^9.0.0"

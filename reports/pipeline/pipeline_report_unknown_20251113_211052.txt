@@ -1,0 +1,18 @@
+============================================================
+PIPELINE EXECUTION REPORT
+============================================================
+Timestamp: 2025-11-13T21:10:49.754783
+Config: CI Mode
+
+EXECUTION STEPS:
+------------------------------------------------------------
+1. [OK] Locate PDF
+   Details: exports/TEEI-AWS-Partnership-PRINT.pdf
+2. [OK] Validate PDF
+   Details: Score: 106/125
+3. [FAIL] Visual Regression
+
+============================================================
+FINAL SCORE: 106/100
+STATUS: FAILED
+============================================================

@@ -1,0 +1,195 @@
+{
+  "jobType": "partnership",
+  "humanSession": true,
+  "worldClass": true,
+  "templateId": "report-annual-v1",
+  "data": {
+    "title": "TEEI AWS Partnership Proposal",
+    "subtitle": "Empowering Ukrainian Students Through Cloud Technology",
+    "organization": {
+      "name": "The Educational Equality Institute",
+      "logo": "assets/images/teei-logo-dark.png",
+      "website": "https://theeducationalequalityinstitute.org"
+    },
+    "partner": {
+      "name": "Amazon Web Services",
+      "logo": "assets/partner-logos/aws.svg",
+      "website": "https://aws.amazon.com"
+    },
+    "overview": {
+      "mission": "TEEI partners with leading organizations to provide world-class educational opportunities to displaced Ukrainian students.",
+      "value_proposition": "By partnering with AWS, we can scale our technology education programs to reach 50,000+ students across Europe.",
+      "impact": "Together, we're building the next generation of tech leaders from refugee communities."
+    },
+    "programs": [
+      {
+        "name": "Cloud Computing Curriculum",
+        "description": "Comprehensive AWS training for high school and university students",
+        "students_reached": 15000,
+        "success_rate": "92%",
+        "certification_rate": "78%"
+      },
+      {
+        "name": "AI/ML Learning Path",
+        "description": "Hands-on machine learning projects using AWS services",
+        "students_reached": 8000,
+        "success_rate": "88%",
+        "certification_rate": "65%"
+      },
+      {
+        "name": "Career Pathways Program",
+        "description": "Job readiness training and AWS certification preparation",
+        "students_reached": 12000,
+        "success_rate": "95%",
+        "placement_rate": "72%"
+      }
+    ],
+    "metrics": {
+      "students_reached": 50000,
+      "countries": 12,
+      "partner_organizations": 45,
+      "aws_certifications": 3500
+    },
+    "call_to_action": {
+      "headline": "Ready to Transform Education Together?",
+      "description": "Join us in empowering the next generation of technology leaders.",
+      "action": "Schedule a Partnership Discussion",
+      "contact": {
+        "name": "Henrik Røine",
+        "email": "henrik@theeducationalequalityinstitute.org",
+        "phone": "+47 919 08 939"
+      }
+    },
+    "content_source": "deliverables/TEEI-AWS-Partnership-Document-Content.md"
+  },
+  "output": {
+    "format": "pdf",
+    "intent": "print",
+    "quality": "high",
+    "destination": "exports/TEEI-AWS-Partnership-WorldClass.pdf"
+  },
+  "qa": {
+    "enabled": true,
+    "threshold": 95,
+    "visual_diff_max_percent": 5,
+    "brand_enforcement": true,
+    "checks": [
+      "brand-compliance",
+      "typography-hierarchy",
+      "color-accuracy",
+      "layout-perfection",
+      "accessibility-wcag-aa",
+      "print-production",
+      "text-cutoff-detection",
+      "logo-clearspace",
+      "metric-accuracy"
+    ]
+  },
+  "export": {
+    "pdfPreset": "High Quality Print",
+    "compression": "Maximum Quality",
+    "colorProfile": "U.S. Web Coated (SWOP) v2",
+    "resolution": 300,
+    "colorMode": "CMYK",
+    "cropMarks": true,
+    "bleedMarks": true,
+    "registrationMarks": true,
+    "variants": [
+      {
+        "name": "print",
+        "format": "PDF/X-4",
+        "resolution": 300,
+        "colorMode": "CMYK",
+        "includeBleed": true,
+        "includeCropMarks": true,
+        "destination": "exports/TEEI-AWS-Partnership-PRINT.pdf"
+      },
+      {
+        "name": "digital",
+        "format": "PDF",
+        "resolution": 150,
+        "colorMode": "RGB",
+        "includeBleed": false,
+        "includeCropMarks": false,
+        "destination": "exports/TEEI-AWS-Partnership-DIGITAL.pdf"
+      }
+    ]
+  },
+  "brand": {
+    "organization": "TEEI",
+    "use_teei_colors": true,
+    "colors": {
+      "primary": "#00393F",
+      "secondary": "#C9E4EC",
+      "accent": "#BA8F5A",
+      "background": "#FFF1E2",
+      "nordshore": "#00393F",
+      "sky": "#C9E4EC",
+      "sand": "#FFF1E2",
+      "gold": "#BA8F5A",
+      "moss": "#65873B",
+      "clay": "#913B2F",
+      "beige": "#EFE1DC"
+    },
+    "typography": {
+      "headline": "Lora",
+      "body": "Roboto Flex",
+      "weights": {
+        "headline": "SemiBold",
+        "headlineBold": "Bold",
+        "body": "Regular",
+        "bodyMedium": "Medium"
+      },
+      "sizes": {
+        "documentTitle": 42,
+        "sectionHeader": 28,
+        "subhead": 18,
+        "body": 11,
+        "caption": 9
+      }
+    },
+    "layout": {
+      "grid": {
+        "columns": 12,
+        "gutter": 20
+      },
+      "margins": {
+        "top": 40,
+        "bottom": 40,
+        "left": 40,
+        "right": 40
+      },
+      "spacing": {
+        "sectionBreak": 60,
+        "betweenElements": 20,
+        "betweenParagraphs": 12
+      }
+    },
+    "guidelines": "reports/TEEI_AWS_Design_Fix_Report.md"
+  },
+  "routing": {
+    "preferredWorker": "mcp",
+    "reason": "World-class AWS partnership document requires human oversight, brand-compliant InDesign automation, and 95/100 QA threshold"
+  },
+  "metadata": {
+    "author": "The Educational Equality Institute",
+    "subject": "AWS Partnership Proposal - World Class",
+    "keywords": ["AWS", "cloud", "education", "Ukraine", "TEEI", "partnership"],
+    "creator": "PDF Orchestrator v1.0 (MCP Worker)",
+    "version": "1.0",
+    "date": "2025-11-13"
+  },
+  "notes": [
+    "WORLD-CLASS MODE: This job MUST route through MCP worker with QA threshold=95",
+    "All colors must match exact TEEI brand hex codes (Nordshore, Sky, Sand, Gold, Moss, Clay, Beige)",
+    "Typography: Lora (headlines), Roboto Flex (body) - NO exceptions",
+    "All images should use authentic TEEI program photography (warm, natural light)",
+    "Verify 40pt margins and proper text frame sizing to prevent text cutoffs",
+    "NO placeholder text like 'XX Students' - all metrics must show actual numbers",
+    "Test export at 100%, 150%, and 200% zoom for quality verification",
+    "Logo clearspace = height of logo icon element (minimum)",
+    "Visual regression diff must be <5% against baseline",
+    "Content source: deliverables/TEEI-AWS-Partnership-Document-Content.md",
+    "Data source: data/partnership-aws-example.json"
+  ]
+}

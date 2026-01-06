@@ -1,0 +1,61 @@
+# AWS x TEEI Partnership Document - 2025
+# Simple, human-friendly job specification for autopilot mode
+
+# Unique job identifier
+job_id: aws-tfu-2025
+
+# Partner profile for personalization
+partner_profile_id: aws-cloud
+
+# Document title
+title: "Building Europe's Cloud-Native Workforce"
+
+# High-level objectives (used by LLM for narrative generation)
+objectives:
+  - "Scale cloud skills training for displaced Ukrainian learners across Europe"
+  - "Increase AWS certification completion rates and employment outcomes"
+  - "Establish strategic multi-year partnership framework with measurable impact"
+
+# Target audience (influences content depth and tone)
+audience:
+  - "AWS EMEA public sector leadership"
+  - "TEEI board of directors and program managers"
+
+# Communication tone
+tone: "strategic_b2b_professional"
+
+# Primary language
+primary_language: "en"
+
+# Additional languages (separate PDFs generated for each)
+secondary_languages:
+  - "de"
+
+# Layout preferences
+layout_prefs:
+  pages: 4  # TFU standard
+  variant_mode: "auto"  # Test 3-5 layout variants, pick best
+
+# Content inputs
+content_inputs:
+  # Existing content to reference
+  deliverables:
+    - "deliverables/TEEI-AWS-Partnership-Document-Content.md"
+
+  # Metrics data
+  metrics_file: "data/partnership-aws-metrics.json"
+
+  # Inline guidance for content generation
+  notes:
+    - "Highlight concrete employability outcomes (78% employment rate, €45k avg salary)"
+    - "Emphasize Europe/Ukraine narrative - refugees building new careers"
+    - "Include AWS Academy partnership expansion details"
+    - "Mention specific success stories from cloud training programs"
+    - "Strong call-to-action around scaling partnership impact"
+
+# Quality assurance thresholds
+qa_prefs:
+  min_score_layer1: 145  # TFU compliance (out of 150)
+  min_ai_tier1: 0.90     # AI design validation
+  min_gemini: 0.92       # Visual quality check
+  accessibility_required: true  # Generate WCAG 2.1 AA compliant version

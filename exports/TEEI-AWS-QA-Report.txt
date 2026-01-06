@@ -1,0 +1,56 @@
+LOGGER : Socket client configured: app=indesign, url=http://localhost:8013, timeout=10
+LOGGER : waiting for response...
+LOGGER : Connected to server with session ID: 0e1-V1S5A8jf21a_AADI
+LOGGER : Sending message to indesign: {'application': 'indesign', 'action': 'ping', 'options': {}}
+LOGGER : Received response: {'senderId': 'C4JLx6MyXbBUl5iVAADJ', 'response': {'status': 'ok', 'app': 'InDesign', 'version': '20.6.0.41', 'transport': 'socket+stdio'}, 'status': 'SUCCESS', 'activeDocument': {'documentPreferences': {'pageWidth': 612, 'pageHeight': 792, 'pagesPerDocument': 3, 'facingPages': False, 'measurementUnit': 'pt'}, 'marginPreferences': {'top': 40, 'bottom': 40, 'left': 40, 'right': 40, 'columnCount': 12, 'columnGutter': 20}}}
+LOGGER : Disconnected from server
+LOGGER : response received...
+LOGGER : {"senderId": "C4JLx6MyXbBUl5iVAADJ", "response": {"status": "ok", "app": "InDesign", "version": "20.6.0.41", "transport": "socket+stdio"}, "status": "SUCCESS", "activeDocument": {"documentPreferences": {"pageWidth": 612, "pageHeight": 792, "pagesPerDocument": 3, "facingPages": false, "measurementUnit": "pt"}, "marginPreferences": {"top": 40, "bottom": 40, "left": 40, "right": 40, "columnCount": 12, "columnGutter": 20}}}
+LOGGER : Final response: SUCCESS
+[OK] Loaded job config from: example-jobs/aws-world-class.json
+Intent: print
+ Starting comprehensive validation...
+[WARNING] Could not detect PDF intent: argument of type 'IndirectObject' is not a container or iterable
+
+============================================================
+ DOCUMENT VALIDATION REPORT
+============================================================
+
+ DOCUMENT STRUCTURE:
+  • Pages: 3
+  • Has Text: [OK]
+  • File Size: 0.05 MB
+  • Dimensions: 612 x 792 (portrait)
+  • Fonts: IVVXEX+MinionPro-Regular, GSWLCB+Lora-Bold, YGVPUR+Lora-SemiBold
+
+ CONTENT VALIDATION:
+  • Organization Found: [OK]
+  • Partner Found: [OK]
+  • Metrics Found: 50,000, 12, 45, 3,500
+  • Sections Found: Mission, Impact, Partnership, Contact
+
+ VISUAL HIERARCHY:
+  • Header Present: [OK]
+  • Footer Present: [OK]
+  • Text Sizes: 8 different sizes
+    Largest: 42.0pt
+  • White Space: 98%
+
+ COLOR VALIDATION:
+  • InDesign Connection: connected
+  • Colors Validated: [OK]
+
+  INTENT-AWARE IMAGE VALIDATION:
+  • Expected Intent: PRINT
+  • Detected Intent: PRINT
+  • Intent Match: [OK]
+  • Required DPI: 300
+  • Required Color Space: CMYK
+  • Images Checked: 1
+  • Intent Validated: [OK]
+
+============================================================
+ OVERALL SCORE: 100/100
+ RATING:  EXCELLENT - Ready for production
+============================================================
+

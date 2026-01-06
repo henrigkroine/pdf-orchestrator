@@ -1,0 +1,300 @@
+{
+  "mcpServers": {
+    "indesign": {
+      "name": "Adobe InDesign",
+      "status": "active",
+      "type": "local",
+      "protocol": "websocket",
+      "url": "http://localhost:8013",
+      "bridge": "http://localhost:8012",
+      "capabilities": [
+        "document_creation",
+        "text_formatting",
+        "color_application",
+        "pdf_export",
+        "template_loading"
+      ],
+      "priority": "critical"
+    },
+    "figma": {
+      "name": "Figma Design Tokens",
+      "status": "planned",
+      "type": "remote",
+      "protocol": "https",
+      "url": "https://mcp.figma.com/mcp",
+      "capabilities": [
+        "design_token_extraction",
+        "color_palette_sync",
+        "typography_sync",
+        "component_export",
+        "brand_validation"
+      ],
+      "priority": "critical",
+      "config": {
+        "fileId": "TEEI-Brand-System",
+        "teamId": "teei-workspace"
+      },
+      "requiredEnv": ["FIGMA_ACCESS_TOKEN"]
+    },
+    "dalle": {
+      "name": "DALL-E Image Generation",
+      "status": "planned",
+      "type": "npm",
+      "command": "npx",
+      "args": ["-y", "@garoth/dalle-mcp"],
+      "capabilities": [
+        "text_to_image",
+        "image_editing",
+        "style_variations",
+        "custom_illustrations"
+      ],
+      "priority": "critical",
+      "config": {
+        "model": "dall-e-3",
+        "quality": "hd",
+        "size": "1792x1024",
+        "style": "natural"
+      },
+      "requiredEnv": ["OPENAI_API_KEY"],
+      "costPerImage": 0.12
+    },
+    "github": {
+      "name": "GitHub Version Control",
+      "status": "planned",
+      "type": "npm",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "capabilities": [
+        "repository_operations",
+        "branch_management",
+        "pull_request_creation",
+        "issue_tracking",
+        "file_operations"
+      ],
+      "priority": "critical",
+      "config": {
+        "owner": "your-org",
+        "repo": "pdf-orchestrator"
+      },
+      "requiredEnv": ["GITHUB_PERSONAL_ACCESS_TOKEN"]
+    },
+    "pdfco": {
+      "name": "PDF.co Advanced Operations",
+      "status": "planned",
+      "type": "api",
+      "protocol": "https",
+      "url": "https://api.pdf.co/v1",
+      "capabilities": [
+        "pdf_to_json",
+        "pdf_merge",
+        "pdf_split",
+        "pdf_compress",
+        "ocr_extraction",
+        "form_filling"
+      ],
+      "priority": "high",
+      "config": {
+        "tier": "professional",
+        "maxPages": 500
+      },
+      "requiredEnv": ["PDFCO_API_KEY"],
+      "costPerMonth": 99
+    },
+    "notion": {
+      "name": "Notion Content Management",
+      "status": "planned",
+      "type": "npm",
+      "command": "npx",
+      "args": ["-y", "@notionhq/client"],
+      "capabilities": [
+        "database_query",
+        "page_retrieval",
+        "content_sync",
+        "template_management"
+      ],
+      "priority": "high",
+      "config": {
+        "databaseId": "partnership-content",
+        "workspace": "teei"
+      },
+      "requiredEnv": ["NOTION_API_KEY"]
+    },
+    "mongodb": {
+      "name": "MongoDB Data Source",
+      "status": "planned",
+      "type": "npm",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-mongodb"],
+      "capabilities": [
+        "query_execution",
+        "data_retrieval",
+        "batch_operations",
+        "aggregation_pipeline"
+      ],
+      "priority": "high",
+      "config": {
+        "database": "teei_partnerships",
+        "collections": ["partners", "metrics", "templates"]
+      },
+      "requiredEnv": ["MONGODB_URI"]
+    },
+    "slack": {
+      "name": "Slack Notifications",
+      "status": "planned",
+      "type": "npm",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-slack"],
+      "capabilities": [
+        "send_messages",
+        "upload_files",
+        "create_threads",
+        "request_approvals"
+      ],
+      "priority": "medium",
+      "config": {
+        "channel": "#teei-design-approvals",
+        "notificationChannel": "#pdf-automation"
+      },
+      "requiredEnv": ["SLACK_BOT_TOKEN"]
+    },
+    "cloudflare": {
+      "name": "Cloudflare R2 Storage",
+      "status": "planned",
+      "type": "api",
+      "protocol": "https",
+      "url": "https://api.cloudflare.com/client/v4",
+      "capabilities": [
+        "r2_upload",
+        "public_url_generation",
+        "cdn_delivery",
+        "access_analytics"
+      ],
+      "priority": "medium",
+      "config": {
+        "bucket": "teei-pdf-outputs",
+        "accountId": "your-account-id"
+      },
+      "requiredEnv": ["CLOUDFLARE_API_TOKEN", "R2_ACCESS_KEY_ID", "R2_SECRET_ACCESS_KEY"]
+    },
+    "playwright": {
+      "name": "Playwright Visual QA",
+      "status": "planned",
+      "type": "npm",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-playwright"],
+      "capabilities": [
+        "pdf_screenshot",
+        "visual_regression",
+        "zoom_level_testing",
+        "accessibility_audit"
+      ],
+      "priority": "medium",
+      "config": {
+        "zoomLevels": [100, 150, 200],
+        "outputDir": "exports/validation-issues"
+      }
+    },
+    "sentry": {
+      "name": "Sentry Error Tracking",
+      "status": "planned",
+      "type": "npm",
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sentry"],
+      "capabilities": [
+        "error_tracking",
+        "performance_monitoring",
+        "context_capture",
+        "issue_creation"
+      ],
+      "priority": "low",
+      "config": {
+        "project": "pdf-orchestrator",
+        "environment": "production"
+      },
+      "requiredEnv": ["SENTRY_DSN"]
+    }
+  },
+  "workflows": {
+    "generate-partnership-pdf": {
+      "name": "Generate Partnership PDF",
+      "steps": [
+        {
+          "server": "notion",
+          "action": "fetchContent",
+          "params": { "page": "AWS-Partnership-2025" }
+        },
+        {
+          "server": "mongodb",
+          "action": "queryMetrics",
+          "params": { "partner": "AWS", "year": 2025 }
+        },
+        {
+          "server": "dalle",
+          "action": "generateHeroImage",
+          "params": {
+            "prompt": "Warm natural lighting photo of diverse students collaborating on laptops, authentic educational setting, TEEI brand style",
+            "style": "natural"
+          }
+        },
+        {
+          "server": "figma",
+          "action": "extractDesignTokens",
+          "params": { "fileId": "TEEI-Brand-System" }
+        },
+        {
+          "server": "indesign",
+          "action": "openTemplate",
+          "params": { "templateId": "partnership-v1" }
+        },
+        {
+          "server": "indesign",
+          "action": "applyBrandColors",
+          "params": { "source": "figma-tokens" }
+        },
+        {
+          "server": "indesign",
+          "action": "bindData",
+          "params": { "content": "notion-data", "metrics": "mongodb-data" }
+        },
+        {
+          "server": "indesign",
+          "action": "placeImage",
+          "params": { "image": "dalle-hero", "frame": "hero-frame" }
+        },
+        {
+          "server": "indesign",
+          "action": "exportPDF",
+          "params": { "preset": "High Quality Print" }
+        },
+        {
+          "server": "playwright",
+          "action": "validateQA",
+          "params": { "zoomLevels": [100, 150, 200] }
+        },
+        {
+          "server": "cloudflare",
+          "action": "uploadR2",
+          "params": { "bucket": "teei-pdf-outputs" }
+        },
+        {
+          "server": "slack",
+          "action": "sendApproval",
+          "params": { "channel": "#teei-design-approvals" }
+        }
+      ]
+    }
+  },
+  "integrationPriority": [
+    "indesign",
+    "figma",
+    "dalle",
+    "github",
+    "pdfco",
+    "notion",
+    "mongodb",
+    "slack",
+    "cloudflare",
+    "playwright",
+    "sentry"
+  ]
+}

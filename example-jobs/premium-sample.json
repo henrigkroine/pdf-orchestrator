@@ -1,0 +1,138 @@
+{
+  "jobType": "partnership",
+  "humanSession": true,
+  "templateId": "report-annual-v1",
+  "data": {
+    "title": "TEEI × Partner",
+    "subtitle": "2025 Overview",
+    "partner": {
+      "name": "Example Partner Organization",
+      "logo": "assets/partner-logos/example.svg",
+      "website": "https://example.com"
+    },
+    "sections": [
+      {
+        "type": "hero",
+        "heading": "Educational Excellence Through Partnership",
+        "subheading": "Together, we're transforming educational outcomes for underserved communities worldwide",
+        "image": "assets/images/partnership-hero.jpg"
+      },
+      {
+        "type": "metrics",
+        "heading": "Our Impact",
+        "metrics": [
+          {
+            "value": "15,000+",
+            "label": "Students Reached",
+            "description": "Direct educational support across 12 countries"
+          },
+          {
+            "value": "92%",
+            "label": "Program Completion",
+            "description": "Above industry average by 27 percentage points"
+          },
+          {
+            "value": "$2.4M",
+            "label": "Resources Deployed",
+            "description": "Scholarships, materials, and teacher training"
+          }
+        ]
+      },
+      {
+        "type": "narrative",
+        "heading": "The Challenge",
+        "content": [
+          "Educational inequality remains one of the most persistent barriers to social mobility. Traditional approaches often fail to address the root causes of academic underperformance in underserved communities.",
+          "Through our partnership, we've developed evidence-based interventions that combine rigorous academic support with holistic student development."
+        ]
+      },
+      {
+        "type": "narrative",
+        "heading": "Our Approach",
+        "content": [
+          "We focus on three core pillars: academic excellence, mentor support, and community engagement. Each student receives personalized learning plans developed in collaboration with teachers, parents, and community leaders.",
+          "Our programs are designed to be culturally responsive and locally relevant, ensuring that interventions resonate with students' lived experiences."
+        ]
+      },
+      {
+        "type": "image",
+        "src": "assets/images/classroom-collaboration.jpg",
+        "caption": "Students collaborating on a STEM project in rural Ghana",
+        "credit": "Photo: TEEI Program Photographer, 2024"
+      },
+      {
+        "type": "testimonial",
+        "quote": "This partnership has transformed our ability to serve students who need it most. The resources and expertise have been invaluable.",
+        "attribution": "Dr. Sarah Johnson, Program Director"
+      },
+      {
+        "type": "narrative",
+        "heading": "Looking Forward",
+        "content": [
+          "In 2025, we're expanding to four new regions and launching our digital learning platform. With continued partnership support, we project reaching 25,000 students by year-end.",
+          "Together, we're proving that with the right resources and commitment, every student can achieve academic excellence regardless of their starting point."
+        ]
+      }
+    ]
+  },
+  "output": {
+    "format": "pdf",
+    "intent": "print",
+    "quality": "high",
+    "destination": "exports/partnership-overview-2025.pdf"
+  },
+  "qa": {
+    "enabled": true,
+    "threshold": 80,
+    "checks": [
+      "brand-compliance",
+      "typography-hierarchy",
+      "color-accuracy",
+      "layout-perfection",
+      "accessibility-wcag-aa",
+      "print-production"
+    ]
+  },
+  "export": {
+    "pdfPreset": "High Quality Print",
+    "compression": "Maximum Quality",
+    "colorProfile": "U.S. Web Coated (SWOP) v2",
+    "cropMarks": true,
+    "bleedMarks": true,
+    "registrationMarks": true
+  },
+  "brand": {
+    "organization": "TEEI",
+    "colors": {
+      "primary": "#00393F",
+      "secondary": "#C9E4EC",
+      "accent": "#BA8F5A",
+      "background": "#FFF1E2"
+    },
+    "typography": {
+      "headline": "Lora",
+      "body": "Roboto Flex",
+      "weights": {
+        "headline": "SemiBold",
+        "body": "Regular"
+      }
+    },
+    "guidelines": "reports/TEEI_AWS_Design_Fix_Report.md"
+  },
+  "routing": {
+    "preferredWorker": "mcp",
+    "reason": "Premium partnership document requires human oversight and brand-compliant InDesign automation"
+  },
+  "metadata": {
+    "author": "The Educational Equality Institute",
+    "subject": "Partnership Overview 2025",
+    "keywords": ["education", "partnership", "impact", "TEEI"],
+    "creator": "PDF Orchestrator v1.0 (MCP Worker)"
+  },
+  "notes": [
+    "This job MUST route through MCP worker for quality control",
+    "All images should use authentic TEEI program photography (warm, natural light)",
+    "Verify 40pt margins and proper text frame sizing to prevent cutoffs",
+    "Test export at 100%, 150%, and 200% zoom for quality verification"
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "timestamp": "2025-11-13T20:50:06.190630",
+  "steps": [
+    {
+      "name": "Locate PDF",
+      "success": true,
+      "timestamp": "2025-11-13T20:50:06.190719",
+      "duration_seconds": 9.250640869140625e-05,
+      "details": "exports/TEEI-AWS-Partnership-PRINT.pdf"
+    },
+    {
+      "name": "Validate PDF",
+      "success": true,
+      "timestamp": "2025-11-13T20:50:08.482324",
+      "duration_seconds": 2.2916982173919678,
+      "details": "Score: 91/125"
+    },
+    {
+      "name": "Visual Regression",
+      "success": false,
+      "timestamp": "2025-11-13T20:50:08.543210",
+      "duration_seconds": 2.352583885192871,
+      "error": "(node:268724) Warning: To load an ES module, set \"type\": \"module\" in the package.json or use the .mjs extension.\n(Use `node --trace-warnings ...` to show where the warning was created)\nD:\\Dev\\VS Projects\\Projects\\pdf-orchestrator\\scripts\\compare-pdf-visual.js:15\nimport { pdf } from 'pdf-to-img';\n^^^^^^\n\nSyntaxError: Cannot use import statement outside a module\n    at wrapSafe (node:internal/modules/cjs/loader:1378:20)\n    at Module._compile (node:internal/modules/cjs/loader:1428:41)\n    at Module._extensions..js (node:internal/modules/cjs/loader:1548:10)\n    at Module.load (node:internal/modules/cjs/loader:1288:32)\n    at Module._load (node:internal/modules/cjs/loader:1104:12)\n    at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:173:12)\n    at node:internal/main/run_main_module:28:49\n\nNode.js v20.18.1\n"
+    }
+  ],
+  "success": false,
+  "score": 91
+}

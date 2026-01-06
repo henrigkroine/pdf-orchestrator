@@ -1,0 +1,102 @@
+{
+  "jobId": "aws-partnership-tfu-mcp-2025",
+  "generatedAt": "2025-11-13T21:10:52.498051",
+  "nodes": [
+    {
+      "id": "job",
+      "type": "job",
+      "label": "Job",
+      "status": "completed"
+    },
+    {
+      "id": "mcp_figma",
+      "type": "mcp",
+      "label": "Figma MCP",
+      "status": "completed"
+    },
+    {
+      "id": "mcp_dalle",
+      "type": "mcp",
+      "label": "Dalle MCP",
+      "status": "completed"
+    },
+    {
+      "id": "mcp_indesign",
+      "type": "mcp",
+      "label": "Indesign MCP",
+      "status": "completed"
+    },
+    {
+      "id": "mcp_playwright",
+      "type": "mcp",
+      "label": "Playwright MCP",
+      "status": "completed"
+    },
+    {
+      "id": "indesign_app",
+      "type": "indesign",
+      "label": "InDesign",
+      "status": "completed"
+    },
+    {
+      "id": "validator",
+      "type": "qa",
+      "label": "Document Validator",
+      "status": "failed"
+    },
+    {
+      "id": "visual",
+      "type": "qa",
+      "label": "Visual Regression",
+      "status": "completed"
+    }
+  ],
+  "edges": [
+    {
+      "from": "job",
+      "to": "mcp_figma",
+      "label": "process"
+    },
+    {
+      "from": "job",
+      "to": "mcp_dalle",
+      "label": "process"
+    },
+    {
+      "from": "job",
+      "to": "mcp_indesign",
+      "label": "openTemplate, applyBrandColors, bindData, placeImage, exportPDF"
+    },
+    {
+      "from": "job",
+      "to": "mcp_playwright",
+      "label": "process"
+    },
+    {
+      "from": "job",
+      "to": "indesign_app",
+      "label": "layout"
+    },
+    {
+      "from": "indesign_app",
+      "to": "validator",
+      "label": "validate"
+    },
+    {
+      "from": "validator",
+      "to": "visual",
+      "label": "compare"
+    }
+  ],
+  "metadata": {
+    "jobType": "partnership",
+    "client": "AWS",
+    "style": "TFU",
+    "mcpMode": true
+  },
+  "executionMetrics": {
+    "totalScore": 106,
+    "passed": false,
+    "runtime_seconds": 2.6920111179351807
+  }
+}

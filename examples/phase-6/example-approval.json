@@ -1,0 +1,45 @@
+{
+  "jobId": "example-approval",
+  "jobType": "partnership",
+  "client": "Example Client",
+
+  "data": {
+    "title": "Example Partnership Document",
+    "partner": {
+      "name": "Example Partner"
+    },
+    "subtitle": "Demonstrating Human-in-the-Loop Approval"
+  },
+
+  "output": {
+    "format": "pdf",
+    "quality": "high",
+    "filename": "Example-Approval"
+  },
+
+  "qaProfile": {
+    "id": "premium",
+    "min_score": 90,
+    "visual_baseline_id": "example-approval-baseline",
+    "create_baseline_on_first_pass": true
+  },
+
+  "approval": {
+    "mode": "slack",
+    "channel": "#design-approvals",
+    "timeout": 3600,
+    "approvers": ["@designer", "@manager"],
+    "requireAllApprovers": false,
+    "autoApproveOnTimeout": false,
+    "includeScreenshot": true,
+    "includeMetrics": true
+  },
+
+  "notes": [
+    "This example demonstrates approval workflows",
+    "Requires SLACK_WEBHOOK_URL env var",
+    "Approval modes: none, auto, slack, manual",
+    "Timeout: 3600 seconds (1 hour)",
+    "Auto-approve on timeout: false (job fails if timeout)"
+  ]
+}

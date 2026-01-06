@@ -1,0 +1,8 @@
+{
+  "prompt": "test prompt",
+  "provider": "dalle3",
+  "category": "hero",
+  "cachedAt": "2025-11-14T19:12:02.405Z",
+  "cacheKey": "test-cache-key",
+  "jobId": "test-job"
+}

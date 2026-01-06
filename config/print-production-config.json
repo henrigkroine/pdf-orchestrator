@@ -345,73 +345,57 @@
     "cropMarks": "Crop marks show the printer where to trim the final document."
   },
 
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
+
   "aiModels": {
-    "gpt4o": {
+    "claudeOpus4_5": {
+      "provider": "anthropic",
+      "model": "claude-opus-4-5-20251001",
+      "role": "Color management, print quality reasoning, and production readiness",
+      "tasks": [
+        "CMYK color analysis",
+        "Ink coverage calculation",
+        "Out-of-gamut detection",
+        "Color profile validation",
+        "Rich black verification",
+        "Production readiness scoring",
+        "Automated fix recommendations",
+        "Print optimization strategies"
+      ],
+      "temperature": 0.25,
+      "maxTokens": 8192
+    },
+    "geminiPro3_0": {
+      "provider": "google",
+      "model": "gemini-3.0-pro",
+      "role": "Image resolution, quality validation, and visual assessment",
+      "tasks": [
+        "Image resolution validation",
+        "Upsampling detection",
+        "JPEG compression analysis",
+        "Visual quality assessment",
+        "Bitmap vs vector identification",
+        "Cross-page consistency checking"
+      ],
+      "temperature": 0.2,
+      "maxTokens": 8192
+    },
+    "gpt5_1": {
       "provider": "openai",
-      "model": "gpt-4o-2024-11-20",
-      "role": "PDF/X compliance assessment and technical specifications",
+      "model": "gpt-5.1",
+      "role": "PDF/X compliance, bleed/trim validation, and production optimization",
       "tasks": [
         "PDF/X standard compliance validation",
         "Technical specification analysis",
         "Production readiness assessment",
-        "Compliance report generation"
-      ],
-      "temperature": 0.3,
-      "maxTokens": 4000
-    },
-    "gpt5": {
-      "provider": "openai",
-      "model": "gpt-5-preview",
-      "role": "Bleed and trim validation, production optimization",
-      "tasks": [
+        "Compliance report generation",
         "Bleed measurement and validation",
         "Trim mark accuracy checking",
         "Production workflow optimization",
         "Advanced preflight reasoning"
       ],
       "temperature": 0.2,
-      "maxTokens": 8000
-    },
-    "claudeOpus4": {
-      "provider": "anthropic",
-      "model": "claude-opus-4-20250514",
-      "role": "Color management and print quality reasoning",
-      "tasks": [
-        "CMYK color analysis",
-        "Ink coverage calculation",
-        "Out-of-gamut detection",
-        "Color profile validation",
-        "Rich black verification"
-      ],
-      "temperature": 0.25,
-      "maxTokens": 6000
-    },
-    "claudeSonnet4_5": {
-      "provider": "anthropic",
-      "model": "claude-sonnet-4-5-20250929",
-      "role": "Production readiness and optimization",
-      "tasks": [
-        "Production readiness scoring",
-        "Automated fix recommendations",
-        "Print optimization strategies",
-        "Cost estimation analysis"
-      ],
-      "temperature": 0.3,
-      "maxTokens": 5000
-    },
-    "geminiPro2_5": {
-      "provider": "google",
-      "model": "gemini-2.5-pro-vision",
-      "role": "Image resolution and quality for print",
-      "tasks": [
-        "Image resolution validation",
-        "Upsampling detection",
-        "JPEG compression analysis",
-        "Visual quality assessment",
-        "Bitmap vs vector identification"
-      ],
-      "temperature": 0.2,
-      "maxTokens": 4000
+      "maxTokens": 8192
     }
   },
 

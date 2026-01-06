@@ -1,0 +1,10 @@
+{"timestamp":"2025-11-05T11:03:17.160Z","metric":"test.metric","value":42,"tags":{"environment":"test"}}
+{"timestamp":"2025-11-05T11:03:49.098Z","metric":"test.metric","value":42,"tags":{"environment":"test"}}
+{"timestamp":"2025-11-05T11:04:05.821Z","metric":"test.metric","value":42,"tags":{"environment":"test"}}
+{"timestamp":"2025-11-05T11:04:39.285Z","metric":"orchestrator.latency.p50","value":1500,"tags":{"period":"15m"}}
+{"timestamp":"2025-11-05T11:04:39.317Z","metric":"orchestrator.latency.p95","value":3000,"tags":{"period":"15m"}}
+{"timestamp":"2025-11-05T11:04:39.350Z","metric":"orchestrator.latency.p99","value":3000,"tags":{"period":"15m"}}
+{"timestamp":"2025-11-05T11:04:39.381Z","metric":"orchestrator.success_rate","value":84.21,"tags":{"period":"15m"}}
+{"timestamp":"2025-11-05T11:04:39.413Z","metric":"orchestrator.error_rate","value":15.79,"tags":{"period":"15m"}}
+{"timestamp":"2025-11-05T11:04:39.446Z","metric":"orchestrator.cost.total","value":9.25,"tags":{"period":"15m"}}
+{"timestamp":"2025-11-05T11:04:39.479Z","metric":"orchestrator.operations.count","value":19,"tags":{"period":"15m"}}

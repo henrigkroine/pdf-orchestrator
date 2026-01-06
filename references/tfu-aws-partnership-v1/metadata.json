@@ -1,0 +1,277 @@
+{
+  "documentName": "tfu-aws-partnership-v1",
+  "sourcePDF": "D:\\Dev\\VS Projects\\Projects\\pdf-orchestrator\\exports\\TEEI-AWS-Partnership-TFU-DIGITAL.pdf",
+  "scale": 3,
+  "createdAt": "2025-11-14T08:30:50.519Z",
+  "pages": [
+    {
+      "page": 1,
+      "width": 1836,
+      "height": 2376,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 105,
+          "stdev": 125,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 139,
+          "stdev": 97,
+          "min": 57,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 142,
+          "stdev": 94,
+          "min": 63,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 76641,
+      "timestamp": "2025-11-14T08:30:51.004Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": true,
+          "contentDensity": "100.00",
+          "totalPixels": 218484,
+          "nonWhitePixels": 218484
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-1.png"
+    },
+    {
+      "page": 2,
+      "width": 1836,
+      "height": 2376,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 226,
+          "stdev": 41,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 239,
+          "stdev": 30,
+          "min": 46,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 242,
+          "stdev": 28,
+          "min": 53,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 273569,
+      "timestamp": "2025-11-14T08:30:51.405Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": true,
+          "contentDensity": "100.00",
+          "totalPixels": 218484,
+          "nonWhitePixels": 218484
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-2.png"
+    },
+    {
+      "page": 3,
+      "width": 1836,
+      "height": 2376,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 249,
+          "stdev": 37,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 250,
+          "stdev": 31,
+          "min": 42,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 250,
+          "stdev": 30,
+          "min": 49,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 256337,
+      "timestamp": "2025-11-14T08:30:51.760Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": false,
+          "contentDensity": "0.00",
+          "totalPixels": 218484,
+          "nonWhitePixels": 0
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-3.png"
+    },
+    {
+      "page": 4,
+      "width": 1836,
+      "height": 2376,
+      "format": "png",
+      "space": "srgb",
+      "channels": 4,
+      "depth": "uchar",
+      "density": 72,
+      "hasAlpha": true,
+      "dominantColors": [
+        {
+          "channel": "R",
+          "mean": 37,
+          "stdev": 89,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "G",
+          "mean": 85,
+          "stdev": 68,
+          "min": 57,
+          "max": 255
+        },
+        {
+          "channel": "B",
+          "mean": 89,
+          "stdev": 66,
+          "min": 0,
+          "max": 255
+        },
+        {
+          "channel": "Alpha",
+          "mean": 255,
+          "stdev": 0,
+          "min": 255,
+          "max": 255
+        }
+      ],
+      "fileSize": 153566,
+      "timestamp": "2025-11-14T08:30:52.045Z",
+      "edgeAnalysis": {
+        "top": {
+          "hasContent": true,
+          "contentDensity": "100.00",
+          "totalPixels": 218484,
+          "nonWhitePixels": 218484
+        },
+        "bottom": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "left": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        },
+        "right": {
+          "hasContent": false,
+          "contentDensity": 0,
+          "error": "extract_area: bad extract area"
+        }
+      },
+      "screenshotPath": "page-4.png"
+    }
+  ],
+  "pageCount": 4
+}

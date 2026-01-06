@@ -130,39 +130,40 @@
     }
   },
 
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
   "aiModels": {
     "fonts": {
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "provider": "openai",
       "purpose": "Font appropriateness and hierarchy effectiveness"
     },
     "scale": {
-      "model": "claude-opus-4.1",
+      "model": "claude-opus-4.5",
       "provider": "anthropic",
       "purpose": "Type scale reasoning and critique"
     },
     "spacing": {
-      "model": "gpt-5",
+      "model": "gpt-5.1",
       "provider": "openai",
       "purpose": "Line spacing and widow/orphan optimization"
     },
     "kerning": {
-      "model": "claude-sonnet-4.5",
+      "model": "claude-opus-4.5",
       "provider": "anthropic",
       "purpose": "Micro-typography and kerning analysis"
     },
     "readability": {
-      "model": "gemini-2.5-pro",
+      "model": "gemini-pro-3.0",
       "provider": "google",
       "purpose": "Readability and rag quality analysis"
     },
     "hierarchy": {
-      "model": "gpt-4o",
+      "model": "gpt-5.1",
       "provider": "openai",
       "purpose": "Hierarchy effectiveness and clarity"
     },
     "polish": {
-      "model": "claude-opus-4.1",
+      "model": "claude-opus-4.5",
       "provider": "anthropic",
       "purpose": "Typography polish and refinement"
     }

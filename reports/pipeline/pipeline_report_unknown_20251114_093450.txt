@@ -1,0 +1,20 @@
+============================================================
+PIPELINE EXECUTION REPORT
+============================================================
+Timestamp: 2025-11-14T09:34:35.549557
+Config: CI Mode
+
+EXECUTION STEPS:
+------------------------------------------------------------
+1. [OK] Locate PDF
+   Details: exports/TEEI-AWS-Partnership-TFU-DIGITAL.pdf
+2. [FAIL] Validate PDF
+   Error: Score: 115/150
+3. [OK] PDF Quality Validation
+4. [OK] Visual Regression
+   Details: Diff 0.00%
+
+============================================================
+FINAL SCORE: 115/100
+STATUS: FAILED
+============================================================

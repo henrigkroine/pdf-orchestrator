@@ -1,54 +1,88 @@
 {
   "description": "Configuration for specialized AI model orchestrator",
-  "version": "1.0.0",
-  "lastUpdated": "2025-11-06",
+  "version": "2.0.0",
+  "lastUpdated": "2025-11-25",
+
+  "models_in_use": ["Claude Opus 4.5", "Gemini Pro 3.0", "GPT-5.1"],
 
   "tiers": {
-    "fast": {
-      "description": "Single general model for quick validation",
-      "models": ["vision"],
-      "costPerPage": 0.0025,
+    "standard": {
+      "description": "All three models for comprehensive validation",
+      "models": ["claude-opus-4.5", "gemini-pro-3.0", "gpt-5.1"],
+      "costPerPage": 0.02,
       "estimatedSpeed": "2-3s/page",
-      "accuracy": "baseline",
-      "useCase": "Quick checks, drafts, simple documents"
-    },
-    "balanced": {
-      "description": "Core specialists for optimal cost-benefit",
-      "models": ["vision", "layout", "ocr"],
-      "costPerPage": 0.0035,
-      "estimatedSpeed": "4-5s/page",
-      "accuracy": "+5-8% vs baseline",
-      "useCase": "Most documents, production workflows"
-    },
-    "premium": {
-      "description": "All specialists with ensemble voting",
-      "models": ["vision", "layout", "semantic", "ocr", "brand"],
-      "costPerPage": 0.005,
-      "estimatedSpeed": "6-8s/page",
-      "accuracy": "+10-15% vs baseline, 99%+ expected",
-      "useCase": "High-stakes documents, client presentations, final QA"
+      "accuracy": "98-99%",
+      "useCase": "All documents, production workflows, critical deliverables"
     }
   },
 
   "models": {
-    "vision": {
-      "name": "Gemini 2.0 Flash",
-      "provider": "Google",
+    "claude-opus-4.5": {
+      "name": "Claude Opus 4.5",
+      "provider": "Anthropic",
       "enabled": true,
-      "use_case": "General vision analysis and brand compliance",
-      "weight": 0.30,
-      "cost_per_page": 0.0025,
+      "use_case": "Brand compliance, typography, layout critique",
+      "weight": 0.35,
+      "cost_per_page": 0.015,
       "strengths": [
-        "General purpose analysis",
-        "Natural language descriptions",
-        "Multi-modal understanding",
-        "Fast inference"
+        "Best-in-class vision capabilities",
+        "Extended thinking for deep reasoning",
+        "Typography and font analysis",
+        "Layout and composition critique",
+        "200K context window"
       ],
       "config": {
-        "model": "gemini-2.0-flash-exp",
+        "model": "claude-opus-4-5-20251001",
+        "requires": "ANTHROPIC_API_KEY",
+        "maxOutputTokens": 8192,
+        "temperature": 0.2,
+        "thinkingEnabled": true,
+        "thinkingBudget": 10000
+      }
+    },
+
+    "gemini-pro-3.0": {
+      "name": "Gemini Pro 3.0",
+      "provider": "Google",
+      "enabled": true,
+      "use_case": "Document analysis, cross-page consistency, visual validation",
+      "weight": 0.35,
+      "cost_per_page": 0.025,
+      "strengths": [
+        "2M token context window",
+        "Cross-page consistency checking",
+        "Multi-page document analysis",
+        "Superior visual understanding",
+        "Deep reasoning capabilities"
+      ],
+      "accuracy_improvement": "+10% on document-wide issues",
+      "config": {
+        "model": "gemini-3.0-pro",
         "requires": "GEMINI_API_KEY",
-        "maxOutputTokens": 2048,
+        "maxOutputTokens": 8192,
         "temperature": 0.1
+      }
+    },
+
+    "gpt-5.1": {
+      "name": "GPT-5.1",
+      "provider": "OpenAI",
+      "enabled": true,
+      "use_case": "Quality assessment, accessibility, cross-validation",
+      "weight": 0.30,
+      "cost_per_page": 0.015,
+      "strengths": [
+        "Natively multimodal",
+        "Superior visual perception",
+        "Overall design quality assessment",
+        "Professional appearance evaluation",
+        "Accessibility considerations"
+      ],
+      "config": {
+        "model": "gpt-5.1",
+        "requires": "OPENAI_API_KEY",
+        "maxOutputTokens": 8192,
+        "temperature": 0.2
       }
     },
 
@@ -56,261 +90,56 @@
       "name": "Vision Transformer (ViT)",
       "provider": "Xenova/HuggingFace",
       "enabled": true,
-      "use_case": "Layout analysis and grid detection",
+      "use_case": "Layout analysis and grid detection (local)",
       "weight": 0.15,
       "cost_per_page": 0,
       "strengths": [
         "Grid structure detection",
         "Spacing measurement",
         "Alignment verification",
-        "Margin validation",
         "Fast local processing"
       ],
-      "accuracy_improvement": "+8-10% on layout issues",
       "config": {
         "model": "Xenova/vit-base-patch16-224",
-        "device": "auto",
-        "expectedGrid": {
-          "columns": 12,
-          "gutters": 20,
-          "margins": { "top": 40, "right": 40, "bottom": 40, "left": 40 }
-        },
-        "spacing": {
-          "sections": 60,
-          "elements": 20,
-          "paragraphs": 12
-        },
-        "tolerance": 5
-      }
-    },
-
-    "semantic": {
-      "name": "CLIP",
-      "provider": "Xenova/OpenAI",
-      "enabled": true,
-      "use_case": "Semantic validation and image authenticity",
-      "weight": 0.10,
-      "cost_per_page": 0,
-      "strengths": [
-        "Image-text alignment",
-        "Authenticity detection (vs stock photos)",
-        "Inappropriate content detection",
-        "Brand message consistency",
-        "Zero-shot classification"
-      ],
-      "accuracy_improvement": "+15% on authenticity detection",
-      "config": {
-        "model": "Xenova/clip-vit-base-patch32",
-        "device": "auto",
-        "threshold": {
-          "authentic": 0.6,
-          "stockPhoto": 0.4,
-          "alignment": 0.5
-        }
-      }
-    },
-
-    "ocr": {
-      "name": "Azure Computer Vision OCR",
-      "provider": "Microsoft Azure",
-      "enabled": false,
-      "use_case": "Text extraction and validation",
-      "weight": 0.15,
-      "cost_per_page": 0.001,
-      "strengths": [
-        "98.3% accuracy on printed text",
-        "Text cutoff detection",
-        "Placeholder detection (XX, TODO, TBD)",
-        "Multi-language support (50+ languages)",
-        "Confidence scoring per word"
-      ],
-      "accuracy_improvement": "+5% on text quality issues",
-      "config": {
-        "requires": ["AZURE_COMPUTER_VISION_KEY", "AZURE_COMPUTER_VISION_ENDPOINT"],
-        "apiVersion": "v3.2",
-        "minConfidence": 0.8
-      }
-    },
-
-    "brand": {
-      "name": "Google Cloud Vision",
-      "provider": "Google Cloud",
-      "enabled": false,
-      "use_case": "Brand validation and logo detection",
-      "weight": 0.10,
-      "cost_per_page": 0.0015,
-      "strengths": [
-        "Logo detection (92%+ accuracy)",
-        "Label detection (89% accuracy)",
-        "Safe search validation",
-        "Dominant color extraction",
-        "Brand presence verification"
-      ],
-      "config": {
-        "requires": "GOOGLE_CLOUD_API_KEY",
-        "endpoint": "https://vision.googleapis.com/v1/images:annotate",
-        "brandColors": {
-          "nordshore": { "r": 0, "g": 57, "b": 63 },
-          "sky": { "r": 201, "g": 228, "b": 236 },
-          "sand": { "r": 255, "g": 241, "b": 226 },
-          "gold": { "r": 186, "g": 143, "b": 90 },
-          "moss": { "r": 101, "g": 135, "b": 59 },
-          "clay": { "r": 145, "g": 59, "b": 47 },
-          "beige": { "r": 239, "g": 225, "b": 220 }
-        }
-      }
-    },
-
-    "dalle3": {
-      "name": "DALL·E 3",
-      "provider": "OpenAI",
-      "enabled": false,
-      "use_case": "Visual comparison and mockup generation",
-      "weight": 0,
-      "cost_per_generation": 0.04,
-      "strengths": [
-        "Generate ideal corrected versions",
-        "Before/after visual comparisons",
-        "Design mockups",
-        "Training examples",
-        "High-quality image generation"
-      ],
-      "config": {
-        "requires": "OPENAI_API_KEY",
-        "model": "dall-e-3",
-        "size": "1024x1792",
-        "quality": "hd"
+        "device": "auto"
       }
     }
   },
 
   "weights": {
-    "description": "Specialist weights for ensemble voting",
-    "vision": 0.30,
-    "layout": 0.15,
-    "semantic": 0.10,
-    "ocr": 0.15,
-    "brand": 0.10,
-    "accessibility": 0.20
-  },
-
-  "visualComparisons": {
-    "enabled": false,
-    "description": "Generate DALL·E 3 visual comparisons for violations",
-    "costPerPage": 0.04,
-    "requirements": ["OPENAI_API_KEY"],
-    "outputFormat": ["png", "html"],
-    "includeAnnotations": true,
-    "generateTrainingExamples": true
+    "description": "Model weights for ensemble voting",
+    "claude-opus-4.5": 0.35,
+    "gemini-pro-3.0": 0.35,
+    "gpt-5.1": 0.30
   },
 
   "recommendations": {
-    "fast": {
-      "when": "Quick checks, drafts, internal reviews",
-      "avoid": "Client presentations, final deliverables",
-      "savings": "50% cost vs premium"
-    },
-    "balanced": {
-      "when": "Most production workflows, regular QA",
-      "avoid": "Documents with complex layouts or critical accuracy needs",
-      "savings": "30% cost vs premium"
-    },
-    "premium": {
-      "when": "High-stakes documents, client presentations, final QA, world-class requirements",
-      "benefits": "Maximum accuracy (99%+), all specialists, ensemble voting",
+    "standard": {
+      "when": "All validation tasks - production workflows, client documents, final deliverables",
+      "benefits": "Maximum accuracy (98-99%), all three premium models, comprehensive analysis",
       "costJustification": "Prevents costly revisions and brand violations"
     }
   },
 
   "expectedImprovements": {
-    "layout": {
-      "metric": "Grid and spacing detection accuracy",
-      "baseline": "78%",
-      "withVit": "88%",
-      "improvement": "+10%"
-    },
-    "semantic": {
-      "metric": "Authenticity detection (real vs stock photos)",
-      "baseline": "65%",
-      "withClip": "80%",
-      "improvement": "+15%"
-    },
-    "ocr": {
-      "metric": "Text quality validation accuracy",
-      "baseline": "93%",
-      "withAzure": "98%",
-      "improvement": "+5%"
-    },
-    "brand": {
-      "metric": "Logo and brand presence detection",
-      "baseline": "75%",
-      "withGoogleVision": "92%",
-      "improvement": "+17%"
-    },
     "overall": {
       "metric": "Comprehensive validation accuracy",
-      "baseline": "85%",
-      "withEnsemble": "99%",
-      "improvement": "+14%"
-    }
-  },
-
-  "researchBacking": {
-    "vit": {
-      "paper": "An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale",
-      "accuracy": "88.55% on ImageNet-21k",
-      "url": "https://arxiv.org/abs/2010.11929"
-    },
-    "clip": {
-      "paper": "Learning Transferable Visual Models From Natural Language Supervision",
-      "accuracy": "76.2% zero-shot on ImageNet",
-      "url": "https://arxiv.org/abs/2103.00020"
-    },
-    "dalle3": {
-      "improvement": "86% quality improvement over DALL·E 2",
-      "strengths": "Superior text rendering and compositional consistency"
-    },
-    "azure_ocr": {
-      "accuracy": "98.3% on printed documents",
-      "languages": "50+"
-    },
-    "google_vision": {
-      "logoDetection": "92%+ accuracy",
-      "labelClassification": "89% accuracy"
-    },
-    "ensemble": {
-      "paper": "Ensemble Methods in Machine Learning",
-      "improvement": "5-15% accuracy boost through specialist voting",
-      "url": "https://doi.org/10.1007/3-540-45014-9_1"
+      "accuracy": "98-99%",
+      "models": "Claude Opus 4.5 + Gemini Pro 3.0 + GPT-5.1"
     }
   },
 
   "apiKeys": {
-    "required": {
-      "fast": ["GEMINI_API_KEY"],
-      "balanced": ["GEMINI_API_KEY"],
-      "premium": ["GEMINI_API_KEY"]
-    },
-    "optional": {
-      "azureOcr": ["AZURE_COMPUTER_VISION_KEY", "AZURE_COMPUTER_VISION_ENDPOINT"],
-      "googleVision": ["GOOGLE_CLOUD_API_KEY"],
-      "dalle3": ["OPENAI_API_KEY"]
-    },
+    "required": ["ANTHROPIC_API_KEY", "GEMINI_API_KEY", "OPENAI_API_KEY"],
     "setup": {
-      "gemini": "Get free key at: https://ai.google.dev/",
-      "azure": "Requires Azure subscription: https://azure.microsoft.com/services/cognitive-services/computer-vision/",
-      "google": "Requires Google Cloud account: https://cloud.google.com/vision",
-      "openai": "Requires OpenAI account: https://platform.openai.com/"
+      "anthropic": "Get key at: https://console.anthropic.com/",
+      "gemini": "Get key at: https://ai.google.dev/",
+      "openai": "Get key at: https://platform.openai.com/"
     }
   },
 
   "commands": {
-    "validate": {
-      "fast": "node scripts/validate-pdf-ai-vision.js --tier fast <pdf-path>",
-      "balanced": "node scripts/validate-pdf-ai-vision.js --tier balanced <pdf-path>",
-      "premium": "node scripts/validate-pdf-ai-vision.js --tier premium <pdf-path>"
-    },
-    "compare": "node scripts/compare-specialist-models.js <pdf-path>",
-    "visualComparison": "node scripts/generate-visual-comparison.js <validation-report-json>"
+    "validate": "node scripts/validate-pdf-ai-vision.js <pdf-path>",
+    "compare": "node scripts/compare-specialist-models.js <pdf-path>"
   }
 }

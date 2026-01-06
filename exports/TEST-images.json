@@ -1,0 +1,14 @@
+{
+  "images": {
+    "cover_hero": {
+      "file": "assets\\images\\tfu\\aws\\cover_hero-20251114.png",
+      "altText": "Ukrainian students learning cloud computing with AWS mentor in modern classroom, warm natural lighting",
+      "provider": "local",
+      "cached": false,
+      "generated_at": "2025-11-14T19:30:59.372975"
+    }
+  },
+  "manifest_version": "1.0",
+  "generated_at": "2025-11-14T19:30:59.372989",
+  "provider": "local"
+}

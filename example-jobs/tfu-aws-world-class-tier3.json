@@ -1,0 +1,297 @@
+{
+  "name": "TFU AWS Partnership - Tier 3 World-Class (ALL FEATURES ENABLED)",
+  "description": "Together for Ukraine AWS Partnership with ALL AI features: Tier 1 (typography/color/whitespace), Tier 2 (RAG), and Tier 3 (Image Gen + Accessibility)",
+  "template": "partnership",
+  "design_system": "tfu",
+  "validate_tfu": true,
+
+  "generator": {
+    "type": "tfu_aws_tier3",
+    "jsx_script": "scripts/generate_tfu_aws_v2.jsx"
+  },
+
+  "data": {
+    "title": "Building Europe's Cloud-Native Workforce",
+    "subtitle": "Together for Ukraine · AWS Strategic Partnership",
+    "organization": "The Educational Equality Institute",
+    "partner": "Amazon Web Services"
+  },
+
+  "typography_sidecar": "exports/TEEI-AWS-Partnership-TFU-Tier3-typography.json",
+
+  "expected_metrics": {
+    "core": ["50,000", "50000", "12", "45", "3,500", "3500"],
+    "outcomes": ["78%", "92%", "€45k", "45k", "72%", "65%", "88%"],
+    "strategic": ["$150,000", "$150k", "150,000", "150k"]
+  },
+
+  "output": {
+    "formats": ["indd", "pdf_digital", "pdf_print"],
+    "intent": "both",
+    "filename_base": "TEEI-AWS-Partnership-TFU-Tier3",
+    "export_path": "./exports",
+    "pdf_settings": {
+      "digital": {
+        "preset": "[High Quality Print]",
+        "color_space": "RGB",
+        "resolution": 150,
+        "optimize_web": true
+      }
+    }
+  },
+
+  "quality": {
+    "validation_threshold": 145,
+    "auto_fix": true,
+    "strict_mode": true,
+    "required_checks": [
+      "tfu_compliance",
+      "typography_design",
+      "pdf_structure",
+      "content",
+      "visual_hierarchy",
+      "accessibility"
+    ]
+  },
+
+  "mcp_requirements": {
+    "require_mcp_for_validation": true,
+    "proxy_url": "http://localhost:8013",
+    "timeout": 60
+  },
+
+  "qaProfile": {
+    "id": "tfu_aws_tier3_world_class",
+    "min_score": 145,
+    "min_tfu_score": 145,
+    "max_visual_diff_percent": 3.0,
+    "visual_baseline_id": "tfu-aws-tier3-baseline",
+    "create_baseline_on_first_pass": true
+  },
+
+  "gemini_vision": {
+    "enabled": true,
+    "min_score": 0.95,
+    "fail_on_critical": true,
+    "output_dir": "reports/gemini"
+  },
+
+  "planning": {
+    "rag": {
+      "enabled": true,
+      "vectorDatabase": "qdrant",
+      "embeddingModel": "openai/text-embedding-3-large",
+      "retrievalCount": 8,
+      "similarityThreshold": 0.70,
+      "indexPath": "ai/rag/indexes/",
+      "fallbackBehavior": "warn",
+      "hybridSearch": {
+        "enabled": true,
+        "keywords": ["AWS", "cloud", "partnership", "Together for Ukraine", "technical training", "workforce development", "cloud-native"],
+        "minPerformanceScore": 0.75,
+        "boostRecent": true
+      }
+    },
+    "personalization_enabled": true,
+    "partner_profile_id": "aws-cloud",
+    "performance_recommendations": true,
+    "partner_profiles_db": "data/partner-profiles.json"
+  },
+
+  "generation": {
+    "figma": {
+      "enabled": false,
+      "file_id": "",
+      "page": "TFU AWS Partnership",
+      "component_map": {
+        "AWS Hero Card": "cover_hero",
+        "Stat Block": "stats_sidebar",
+        "Program Card": "program_section"
+      }
+    },
+    "imageGeneration": {
+      "enabled": true,
+      "provider": "openai-dalle3",
+      "quality": "hd",
+      "style": "natural",
+      "size": "1792x1024",
+      "cacheEnabled": true,
+      "cachePath": "assets/images/generated/",
+      "cacheMaxAgeDays": 30,
+      "requirements": {
+        "heroImage": {
+          "enabled": true,
+          "prompt": "Ukrainian students using educational technology in modern classroom, warm natural lighting, hopeful atmosphere, diverse group learning cloud computing with AWS mentor, photorealistic documentary style, authentic educational moment showing connection and engagement, bright and inspiring space, NOT staged corporate stock photo",
+          "negativePrompt": "staged, corporate stock photo, artificial lighting, posed, fake smiles, studio photography, overly polished"
+        },
+        "programPhotos": {
+          "enabled": true,
+          "count": 4,
+          "promptTemplate": "Educational program: {program_name}, diverse Ukrainian students in authentic learning moment, warm natural tones, bright educational space, technology-enabled learning with laptops and modern equipment, genuine engagement and collaboration, documentary photography style, NOT corporate or staged"
+        }
+      },
+      "prompts": {
+        "cover_hero": "Ukrainian student learning cloud computing skills with AWS mentor in modern bright classroom, warm natural lighting, documentary photography style, photorealistic, authentic educational moment showing hope and opportunity, diverse students engaged with technology",
+        "program_image_1": "Diverse Ukrainian students collaborating on cloud computing project in bright educational space with laptops, warm tones, natural lighting, genuine engagement",
+        "program_image_2": "Ukrainian mentor teaching AWS cloud skills to students in modern classroom, authentic teaching moment, hopeful atmosphere, natural documentary style",
+        "program_image_3": "Students engaged in technical training session using AWS educational materials, modern educational technology, warm authentic moment",
+        "program_image_4": "Close-up of Ukrainian student working on laptop with AWS cloud interface, focused concentration, natural lighting, photorealistic documentary style"
+      }
+    },
+    "fontPairing": {
+      "enabled": true,
+      "strategy": "constrained",
+      "allow_alternatives": false,
+      "tfu_brand_lock": true
+    },
+    "layoutIteration": {
+      "enabled": false,
+      "num_variations": 5,
+      "variation_strategies": ["hero_image", "card_layout", "split_screen"],
+      "parallel_execution": true
+    }
+  },
+
+  "validation": {
+    "smoldocling": {
+      "enabled": false,
+      "model": "smolvlm-500m",
+      "output_dir": "reports/layout"
+    },
+    "accessibility": {
+      "enabled": true,
+      "standards": {
+        "wcag22AA": {
+          "enabled": true,
+          "failOnViolation": true
+        },
+        "pdfUA": {
+          "enabled": true,
+          "failOnViolation": false
+        },
+        "section508": {
+          "enabled": false,
+          "failOnViolation": false
+        }
+      },
+      "autoRemediation": {
+        "enabled": true,
+        "altText": {
+          "enabled": true,
+          "aiProvider": "aws-bedrock",
+          "model": "anthropic.claude-3-haiku-20240307-v1:0",
+          "maxLength": 125
+        },
+        "structureTags": {
+          "enabled": true
+        },
+        "readingOrder": {
+          "enabled": true
+        },
+        "contrastAdjustment": {
+          "enabled": true,
+          "targetRatio": 4.5
+        }
+      },
+      "reportPath": "reports/accessibility/"
+    }
+  },
+
+  "analytics": {
+    "performance_tracking": true,
+    "partner_id": "aws",
+    "doc_family": "tfu_partnership",
+    "analytics_db": "sqlite:///database/performance.db"
+  },
+
+  "ai": {
+    "enabled": true,
+    "dryRun": false,
+    "advancedMode": true,
+    "features": {
+      "typography": {
+        "enabled": true,
+        "weight": 0.35,
+        "minScore": 0.90
+      },
+      "whitespace": {
+        "enabled": true,
+        "weight": 0.25,
+        "minScore": 0.85
+      },
+      "color": {
+        "enabled": true,
+        "weight": 0.25,
+        "minScore": 0.92
+      },
+      "layout": {
+        "enabled": true,
+        "weight": 0.15,
+        "minScore": 0.88
+      }
+    },
+    "thresholds": {
+      "minNormalizedScore": 0.90,
+      "failOnCriticalIssues": true
+    },
+    "output": {
+      "reportDir": "reports/ai",
+      "includeInLayer1Score": true,
+      "layer1Points": 15
+    }
+  },
+
+  "mode": "world_class",
+  "tfu_requirements": {
+    "page_count": 4,
+    "primary_color": "#00393F",
+    "forbidden_colors": ["#BA8F5A"],
+    "required_fonts": ["Lora", "Roboto"],
+    "forbidden_fonts": ["Roboto Flex"],
+    "paragraph_style_prefix": "TFU_",
+    "content_page_number": 4,
+    "required_elements": [
+      "TFU badge (blue + yellow)",
+      "Partner logo grid (3×3)",
+      "Full teal cover page",
+      "Full teal closing page",
+      "Light blue stats sidebar",
+      "Two-column program matrix",
+      "AI-generated hero image (DALL-E 3)",
+      "AI-generated program photos (4 images)",
+      "Accessibility tags (WCAG 2.2 AA compliant)",
+      "Alt text for all images (AI-generated)"
+    ],
+    "typography_requirements": {
+      "min_type_sizes": 11,
+      "hierarchy_levels": [
+        "cover_title",
+        "section_heading",
+        "cta_heading",
+        "stat_number",
+        "program_name",
+        "subheading",
+        "body_lead",
+        "body",
+        "caption",
+        "label",
+        "fine_print"
+      ]
+    }
+  },
+
+  "notes": [
+    "TIER 3 WORLD-CLASS CONFIGURATION - ALL FEATURES ENABLED",
+    "Tier 1: Typography, Whitespace, Color AI validation (advanced mode)",
+    "Tier 1.5: Layout AI validation enabled",
+    "Tier 2: RAG-powered content personalization (8 documents, hybrid search)",
+    "Tier 3: AI image generation (DALL-E 3, HD quality, 5 images)",
+    "Tier 3: Accessibility auto-remediation (WCAG 2.2 AA + PDF/UA)",
+    "Target: 145-150/150 validation score with maximum quality",
+    "AI score threshold: 0.90 (very high quality)",
+    "All TFU brand compliance rules enforced",
+    "Accessibility: Auto alt-text, structure tagging, reading order, contrast adjustment",
+    "Image Gen: Hero image + 4 program photos (documentary style, warm natural lighting)",
+    "RAG: Retrieves best-performing content patterns from past AWS partnerships"
+  ]
+}

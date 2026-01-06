@@ -1,14 +1,14 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "title": "Report Job Schema",
-  "description": "Schema for automated report generation jobs",
+  "title": "Premium Report Job Schema",
+  "description": "Schema for premium report generation jobs with intent-aware validation",
   "type": "object",
-  "required": ["jobType", "templateId", "data", "output"],
+  "required": ["jobType", "data", "output"],
   "properties": {
     "jobType": {
       "type": "string",
-      "const": "report",
-      "description": "Type of PDF generation job"
+      "enum": ["report", "partnership", "program"],
+      "description": "Type of premium PDF generation job"
     },
     "templateId": {
       "type": "string",
@@ -59,22 +59,36 @@
     },
     "output": {
       "type": "object",
-      "required": ["format"],
+      "required": ["format", "intent", "quality"],
       "properties": {
         "format": {
           "type": "string",
           "enum": ["pdf", "pdf-print", "pdf-interactive"]
         },
+        "intent": {
+          "type": "string",
+          "enum": ["print", "screen"],
+          "description": "Delivery intent: print (300 DPI, CMYK) or screen (150 DPI, RGB)"
+        },
+        "quality": {
+          "type": "string",
+          "enum": ["high"],
+          "description": "Quality level - premium docs require 'high' quality"
+        },
         "destination": {
           "type": "string",
           "description": "Output path or R2 bucket key"
         },
-        "quality": {
+        "accessibility": {
           "type": "string",
-          "enum": ["draft", "standard", "high"],
-          "default": "standard"
+          "enum": ["autotag"],
+          "description": "Optional: Enable PDF accessibility auto-tagging (adds cost)"
         }
       }
+    },
+    "worldClass": {
+      "type": "boolean",
+      "description": "If true, uses world-class Python CLI for highest quality output"
     }
   }
 }
