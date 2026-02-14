@@ -1,0 +1,27 @@
+---
+description: Git safety rules for AI agents — prevents destructive operations
+alwaysApply: true
+---
+
+# Agent Safety Rules
+
+## Git — Allowed (read-only)
+- git log, git show, git diff, git status, git branch, git stash list
+
+## Git — Allowed (only when user explicitly requests)
+- git add, git commit, git push, git stash
+
+## Git — FORBIDDEN (never use)
+- git reset --hard
+- git checkout -- . / git checkout -- <file>
+- git clean -f / git clean -fd
+- git push --force / git push -f
+- git branch -D
+- git stash drop / git stash clear
+- git rebase (without explicit approval)
+
+## General Safety
+- NEVER deploy to production without explicit approval
+- NEVER delete data files, databases, or .env files
+- NEVER modify CI/CD pipelines without approval
+- Always create a checkpoint commit before large refactors

@@ -79,3 +79,12 @@ FORBIDDEN PATHS:
 - Spending 30+ mins on workarounds without asking
 - Outputting PDFs that didn't go through the pipeline
 - Saying "done" when validation didn't run
+
+
+## Git Safety Rules
+- READ-ONLY commands ALLOWED: git log, git show, git diff, git status, git branch
+- FORBIDDEN: git reset --hard, git checkout -- ., git clean -fd, git push --force, git branch -D
+- git add, git commit, git push are ALLOWED only when explicitly requested
+- NEVER force push. NEVER reset. NEVER rebase without explicit approval.
+- Before ANY destructive file changes: git add -A && git commit -m "checkpoint"
+- Use /rewind for session recovery instead of destructive git commands
